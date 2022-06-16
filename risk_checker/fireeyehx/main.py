@@ -79,9 +79,19 @@ def _notify_to_redmine(_rm_conf, alert_id, alert, splunk_server,
 	csev = result["correct_severity"]
 	if tickets is None or len(tickets) is 0:
 		logger.info( "no open ticekt for this incident" )
+<<<<<<< HEAD
 		if result["flag"] is True and csev != "低":
 			rm_helper._issue_redmine_ticket(_rm_conf, alert)
 			tickets = rm_helper.get_ticket_idlist(_rm_conf, alert_id)
+=======
+		if result["flag"] is True and (csev != "低" or csev != "-"):
+			rm_helper._issue_redmine_ticket(_rm_conf, alert)
+			tickets = rm_helper.get_ticket_idlist(_rm_conf, alert_id)
+		elif result["flag"] is True and csev == "低":
+			# Added below logs for clarity
+			logger.info( "Past Redmine Ticket Severity - {}, No new ticket created" . format(csev))
+			logger.info("Past_ticket info: {}" . format(result))
+>>>>>>> develop
 		else:
 			logger.info("this is needless to check by analyst.")
 	if tickets:

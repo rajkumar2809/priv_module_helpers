@@ -31,6 +31,10 @@ def get_info_by_hash_from_past_ticket(ps_hash, customer, past_days=30):
 	info = None
 	for each in result["tickets"]:
 		#if each[u"顧客名"] == customer: #すべてのお客様のチケットを対象にして検索
+<<<<<<< HEAD
+=======
+		if each[u"参考利用可"] == 'Yes': #「参考利用可」フラグがYESになっているチケットのみ参考する
+>>>>>>> develop
 			msg = _get_analyse_comment(each["notes"])
 			if msg is None:
 				continue

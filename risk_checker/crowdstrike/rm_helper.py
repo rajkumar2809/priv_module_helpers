@@ -30,6 +30,7 @@ def get_info_by_hash_from_past_ticket(ps_hash, customer, past_days=30):
 			created_on="><t-{}".format(past_days))
 	info = None
 	for each in result["tickets"]:
+<<<<<<< HEAD
 		msg = _get_analyse_comment(each["notes"])
 		if msg is None:
 			continue
@@ -43,6 +44,22 @@ def get_info_by_hash_from_past_ticket(ps_hash, customer, past_days=30):
 				info = {"ticket_id" : int(each["id"]),
 						"severity"  : each[u"危険度"],
 						"message"   : msg }
+=======
+		if each[u"参考利用可"] == 'Yes': #「参考利用可」フラグがYESになっているチケットのみ参考する
+			msg = _get_analyse_comment(each["notes"])
+			if msg is None:
+				continue
+			msg = msg.replace("*result*", "過去の以下チケットにならいます。\n#{}\n".format(each["id"]))
+			if msg:
+				if info is None:
+					info = {"ticket_id" : int(each["id"]),
+							"severity"  : each[u"危険度"],
+							"message"   : msg }
+				elif info["ticket_id"]<int(each["id"]):
+					info = {"ticket_id" : int(each["id"]),
+							"severity"  : each[u"危険度"],
+							"message"   : msg }
+>>>>>>> develop
 	return info
 
 def get_ticket_idlist(rm_conf, alert_id):
