@@ -1,0 +1,90 @@
+{
+  "headers" : {
+    "title"       : "CrowdStrike アラート解析一次レポート",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. アラート情報",
+    "remediation" : "3. 推奨対応",
+    "appendix"    : "参考: 詳細情報"
+  },
+  "_form" : {
+    "action" : "cs_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "process_info" : "アラートプロセス",
+    "ev_info_summary" : "イベント詳細情報",
+    "network_info" : "通信先情報",
+    "process_detail_list" : "プロセス詳細一覧"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "process_info" : {
+    "src" : "process_info"
+  },
+  "summary_info" : [
+    { "name" : "通知日時",       "src" : "alert_time" },
+    { "name" : "アラートID",     "src" : "alert_id"   },
+    { "name" : "カテゴリ",       "src" : "category"   },
+    { "name" : "危険度",         "src" : "severity"   },
+    { "name" : "アクション",     "src" : "blocked"    },
+    { "name" : "IPアドレス",     "src" : "ipaddr"     },
+    { "name" : "対象ホスト",     "src" : "hostname"   },
+    { "name" : "ホストセット",   "src" : "host_group" },
+    { "name" : "ホストタグ",     "src" : "host_tags"  },
+    { "name" : "ホストOS",       "src" : "os"         },
+    { "name" : "ユーザID",       "src" : "username"   }
+  ],
+  "mltables" : {
+    "ev_info_summary" : {
+      "from"     : "event_info",
+      "datatype" : null,
+      "prefix"   : "event_info",
+      "fields"   : [
+        { "name" : "発生日時",   "src" : "alert_time" },
+        { "name" : "プロセス名", "src" : "ps_name"    },
+        { "name" : "アラート名", "src" : "alert_name" },
+        { "name" : "カテゴリ",   "src" : "category"   },
+        { "name" : "防止",       "src" : "is_blocked" }
+      ]
+    },
+    "network_info" : {
+      "from"     : "nw_info",
+      "datatype" : null,
+      "prefix"   : "edge_info",
+      "fields"   : [
+        { "name" : "通信先IP",  "src" : "ipaddr" },
+        { "name" : "DNSホスト", "src" : "dns" }
+      ]
+    },
+    "process_detail_list" : {
+      "from"     : "process_detail_info",
+      "datatype" : null,
+      "prefix"   : "graph_info",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "プロセスID",       "src" : "ps_rawid"   },
+        { "name" : "プロセス名",       "src" : "ps_name"    },
+        { "name" : "プロセスハッシュ", "src" : "ps_hash"    },
+        { "name" : "プロセス停止時刻", "src" : "ps_end"     },
+        { "name" : "コマンドライン",   "src" : "ps_cmdline" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "隔離要否", "src" : "need_contain" },
+    { "name" : "隔離対象", "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "customer_name"   },
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ]
+}

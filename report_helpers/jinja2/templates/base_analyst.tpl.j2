@@ -1,0 +1,107 @@
+{# base tpl #}
+<html>
+  <head>
+    <title>{{ headers["title"] }}</title>
+  </head>
+    <style type="text/css">
+      table {
+        border-collapse: collapse;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      td {
+        border: solid 1px;
+        padding: 0.5em;
+        font-family:"Meiryo UI";
+      }
+      .head {
+        font:bold;
+        font-family:"Meiryo UI";
+      }
+      .subsection {
+        font-family:"Meiryo UI";
+      }
+      .description {
+        font-family:"Meiryo UI";
+      }
+      .item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:250px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .content {
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .value {
+        font-family:"Meiryo UI";
+        width:700px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .hvalue {
+        font-family:"Meiryo UI";
+        width:350px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .date {
+        font-family:"Meiryo UI";
+        text-align:right;
+      }
+      .company {
+        font-family:"Meiryo UI";
+        text-align:right;
+      }
+      .title {
+        text-align:center;
+        font:bold;
+        font-family:"Meiryo UI";
+      }
+      .fheader {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:350px;
+        padding:2px;
+        text-align:center;
+      }
+      .comments {
+        font-family:"Meiryo UI";
+      }
+      {% block stylesheet %}
+      {% endblock %}
+    </style>
+  <body>
+    <p class="date">{{ date["content"] }}</p>
+    <h2 class="title">{{ headers["title"] }}</h2>
+    <p class="company">{{ headers["company"] }}</p>
+    {% block summary %}
+      <h2 class="head">{{ headers["summary"] }}</h2>
+      <p class="description">{{ summary["content"] | linebreaksbr }}<p>
+      <div style="page-break-before: avoid;">
+        <table>
+          {% for each in summary_info %}
+            <tr>
+              <td class="item">{{ each["name"] }}</td>
+              <td class="content">{{ each["content"] | linebreaksbr }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    {% endblock %}
+    {% block detail %}
+    {% endblock %}
+    {% block remediation %}
+      <h2 class="head">{{ headers["remediation"] }}</h2>
+      <p class="description">{{ remediation["content"] | linebreaksbr }}<p>
+    {% endblock %}
+  </body>
+</html>

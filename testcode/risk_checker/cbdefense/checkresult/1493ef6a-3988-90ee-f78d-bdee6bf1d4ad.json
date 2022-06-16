@@ -1,0 +1,149 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 53412, 
+            "ip": "50.27.153.19", 
+            "location": "Lubbock,TX,United States", 
+            "name": null
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "520-78ae0ae1038a989645577d00890f5bb16af35002ecb4c0f1485d0937c7fee02c-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\taguchi005", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "9514f7ec1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:48:00"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "520-78ae0ae1038a989645577d00890f5bb16af35002ecb4c0f1485d0937c7fee02c-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "login.exe", 
+                    "hash": "78ae0ae1038a989645577d00890f5bb16af35002ecb4c0f1485d0937c7fee02c", 
+                    "pid": 520, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\EXA010.exe\" CANVAS", 
+                    "parent_path": "c:\\canvas\\bin\\login.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f", 
+                    "path": "c:\\canvas\\bin\\exa010.exe", 
+                    "ppid": "520-78ae0ae1038a989645577d00890f5bb16af35002ecb4c0f1485d0937c7fee02c-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9708
+                }
+            }, 
+            "message": "canvas_tmp_exe(520):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "8936-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "UNKNOWN_APP", 
+                    "ACTIVE_SERVER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\taguchi005", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.23.27.175:55989", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "92d7a7d71e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "40.23.27.175:55989<-(UDP:IN)-50.27.153.19:53412(None)[Lubbock,TX,United States]", 
+                        "occurred": [
+                            "2021/09/26 03:40:49"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.27.153.19", 
+                            "local_port": 55989, 
+                            "proto": "UDP", 
+                            "local_ipv4": "40.23.27.175", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": "Lubbock,TX,United States", 
+                            "remote_port": 53412
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8936-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9", 
+                    "pid": 8936, 
+                    "command_line": "\"C:\\ADTool\\Bin\\iNotify.exe\" ", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "536b73beda8c4d69e377d92e5995a77b6129345e03b70b1c61105c168c7a5e0b", 
+                    "path": "c:\\adtool\\bin\\inotify.exe", 
+                    "ppid": "8936-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 6692
+                }
+            }, 
+            "message": "inotify.exe(8936):00001-10-000803:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "inotify.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

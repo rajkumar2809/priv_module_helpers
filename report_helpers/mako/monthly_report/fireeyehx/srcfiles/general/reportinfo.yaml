@@ -1,0 +1,223 @@
+headers:
+  title: 
+    DH: DH-MDR サービス for FireEye HX
+    NVC: NVC セキュリティ運用サービス for FireEye HX
+    NOS: NOS セキュリティ運用サービス for FireEye HX
+  sub_title: アラートサマリー報告書
+  date: JPN
+  sections:
+    top_message:
+      title: 本書について
+      number: 1
+    alert_analysis: 
+      title: FireEye HX対象別レポート
+      number: 2
+    incident: 
+      title: インシデント対応状況
+      number: 3
+    software_release: 
+      title: リリース情報
+      number: 4
+    config_history: 
+      title: 設定変更内容
+      number: 5
+    threat_hunting: 
+      title: 脅威ハンティング実施結果
+      number: 6
+    security_news: 
+      title: セキュリティ関連情報
+      number: 7
+    digitalrisk:
+      title: デジタルリスク監視結果
+      number: 8
+    other_comment: 
+      title: その他特記事項
+      number: 9
+    conclusion: 
+      title: 総評
+      number: 10
+  sender:
+    DH: 株式会社デジタルハーツ
+    NVC: 株式会社ネットワークバリューコンポネンツ
+
+tableformat:
+  general:
+    severity:
+      high: 高
+      medium: 中
+      low: 低
+  monthly_chart:
+    column:
+      - name: 月
+      - name: 件数
+      - name: 高
+      - name: 中
+      - name: 低
+    date: YMDHMS
+  daily_chart:
+    column:
+      - name: 日付
+      - name: 件数
+      - name: 高
+      - name: 中
+      - name: 低
+    date: YMDHMS
+  malware_base:
+    column:
+      - name: マルウェアタイプ
+      - name: 危険度
+      - name: アラート件数
+      - name: 対象ホスト
+    overhosts: その他{OverNum}端末
+  os_base:
+    column:
+      - name: OS名
+      - name: 高
+      - name: 中
+      - name: 低
+  host_base:
+    column:
+      - name: ホスト名
+      - name: 危険度
+      - name: アラート件数
+  incident_base:
+    column:
+      - name: インシデント発生日時
+      - name: アラートID
+      - name: 対象ホスト
+      - name: ステータス
+  severity_circle:
+    column:
+      - name: 危険度
+      - name: 件数
+      - name: アラート発生ホスト
+    legend:
+      - name: 高
+      - name: 中
+      - name: 低
+    overhosts: その他{OverNum}端末
+  server_release:
+    column:
+      - name: OS
+      - name: リリース日
+      - name: 検証状況(検証完了日)※
+  hunting:
+    column:
+      - name: 検知概要
+      - name: 検知数
+      - name: 必要な対応
+  config_history:
+    column:
+      - name: 作業内容
+      - name: 状況
+      - name: 作業日
+
+format:
+  footer:
+    DH: dhsoc.html
+    NVC: nvc.html
+    NOS: nos.html
+    KOP: kop.html
+  logo:
+    DH:
+      s: dh-logo_s.png
+      m: dh-logo_m.png
+      l: dh-logo-l.png
+    NVC:
+      s: nvc-logo_s.png
+      m: nvc-logo_m.png
+      l: nvc-logo-l.png
+    NOS:
+      s: nos-logo_s.png
+      m: nos-logo_m.png
+      l: nos-logo-l.png
+    KOP:
+      s: kop-logo_s.png
+      m: kop-logo_m.png
+      l: kop-logo-l.png
+
+report_target:
+  chapters:
+    - name: 1.1. レポート対象
+  table:
+    header:
+      - 項目
+      - 内容
+    contents:
+      - name: 製品名
+        src: product
+      - name: 対象期間
+        src: report_period
+
+alert_analysis:
+  chapters:
+    - name: 1. 月間アラート件数
+      chapters:
+        - name: 1.1. 危険度別アラート件数
+        - name: 1.2. 日別アラート件数
+        - name: 1.3. マルウェアタイプ
+        - name: 1.4. アラート発生ホスト
+        - name: 1.5. アラート発生OS
+    - name: 2. アラート件数の推移
+
+software_release:
+  chapters:
+    - name: 1. FireEye Endpoint Security OS
+    - name: 2. FireEye Endpoint Security Agent
+  server_release:
+    type: server
+    updated: false
+    message: ""
+    supported:
+        - version: "5.1.1"
+          release_date: 2021年08月26日
+          end_of_release_test: 完了(2021年9月15日)
+        - version: "5.2.0"
+          release_date: 2021年11月03日
+          end_of_release_test: 完了(2021年12月09日)
+  agent_release:
+    type: agent
+    updated: false
+    message: ""
+
+threat_hunting:
+  chapters:
+    - name: 1. 調査情報
+    - name: 2. 調査結果
+  ioc_type:
+    - type: sha256
+      desc: 悪性ファイルのハッシュ値
+    - type: ipaddr
+      desc: 悪性のIPアドレス
+    - type: domain
+      desc: 悪性のドメイン名
+
+config_history:
+  comment: no need child
+
+digitalrisk:
+  vuln_domain:
+    name: 1. 登録ドメインのオープンポートと脆弱性情報
+    description:
+      header:
+        - 危険度
+        - 内容
+      rawtable:
+        - name: 高
+          content: 脆弱性の存在が確認されています。
+        - name: 中
+          content: オープンポートが確認されており、その中に公開することが推奨されないポート(例:SSHなど)が含まれています。
+        - name: 低
+          content: オープンポートが確認されているサブドメイン一覧です。
+        - name: 情報
+          content: オープンポートが確認されていないサブドメイン一覧です。
+  vuln_ipaddr:
+    name: 2. 登録IPアドレスのオープンポートと脆弱性情報
+  impersonate_domain:
+    name: 3. 登録ドメインのなりすましドメイン情報
+  dataleak:
+    name: 4. 登録キーワードの検出
+  monitor_target:
+    name: not use
+
+

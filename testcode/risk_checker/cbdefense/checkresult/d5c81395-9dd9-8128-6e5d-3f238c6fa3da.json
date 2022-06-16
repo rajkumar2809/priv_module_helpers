@@ -1,0 +1,719 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 443, 
+            "ip": "52.109.76.31", 
+            "location": "Dublin,07,Ireland", 
+            "name": null
+        }, 
+        {
+            "port": 443, 
+            "ip": "52.109.124.127", 
+            "location": "Singapore,00,Singapore", 
+            "name": "odc.officeapps.live.com"
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "4332-c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_SERVICE", 
+                    "UNKNOWN_APP", 
+                    "INTERNATIONAL_SITE", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "4332-c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8-0", 
+                        "description": "ControlService(pass commands to the Service Control Manager)", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "ControlService(False)", 
+                        "occurred": [
+                            "2021/09/26 03:22:18"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "ControlService"
+                        }, 
+                        "event_id": [
+                            "0390a6541e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_SERVICE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "4332-c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8-0", 
+                        "description": "52.109.76.31:443(located in Dublin 07, Ireland)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "28.11.38.141:63333-(TCP:OUT)->52.109.76.31:443(None)[Dublin,07,Ireland]", 
+                        "occurred": [
+                            "2021/09/26 03:19:58"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.76.31", 
+                            "remote_port": 443, 
+                            "proto": "TCP", 
+                            "remote_domain": null, 
+                            "local_ipv4": "28.11.38.141", 
+                            "local_port": 63333, 
+                            "is_inbound": false, 
+                            "remote_location": "Dublin,07,Ireland"
+                        }, 
+                        "event_id": [
+                            "bb28ba7f1e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "4332-c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8-0", 
+                        "description": "52.109.124.127:443(odc.officeapps.live.com, located in Singapore 00, Singapore)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "28.11.38.141:63268-(TCP:OUT)->52.109.124.127:443(odc.officeapps.live.com)[Singapore,00,Singapore]", 
+                        "occurred": [
+                            "2021/09/26 03:18:55"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.124.127", 
+                            "remote_port": 443, 
+                            "proto": "TCP", 
+                            "remote_domain": "odc.officeapps.live.com", 
+                            "local_ipv4": "28.11.38.141", 
+                            "local_port": 63268, 
+                            "is_inbound": false, 
+                            "remote_location": "Singapore,00,Singapore"
+                        }, 
+                        "event_id": [
+                            "96e8cb2c1e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8", 
+                    "pid": 4332, 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\sun01295\\Desktop\\\u81ea\u5df1\u8a55\u4fa1.xlsm\"", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "c3159f629b9e989ee354834aa5a6a9af146b8bd1c07204e6ed9e94c96f2509fb", 
+                    "parent_pid": 11476, 
+                    "path": "c:\\users\\sun01295\\desktop\\\u81ea\u5df1\u8a55\u4fa1.xlsm", 
+                    "ppid": "4332-c07eac379c87fa6df47577d584787d4b0c5de2d8284f5ea2c00b30a4259090f8-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "excel(4332):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "8736-d3e4c1233c54256af1ab93c51bb19de9fbd6a8376e093c47a36d2c0f721510a7-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "NETWORK_ACCESS", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "8736-d3e4c1233c54256af1ab93c51bb19de9fbd6a8376e093c47a36d2c0f721510a7-0", 
+                        "description": "52.109.124.127:443(located in Singapore 00, Singapore)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "28.11.38.141:55075-(TCP:OUT)->52.109.124.127:443(None)[Singapore,00,Singapore]", 
+                        "occurred": [
+                            "2021/09/26 03:23:35"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.124.127", 
+                            "remote_port": 443, 
+                            "proto": "TCP", 
+                            "remote_domain": null, 
+                            "local_ipv4": "28.11.38.141", 
+                            "local_port": 55075, 
+                            "is_inbound": false, 
+                            "remote_location": "Singapore,00,Singapore"
+                        }, 
+                        "event_id": [
+                            "282609311e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "hash": "d3e4c1233c54256af1ab93c51bb19de9fbd6a8376e093c47a36d2c0f721510a7", 
+                    "pid": 8736, 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\sun01295\\Downloads\\PSJ1M2001632626610292.xlsm\"", 
+                    "parent_path": "c:\\program files\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed", 
+                    "parent_pid": 13176, 
+                    "path": "c:\\users\\sun01295\\downloads\\psj1m2001632626610292.xlsm", 
+                    "ppid": "8736-d3e4c1233c54256af1ab93c51bb19de9fbd6a8376e093c47a36d2c0f721510a7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "excel(8736):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "13176-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "13176-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0", 
+                        "description": "NtCreateThreadEx(C:\\Windows\\System32\\cmd.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:22:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "2826090b1e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed", 
+                    "pid": 13176, 
+                    "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" ", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "c3159f629b9e989ee354834aa5a6a9af146b8bd1c07204e6ed9e94c96f2509fb", 
+                    "parent_pid": 11476, 
+                    "path": "c:\\program files\\google\\chrome\\application\\chrome.exe", 
+                    "ppid": "13176-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "chrome.exe(13176):[00001-10-000721:<Chrome Normaly Work>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "chrome.exe", 
+            "shell_type": 0
+        }, 
+        "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "RUN_ANOTHER_APP", 
+                    "COMPROMISED_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "description": "CreateProcessW(invoke the application \"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:22:56"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcessW"
+                        }, 
+                        "event_id": [
+                            "282609141e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "description": "OpenProcess(open the process \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:22:56"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "282609111e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "description": "FindFirstFileExW(find \"C:\\WINDOWS\\system32\\PSAPI.DLL\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:22:56"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFileExW"
+                        }, 
+                        "event_id": [
+                            "282609101e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "description": "C:\\program files\\windows security\\browsercore\\browsercore.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files\\windows security\\browsercore\\browsercore.exe:12796[\"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\"  chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 ]", 
+                        "occurred": [
+                            "2021/09/26 03:22:56"
+                        ], 
+                        "event_detail": {
+                            "hash": "f6fcf468ff94e2fb43b2383142b93581b83cdad898a4b1f0d71a76a5106a621a", 
+                            "pid": 12796, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\"  chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 ", 
+                            "name": "c:\\program files\\windows security\\browsercore\\browsercore.exe"
+                        }, 
+                        "event_id": [
+                            "282609131e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\sun01295", 
+                        "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:6444[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 03:22:55"
+                        ], 
+                        "event_detail": {
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "pid": 6444, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "2826090c1e7911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "pid": 3640, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /d /c \"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\" chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 < \\\\.\\pipe\\chrome.nativeMessaging.in.87b1256d3cfced98 > \\\\.\\pipe\\chrome.nativeMessaging.out.87b1256d3cfced98", 
+                    "parent_path": "c:\\program files\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed", 
+                    "parent_pid": 13176, 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "3640-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(3640):00001-10-000560:<Google Chrome AddOn.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "CODE_DROP", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "OpenProcess(open the process \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2108.7-0\\MsMpEng.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "96dc95a01e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateWindowExW(create a viewable window)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateWindowExW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateWindowExW"
+                        }, 
+                        "event_id": [
+                            "96dc959f1e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtQuerySystemInformation"
+                        }, 
+                        "event_id": [
+                            "96dc95971e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "IsWindowVisible(manage a viewable window)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "IsWindowVisible(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "IsWindowVisible"
+                        }, 
+                        "event_id": [
+                            "96dc95961e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "96dc95901e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "OpenProcess(open itself for modification)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "96dc958e1e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "FindFirstFileExW(find \"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFileExW"
+                        }, 
+                        "event_id": [
+                            "96dc958d1e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_aoidlo0y.b0n.ps1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_aoidlo0y.b0n.ps1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_aoidlo0y.b0n.ps1", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "96dc95b31e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:14072[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 03:18:33"
+                        ], 
+                        "event_detail": {
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "pid": 14072, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "96dc95791e7811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 5792, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command \".\\MECM_ConnTypeChg.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 2220, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "5792-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(5792):00001-10-000770:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "ESI1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

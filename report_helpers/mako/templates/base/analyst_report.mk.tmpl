@@ -1,0 +1,137 @@
+#coding:utf-8
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+
+## main
+
+<html>
+  <head>
+    <title>${ headers["title"] }</title>
+  </head>
+    <style type="text/css">
+      table {
+        border-collapse: collapse;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      td {
+        border: solid 1px;
+        padding: 0.5em;
+        font-family:"Meiryo UI";
+      }
+      caption {
+        font:bold;
+        font-size: large;
+        padding:2px;
+        font-family:"Meiryo UI";
+      }
+      .head {
+        font:bold;
+        font-family:"Meiryo UI";
+      }
+      .subsection {
+        font-family:"Meiryo UI";
+      }
+      .desc_box {
+        font-family:"Meiryo UI";
+        border: 2px solid #000000;
+      }
+      .description {
+        font-family:"Meiryo UI";
+      }
+      .description_withbreak {
+        font-family:"Meiryo UI";
+        word-break: break-all;
+      }
+      .item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:250px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .content {
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .desc_content {
+        font-size: small;
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .value {
+        font-family:"Meiryo UI";
+        width:700px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .hvalue {
+        font-family:"Meiryo UI";
+        width:350px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .date {
+        font-family:"Meiryo UI";
+        text-align:right;
+      }
+      .company {
+        font-family:"Meiryo UI";
+        text-align:right;
+      }
+      .title {
+        text-align:center;
+        font:bold;
+        font-family:"Meiryo UI";
+      }
+      .fheader {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:350px;
+        padding:2px;
+        text-align:center;
+      }
+      .comments {
+        font-family:"Meiryo UI";
+      }
+      <%block name="stylesheet_blk">
+      </%block>
+    </style>
+  <body>
+    <p class="date">${ date["content"] }</p>
+    <h2 class="title">${ headers["title"] }</h2>
+    <p class="company">${ company }</p>
+    <%block name="summary_blk">
+      <h2 class="head">${ headers["summary"] }</h2>
+      <p class="description">${ func.replace2br(summary["content"]) }<p>
+      <table>
+        % for each in summary_info:
+          <tr>
+            <td class="item">${ each["name"] }</td>
+            <td class="content">${ func.replace2br(each["content"]) }</td>
+          </tr>
+        % endfor
+      </table>
+    </%block>
+    <%block name="detail_blk">
+    </%block>
+    <%block name="remediation_blk">
+      <h2 class="head">${ headers["remediation"] }</h2>
+      <p class="description">${ func.replace2br(remediation["content"]) }<p>
+    </%block>
+    % if appendix:
+      <div style="page-break-before: always;"></div>
+      <%block name="appendix_blk">
+      </%block>
+    % endif
+  </body>
+</html>

@@ -1,0 +1,762 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8580-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "8580-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "345395181e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:20:36"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc", 
+                    "pid": 8580, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2e18dc3466566df55792d6afad818d1e28ffa2c32017770a959419736db577ee", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "8580-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 820
+                }
+            }, 
+            "message": "svchost.exe(8580):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "2056-0378a322c8b7de30fbab4aaa3a35645b65a4ea551d68f972af5da70b8c936980-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "2056-0378a322c8b7de30fbab4aaa3a35645b65a4ea551d68f972af5da70b8c936980-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "7fa74af71e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:4656[C:\\WINDOWS\\system32\\cmd.exe /c C:\\Users\\sato315\\AppData\\Local\\Temp\\DigiDMain.bat]", 
+                        "occurred": [
+                            "2021/09/26 04:15:11"
+                        ], 
+                        "event_detail": {
+                            "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723", 
+                            "pid": 4656, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c C:\\Users\\sato315\\AppData\\Local\\Temp\\DigiDMain.bat", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "startsidecs.exe", 
+                    "hash": "0378a322c8b7de30fbab4aaa3a35645b65a4ea551d68f972af5da70b8c936980", 
+                    "command_line": "D:\\SIDECS64\\BIN\\SHMStartMng.exe D:\\SIDECS64\\BIN\\SIDECS.exe /CANVAS shex7h02;50.27.162.12;CANVAS408;CANVAS;277072;1;ANNS21080001;08;408002;408002;20140914;0009650817;shex7h02;50.27.162.12;CANVAS408;CANVAS;277072;CANVAS;CANVAS /MODE 2", 
+                    "pid": 2056, 
+                    "parent_path": "d:\\canvas\\bin\\startsidecs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "dacc9e40d9d9da5d59d0593c6790f0854374e2d6d98b6a511b399539ca8edc1b", 
+                    "path": "d:\\sidecs64\\bin\\shmstartmng.exe", 
+                    "ppid": "2056-0378a322c8b7de30fbab4aaa3a35645b65a4ea551d68f972af5da70b8c936980-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 14488
+                }
+            }, 
+            "message": "shmstartmng.exe(2056):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "shmstartmng.exe", 
+            "shell_type": 0
+        }, 
+        "13692-1f746d7582f6147d9ccb3080679f2c08bb6eab54232a85a13d88f4fa35d531a8-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1082_SYS_INF_DISCOVERY", 
+                    "MITRE_T1106_EXEC_API", 
+                    "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                    "RUN_SYSTEM_APP", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "MODIFY_SERVICE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "13692-1f746d7582f6147d9ccb3080679f2c08bb6eab54232a85a13d88f4fa35d531a8-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 2, 
+                        "event_id": [
+                            "e976a8701e7f11ec871fb75d4dae9b8a", 
+                            "e976a86f1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:13840[reg  add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 0 /f]", 
+                        "occurred": [
+                            "2021/09/26 04:08:57", 
+                            "2021/09/26 04:08:57"
+                        ], 
+                        "event_detail": {
+                            "hash": "c0e25b1f9b22de445298c1e96ddfcead265ca030fa6626f61a4a4786cc4a3b7d", 
+                            "pid": 13840, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "reg  add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\\PrefetchParameters\" /v EnableSuperfetch /t REG_DWORD /d 0 /f", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "13692-1f746d7582f6147d9ccb3080679f2c08bb6eab54232a85a13d88f4fa35d531a8-0", 
+                        "description": "C:\\windows\\system32\\net.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e976a8561e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\net.exe:12772[net  stop \"SysMain\"]", 
+                        "occurred": [
+                            "2021/09/26 04:08:56"
+                        ], 
+                        "event_detail": {
+                            "hash": "9f376759bcbcd705f726460fc4a7e2b07f310f52baa73caaaaa124fddbdf993e", 
+                            "pid": 12772, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "net  stop \"SysMain\"", 
+                            "name": "c:\\windows\\system32\\net.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1106_EXEC_API", 
+                            "MITRE_T1082_SYS_INF_DISCOVERY", 
+                            "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                            "MODIFY_SERVICE", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "1f746d7582f6147d9ccb3080679f2c08bb6eab54232a85a13d88f4fa35d531a8", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{1DB40829-9316-4A5C-A512-DD9D660D64EC}\\User\\Scripts\\Logon\\disable_superfetch.bat\" \"", 
+                    "pid": 13692, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{1db40829-9316-4a5c-a512-dd9d660d64ec}\\user\\scripts\\logon\\disable_superfetch.bat", 
+                    "ppid": "13692-1f746d7582f6147d9ccb3080679f2c08bb6eab54232a85a13d88f4fa35d531a8-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "win_batch(13692):00001-10-000805:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "14128-11f076dcb4edd3e5a267d2656acc37af518cc71fdbf68f3112d8e6a658542682-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "14128-11f076dcb4edd3e5a267d2656acc37af518cc71fdbf68f3112d8e6a658542682-0", 
+                        "description": "C:\\windows\\regedit.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e9ce8c4f1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\regedit.exe:4976[regedit  /s \u89aa\u30d5\u30a9\u30eb\u30c0\u6a29\u9650\u3092\u7d99\u627f\u3059\u308b.reg]", 
+                        "occurred": [
+                            "2021/09/26 04:09:04"
+                        ], 
+                        "event_detail": {
+                            "hash": "f5cb9796e4517d2e2d3468a5de1da12bc57d0a582cab46f8a70b69b0ffde928d", 
+                            "pid": 4976, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "regedit  /s \u89aa\u30d5\u30a9\u30eb\u30c0\u6a29\u9650\u3092\u7d99\u627f\u3059\u308b.reg", 
+                            "name": "c:\\windows\\regedit.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "11f076dcb4edd3e5a267d2656acc37af518cc71fdbf68f3112d8e6a658542682", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\USER\\Scripts\\Logon\\\u89aa\u30d5\u30a9\u30eb\u30c0\u6a29\u9650\u7d99\u627f.bat\" \"", 
+                    "pid": 14128, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{31b2f340-016d-11d2-945f-00c04fb984f9}\\user\\scripts\\logon\\\u89aa\u30d5\u30a9\u30eb\u30c0\u6a29\u9650\u7d99\u627f.bat", 
+                    "ppid": "14128-11f076dcb4edd3e5a267d2656acc37af518cc71fdbf68f3112d8e6a658542682-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "win_batch(14128):00001-10-000805:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "14248-d0e127cd963ac8b8cfd61805809eed87cd03d22e52678d350aa9ee02193d00c9-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "14248-d0e127cd963ac8b8cfd61805809eed87cd03d22e52678d350aa9ee02193d00c9-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 4, 
+                        "event_id": [
+                            "e976a8271e7f11ec871fb75d4dae9b8a", 
+                            "e976a8261e7f11ec871fb75d4dae9b8a", 
+                            "e976a81b1e7f11ec871fb75d4dae9b8a", 
+                            "e976a8191e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:9516[reg  add  \"HKLM\\SYSTEM\\CurrentControlSet\\services\\eventlog\\System\" /v Retention /t REG_DWORD /d 00000000 /f]", 
+                        "occurred": [
+                            "2021/09/26 04:08:55", 
+                            "2021/09/26 04:08:55", 
+                            "2021/09/26 04:08:54", 
+                            "2021/09/26 04:08:54"
+                        ], 
+                        "event_detail": {
+                            "hash": "c0e25b1f9b22de445298c1e96ddfcead265ca030fa6626f61a4a4786cc4a3b7d", 
+                            "pid": 9516, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "reg  add  \"HKLM\\SYSTEM\\CurrentControlSet\\services\\eventlog\\System\" /v Retention /t REG_DWORD /d 00000000 /f", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "d0e127cd963ac8b8cfd61805809eed87cd03d22e52678d350aa9ee02193d00c9", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{B977945E-1772-4912-91F5-EEA737806751}\\User\\Scripts\\Logon\\logset.bat\" \"", 
+                    "pid": 14248, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{b977945e-1772-4912-91f5-eea737806751}\\user\\scripts\\logon\\logset.bat", 
+                    "ppid": "14248-d0e127cd963ac8b8cfd61805809eed87cd03d22e52678d350aa9ee02193d00c9-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "win_batch(14248):00001-10-000805:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "13892-e96ceca1c146e85e6ee4acf445792077bdc2e1bae57d0ae10b45f04b88d45320-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "13892-e96ceca1c146e85e6ee4acf445792077bdc2e1bae57d0ae10b45f04b88d45320-0", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e976a82b1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:12692[C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" ver \"]", 
+                        "occurred": [
+                            "2021/09/26 04:08:55"
+                        ], 
+                        "event_detail": {
+                            "hash": "100348552b388ab5d0095bb09ebf0ebc22668092fb8e0f92ac7ed5909492b4f6", 
+                            "pid": 12692, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" ver \"", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "e96ceca1c146e85e6ee4acf445792077bdc2e1bae57d0ae10b45f04b88d45320", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{886FA2F0-03B5-459D-BF76-636FC227A2D6}\\User\\Scripts\\Logon\\thohfik.bat\" \"", 
+                    "pid": 13892, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{886fa2f0-03b5-459d-bf76-636fc227a2d6}\\user\\scripts\\logon\\thohfik.bat", 
+                    "ppid": "13892-e96ceca1c146e85e6ee4acf445792077bdc2e1bae57d0ae10b45f04b88d45320-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "win_batch(13892):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "2088-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "2088-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e8a2dd3d1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:32"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0", 
+                    "command_line": "\"D:\\ADTool\\Bin\\TwScheduler.exe\" ", 
+                    "pid": 2088, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "path": "d:\\adtool\\bin\\twscheduler.exe", 
+                    "ppid": "2088-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 2824
+                }
+            }, 
+            "message": "twscheduler.exe(2088):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "twscheduler.exe", 
+            "shell_type": 0
+        }, 
+        "12112-4a0a2274656a7f3318d16da7653d93c9823730e4ef47b519ca201baa8235e2de-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "12112-4a0a2274656a7f3318d16da7653d93c9823730e4ef47b519ca201baa8235e2de-0", 
+                        "description": "The application \"d:\\canvas\\bin\\v3z045.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "eaae3e1b1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:10:22"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "hash": "4a0a2274656a7f3318d16da7653d93c9823730e4ef47b519ca201baa8235e2de", 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3Z045.EXE\" 1", 
+                    "pid": 12112, 
+                    "parent_path": "d:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "d:\\canvas\\bin\\v3z045.exe", 
+                    "ppid": "12112-4a0a2274656a7f3318d16da7653d93c9823730e4ef47b519ca201baa8235e2de-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 14688
+                }
+            }, 
+            "message": "canvas_tmp_exe(12112):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "6896-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "MONITOR_USER_INPUT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "6896-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                        "description": "The application \"d:\\canvas\\bin\\login.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e8ec90721e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:52"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "6896-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e8ec90731e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:52"
+                        ], 
+                        "event_detail": {
+                            "api_name": "SetWindowsHookEx", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f", 
+                    "command_line": "\"D:\\CANVAS\\BIN\\LOGIN.exe\" ", 
+                    "pid": 6896, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "path": "d:\\canvas\\bin\\login.exe", 
+                    "ppid": "6896-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 2824
+                }
+            }, 
+            "message": "canvas_tmp_exe(6896):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "14192-9fca26aad64d3bef7a309a32ab1dae596af144fb578fa73538103a000e83f012-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "14192-9fca26aad64d3bef7a309a32ab1dae596af144fb578fa73538103a000e83f012-0", 
+                        "description": "C:\\windows\\regedit.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e9828e991e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\regedit.exe:14068[regedit  /s \\\\50.27.154.131\\sysvol\\sekisuihouse.gp\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\USER\\Scripts\\Logon\\\u30ed\u30b0\u30aa\u30f3\u30b9\u30af\u30ea\u30d7\u30c8\\DCOM\\DCOM.reg]", 
+                        "occurred": [
+                            "2021/09/26 04:09:00"
+                        ], 
+                        "event_detail": {
+                            "hash": "f5cb9796e4517d2e2d3468a5de1da12bc57d0a582cab46f8a70b69b0ffde928d", 
+                            "pid": 14068, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "regedit  /s \\\\50.27.154.131\\sysvol\\sekisuihouse.gp\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\USER\\Scripts\\Logon\\\u30ed\u30b0\u30aa\u30f3\u30b9\u30af\u30ea\u30d7\u30c8\\DCOM\\DCOM.reg", 
+                            "name": "c:\\windows\\regedit.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9fca26aad64d3bef7a309a32ab1dae596af144fb578fa73538103a000e83f012", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\USER\\Scripts\\Logon\\\u30ed\u30b0\u30aa\u30f3\u30b9\u30af\u30ea\u30d7\u30c8\\DCOM\\reg.bat\" \"", 
+                    "pid": 14192, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{31b2f340-016d-11d2-945f-00c04fb984f9}\\user\\scripts\\logon\\\u30ed\u30b0\u30aa\u30f3\u30b9\u30af\u30ea\u30d7\u30c8\\dcom\\reg.bat", 
+                    "ppid": "14192-9fca26aad64d3bef7a309a32ab1dae596af144fb578fa73538103a000e83f012-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "win_batch(14192):00001-10-000858:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "11768-262c487d21a90317021d7c1ae3298b41dab5f357ec66259e679ff971658697fd-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sato315", 
+                        "ppid": "11768-262c487d21a90317021d7c1ae3298b41dab5f357ec66259e679ff971658697fd-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e976a83c1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:55"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "262c487d21a90317021d7c1ae3298b41dab5f357ec66259e679ff971658697fd", 
+                    "command_line": "\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{3656B306-EFA5-4EC1-A451-2E328ACECE44}\\User\\Scripts\\Logon\\UninstallSHPCShutDown.exe\" ", 
+                    "pid": 11768, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{3656b306-efa5-4ec1-a451-2e328acece44}\\user\\scripts\\logon\\uninstallshpcshutdown.exe", 
+                    "ppid": "11768-262c487d21a90317021d7c1ae3298b41dab5f357ec66259e679ff971658697fd-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12128
+                }
+            }, 
+            "message": "uninstallshpcshutdown.exe(11768):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "uninstallshpcshutdown.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

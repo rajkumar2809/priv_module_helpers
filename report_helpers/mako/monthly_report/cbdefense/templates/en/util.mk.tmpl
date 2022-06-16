@@ -1,0 +1,153 @@
+#coding:utf-8
+
+## define function
+<%def name="replace2br(word)">
+  ${word.replace('\n', '<br />')}
+</%def>
+
+<%def name="replace4space(word)">
+  ${word.replace(' ', '&nbsp;')}
+</%def>
+
+<%def name="maskURL(_url)">
+  ${_url.replace('http://', 'hxxp://').replace('https://', 'hxxps://').replace('.', '[.]')}
+</%def>
+
+<%def name="list2table(rows)">
+  <table><tr>
+    % for each in rows:
+      <td>${each}</td>
+    % endfor
+  </tr></table>
+</%def>
+
+<%def name="graph_wLegend(imagename, legends)">
+  <table style="border: none; table-layout: fixed;"><tr>
+    <td style="border: none;">
+      <image src="${imagename}">
+    </td>
+    <td style="border: none;">
+      <table style="border: none; border-collapse: separate; border-spacing: 2px 2px; table-layout: fixed;">
+        % for each in legends:
+          <tr>
+            <td style="border: none;">
+              <table><tr></tr><tr>
+                <td style="border: none; background-color:${each[0]};">
+                </td>
+              </tr><tr></tr></table>
+            </td>
+            <td style="border: none;">${each[1]}</td>
+          </tr>
+        % endfor
+      </table>
+    </td>
+  </tr></table>
+</%def>
+
+<%def name="verticaltable(infos, section=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      % for each in infos:
+        <tr>
+          <td class="item">${ each["name"] }</td>
+          <td class="content">${ self.replace2br(each["content"])}</td>
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+
+<%def name="lateraltable(names, values=None, section=None, rowheads=None)">
+  % if names and len(names) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      <tr>
+        % if rowheads:
+          <td class="item">${ rowheads[0] }</td>
+        % endif
+        % for each in names:
+            <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % if values:
+        % for i in range(0, len(values)):
+          <tr>
+            % if rowheads:
+              <td class="item">${ rowheads[i+1] }</td>
+            % endif
+            % for each in values[i]:
+              <td class="content">${ self.replace2br(each["content"]) }</td>
+            % endfor
+          </tr>
+        % endfor
+      % else:
+        <tr>
+          % if rowheads:
+            <td class="item">${ rowheads[1] }</td>
+          % endif
+          % for each in names:
+            <td class="content">${ self.replace2br(each["content"]) }</td>
+          % endfor
+        </tr>
+      % endif
+    </table>
+  % endif
+</%def>
+
+<%def name="matrixtable(infos, section=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      <tr>
+        % for each in infos["header"]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each_row in infos["fields"]:
+        <tr>
+          % for each in each_row:
+            % if each["src"] == "name":
+              <td class="item">${ each["content"] }</td>
+            % else:
+              <td class="content">${ self.replace2br(each["content"])}</td>
+            % endif
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+
+<%def name="mltable(infos, with_color=False, name=None)">
+  % if infos and len(infos) > 0:
+    % if name:
+      <h3 class="subsection">・${ name }</h3>
+    % endif
+    % if with_color:
+      <table class="mltable">
+    % else:
+      <table>
+    % endif
+      <tr>
+        % for each in infos["header"]:
+          <td class="${ each["class"] }">${ each["content"] }</td>
+        % endfor
+      </tr>
+      % for each_row in infos["fields"]:
+        <tr>
+          % for each in each_row:
+            <td class="${each["class"]}">${ self.replace2br(each["content"]) }</td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+

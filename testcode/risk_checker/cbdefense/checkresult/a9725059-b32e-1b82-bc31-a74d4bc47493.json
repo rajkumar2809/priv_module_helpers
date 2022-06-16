@@ -1,0 +1,308 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "653420-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "CODE_DROP", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_gf55nsap.05p.ps1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_gf55nsap.05p.ps1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 04:00:25"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_gf55nsap.05p.ps1", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "4e8760591e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "653420-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436", 
+                    "command_line": "powershell  \"get-VMNetworkAdapter -ManagementOS | fl | out-file -encoding ASCII VMNetworkAdapterInstances.txt\"", 
+                    "pid": 653420, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "935c1861df1f4018d698e8b65abfa02d7e9037d8f68ca3c2065b6ca165d44ad2", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "653420-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 438480
+                }
+            }, 
+            "message": "powershell.exe(653420):00001-10-000089:<customer scripts>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "3256-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "ACTIVE_SERVER", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "10.201.4.24:10050", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "10.201.4.24:10050<-(TCP:IN)-10.194.2.37:33984(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 04:00:48"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "10.194.2.37", 
+                            "local_port": 10050, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.201.4.24", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 33984
+                        }, 
+                        "event_id": [
+                            "72d273df1e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "3256-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633", 
+                    "command_line": "\"c:\\zabbix_agent\\bin\\zabbix_agentd.exe\" --config \"c:\\zabbix_agent\\zabbix_agentd.conf\"", 
+                    "pid": 3256, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "930f44f9a599937bdb23cf0c7ea4d158991b837d2a0975c15686cdd4198808e8", 
+                    "path": "c:\\zabbix_agent\\bin\\zabbix_agentd.exe", 
+                    "ppid": "3256-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 800
+                }
+            }, 
+            "message": "zabbix_agentd.exe(3256):00001-10-000114:<Monitoring Module:Zabbix>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "zabbix_agentd.exe", 
+            "shell_type": 0
+        }, 
+        "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\system32\\get-VMNetworkAdapter\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "4e8760581e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "4e8760561e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\programdata\\microsoft\\windows defender\\platform\\4.18.2108.7-0\\msmpeng.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "4e8760571e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "4e8760501e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:25"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "4e8760461e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436", 
+                    "command_line": "powershell  \"get-VMNetworkAdapter -ManagementOS | fl | out-file -encoding ASCII VMNetworkAdapterInstances.txt\"", 
+                    "pid": 240192, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "935c1861df1f4018d698e8b65abfa02d7e9037d8f68ca3c2065b6ca165d44ad2", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "240192-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 34716
+                }
+            }, 
+            "message": "powershell.exe(240192):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SMW1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

@@ -1,0 +1,1255 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 80, 
+            "ip": "192.124.249.36", 
+            "name": "ocsp.godaddy.com", 
+            "location": "Menifee,CA,United States"
+        }, 
+        {
+            "port": 443, 
+            "ip": "52.109.124.127", 
+            "name": null, 
+            "location": "Singapore,00,Singapore"
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "13768-8bf948fd644a4002cef1c74c8c056759992f7c61943ae41388433a9d0fa18b3e-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "13768-8bf948fd644a4002cef1c74c8c056759992f7c61943ae41388433a9d0fa18b3e-0", 
+                        "description": "C:\\windows\\syswow64\\reg.exe", 
+                        "event_count": 15, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\reg.exe:13812[reg  add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\16.0\\Lync\" /v \"UserConsentedTelemetryUpload\" /t  REG_DWORD /d \"1\" /f]", 
+                        "occurred": [
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:07", 
+                            "2021/09/26 04:03:06", 
+                            "2021/09/26 04:03:06", 
+                            "2021/09/26 04:03:06", 
+                            "2021/09/26 04:03:06"
+                        ], 
+                        "event_detail": {
+                            "command_line": "reg  add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\16.0\\Lync\" /v \"UserConsentedTelemetryUpload\" /t  REG_DWORD /d \"1\" /f", 
+                            "pid": 13812, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "224a746aee2957c3fca376f4457cfc044c1ec99e75756195b27cab396174e2db", 
+                            "name": "c:\\windows\\syswow64\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "0f9670fd1e7f11ec871fb75d4dae9b8a", 
+                            "0f9670fb1e7f11ec871fb75d4dae9b8a", 
+                            "0f9670f31e7f11ec871fb75d4dae9b8a", 
+                            "0f9670ed1e7f11ec871fb75d4dae9b8a", 
+                            "0f9670e61e7f11ec871fb75d4dae9b8a", 
+                            "0f9670e51e7f11ec871fb75d4dae9b8a", 
+                            "0f9670e41e7f11ec871fb75d4dae9b8a", 
+                            "0f9670e31e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb141e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb131e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb121e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb0c1e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb041e7f11ec871fb75d4dae9b8a", 
+                            "0f87cb001e7f11ec871fb75d4dae9b8a", 
+                            "0f87caff1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "awwindowsipc.exe", 
+                    "hash": "8bf948fd644a4002cef1c74c8c056759992f7c61943ae41388433a9d0fa18b3e", 
+                    "pid": 13768, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Users\\MT3555\\Scripts\\Office2016.bat\"\"", 
+                    "parent_path": "c:\\program files (x86)\\airwatch\\agentui\\awwindowsipc.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "029879ea0f0347c4e6be6158e0d6de2b8c923d0d645e706d44856c452ed225e9", 
+                    "path": "c:\\users\\mt3555\\scripts\\office2016.bat", 
+                    "ppid": "13768-8bf948fd644a4002cef1c74c8c056759992f7c61943ae41388433a9d0fa18b3e-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12264
+                }
+            }, 
+            "message": "win_batch(13768):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "5700-33b239dc04788f17683eb40f085df06f662c1378e8da34df4d6ec77518fd3e97-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5700-33b239dc04788f17683eb40f085df06f662c1378e8da34df4d6ec77518fd3e97-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:52"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "1019aaf01e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "33b239dc04788f17683eb40f085df06f662c1378e8da34df4d6ec77518fd3e97", 
+                    "pid": 5700, 
+                    "command_line": "\"C:\\Program Files (x86)\\IDLM\\ClientService\\IDLMMonitoringService.exe\"", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2e18dc3466566df55792d6afad818d1e28ffa2c32017770a959419736db577ee", 
+                    "path": "c:\\program files (x86)\\idlm\\clientservice\\idlmmonitoringservice.exe", 
+                    "ppid": "5700-33b239dc04788f17683eb40f085df06f662c1378e8da34df4d6ec77518fd3e97-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 344
+                }
+            }, 
+            "message": "idlmmonitoringservice.exe(5700):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "idlmmonitoringservice.exe", 
+            "shell_type": 0
+        }, 
+        "11416-bab699449dc7266014a0878f4854e4c30f105ab0eeb78595e047cee2233fc850-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "11416-bab699449dc7266014a0878f4854e4c30f105ab0eeb78595e047cee2233fc850-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:14840[REG  ADD \"HKCU\\Software\\FLEXlm License Manager\" /v ADSKFLEX_LICENSE_FILE /t REG_SZ /d @zaapcad1;@zaapcad2; /f]", 
+                        "occurred": [
+                            "2021/09/26 04:03:51"
+                        ], 
+                        "event_detail": {
+                            "command_line": "REG  ADD \"HKCU\\Software\\FLEXlm License Manager\" /v ADSKFLEX_LICENSE_FILE /t REG_SZ /d @zaapcad1;@zaapcad2; /f", 
+                            "pid": 14840, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "c0e25b1f9b22de445298c1e96ddfcead265ca030fa6626f61a4a4786cc4a3b7d", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "1019aae61e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "bab699449dc7266014a0878f4854e4c30f105ab0eeb78595e047cee2233fc850", 
+                    "pid": 11416, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"\\\\tokyu-cnst.co.jp\\SysVol\\tokyu-cnst.co.jp\\Policies\\{16236267-747A-41B6-A7CC-C92CD578DE30}\\User\\Scripts\\Logon\\03_FLEXLM_TIMEOUT_tokyu-cnst.bat\" \"", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\policies\\{16236267-747a-41b6-a7cc-c92cd578de30}\\user\\scripts\\logon\\03_flexlm_timeout_tokyu-cnst.bat", 
+                    "ppid": "11416-bab699449dc7266014a0878f4854e4c30f105ab0eeb78595e047cee2233fc850-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13232
+                }
+            }, 
+            "message": "win_batch(11416):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "11840-b3bc26c96d688438a42978bfe85dbee5ea2b98dafb11439881a72c5ffb63ecb4-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_NET_UTILITY", 
+                    "RUN_SYSTEM_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "11840-b3bc26c96d688438a42978bfe85dbee5ea2b98dafb11439881a72c5ffb63ecb4-0", 
+                        "description": "C:\\windows\\system32\\netsh.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\netsh.exe:9348[netsh  wlan set profileparameter name=\"tccpwifi\" keymaterial=4cA7JsgraGpkGvoJ]", 
+                        "occurred": [
+                            "2021/09/26 04:02:26"
+                        ], 
+                        "event_detail": {
+                            "command_line": "netsh  wlan set profileparameter name=\"tccpwifi\" keymaterial=4cA7JsgraGpkGvoJ", 
+                            "pid": 9348, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "6b691b06fa865f52c9484ef4f10e2e02ed6d7c3a3f474b8b138a33af7258b2a9", 
+                            "name": "c:\\windows\\system32\\netsh.exe"
+                        }, 
+                        "event_id": [
+                            "0eacacd41e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_NET_UTILITY", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "b3bc26c96d688438a42978bfe85dbee5ea2b98dafb11439881a72c5ffb63ecb4", 
+                    "pid": 11840, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\Policies\\{4E8E7C17-6699-4515-AE16-C884F7D3DA0E}\\Machine\\Scripts\\Startup\\10StartupScript.bat\" \"", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\policies\\{4e8e7c17-6699-4515-ae16-c884f7d3da0e}\\machine\\scripts\\startup\\10startupscript.bat", 
+                    "ppid": "11840-b3bc26c96d688438a42978bfe85dbee5ea2b98dafb11439881a72c5ffb63ecb4-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9904
+                }
+            }, 
+            "message": "win_batch(11840):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "13520-66b0c4fbb1cfbbc4ead4507dd7c1df312a5d1c1cfedb43b771aa7953c82cfc70-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "13520-66b0c4fbb1cfbbc4ead4507dd7c1df312a5d1c1cfedb43b771aa7953c82cfc70-0", 
+                        "description": "C:\\windows\\syswow64\\reg.exe", 
+                        "event_count": 24, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\reg.exe:13560[reg  delete \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\Domains\\salesforce.com\\tokyu-cnst.my\" /v \"https\" /f]", 
+                        "occurred": [
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:05"
+                        ], 
+                        "event_detail": {
+                            "command_line": "reg  delete \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\Domains\\salesforce.com\\tokyu-cnst.my\" /v \"https\" /f", 
+                            "pid": 13560, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "224a746aee2957c3fca376f4457cfc044c1ec99e75756195b27cab396174e2db", 
+                            "name": "c:\\windows\\syswow64\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "0f7135601e7f11ec871fb75d4dae9b8a", 
+                            "0f71355f1e7f11ec871fb75d4dae9b8a", 
+                            "0f71355e1e7f11ec871fb75d4dae9b8a", 
+                            "0f71355d1e7f11ec871fb75d4dae9b8a", 
+                            "0f71355b1e7f11ec871fb75d4dae9b8a", 
+                            "0f7135581e7f11ec871fb75d4dae9b8a", 
+                            "0f7135571e7f11ec871fb75d4dae9b8a", 
+                            "0f7135561e7f11ec871fb75d4dae9b8a", 
+                            "0f7135551e7f11ec871fb75d4dae9b8a", 
+                            "0f7135521e7f11ec871fb75d4dae9b8a", 
+                            "0f7135511e7f11ec871fb75d4dae9b8a", 
+                            "0f7135501e7f11ec871fb75d4dae9b8a", 
+                            "0f71354d1e7f11ec871fb75d4dae9b8a", 
+                            "0f7135451e7f11ec871fb75d4dae9b8a", 
+                            "0f71353d1e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11e51e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11e41e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11e21e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11e01e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11df1e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11de1e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11db1e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11da1e7f11ec871fb75d4dae9b8a", 
+                            "0f5d11d91e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "awwindowsipc.exe", 
+                    "hash": "66b0c4fbb1cfbbc4ead4507dd7c1df312a5d1c1cfedb43b771aa7953c82cfc70", 
+                    "pid": 13520, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Users\\MT3555\\Scripts\\Windows10User.bat\"\"", 
+                    "parent_path": "c:\\program files (x86)\\airwatch\\agentui\\awwindowsipc.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "029879ea0f0347c4e6be6158e0d6de2b8c923d0d645e706d44856c452ed225e9", 
+                    "path": "c:\\users\\mt3555\\scripts\\windows10user.bat", 
+                    "ppid": "13520-66b0c4fbb1cfbbc4ead4507dd7c1df312a5d1c1cfedb43b771aa7953c82cfc70-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12264
+                }
+            }, 
+            "message": "win_batch(13520):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "15816-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "CODE_DROP", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15816-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:13656[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 04:07:04"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 13656, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "57b0ccd3aebc6c7126e7c19f5dac492df51d904a505c5f5b0cb02270d53f8684", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "34fb32541e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15816-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:07:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "3a79bfc31e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15816-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_44dy3zzk.ijz.ps1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_44dy3zzk.ijz.ps1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 04:07:04"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_44dy3zzk.ijz.ps1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "event_id": [
+                            "34fb325e1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "lenovo.modern.imcontroller.pluginhost.device.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 15816, 
+                    "command_line": "\"C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy Bypass -NoProfile -NonInteractive -File \"C:\\ProgramData\\Lenovo\\iMController\\Plugins\\LenovoSystemUpdatePlugin\\x64\\export_update_history_wmi.ps1\"", 
+                    "parent_path": "c:\\windows\\lenovo\\imcontroller\\pluginhost\\lenovo.modern.imcontroller.pluginhost.device.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "e19224629e1eac28c4e8ff85653dc577a87a7148b0cd4b9b63c592fea1ecbda5", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "15816-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 15544
+                }
+            }, 
+            "message": "powershell.exe(15816):[00001-10-000007:<normaly alert by customer script(*PSScriptPolicyTest*.ps1).>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "14224-9f03d1fb46ac466094cf300cc130044d03f5d21ba1fac2be28ac5f6af7a82ef3-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "UNKNOWN_APP", 
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "14224-9f03d1fb46ac466094cf300cc130044d03f5d21ba1fac2be28ac5f6af7a82ef3-0", 
+                        "description": "52.109.124.127:443(located in Singapore 00, Singapore)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.58.36.115:50585-(TCP:OUT)->52.109.124.127:443(None)[Singapore,00,Singapore]", 
+                        "occurred": [
+                            "2021/09/26 04:15:55"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.124.127", 
+                            "proto": "TCP", 
+                            "local_port": 50585, 
+                            "remote_port": 443, 
+                            "local_ipv4": "10.58.36.115", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Singapore,00,Singapore"
+                        }, 
+                        "event_id": [
+                            "7f9682ea1e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "outlook.exe", 
+                    "hash": "9f03d1fb46ac466094cf300cc130044d03f5d21ba1fac2be28ac5f6af7a82ef3", 
+                    "pid": 14224, 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\" /vu \"C:\\Users\\mt3555\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\9JRSCLNT\\210901_\u4f5c\u696d\u6240\u3067\u884c\u3046\u54c1\u8cea\u7ba1\u7406(\u56fd\u969b\u4e8b\u696d\u90e8).xlsx\"", 
+                    "parent_path": "c:\\program files\\microsoft office\\root\\office16\\outlook.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "0ce3194ff096a6858f20dac3b6825d12da203e1cd4d0ed3809e912e40769052f", 
+                    "path": "c:\\users\\mt3555\\appdata\\local\\microsoft\\windows\\inetcache\\content.outlook\\9jrsclnt\\210901_\u4f5c\u696d\u6240\u3067\u884c\u3046\u54c1\u8cea\u7ba1\u7406(\u56fd\u969b\u4e8b\u696d\u90e8).xlsx", 
+                    "ppid": "14224-9f03d1fb46ac466094cf300cc130044d03f5d21ba1fac2be28ac5f6af7a82ef3-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 16924
+                }
+            }, 
+            "message": "excel(14224):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "16132-db81b4f0982b8d9eb87707a98da1db2840fc3fd12f870b10e5baf87b76f0e777-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "16132-db81b4f0982b8d9eb87707a98da1db2840fc3fd12f870b10e5baf87b76f0e777-0", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 5, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:22:49", 
+                            "2021/09/26 04:21:39", 
+                            "2021/09/26 04:17:50", 
+                            "2021/09/26 04:14:49", 
+                            "2021/09/26 04:03:51"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "7baf68221e8111ec871fb75d4dae9b8a", 
+                            "517725971e8111ec871fb75d4dae9b8a", 
+                            "c9c60e2d1e8011ec871fb75d4dae9b8a", 
+                            "5ba8d1321e8011ec871fb75d4dae9b8a", 
+                            "1019aae21e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "runonce.exe", 
+                    "hash": "db81b4f0982b8d9eb87707a98da1db2840fc3fd12f870b10e5baf87b76f0e777", 
+                    "pid": 16132, 
+                    "command_line": "\"C:\\Program Files (x86)\\Dropbox\\Client\\Dropbox.exe\" /systemstartup", 
+                    "parent_path": "c:\\windows\\syswow64\\runonce.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "e2031017207a33a6fa147a5bb6e32ad5788df03f783d424a0053ba1b16d561f5", 
+                    "path": "c:\\program files (x86)\\dropbox\\client\\dropbox.exe", 
+                    "ppid": "16132-db81b4f0982b8d9eb87707a98da1db2840fc3fd12f870b10e5baf87b76f0e777-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 15348
+                }
+            }, 
+            "message": "dropbox.exe(16132):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "dropbox.exe", 
+            "shell_type": 0
+        }, 
+        "15816-f6844ac1a44dadfacf31d4c7ea20e7382ef6bc74afa423e0a681d0125553390b-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15816-f6844ac1a44dadfacf31d4c7ea20e7382ef6bc74afa423e0a681d0125553390b-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:07:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "3a79bfc71e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "lenovo.modern.imcontroller.pluginhost.device.exe", 
+                    "hash": "f6844ac1a44dadfacf31d4c7ea20e7382ef6bc74afa423e0a681d0125553390b", 
+                    "pid": 15816, 
+                    "command_line": "\"C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy Bypass -NoProfile -NonInteractive -File \"C:\\ProgramData\\Lenovo\\iMController\\Plugins\\LenovoSystemUpdatePlugin\\x64\\export_update_history_wmi.ps1\"", 
+                    "parent_path": "c:\\windows\\lenovo\\imcontroller\\pluginhost\\lenovo.modern.imcontroller.pluginhost.device.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "e19224629e1eac28c4e8ff85653dc577a87a7148b0cd4b9b63c592fea1ecbda5", 
+                    "path": "c:\\programdata\\lenovo\\imcontroller\\plugins\\lenovosystemupdateplugin\\x64\\export_update_history_wmi.ps1", 
+                    "ppid": "15816-f6844ac1a44dadfacf31d4c7ea20e7382ef6bc74afa423e0a681d0125553390b-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 15544
+                }
+            }, 
+            "message": "ps_script(15816):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "5596-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "5596-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:16:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a3a306711e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "5596-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\common files\\macrovision shared\\flexnet publisher\\fnplicensingservice64.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:06:12"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "34a34d891e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "userinit.exe", 
+                    "hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "pid": 5596, 
+                    "command_line": "C:\\Windows\\Explorer.EXE", 
+                    "parent_path": "c:\\windows\\system32\\userinit.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+                    "path": "c:\\windows\\explorer.exe", 
+                    "ppid": "5596-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 3736
+                }
+            }, 
+            "message": "explorer.exe(5596):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "explorer.exe", 
+            "shell_type": 0
+        }, 
+        "4376-726f733e12157eb91d7b91276f7bae9668b509b3a7b96f017e9a03211149e8a3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "4376-726f733e12157eb91d7b91276f7bae9668b509b3a7b96f017e9a03211149e8a3-0", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:06:51"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "34e4ea4e1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "microsoftedge_x64_94.0.992.31_93.0.961.52.exe", 
+                    "hash": "726f733e12157eb91d7b91276f7bae9668b509b3a7b96f017e9a03211149e8a3", 
+                    "pid": 4376, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\Install\\{E7EB9419-6F4F-49E0-8708-DEE373DC6814}\\EDGEMITMP_32A41.tmp\\setup.exe\" --install-archive=\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\Install\\{E7EB9419-6F4F-49E0-8708-DEE373DC6814}\\EDGEMITMP_32A41.tmp\\MSEDGE_PATCH.PACKED.7Z\" --previous-version=\"93.0.961.52\" --msedge --verbose-logging --do-not-launch-msedge --system-level", 
+                    "parent_path": "c:\\program files (x86)\\microsoft\\edgeupdate\\download\\{56eb18f8-b008-4cbd-b6d2-8c97fe7e9062}\\94.0.992.31\\microsoftedge_x64_94.0.992.31_93.0.961.52.exe", 
+                    "reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "d6ee5acb25d59a1820343d3e3c1aa92f3b75a7e79ea48777bf0f4548fe124cc5", 
+                    "path": "c:\\program files (x86)\\microsoft\\edgeupdate\\install\\{e7eb9419-6f4f-49e0-8708-dee373dc6814}\\edgemitmp_32a41.tmp\\setup.exe", 
+                    "ppid": "4376-726f733e12157eb91d7b91276f7bae9668b509b3a7b96f017e9a03211149e8a3-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13544
+                }
+            }, 
+            "message": "setup.exe(4376):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "setup.exe", 
+            "shell_type": 0
+        }, 
+        "15052-2eeb087dab228c6d154299c5c67e0fc7f5bb4ea47d59aad4faefd367eda4405e-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "15052-2eeb087dab228c6d154299c5c67e0fc7f5bb4ea47d59aad4faefd367eda4405e-0", 
+                        "description": "FindFirstFile(find \"\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\policies\\{29214564-95a8-49d9-8a87-6446df2106d2}\\user\\scripts\\logon\\Join-Path\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:38"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "100315581e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "2eeb087dab228c6d154299c5c67e0fc7f5bb4ea47d59aad4faefd367eda4405e", 
+                    "pid": 15052, 
+                    "command_line": " -ExecutionPolicy ByPass -File SetFirewall_Teams.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\policies\\{29214564-95a8-49d9-8a87-6446df2106d2}\\user\\scripts\\logon\\setfirewall_teams.ps1", 
+                    "ppid": "15052-2eeb087dab228c6d154299c5c67e0fc7f5bb4ea47d59aad4faefd367eda4405e-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13232
+                }
+            }, 
+            "message": "ps_script(15052):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "3000-b0e0060e940b1500a5779278de2ef5880b1230bbcdd02f8f2f6901a21258cc73-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "NETWORK_ACCESS", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "MONITOR_USER_INPUT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "3000-b0e0060e940b1500a5779278de2ef5880b1230bbcdd02f8f2f6901a21258cc73-0", 
+                        "description": "192.124.249.36:80(ocsp.godaddy.com, located in Singapore)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.58.36.115:50717-(TCP:OUT)->192.124.249.36:80(ocsp.godaddy.com)[Menifee,CA,United States]", 
+                        "occurred": [
+                            "2021/09/26 04:18:57"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.124.249.36", 
+                            "proto": "TCP", 
+                            "local_port": 50717, 
+                            "remote_port": 80, 
+                            "local_ipv4": "10.58.36.115", 
+                            "is_inbound": false, 
+                            "remote_domain": "ocsp.godaddy.com", 
+                            "remote_location": "Menifee,CA,United States"
+                        }, 
+                        "event_id": [
+                            "faa7f1661e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "3000-b0e0060e940b1500a5779278de2ef5880b1230bbcdd02f8f2f6901a21258cc73-0", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 04:19:49"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "event_id": [
+                            "fd8a50d61e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "MONITOR_USER_INPUT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "b0e0060e940b1500a5779278de2ef5880b1230bbcdd02f8f2f6901a21258cc73", 
+                    "pid": 3000, 
+                    "command_line": "\"C:\\Program Files\\WindowsApps\\AirWatchLLC.WorkspaceONEIntelligentHub_21.7.2.0_x86__htcwkw4rx2gx4\\VMware.IntelligentHub.UI.exe\" -ServerName:App.AppXjjv3qftn40q4s0f3sej7p53fcnqrksfz.mca", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\program files\\windowsapps\\airwatchllc.workspaceoneintelligenthub_21.7.2.0_x86__htcwkw4rx2gx4\\vmware.intelligenthub.ui.exe", 
+                    "ppid": "3000-b0e0060e940b1500a5779278de2ef5880b1230bbcdd02f8f2f6901a21258cc73-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1188
+                }
+            }, 
+            "message": "vmware.intelligenthub.ui.exe(3000):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "vmware.intelligenthub.ui.exe", 
+            "shell_type": 0
+        }, 
+        "11496-e1e67d1117f9f8d684b9651c077653e554f524792fc748d8f11a2ab420175751-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "11496-e1e67d1117f9f8d684b9651c077653e554f524792fc748d8f11a2ab420175751-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:4188[reg add \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\" /v \"Secondary Start Pages\" /t REG_MULTI_SZ /d \"http://10.237.124.9/tcccws30/cws\" /f]", 
+                        "occurred": [
+                            "2021/09/26 04:03:51"
+                        ], 
+                        "event_detail": {
+                            "command_line": "reg add \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\" /v \"Secondary Start Pages\" /t REG_MULTI_SZ /d \"http://10.237.124.9/tcccws30/cws\" /f", 
+                            "pid": 4188, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "c0e25b1f9b22de445298c1e96ddfcead265ca030fa6626f61a4a4786cc4a3b7d", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "1019aaeb1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "e1e67d1117f9f8d684b9651c077653e554f524792fc748d8f11a2ab420175751", 
+                    "pid": 11496, 
+                    "command_line": "\"C:\\Windows\\System32\\WScript.exe\" \"\\\\tokyu-cnst.co.jp\\SysVol\\tokyu-cnst.co.jp\\Policies\\{AA4CE65F-D5CC-49F6-83A8-DB4CC0D69F9C}\\User\\Scripts\\Logon\\change_ie_toppage.vbs\" ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\tokyu-cnst.co.jp\\sysvol\\tokyu-cnst.co.jp\\policies\\{aa4ce65f-d5cc-49f6-83a8-db4cc0d69f9c}\\user\\scripts\\logon\\change_ie_toppage.vbs", 
+                    "ppid": "11496-e1e67d1117f9f8d684b9651c077653e554f524792fc748d8f11a2ab420175751-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13232
+                }
+            }, 
+            "message": "vb_script(11496):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "15052-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "15052-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:10804[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 04:03:18"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 10804, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "57b0ccd3aebc6c7126e7c19f5dac492df51d904a505c5f5b0cb02270d53f8684", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "0fcee6831e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "15052-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "0fdb422f1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\MT3555", 
+                        "ppid": "15052-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "0fdb422a1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 15052, 
+                    "command_line": " -ExecutionPolicy ByPass -File SetFirewall_Teams.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "15052-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13232
+                }
+            }, 
+            "message": "powershell.exe(15052):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "6468-12b3792c59d2386cab9331b0480500b650ab0ae28eb65aafa1b1a09d3d4217b0-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6468-12b3792c59d2386cab9331b0480500b650ab0ae28eb65aafa1b1a09d3d4217b0-0", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:13:52"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "37aceee41e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "12b3792c59d2386cab9331b0480500b650ab0ae28eb65aafa1b1a09d3d4217b0", 
+                    "pid": 6468, 
+                    "command_line": "\"C:\\Program Files\\VMware\\Workspace ONE Tunnel\\VMwareTunnel.exe\"", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2e18dc3466566df55792d6afad818d1e28ffa2c32017770a959419736db577ee", 
+                    "path": "c:\\program files\\vmware\\workspace one tunnel\\vmwaretunnel.exe", 
+                    "ppid": "6468-12b3792c59d2386cab9331b0480500b650ab0ae28eb65aafa1b1a09d3d4217b0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 344
+                }
+            }, 
+            "message": "vmwaretunnel.exe(6468):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "vmwaretunnel.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TKC1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

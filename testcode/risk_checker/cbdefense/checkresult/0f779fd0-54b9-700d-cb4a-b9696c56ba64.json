@@ -1,0 +1,428 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "76636-3c1db3b45a901eba00113d0652b1ce692629deceab83de2f4a132e932b2d6076-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401861e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:73908[\"C:\\Windows\\System32\\cmd.exe\" /c \"C:\\chk_ie\\chk_ie.bat \"]", 
+                        "occurred": [
+                            "2021/09/26 02:42:02"
+                        ], 
+                        "event_detail": {
+                            "pid": 73908, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Windows\\System32\\cmd.exe\" /c \"C:\\chk_ie\\chk_ie.bat \"", 
+                            "name": "c:\\windows\\system32\\cmd.exe", 
+                            "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "76636-3c1db3b45a901eba00113d0652b1ce692629deceab83de2f4a132e932b2d6076-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "3c1db3b45a901eba00113d0652b1ce692629deceab83de2f4a132e932b2d6076", 
+                    "pid": 76636, 
+                    "command_line": "C:\\WINDOWS\\System32\\WScript.exe \"C:\\chk_ie\\chk_ie_startup.vbs\" ", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\chk_ie\\chk_ie_startup.vbs", 
+                    "ppid": "76636-3c1db3b45a901eba00113d0652b1ce692629deceab83de2f4a132e932b2d6076-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1772
+                }
+            }, 
+            "message": "vb_script(76636):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "72296-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "FILELESS", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\program files\\windows defender\\msmpeng.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401aa1e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401a91e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401a31e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 72296, 
+                    "command_line": "powershell  -WindowStyle Hidden -ExecutionPolicy RemoteSigned -command \"C:\\chk_ie\\chk_ie.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "72296-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 73908
+                }
+            }, 
+            "message": "powershell.exe(72296):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "72296-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\program files (x86)\\common files\\oracle\\java\\javapath_target_846531\\Get-Content\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401ab1e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401a51e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtAllocateVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401a41e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 02:42:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "72296-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268", 
+                    "pid": 72296, 
+                    "command_line": "powershell  -WindowStyle Hidden -ExecutionPolicy RemoteSigned -command \"C:\\chk_ie\\chk_ie.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "path": "c:\\chk_ie\\chk_ie.ps1", 
+                    "ppid": "72296-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 73908
+                }
+            }, 
+            "message": "ps_script(72296):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "85456-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\chk_ie\\chk_ie.ps1\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4bc761ce1e7411ecb6e8534be2385519"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 02:48:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "85456-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268", 
+                    "pid": 85456, 
+                    "command_line": "powershell  -WindowStyle Hidden -ExecutionPolicy RemoteSigned -command \"C:\\chk_ie\\chk_ie.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "path": "c:\\chk_ie\\chk_ie.ps1", 
+                    "ppid": "85456-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 70588
+                }
+            }, 
+            "message": "ps_script(85456):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "54200-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0": {
+            "details": {
+                "indicators": [
+                    "CODE_DROP", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TDSL106157\\tdsl106157", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\users\\tdsl106157\\appdata\\local\\temp\\__psscriptpolicytest_tgpkis2j.txf.ps1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6ef401d01e7311ec8182d3b4881c409e"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\tdsl106157\\appdata\\local\\temp\\__psscriptpolicytest_tgpkis2j.txf.ps1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 02:42:02"
+                        ], 
+                        "event_detail": {
+                            "file_scan_result": "/", 
+                            "filemod_name": "c:\\users\\tdsl106157\\appdata\\local\\temp\\__psscriptpolicytest_tgpkis2j.txf.ps1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "54200-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chk_ie.bat", 
+                    "hash": "430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268", 
+                    "pid": 54200, 
+                    "command_line": "powershell  -WindowStyle Hidden -ExecutionPolicy RemoteSigned -command \"C:\\chk_ie\\chk_ie.ps1\"", 
+                    "parent_path": "c:\\chk_ie\\chk_ie.bat", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d2d410414feade4c87ffac5002b011b92243e0d35b973a21767dcb24913e4bad", 
+                    "path": "c:\\chk_ie\\chk_ie.ps1", 
+                    "ppid": "54200-430bcc180eb58b621a6882a6fced116aa4c046c4ef9e22ca2f8fb853ee9c1268-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 81976
+                }
+            }, 
+            "message": "ps_script(54200):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

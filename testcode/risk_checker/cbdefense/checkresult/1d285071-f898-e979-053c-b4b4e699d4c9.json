@@ -1,0 +1,256 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8688-04eeb3be9f8c462ebdd25a40c3a346ac4c5caf58d3f3288f615f9e21e6d0991f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\ogawa0082", 
+                        "ppid": "8688-04eeb3be9f8c462ebdd25a40c3a346ac4c5caf58d3f3288f615f9e21e6d0991f-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "deb726911e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:1012[C:\\Windows\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\11.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"]", 
+                        "occurred": [
+                            "2021/09/26 04:03:54"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\Windows\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\11.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"", 
+                            "pid": 1012, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "04eeb3be9f8c462ebdd25a40c3a346ac4c5caf58d3f3288f615f9e21e6d0991f", 
+                    "command_line": "cmd /c C:\\WHITE\\BIN\\ODPVer.bat", 
+                    "pid": 8688, 
+                    "parent_path": "c:\\white\\bin\\softcoll.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "parent_pid": 4676, 
+                    "path": "c:\\white\\bin\\odpver.bat", 
+                    "ppid": "8688-04eeb3be9f8c462ebdd25a40c3a346ac4c5caf58d3f3288f615f9e21e6d0991f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(8688):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "10064-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\ogawa0082", 
+                        "ppid": "10064-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                        "description": "FindFirstFile(find \"c:\\windows\\assembly\\gac_32\\mscorlib\\2.0.0.0__b77a5c561934e089\\mscorlib.INI\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "deabdbf21e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:45"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\ogawa0082", 
+                        "ppid": "10064-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                        "description": "FindFirstFile(find \"c:\\windows\\help\\NVWCPJA.chm\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "deabdbf11e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:44"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\ogawa0082", 
+                        "ppid": "10064-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "deabdbc81e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:03:40"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtAllocateVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy RemoteSigned -Command Get-EventLog -LogName Application -Source MsiInstaller -EntryType Information -After 2020/05/01 | ?{ $_.EventID -eq \"1040\"} | Select-Object TimeWritten,Message | Export-CSV -NoTypeInformation -Encoding Default \"C:\\Users\\gaikou\\AppData\\Local\\Temp\\eventlog.csv\"", 
+                    "pid": 10064, 
+                    "parent_path": "c:\\white\\bin\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "parent_pid": 4676, 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "10064-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(10064):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "4676-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\ogawa0082", 
+                        "ppid": "4676-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 4, 
+                        "event_id": [
+                            "deabdc181e7e11ec871fb75d4dae9b8a", 
+                            "deabdbfb1e7e11ec871fb75d4dae9b8a", 
+                            "deabdbbf1e7e11ec871fb75d4dae9b8a", 
+                            "ba7058381e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:8688[cmd /c C:\\WHITE\\BIN\\ODPVer.bat]", 
+                        "occurred": [
+                            "2021/09/26 04:03:54", 
+                            "2021/09/26 04:03:51", 
+                            "2021/09/26 04:03:39", 
+                            "2021/09/26 04:03:36"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /c C:\\WHITE\\BIN\\ODPVer.bat", 
+                            "pid": 8688, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "wbah01.exe", 
+                    "hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "command_line": "C:\\WHITE\\BIN\\SoftColl.exe WHITE", 
+                    "pid": 4676, 
+                    "parent_path": "c:\\white\\bin\\wbah01.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "77b826dabd28f11a908eac5d787d9abef9fc82dfabe47f22b5c3a1bb239fe2f2", 
+                    "parent_pid": 5392, 
+                    "path": "c:\\white\\bin\\softcoll.exe", 
+                    "ppid": "4676-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "softcoll.exe(4676):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "softcoll.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

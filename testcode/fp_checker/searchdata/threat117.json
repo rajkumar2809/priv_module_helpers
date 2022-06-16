@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000017",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "cmd.exe",
+	"detail" : {
+		"data_position" : "process_info",
+		"expected" : [
+			{
+				"field" : "command_line",
+				"value" : "(?i)c:\\\\windows\\\\system32\\\\cmd\\.exe\\s*/c[\\s|\\\"]+\\\\\\\\gdo\\.co\\.jp\\\\sysvol\\\\gdo\\.co\\.jp\\\\policies\\\\\\{[0-9|A-F|a-f|\\-]+\\}\\\\user\\\\scripts\\\\logon\\\\[^\\\\]+\\.bat[\\\"|\\s]+$",
+				"type" : "regexp"
+			},
+			{
+				"field" : "parent_command_line",
+				"value" : "gpscript.exe /Logon",
+				"type" : "exact"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/3/4",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by customer script(logon.bat)."
+}

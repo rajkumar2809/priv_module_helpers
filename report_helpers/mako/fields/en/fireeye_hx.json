@@ -1,0 +1,154 @@
+{
+  "headers" : {
+    "title"       : "DH-MDR for Trellix Endpoint Security Alert Report",
+    "summary"     : "1. Summary",
+    "detailinfo"  : "2. Alert Details",
+    "remediation" : "3. Recommended Actions"
+  },
+  "_form" : {
+    "action" : "fehx_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "process_info" : "Alert process details",
+    "event_info"   : "Event Details",
+    "ioc_info"     : "IOC Details",
+    "exploit_info" : "Exploit Details"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "summary_info" : [
+    { "name" : "detect time(JST)", "src" : "detect_time" },
+    { "name" : "Alert ID",         "src" : "alert_ids"   },
+    { "name" : "category",         "src" : "categories"  },
+    { "name" : "event type",       "src" : "events"      },
+    { "name" : "severity",         "src" : "severity"    },
+    { "name" : "number of alerts", "src" : "alertnum"    },
+    { "name" : "action",           "src" : "blocked"     },
+    { "name" : "IP address",       "src" : "ip"          },
+    { "name" : "hostname",         "src" : "hostname"    },
+    { "name" : "hostset",          "src" : "hostset"     },
+    { "name" : "OS",               "src" : "os"          },
+    { "name" : "user ID",          "src" : "runuser"     }
+  ],
+  "mltables" : {
+    "process_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.process_detail",
+      "fields"   : [
+        { "name" : "process name",   "src" : "process_name"    },
+        { "name" : "process id",     "src" : "process_id"      },
+        { "name" : "command line",   "src" : "process_cmdline" },
+        { "name" : "parent process", "src" : "parent_name"     },
+        { "name" : "run user",       "src" : "runuser"         }
+      ]
+    },
+    "ioc_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.ioc_detail",
+      "fields"   : [
+        { "name" : "IOC Name",   "src" : "src"  },
+        { "name" : "IOC Source", "src" : "name" },
+        { "name" : "IOC ID",     "src" : "id"   }
+      ]
+    },
+    "event_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.event_detail",
+      "fields"   : [
+        { "name" : "detect time",   "src" : "alert_time"   },
+        { "name" : "process name",  "src" : "process_name" },
+        { "name" : "process id",    "src" : "process_id"   },
+        { "name" : "event type",    "src" : "ev_type"      },
+        { "name" : "event subtype", "src" : "ev_subtype"   },
+        { "name" : "target IOC",    "src" : "ev_target"    }
+      ]
+    },
+    "exploit_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.exploit_detail",
+      "fields"   : [
+        { "name" : "process name", "src" : "process_name" },
+        { "name" : "process id",   "src" : "process_id"   },
+        { "name" : "action",       "src" : "is_blocked"   },
+        { "name" : "message",      "src" : "message"      }
+      ]
+    },
+    "exploit_detail_ps" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_process_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "process name",                "src" : "process_name" },
+        { "name" : "process ID",                  "src" : "process_id"   },
+        { "name" : "number of file access",       "src" : "file_num"     },
+        { "name" : "number of network access",    "src" : "network_num"  },
+        { "name" : "number of access to process", "src" : "process_num"  },
+        { "name" : "number of registry access",   "src" : "regkey_num"   }
+      ]
+    },
+    "exploit_detail_network" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_network_list",
+      "fields"   : [
+        { "name" : "process name", "src" : "process_name" },
+        { "name" : "operation",    "src" : "operation"    }
+      ]
+    },
+    "exploit_detail_file" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_file_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "process name", "src" : "process_name" },
+        { "name" : "operation",    "src" : "operation"    }
+      ]
+    },
+    "exploit_detail_bootps" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_bootps_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "process name", "src" : "process_name" },
+        { "name" : "operation",    "src" : "operation"    }
+      ]
+    },
+    "malware_detail" : {
+      "from"     : "malware_info",
+      "datatype" : "json",
+      "prefix"   : "malwares",
+      "fields"   : [
+        { "name" : "detect name", "src" : "detect_info" },
+        { "name" : "file name",   "src" : "file_name"   },
+        { "name" : "file hash",   "src" : "file_hash"   },
+        { "name" : "run user",    "src" : "user_info"   },
+        { "name" : "action",      "src" : "action_info" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "Endpoint Isolation", "src" : "need_contain" },
+    { "name" : "target host",        "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"   },
+    { "src" : "customer_name" },
+    { "src" : "summary"       },
+    { "src" : "remediation"   },
+    { "src" : "with_eng"      }
+  ]
+}

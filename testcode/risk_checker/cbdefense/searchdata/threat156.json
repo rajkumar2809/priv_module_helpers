@@ -1,0 +1,35 @@
+{
+	"id" : "00001-10-000056",
+	"rev" : "0003",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 0,
+	"value" : "kobo.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "INJECT_CODE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "SetWindowsHook",
+				"type" : "include"
+			},
+			{
+				"field" : "description",
+				"value" : "\\Kobo\\Kobo.exe",
+				"type" : "include"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/5/17",
+	"user" : "sanrio",
+	"source" : "manual",
+	"message" : "kobo call api to myself."
+}

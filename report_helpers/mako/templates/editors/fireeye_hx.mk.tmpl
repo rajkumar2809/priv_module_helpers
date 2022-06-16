@@ -1,0 +1,196 @@
+#coding:utf-8
+
+## helix_squid.mk.tmpl Squid解析レポートエディタ
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="2"><h2>${headers["detailinfo"]}</h2></td></tr>
+  </table>
+  % if process_info:
+    <br />
+    <p class="subsection">${ subheaders["process_info"] }</p>
+    <table>
+      <tr>
+        % for each in process_info[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in process_info:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${ func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+  % if event_info:
+    <br />
+    <p class="subsection">${ subheaders["event_info"] }</p>
+    <table>
+      <tr>
+        % for each in event_info[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in event_info:
+        <tr>
+          % for value in each:
+            % if value["content"]:
+              <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+            % else:
+              <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">-</textarea></p></td>
+            % endif
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if ioc_info:
+    <br />
+    <p class="subsection">${ subheaders["ioc_info"] }</p>
+    <table>
+      <tr>
+        % for each in ioc_info[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in ioc_info:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if exploit_info:
+    <br />
+    <p class="subsection">${ subheaders["exploit_info"] }</p>
+    <table>
+      <tr>
+        % for each in exploit_info[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in exploit_info:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if exploit_detail_ps:
+    <br />
+    <p class="subsection">${ subheaders["exploit_detail_ps"] }</p>
+    <table>
+      <tr>
+        % for each in exploit_detail_ps[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in exploit_detail_ps:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if exploit_detail_network:
+    <br />
+    <p class="subsection">${ subheaders["exploit_detail_network"] }</p>
+    <table>
+      <tr>
+        % for each in exploit_detail_network[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in exploit_detail_network:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if exploit_detail_bootps:
+    <br />
+    <p class="subsection">${ subheaders["exploit_detail_bootps"] }</p>
+    <table>
+      <tr>
+        % for each in exploit_detail_bootps[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in exploit_detail_bootps:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if exploit_detail_file:
+    <br />
+    <p class="subsection">${ subheaders["exploit_detail_file"] }</p>
+    <table>
+      <tr>
+        % for each in exploit_detail_file[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in exploit_detail_file:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${func.escape4IllecalChar(value["content"])}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if malware_detail:
+    % for each in malware_detail:
+      <table>
+        % for row in each:
+          <tr>
+            <td class="item">${ row["name"] }</td>
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${row["prefix"]}${row["src"]}">${func.escape4IllecalChar(row["content"])}</textarea></p></td>
+          </tr>
+        % endfor
+        <br />
+      </table>
+    % endfor
+  % endif
+
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+  % if nw_contain:
+    <br />
+    ${ func.lateraltable(nw_contain) }
+  % endif
+</%block>

@@ -1,0 +1,30 @@
+{
+    "product": "cbdefense", 
+    "enable": "yes", 
+    "score": 5, 
+    "registered": "2020/3/30", 
+    "rev": "0004", 
+    "detail": {
+        "expected": [
+            {
+                "field": "parent_name", 
+                "type": "regexp", 
+                "value": "(?i)(cmd\\.exe|explorer\\.exe|gpscript\\.exe)"
+            }, 
+            {
+                "field": "command_line", 
+                "type": "regexp", 
+                "value": "(?i)cmd.exe\\s+.*(econn.local|c:\\\\users\\\\.*\\\\grouppolicy\\\\datastore\\\\.*)(\\\\sysvol\\\\econn.local)?\\\\policies\\\\[^\\\\]+\\\\user\\\\scripts\\\\logon\\\\psrun_v\\d+_bypass\\.bat"
+            }
+        ], 
+        "data_position": "process_info", 
+        "exclusion": []
+    }, 
+    "value": "cmd.exe", 
+    "source": "manual", 
+    "reputation": "white", 
+    "user": "nhs", 
+    "message": "Customer Script", 
+    "type": "condition", 
+    "id": "00001-10-000241"
+}

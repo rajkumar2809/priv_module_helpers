@@ -1,0 +1,79 @@
+{
+  "headers" : {
+    "title"       : "CrowdStrike アラート解析一次レポート",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 詳細情報",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "cs_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "process_info" : "アラートプロセス詳細",
+    "event_info"   : "イベント詳細情報",
+    "ioc_info"     : "IOC詳細情報",
+    "exploit_info" : "エクスプロイト詳細情報"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "summary_info" : [
+    { "name" : "通知日時",       "src" : "alert_time"  },
+    { "name" : "アラートID",     "src" : "alert_id"    },
+    { "name" : "カテゴリ",       "src" : "category"    },
+    { "name" : "危険度",         "src" : "severity"    },
+    { "name" : "アクション",     "src" : "blocked"     },
+    { "name" : "IPアドレス",     "src" : "ip"          },
+    { "name" : "対象ホスト",     "src" : "hostname"    },
+    { "name" : "ホストセット",   "src" : "host_group"  },
+    { "name" : "ホストタグ",     "src" : "host_tags"  },
+    { "name" : "ホストOS",       "src" : "os"          },
+    { "name" : "ユーザID",       "src" : "username"    }
+  ],
+  "mltables" : {
+    "process_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.process_detail",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "プロセス名",     "src" : "ps_name"      },
+        { "name" : "UniqPID",        "src" : "ps_pid"       },
+        { "name" : "ハッシュ",       "src" : "ps_hash"      },
+        { "name" : "コマンドライン", "src" : "ps_cmdline", "limit" : 100 },
+        { "name" : "親プロセス",     "src" : "parent_name"  },
+        { "name" : "祖父プロセス",   "src" : "gparent_name" }
+      ]
+    },
+    "event_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.event_detail",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "発生時刻",   "src" : "alert_time"  },
+        { "name" : "プロセス名", "src" : "ps_name"     },
+        { "name" : "UniqPID",    "src" : "ps_pid"      },
+        { "name" : "イベント",   "src" : "alert_type"  },
+        { "name" : "内容",       "src" : "description" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "隔離要否", "src" : "need_contain" },
+    { "name" : "隔離対象", "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "customer_name"   },
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ]
+}

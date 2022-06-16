@@ -1,0 +1,676 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "1604-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "1604-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:49:12"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7b9e3d341dd511ec9db0771234b6db80"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "1604-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0", 
+                        "description": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{46eee4a2-7714-4514-a0a2-0ea868ea8107}\\user\\scripts\\logon\\presetdavmailproperty.ps1", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "ACTION_FILE_CREATE(\\\\rtri.local\\sysvol\\rtri.local\\policies\\{46eee4a2-7714-4514-a0a2-0ea868ea8107}\\user\\scripts\\logon\\presetdavmailproperty.ps1:189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e)(NOT_LISTED:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/25 07:49:08"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{46eee4a2-7714-4514-a0a2-0ea868ea8107}\\user\\scripts\\logon\\presetdavmailproperty.ps1", 
+                            "filemod_hash": "189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "7b4399dc1dd511ec8ac2dde1331f890a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e", 
+                    "pid": 1604, 
+                    "command_line": " -ExecutionPolicy ByPass -File PresetDavMailProperty.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "parent_pid": 7796, 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{46eee4a2-7714-4514-a0a2-0ea868ea8107}\\user\\scripts\\logon\\presetdavmailproperty.ps1", 
+                    "ppid": "1604-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(1604):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "8928-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "8928-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:8952[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 07:47:43"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 8952, 
+                            "reputation": "ADAPTIVE_WHITE_LIST", 
+                            "hash": "103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "7a0e26f61dd511ec8928bff6480b80ba"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 8928, 
+                    "command_line": " -ExecutionPolicy ByPass -File SetAcceptRDPRule.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "parent_pid": 1460, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "8928-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(8928):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "8480-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "8480-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:49:11"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7b71ae9b1dd511ec83ecd99375a2bc6a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0", 
+                    "pid": 8480, 
+                    "command_line": " -ExecutionPolicy ByPass -File SetRedirectedHomeAcl.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "parent_pid": 7796, 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{12189ccf-ee0a-4f4a-9c12-29b8363ad5f5}\\user\\scripts\\logon\\setredirectedhomeacl.ps1", 
+                    "ppid": "8480-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(8480):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "16104-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "16104-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:50:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7f91be3f1dd511ec8bcabd37b3c3e890"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agentexecutor.exe", 
+                    "hash": "ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212", 
+                    "pid": 16104, 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -executionPolicy bypass -file  \"C:\\Program Files (x86)\\Microsoft Intune Management Extension\\Content\\DetectionScripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1\" ", 
+                    "parent_path": "c:\\program files (x86)\\microsoft intune management extension\\agentexecutor.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "688c97508dea4a3d4c85465c0defd306b7f52ed7e39c115aed85bb9571af4428", 
+                    "parent_pid": 10096, 
+                    "path": "c:\\program files (x86)\\microsoft intune management extension\\content\\detectionscripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1", 
+                    "ppid": "16104-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(16104):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "15112-04a1e7de2b15c744101c064a276a20a1ee1febcbafe1f87112840f14e9706f48-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15112-04a1e7de2b15c744101c064a276a20a1ee1febcbafe1f87112840f14e9706f48-0", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:15760[\"C:\\WINDOWS\\System32\\cmd.exe\" /c \"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\x64\\task.bat\"]", 
+                        "occurred": [
+                            "2021/09/25 07:53:07"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\WINDOWS\\System32\\cmd.exe\" /c \"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\x64\\task.bat\"", 
+                            "pid": 15760, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "a6f29dc41dd511ecb3be31f1dff3ba26"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "04a1e7de2b15c744101c064a276a20a1ee1febcbafe1f87112840f14e9706f48", 
+                    "pid": 15112, 
+                    "command_line": "C:\\WINDOWS\\System32\\Wscript.exe //B //NoLogo \"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\x64\\task.vbs\"", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 2096, 
+                    "path": "c:\\program files\\intel\\sur\\queencreek\\x64\\task.vbs", 
+                    "ppid": "15112-04a1e7de2b15c744101c064a276a20a1ee1febcbafe1f87112840f14e9706f48-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "vb_script(15112):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "2856-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "2856-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0", 
+                        "description": "FindFirstFile(find \"c:\\windows\\system32\\Get-CimInstance\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 07:49:12"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "7b71d5c01dd511ec83ecd99375a2bc6a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549", 
+                    "pid": 2856, 
+                    "command_line": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass \"C:\\ProgramData\\SetTeamsFirewallRule.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 2096, 
+                    "path": "c:\\programdata\\setteamsfirewallrule.ps1", 
+                    "ppid": "2856-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(2856):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "7536-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "7536-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:49:13"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7bf5d3391dd511eca7308145daed6245"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a", 
+                    "pid": 7536, 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-XboxApps.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "parent_pid": 7796, 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-xboxapps.ps1", 
+                    "ppid": "7536-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(7536):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "10292-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "10292-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:49:14"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7bf5d34f1dd511eca7308145daed6245"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152", 
+                    "pid": 10292, 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-YourPhoneApp.ps1 ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "parent_pid": 7796, 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-yourphoneapp.ps1", 
+                    "ppid": "10292-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(10292):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "8468-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "FILELESS", 
+                    "CODE_DROP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "8468-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 07:48:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "7b14e8d91dd511ec9d10d31a02156f15"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "8468-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_jxyx5eqt.abt.psm1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_jxyx5eqt.abt.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/25 07:48:24"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": null, 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_jxyx5eqt.abt.psm1", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "7af04a2c1dd511ec8ba489f9d92e103a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "pid": 8468, 
+                    "command_line": "powershell  -command \"(Get-Content \"C:\\WINDOWS\\TEMP\\firefoxdl.18801.txt\") | ForEach-Object { $_ -replace '^.*/releases/(\\d+(\\.\\d+)*)/.*$','$1' } | Set-Content \"C:\\WINDOWS\\TEMP\\firefoxdl.18801.txt\"\"", 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "parent_pid": 8284, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "8468-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(8468):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "7672-b53f3c0cd32d7f20849850768da6431e5f876b7bfa61db0aa0700b02873393fa-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9944901", 
+                        "ppid": "7672-b53f3c0cd32d7f20849850768da6431e5f876b7bfa61db0aa0700b02873393fa-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 07:50:09"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "7f2715c41dd511ec8bd4fbef8e6c46ad"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "b53f3c0cd32d7f20849850768da6431e5f876b7bfa61db0aa0700b02873393fa", 
+                    "pid": 7672, 
+                    "command_line": "rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 8536, 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "7672-b53f3c0cd32d7f20849850768da6431e5f876b7bfa61db0aa0700b02873393fa-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "rundll32.exe(7672):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "RTR1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

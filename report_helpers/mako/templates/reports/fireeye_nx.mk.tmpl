@@ -1,0 +1,39 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEyeNx
+
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_report.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <div style="page-break-before: avoid;">
+    <h2 class="head">${ subheaders["outbound"] }</h2>
+    <p class="description_withbreak">${ func.maskURL(outbound["content"]) }<p>
+    <p>※ 誤アクセス防止のため、マスクしております</p>
+    % if malware_object:
+      % if len(malware_object["known_callback"]["content"]) is not 0:
+        <h2 class="head">${ subheaders["known_callback"] }</h2>
+        <p class="description_withbreak">${ func.maskURL(
+          malware_object["known_callback"]["content"]) }<p>
+        <p>※ 誤アクセス防止のため、マスクしております</p>
+      % endif
+      ${ func.lateraltable(
+        malware_object["malware_file"], section="malware_file") }
+    % endif
+    % if len(endpointav["content"]) is not 0:
+      <h2 class="head">${ headers["endpointav"] }</h2>
+      <p class="description">${ func.replace2br(endpointav["content"]) }<p>
+    % endif
+  </div>
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+</%block>

@@ -1,0 +1,171 @@
+
+
+
+<style type "text/css">
+  .value_table {
+    border-collapse: collapse;
+    border-style : all;
+    border-color : #FF0000;
+    border: solid 1px;
+    margin-right : auto;
+    margin-left : auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 500px;
+  }
+  .item {
+    border-collapse: collapse;
+    border-style : all;
+    border: solid 1px;
+    padding: 0.5em;
+    font-family:"Meiryo UI";
+    background-color:#CCECFF;
+    font-weight:bold;
+    width:250px;
+    padding:2px;
+    text-align:center;
+    word-break:break-all;
+  }
+  
+  
+  
+
+</style>
+<script type="text/javascript">
+  function target_popup(form) {
+    window.open('', 'formpopup', 'width=1000,height=800,resizeable,scrollbars');
+    form.target = 'formpopup';
+  }
+  function insertRow(id) {
+    var table = document.getElementById(id);
+    var row_len = table.rows.length;
+    row_len = row_len;
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(-1);
+    var cell2 = row.insertCell(-1);
+    var cell3 = row.insertCell(-1);
+    var insbutton = '<input type="button" value="+" onclick="insertRow(\'url\')" />';
+    var delbutton = '<input type="button" value="-" onclick="deleteRow(this)" />';
+    var inputurl = '<textarea rows=1 cols=65 name="url">$url$</textarea>';
+    cell1.innerHTML = '<strong>' + row_len + '</strong>';
+    cell2.innerHTML = inputurl;
+    cell3.innerHTML = insbutton + delbutton;
+  }
+  
+  function deleteRow(obj) {
+    tr = obj.parentNode.parentNode;
+    tr.parentNode.deleteRow( tr.sectionRowIndex );
+  }
+</script>
+
+<form action="html_data_view" method="get" name="inform" id="inform" onsubmit="target_popup( this );" >
+  <input type="submit" value="編集完了"/>
+  <div class="home" style="text-align:center"><center>
+    <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+      <tr><td colspan="2"><center><h1>FireEyeNxアラート解析結果レポート</h1></center></td></tr>
+      <tr><td colspan="2"><h2>1. 解析結果</h2></td></tr>
+      <tr><td colspan="2"><p><textarea rows=5 cols=80 name="form.summary">value_summary</textarea></p></td></tr>
+    </table>
+    
+  
+      
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+        <tr>
+          <td class="item"><strong>対象端末のIPアドレス</strong></td>
+            <td><textarea rows=1 cols=57 name="form.ipaddr">value_ipaddr</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>ホスト名</strong></td>
+            <td><textarea rows=1 cols=57 name="form.hostname">value_hostname</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>ユーザID</strong></td>
+            <td><textarea rows=1 cols=57 name="form.username">value_username</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>対象ID</strong></td>
+            <td><textarea rows=1 cols=57 name="form.targetid">value_targetid</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>危険度</strong></td>
+            <td><textarea rows=1 cols=57 name="form.severity">value_severity</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>外部への通信状況</strong></td>
+            <td><textarea rows=1 cols=57 name="form.outboundcom">value_outboundcom</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>FireEyeによるブロック状況</strong></td>
+            <td><textarea rows=1 cols=57 name="form.block">value_block</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>アラート名称</strong></td>
+            <td><textarea rows=1 cols=57 name="form.alertname">value_alertname</textarea></td>
+        </tr>
+        <tr>
+          <td class="item"><strong>検出日時</strong></td>
+            <td><textarea rows=1 cols=57 name="form.alertdate">value_alertdate</textarea></td>
+        </tr>
+    </table>
+
+    
+
+
+    
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="1"><h2>検知したWebサイト</h2></td></tr>
+    <tr><td colspan="2"><p><textarea rows=3 cols=80 name="form.url">http://fugahoge.com</textarea></p></td></tr>
+  </table>
+    <table>
+    <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+      <tr><td colspan="1"><h2>ファイルが実行された場合の通信先</h2></td></tr>
+      <tr><td colspan="2"><p><textarea rows=3 cols=80 name="form.objcnc">https://callback.com/fugahoge</textarea></p></td></tr>
+    </table>
+    
+      <p class="subsection">検知したファイル</p>
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+      <tr>
+          <td class="item"><strong>ファイル名</strong></td>
+          <td class="item"><strong>MD5ハッシュ値</strong></td>
+      </tr>
+        <tr>
+              <td><textarea rows=1 cols=57 name="form.fname">value_fname</textarea></td>
+              <td><textarea rows=1 cols=57 name="form.fhash">value_fhash</textarea></td>
+        </tr>
+    </table>
+
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    
+      <p class="subsection">EndPointのAVソフトによる検知</p>
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+      <tr>
+          <td class="item"><strong>ホスト名</strong></td>
+          <td class="item"><strong>検知対象</strong></td>
+          <td class="item"><strong>アクション</strong></td>
+      </tr>
+        <tr>
+              <td><textarea rows=1 cols=57 name="form.end_host">value_endhost</textarea></td>
+              <td><textarea rows=1 cols=57 name="form.end_target">value_endtarget</textarea></td>
+              <td><textarea rows=1 cols=57 name="form.end_action">value_endaction</textarea></td>
+        </tr>
+    </table>
+
+  </table>
+
+
+    
+  
+      <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+        <tr><td colspan="2"><h2>2. 推奨対応</h2></td></tr>
+        <tr><td colspan="2" ><p><textarea rows=5 cols=80 name="form.remediation">value_remediation</textarea></p></td></tr>
+      </table>
+    
+
+    
+          <input type="hidden" name="form.customer_name" value="">
+          <input type="hidden" name="form.summary_en" value="">
+          <input type="hidden" name="form.remediation_en" value="">
+          <input type="hidden" name="form.with_eng" value="">
+    
+  </center></div>
+</form>

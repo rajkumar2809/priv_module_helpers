@@ -1,0 +1,255 @@
+headers:
+  title: 
+    DH: DH-MDR Service for CarbonBlack
+    NVC: NVC Security Operation Service for CarbonBlack
+    NOS: NOS Security Operation Service for CarbonBlack
+    KOP: Managed Security Service Endpoint Monitoring
+    HIS: MDR Service
+  sub_title: Alert Summary Report
+  date: ENG
+  sections:
+    top_message:
+      title: About This Document
+      number: 1
+    alert_analysis: 
+      title: Alert Summary
+      number: 2
+    incident: 
+      title: Incident Response Cases
+      number: 3
+    agent_release: 
+      title: Release Information
+      number: 4
+    threat_hunting: 
+      title: Threat Hunting Results
+      number: 5
+    livequery: 
+      title: LiveQuery Results
+      number: 6
+    digitalrisk:
+      title: DigitalRisk Monitoring Results
+      number: 7
+    security_news: 
+      title: Security Topics
+      number: 8
+    other_comment: 
+      title: Other Matters of Note
+      number: 9
+    conclusion: 
+      title: General Comment
+      number: 10
+  sender:
+    DH: DIGITAL HEARTS Co.,Ltd.
+    NVC: Network Value Components Ltd.
+    NOS: NIPPON OFFICE SYSTEMS LTD.
+    KOP: OPTAGE Inc.
+    HIS: Hitachi Solutions, Ltd.
+
+tableformat:
+  general:
+    severity:
+      high: High
+      medium: Medium
+      low: Low
+  monthly_chart:
+    column:
+      - name: Month
+      - name: Number of Alerts
+      - name: High
+      - name: Medium
+      - name: Low
+    date: YMDHMS
+  daily_chart:
+    column:
+      - name: Date
+      - name: Number of Alerts
+      - name: High
+      - name: Medium
+      - name: Low
+    date: YMDHMS
+  malware_base:
+    column:
+      - name: Malware Name
+      - name: Risk Level
+      - name: Number of Alerts
+      - name: Host Name
+    overhosts: and {OverNum} devices
+  os_base:
+    column:
+      - name: OS
+      - name: High
+      - name: Medium
+      - name: Low
+  host_base:
+    column:
+      - name: Host Name
+      - name: Risk Level
+      - name: Number of Alerts
+  incident_base:
+    column:
+      - name: Incident Occurrence Time
+      - name: Alert ID
+      - name: Host Name
+      - name: Status
+  severity_circle:
+    column:
+      - name: Risk
+      - name: Number of Alerts
+      - name: Host Name
+    legend:
+      - name: High
+      - name: Medium
+      - name: Low
+    overhosts: and {OverNum} devices
+  agent_release:
+    column:
+      - name: OS
+      - name: Latest Version
+      - name: Release Date
+  hunting:
+    column:
+      - name: Summary
+      - name: Number of Detections
+      - name: Required Response
+  livequery:
+    column:
+      - name: Probrematic
+      - name: Recommendation
+      - name: Hosts
+  vulnerabilities:
+    grandsummary:
+      column:
+        - name: OS
+        - name: TOTAL
+        - name: CRITICAL
+        - name: IMPORTANT
+        - name: Actively Used
+    manyappsOverHigh:
+      column:
+        - name: Application
+        - name: Vulnerabilities Num(Total)
+        - name: Vulnerabilities Num(Active)
+        - name: MAX CVSS Score
+    manyhostsOverHigh:
+      column:
+        - name: HostName
+        - name: Vulnerabilities Num(Total)
+        - name: Vulnerabilities Num(Active)
+        - name: MAX CVSS Score
+    activeVulnOverHigh:
+      column:
+        - name: CVE ID
+        - name: CVSS Score
+        - name: Severity
+        - name: Vuln Product
+        - name: HostName
+
+format:
+  footer:
+    DH: dhsoc.html
+    NVC: nvc.html
+    NOS: nos.html
+    KOP: kop.html
+  logo:
+    DH:
+      s: dh-logo_s.png
+      m: dh-logo_m.png
+      l: dh-logo-l.png
+    NVC:
+      s: nvc-logo_s.png
+      m: nvc-logo_m.png
+      l: nvc-logo-l.png
+    NOS:
+      s: nos-logo_s.png
+      m: nos-logo_m.png
+      l: nos-logo-l.png
+    KOP:
+      s: kop-logo_s.png
+      m: kop-logo_m.png
+      l: kop-logo-l.png
+
+report_target:
+  enable: false
+  chapters:
+    - name: 1.1. Report Target
+  table:
+    header:
+      - column
+      - information
+    contents:
+      - name: Product
+        src: product
+      - name: Reporting Period
+        src: report_period
+
+alert_analysis:
+  chapters:
+    - name: 2.1. Number of Monthly Alerts
+      chapters:
+        - name: 2.1.1. Number of Alerts by Risk
+        - name: 2.1.2. Number of Alerts by Day
+        - name: 2.1.3. Alerts by Malware Name
+        - name: 2.1.4. Alerts by Host
+        - name: 2.1.5. Alerts by OS
+    - name: 2.2. Number of Alerts by Risk Level in 6 Months
+
+cb_agent_release:
+  chapters:
+    - name: 4.1. CarbonBlack Sensor
+  versions:
+    - os: Windows
+      version: 3.8.0.398
+      release_date: 2021/12/16
+      updated: false
+    - os: OS X
+      version: 3.6.1.10
+      release_date: 2021/10/26
+      updated: false
+    - os: Linux
+      version: 2.12.0.698755
+      release_date: 2021/10/29
+      updated: false
+
+threat_hunting:
+  chapters:
+    - name: 5.1. About Threat Intelligence
+    - name: 5.2. Results
+  ioc_type:
+    - type: sha256
+      desc: Hash values of malicious files
+    - type: ipaddr
+      desc: Malicious IP Addresses
+    - type: domain
+      desc: Malicious Domain Name
+
+livequery:
+  comment: no need child
+
+vulnerabilities:
+  comment: no need child
+
+digitalrisk:
+  vuln_domain:
+    name: 1. Registered domain open port and vulnerability information
+    description:
+      header:
+        - Severity
+        - Contents
+      rawtable:
+        - name: High
+          content: A vulnerability has been confirmed.
+        - name: Medium
+          content: Open ports have been confirmed and they include ports that are not recommended to be exposed (e.g., SSH).
+        - name: Low
+          content: This is a list of subdomains for which open ports have been confirmed.
+        - name: Information
+          content: This is a list of subdomains for which no open port has been confirmed.
+  vuln_ipaddr:
+    name: 2. Open ports and vulnerability information of registered IP addresses
+  impersonate_domain:
+    name: 3. Domain information spoofing of registered domains
+  dataleak:
+    name: 4. Detection of registered keywords
+  monitor_target:
+    name: not use
+

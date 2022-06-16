@@ -1,0 +1,325 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "CODE_DROP", 
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MODIFY_MEMORY_PROTECTION"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\users\\fsadmin-hons001\\appdata\\local\\temp\\ukxtybdy.fdn.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34cf1dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\fsadmin-hons001\\appdata\\local\\temp\\ukxtybdy.fdn.psm1:0220fcb9539798582fc98d4dfc2ec2383e7bc10eaa2079cf750ca80ab16d279d)(NOT_LISTED:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/25 03:10:07"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\users\\fsadmin-hons001\\appdata\\local\\temp\\ukxtybdy.fdn.psm1", 
+                            "filemod_hash": "0220fcb9539798582fc98d4dfc2ec2383e7bc10eaa2079cf750ca80ab16d279d", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34b81dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:2850552[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 03:10:01"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 2850552, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "046f7a1b4de67562547ed9a180a72f481fc41e803de49a96d7d7c731964d53a0", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"C:\\ProgramData\\Microsoft\\Windows Defender\\platform\\4.14.17613.18039-0\\MsMpEng.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34c11dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateWindowExW(create a viewable window)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34c01dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateWindowExW(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateWindowExW"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34bf1dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:06"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtQuerySystemInformation"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34be1dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:03"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open itself for modification)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34bd1dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:03"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\fsadmin-hons001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFileExW(find \"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2baf34bc1dae11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/25 03:10:03"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFileExW"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 1712, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command \"G:\\bin\\EventLogToZip.ps1\"", 
+                    "pid": 2780064, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "438b6ccd84f4dd32d9684ed7d58fd7d1e5a75fe3f3d12ab6c788e6bb0ffad5e7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "2780064-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                    "parent_command_line": null, 
+                    "hash": "ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436"
+                }
+            }, 
+            "message": "powershell.exe(2780064):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "3012-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_SERVER", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "10.194.2.40:10050", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b23a5e061dad11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "10.194.2.40:10050<-(TCP:IN)-10.194.2.37:46543(None)[None]", 
+                        "occurred": [
+                            "2021/09/25 03:06:54"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "10.194.2.37", 
+                            "local_port": 10050, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.194.2.40", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 46543
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "3012-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 868, 
+                    "command_line": "\"C:\\zabbix_agent\\bin\\zabbix_agentd.exe\" --config \"C:\\zabbix_agent\\zabbix_agentd.conf\"", 
+                    "pid": 3012, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "5725089464273b365d89eaef1a8afd69562f763a652e7be87298ff77a8b3daac", 
+                    "path": "c:\\zabbix_agent\\bin\\zabbix_agentd.exe", 
+                    "ppid": "3012-7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633-0", 
+                    "parent_command_line": null, 
+                    "hash": "7eeb4913a766434c7e16eb398b69185882f8e6ad9e78ec0068914c3d5ec45633"
+                }
+            }, 
+            "message": "zabbix_agentd.exe(3012):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "zabbix_agentd.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SMW1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

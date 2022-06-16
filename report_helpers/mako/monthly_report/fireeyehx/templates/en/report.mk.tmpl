@@ -1,0 +1,195 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEyeNx解析レポート用 
+
+## define function
+<%namespace file="./util.mk.tmpl" name="func" />
+
+<%inherit file="base.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+  .mltable {
+    border-collapse: collapse;
+  }
+  .mltable th, .s-tbl td {
+    border: 1px solid #000;
+  }
+  .mltable tr:nth-child(2n+1) {
+    background: #eee;
+  }
+  .mltable tr:first-child, .s-tbl th:first-child {
+    background: #0ff;
+  }
+  .mltable tr:hover {
+    background:#ff0;
+  }
+</%block>
+
+<%block name="alert_by_severity">
+  ${parent.alert_by_severity()}
+  ${ func.graph_wLegend("./images/severity_circle.png",
+                        alertdata["severity_table"]["legend"])
+  }
+  <br />
+  ${ func.mltable(alertdata["severity_table"]) }
+  <br />
+</%block>
+
+<%block name="alert_by_daily">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/dailychart_stack_by_severity.png",
+                        alertdata["dailychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["dailychart_table"], True) }
+</%block>
+
+<%block name="alert_by_malware_type">
+  ${parent.alert_by_malware_type()}
+  <p class="description">The following is an alert summary by Malware Name during the reporting period.<p>
+  ${ func.mltable(alertdata["malware_table"]) }
+</%block>
+
+<%block name="alert_by_host">
+  ${parent.alert_by_host()}
+  <p class="description">The following is an alert summary by host during the reporting period.<p>
+  ${ func.mltable(alertdata["host_table"]) }
+</%block>
+
+<%block name="alert_by_os">
+  ${parent.alert_by_os()}
+  <p class="description">The following is the total number of alerts for each OS and the percentage of alerts for each risk level.<p>
+  <div style="page-break-inside: avoid;">
+    ${ func.mltable(alertdata["os_table"]) }
+  </div>
+</%block>
+
+<%block name="alert_by_monthly">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/monthlychart_stack_by_severity.png",
+                        alertdata["monthlychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["monthlychart_table"], True) }
+</%block>
+
+<%block name="incident">
+  ${parent.alert_by_host()}
+  <p class="description">The following is a list of the incident response performed during the reporting period.<p>
+  ${ func.mltable(alertdata["incident_table"]) }
+  <p class="description">Please refer to the alert analysis report issued at the time of the incident for details of each incident.<p>
+</%block>
+
+<%block name="blk_server_release">
+  <p class="description">
+    % if software_release["server_release"]["updated"]:
+      New agent was released in ${report_target["report_month"]}.
+    % else:
+      No new agent was released in ${report_target["report_month"]}.
+    % endif
+  </p>
+  % if software_release["server_release"]["message"] and not software_release["server_release"]["message"] == "N/A":
+    <p class="description">
+      ${ func.replace2br(software_release["server_release"]["message"]) }
+    </p>
+  % endif
+  <br />
+  ${ func.mltable(software_release["server_release"]["table"]) }
+  <p class="description">
+  ※ Software Verification in Macnica(Vendor of HX)
+  </p>
+</%block>
+<%block name="blk_agent_release">
+  <p class="description">
+    % if software_release["agent_release"]["updated"]:
+      New agent was released in ${report_target["report_month"]}.
+    % else:
+      No new agent was released in ${report_target["report_month"]}.
+    % endif
+  </p>
+  % if software_release["agent_release"]["message"] and not software_release["agent_release"]["message"] == "N/A":
+    <p class="description">
+      ${ func.replace2br(software_release["agent_release"]["message"]) }
+    </p>
+  % endif
+  <br />
+  ${ func.mltable(software_release["agent_release"]["table"]) }
+  <p class="description">
+  ※ Software Verification in Macnica(Vendor of HX)
+  </p>
+  </p>
+</%block>
+
+
+<%block name="blk_threat_hunting">
+  ${ func.mltable(threat_hunting["results"]) }
+</%block>
+<%block name="blk_discover">
+  ${ func.mltable(discover["results"]) }
+</%block>
+<%block name="blk_spotlight">
+  ${ func.mltable(spotlight["results"]) }
+</%block>
+
+<%block name="blk_digitalrisk_vuln_domain">
+  % for each in digitalrisk["vuln_domain"]["results"]:
+    ${ func.mltable( each, name=each["top_domain"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_vuln_ipaddr">
+  % for each in digitalrisk["vuln_ipaddr"]["results"]:
+    ${ func.mltable( each, name=each["ipaddr"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_impersonate_domain">
+  % for each in digitalrisk["impersonate_domain"]["results"]:
+    ${ func.mltable( each, name=each["top_domain"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_dataleak">
+  % for each in digitalrisk["dataleak"]["results"]:
+    ${ func.mltable( each ) }
+  % endfor
+  <p class="description">Please refer to the attached "dataleak.csv" for details of the detected keywords.</p>
+  <p class="description">Recommendedation.<br />
+・Depending on the content of the detected information, appropriate post-incident measures and recurrence prevention measures will be implemented.</p>
+</%block>
+
+<%block name="blk_security_news">
+  <ol>
+    % for each in security_news["news"]:
+      <div style="page-break-inside: avoid;">
+        <li class="subsection">${ each["title"] }</li>
+        <p class="description">${ func.replace2br(each["content"]) }<p>
+      </div>
+      <br />
+    % endfor
+  </ol>
+</%block>
+
+<%block name="blk_other_comment">
+  % for each in userdata["comments"]:
+    <div style="page-break-inside: avoid;">
+      <li class="subsection">${ each["title"] }</li>
+      <p class="description">${ func.replace2br(each["content"]) }<p>
+    </div>
+    <br />
+  % endfor
+</%block>
+
+<%block name="blk_conclusion">
+  % if userdata["conclusion"]["incident"] is 0:
+    <p class="description">
+There was no alert that required incident response during the reporting period.<br />
+We recommend that employees be alerted to suspicious emails and that they be informed about what to do if they click on a suspicious URL or attachment.
+    <p>
+  % else:
+    <p class="description">
+During the reporting period, there were ${userdata["conclusion"]["incident"]} alerts of FireEye HX that required incident response, however due to the process stoppage and the subsequent response  by FireEye HX, no suspicious communication was detected after the alert, so that It is considered the attacks have been prevented.<br />
+We recommend that employees be alerted to suspicious emails and that they be informed about what to do if they click on a suspicious URL or attachment.
+    <p>
+  % endif
+</%block>
+

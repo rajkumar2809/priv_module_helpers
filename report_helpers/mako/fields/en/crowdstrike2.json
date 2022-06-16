@@ -1,0 +1,89 @@
+{
+  "headers" : {
+    "title"       : "MDR for CrowdStrike Alert Report",
+    "summary"     : "1. Summary",
+    "detailinfo"  : "2. Alert Details",
+    "remediation" : "3. Recommended Actions",
+    "appendix"    : "Appendix: Detail of Alerts"
+  },
+  "_form" : {
+    "action" : "cs_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "process_info" : "Alert Process Details",
+    "ev_info_summary" : "Event Details",
+    "network_info" : "Communication destination information",
+    "process_detail_list" : "Process Details"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "process_info" : {
+    "src" : "process_info"
+  },
+  "summary_info" : [
+    { "name" : "Notification time(JST)", "src" : "alert_time" },
+    { "name" : "Alert ID",    "src" : "alert_id"   },
+    { "name" : "category",    "src" : "category"   },
+    { "name" : "severity",    "src" : "severity"   },
+    { "name" : "AV Action",   "src" : "blocked"    },
+    { "name" : "IP address",  "src" : "ipaddr"     },
+    { "name" : "hostname",    "src" : "hostname"   },
+    { "name" : "host group",  "src" : "host_group" },
+    { "name" : "host tags",   "src" : "host_tags"  },
+    { "name" : "OS",          "src" : "os"         },
+    { "name" : "user ID",     "src" : "username"   }
+  ],
+  "mltables" : {
+    "ev_info_summary" : {
+      "from"     : "event_info",
+      "datatype" : null,
+      "prefix"   : "event_info",
+      "fields"   : [
+        { "name" : "event time",   "src" : "alert_time" },
+        { "name" : "Process Name", "src" : "ps_name"    },
+        { "name" : "Alert Name",   "src" : "alert_name" },
+        { "name" : "category",     "src" : "category"   },
+        { "name" : "Prevent",      "src" : "is_blocked" }
+      ]
+    },
+    "network_info" : {
+      "from"     : "nw_info",
+      "datatype" : null,
+      "prefix"   : "edge_info",
+      "fields"   : [
+        { "name" : "IP Address",  "src" : "ipaddr" },
+        { "name" : "URL(Domain)", "src" : "dns"    }
+      ]
+    },
+    "process_detail_list" : {
+      "from"     : "process_detail_info",
+      "datatype" : null,
+      "prefix"   : "graph_info",
+      "fields"   : [
+        { "name" : "Process ID",      "src"  : "ps_rawid"   },
+        { "name" : "Process Name",    "src" : "ps_name"    },
+        { "name" : "Process Hash",    "src" : "ps_hash"    },
+        { "name" : "Process Stopped", "src" : "ps_end"     },
+        { "name" : "Command Line",    "src" : "ps_cmdline" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "Endpoint Isolation", "src" : "need_contain" },
+    { "name" : "target host",        "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "customer_name"   },
+    { "src" : "summary"         },
+    { "src" : "remediation"     },
+    { "src" : "with_eng"        }
+  ]
+}

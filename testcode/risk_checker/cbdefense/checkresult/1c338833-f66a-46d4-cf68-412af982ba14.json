@@ -1,0 +1,152 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "50.27.153.19", 
+            "location": "Lubbock,TX,United States", 
+            "port": 59084, 
+            "name": null
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6568-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "SUSPICIOUS_BEHAVIOR", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\tanikawa002", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\temp\\fps010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "baecc8d91e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\takuc\\bin\\temp\\fps010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm.exe:5344[C:\\TAKUC\\Bin\\TEMP\\FPS010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm.EXE]", 
+                        "occurred": [
+                            "2021/09/26 04:17:35"
+                        ], 
+                        "event_detail": {
+                            "pid": 5344, 
+                            "command_line": "C:\\TAKUC\\Bin\\TEMP\\FPS010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm.EXE", 
+                            "hash": "44fd166aff7d52bd88805d7ce6a046a52708d20bc5867342044240975c6a1619", 
+                            "name": "c:\\takuc\\bin\\temp\\fps010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm.exe", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "6568-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "SUSPICIOUS_BEHAVIOR"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "fps010.exe", 
+                    "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                    "command_line": "\"C:\\TAKUC\\Bin\\TakuC.exe\" N C:\\CANVAS\\BIN\\FPS010_\u8cc7\u91d1\u8a08\u753b\u30b7\u30df\u30e5\u30ec\u30fc\u30b7\u30e7\u30f3.xlsm", 
+                    "pid": 6568, 
+                    "parent_path": "c:\\canvas\\bin\\fps010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "fc18d7a15efbbe42e5af8d37f1c488c85590667e6b29719eb97db47cd0d48f79", 
+                    "path": "c:\\takuc\\bin\\takuc.exe", 
+                    "ppid": "6568-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10052
+                }
+            }, 
+            "message": "takuc.exe(6568):00001-10-000893:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "takuc.exe", 
+            "shell_type": 0
+        }, 
+        "7944-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_SERVER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\tanikawa002", 
+                        "ev_type": "NETWORK", 
+                        "description": "10.35.1.197:53118", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e0029c6d1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "10.35.1.197:53118<-(UDP:IN)-50.27.153.19:59084(None)[Lubbock,TX,United States]", 
+                        "occurred": [
+                            "2021/09/26 04:11:36"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.27.153.19", 
+                            "proto": "UDP", 
+                            "local_port": 53118, 
+                            "remote_port": 59084, 
+                            "local_ipv4": "10.35.1.197", 
+                            "remote_domain": null, 
+                            "is_inbound": true, 
+                            "remote_location": "Lubbock,TX,United States"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "7944-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9", 
+                    "command_line": "\"C:\\ADTool\\Bin\\iNotify.exe\" ", 
+                    "pid": 7944, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "536b73beda8c4d69e377d92e5995a77b6129345e03b70b1c61105c168c7a5e0b", 
+                    "path": "c:\\adtool\\bin\\inotify.exe", 
+                    "ppid": "7944-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 6744
+                }
+            }, 
+            "message": "inotify.exe(7944):00001-10-000803:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "inotify.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

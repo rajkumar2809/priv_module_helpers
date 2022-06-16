@@ -1,0 +1,610 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 21, 
+            "ip": "50.25.1.161", 
+            "location": "Elkins,WV,United States", 
+            "name": null
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9716-e7e531e769c1fec4966382c20cb45e48962a639d0d49d924c602f4d10b143775-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2fe90efb1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe:4032[\"C:\\PROGRA~2\\FUJIXE~1\\DOCUWO~1\\bin\\dwviewer.exe\" \"C:\\Users\\funatsu008\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\OAF9GL8Z\\1\u30b9\u30c1\u30fc\u30eb\u30b7\u30e7\u30c3\u30af\u30c0\u30a4\u30f3\u30b0\u30ec\u30fc\u30c9\u30a2\u30c3\u30d7\u30ad\u30e3\u30f3\u30da\u30fc\u30f3.xdw\"]", 
+                        "occurred": [
+                            "2021/09/26 04:20:19"
+                        ], 
+                        "event_detail": {
+                            "pid": 4032, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\PROGRA~2\\FUJIXE~1\\DOCUWO~1\\bin\\dwviewer.exe\" \"C:\\Users\\funatsu008\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\OAF9GL8Z\\1\u30b9\u30c1\u30fc\u30eb\u30b7\u30e7\u30c3\u30af\u30c0\u30a4\u30f3\u30b0\u30ec\u30fc\u30c9\u30a2\u30c3\u30d7\u30ad\u30e3\u30f3\u30da\u30fc\u30f3.xdw\"", 
+                            "name": "c:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe", 
+                            "hash": "ccd06b5bc574cb100fa0f57fbe6aa23a8eb87b1d0fe7b4fa06a2226ec34b1205"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9716-e7e531e769c1fec4966382c20cb45e48962a639d0d49d924c602f4d10b143775-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "e7e531e769c1fec4966382c20cb45e48962a639d0d49d924c602f4d10b143775", 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE\" ", 
+                    "pid": 9716, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "path": "c:\\program files (x86)\\microsoft office\\root\\office16\\outlook.exe", 
+                    "ppid": "9716-e7e531e769c1fec4966382c20cb45e48962a639d0d49d924c602f4d10b143775-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1036
+                }
+            }, 
+            "message": "outlook.exe(9716):[00001-10-000440:<Outlook Boot already installed application.>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "outlook.exe", 
+            "shell_type": 0
+        }, 
+        "11864-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "NON_STANDARD_PORT", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "NETWORK", 
+                        "description": "50.25.1.161:21(located in Elkins WV, United States)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "0bf6c9ba1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "50.25.24.52:49620-(TCP:OUT)->50.25.1.161:21(None)[Elkins,WV,United States]", 
+                        "occurred": [
+                            "2021/09/26 04:19:22"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.25.1.161", 
+                            "proto": "TCP", 
+                            "local_port": 49620, 
+                            "local_ipv4": "50.25.24.52", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Elkins,WV,United States", 
+                            "remote_port": 21
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "11864-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "\u7d39\u4ecb\u30ab\u30fc\u30c9.xls", 
+                    "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3", 
+                    "command_line": "C:\\CANVAS\\BIN\\V3Z020 REPLACE 208004 241475 \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0314_241475210926131900.XDW\" 0314", 
+                    "pid": 11864, 
+                    "parent_path": "c:\\users\\funatsu008\\appdata\\local\\microsoft\\windows\\inetcache\\content.outlook\\oaf9gl8z\\\u7d39\u4ecb\u30ab\u30fc\u30c9.xls", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d", 
+                    "path": "c:\\canvas\\bin\\v3z020.exe", 
+                    "ppid": "11864-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 2352
+                }
+            }, 
+            "message": "canvas_tmp_exe(11864):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "6240-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2b0bbfd61e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:13:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6240-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ckg000.exe", 
+                    "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                    "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N C:\\SABICS\\BIN\\CKG010.EXE", 
+                    "pid": 6240, 
+                    "parent_path": "c:\\sabics\\bin\\ckg000.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057", 
+                    "path": "c:\\takuc\\bin\\takuc.exe", 
+                    "ppid": "6240-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 11172
+                }
+            }, 
+            "message": "takuc.exe(6240):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "takuc.exe", 
+            "shell_type": 0
+        }, 
+        "8388-cbf388c3fa6123892e42a8793918b75f407e695c382adae0fb3d40f8f52ae860-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\v3a360.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f0753771e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:14:43"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8388-cbf388c3fa6123892e42a8793918b75f407e695c382adae0fb3d40f8f52ae860-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f0753641e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:14:18"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8388-cbf388c3fa6123892e42a8793918b75f407e695c382adae0fb3d40f8f52ae860-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ckg010.exe", 
+                    "hash": "cbf388c3fa6123892e42a8793918b75f407e695c382adae0fb3d40f8f52ae860", 
+                    "command_line": "C:\\CANVAS\\BIN\\V3A360.EXE 1", 
+                    "pid": 8388, 
+                    "parent_path": "c:\\sabics\\bin\\ckg010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "749d5a65fc557207c69eb0183d48daf716d545529e53cc1de2edb6a53d8491eb", 
+                    "path": "c:\\canvas\\bin\\v3a360.exe", 
+                    "ppid": "8388-cbf388c3fa6123892e42a8793918b75f407e695c382adae0fb3d40f8f52ae860-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 5352
+                }
+            }, 
+            "message": "canvas_tmp_exe(8388):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "11172-06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\sabics\\bin\\ckg000.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2b0bbfc91e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:13:03"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11172-06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2b0bbfc81e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:13:01"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11172-06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3zapp.exe", 
+                    "hash": "06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057", 
+                    "command_line": "\"C:\\SABICS\\BIN\\CKG000.exe\" 1 2 1", 
+                    "pid": 11172, 
+                    "parent_path": "c:\\canvas\\bin\\v3zapp.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "309a1ec1fa3fbd4ecdfb2301df0991e43137f4bb8a57fd4831ac343d7f780bd5", 
+                    "path": "c:\\sabics\\bin\\ckg000.exe", 
+                    "ppid": "11172-06c2399e79fd3c566e96c3a314b355f541395a0443c2aab8b1832fb2ac609057-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8364
+                }
+            }, 
+            "message": "sabics_tmp_exe(11172):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sabics_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "10420-f95bb500075f4c956beb4bfd1b82be13f7541f8ffbe580ae32a39d4da48ed6db-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07233e0c1e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:12:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10420-f95bb500075f4c956beb4bfd1b82be13f7541f8ffbe580ae32a39d4da48ed6db-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3z031.exe", 
+                    "hash": "f95bb500075f4c956beb4bfd1b82be13f7541f8ffbe580ae32a39d4da48ed6db", 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V4Z055.exe\" V3Z031", 
+                    "pid": 10420, 
+                    "parent_path": "c:\\canvas\\bin\\v3z031.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "COMPANY_WHITE_LIST", 
+                    "parent_hash": "ca2baa402f4bca7d02d551db156f5bc09134be43f09e3ccf8a6a969aa12245fc", 
+                    "path": "c:\\canvas\\bin\\v4z055.exe", 
+                    "ppid": "10420-f95bb500075f4c956beb4bfd1b82be13f7541f8ffbe580ae32a39d4da48ed6db-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 5232
+                }
+            }, 
+            "message": "canvas_tmp_exe(10420):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "2352-6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP", 
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\canvas\\bin\\v3z020.exe", 
+                        "event_count": 3, 
+                        "event_id": [
+                            "ab0a18c31e8211ec871fb75d4dae9b8a", 
+                            "358e69a81e8211ec871fb75d4dae9b8a", 
+                            "0bf6c9ae1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\canvas\\bin\\v3z020.exe:4232[C:\\CANVAS\\BIN\\V3Z020 REPLACE 208004 241475 \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0207_241475\u30cf\u30a6\u30b9(\u65b0\u898f\u5951\u7d04)_2021091130.XDW\" 0207]", 
+                        "occurred": [
+                            "2021/09/26 04:31:48", 
+                            "2021/09/26 04:27:58", 
+                            "2021/09/26 04:19:18"
+                        ], 
+                        "event_detail": {
+                            "pid": 4232, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "C:\\CANVAS\\BIN\\V3Z020 REPLACE 208004 241475 \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0207_241475\u30cf\u30a6\u30b9(\u65b0\u898f\u5951\u7d04)_2021091130.XDW\" 0207", 
+                            "name": "c:\\canvas\\bin\\v3z020.exe", 
+                            "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "2352-6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\takuc.exe", 
+                        "event_count": 4, 
+                        "event_id": [
+                            "ab0a18c21e8211ec871fb75d4dae9b8a", 
+                            "358e69a61e8211ec871fb75d4dae9b8a", 
+                            "0bf6c9ad1e8111ec871fb75d4dae9b8a", 
+                            "0bf6c9a61e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\takuc\\bin\\takuc.exe:5844[C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0207_241475\u30cf\u30a6\u30b9(\u65b0\u898f\u5951\u7d04)_2021091130.XDW\"]", 
+                        "occurred": [
+                            "2021/09/26 04:31:47", 
+                            "2021/09/26 04:27:57", 
+                            "2021/09/26 04:19:16", 
+                            "2021/09/26 04:19:14"
+                        ], 
+                        "event_detail": {
+                            "pid": 5844, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0207_241475\u30cf\u30a6\u30b9(\u65b0\u898f\u5951\u7d04)_2021091130.XDW\"", 
+                            "name": "c:\\takuc\\bin\\takuc.exe", 
+                            "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "2352-6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "outlook.exe", 
+                    "hash": "6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d", 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\funatsu008\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\OAF9GL8Z\\\u7d39\u4ecb\u30ab\u30fc\u30c9.xls\"", 
+                    "pid": 2352, 
+                    "parent_path": "c:\\program files (x86)\\microsoft office\\root\\office16\\outlook.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "e7e531e769c1fec4966382c20cb45e48962a639d0d49d924c602f4d10b143775", 
+                    "path": "c:\\users\\funatsu008\\appdata\\local\\microsoft\\windows\\inetcache\\content.outlook\\oaf9gl8z\\\u7d39\u4ecb\u30ab\u30fc\u30c9.xls", 
+                    "ppid": "2352-6a708a1b389de9b832e084db66880304510cdfb844e2fd8d80fe00c9fa0af62d-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9716
+                }
+            }, 
+            "message": "excel(2352):[00001-10-000838:<customer tool>||00001-10-000838:<customer tool>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "9064-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0": {
+            "details": {
+                "indicators": [
+                    "SUSPICIOUS_BEHAVIOR", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\funatsu008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\temp\\ckg010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "ab0a18971e8211ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\takuc\\bin\\temp\\ckg010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb.exe:1232[C:\\TAKUC\\Bin\\TEMP\\CKG010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb.EXE]", 
+                        "occurred": [
+                            "2021/09/26 04:31:11"
+                        ], 
+                        "event_detail": {
+                            "pid": 1232, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "C:\\TAKUC\\Bin\\TEMP\\CKG010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb.EXE", 
+                            "name": "c:\\takuc\\bin\\temp\\ckg010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb.exe", 
+                            "hash": "cd9355423e41ab02246eebb676201a6f626d23f94da898eb20f17d44076ffbbf"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9064-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "SUSPICIOUS_BEHAVIOR"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ckg010.exe", 
+                    "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                    "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N C:\\SABICS\\BIN\\CKG010_\u5951\u7d04\u627f\u8a8d\u66f8\u517c\u5951\u7d04\u66f8\u4f5c\u6210\u4f9d\u983c\u66f8_\u8acb\u8ca0.xlsb", 
+                    "pid": 9064, 
+                    "parent_path": "c:\\sabics\\bin\\ckg010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "749d5a65fc557207c69eb0183d48daf716d545529e53cc1de2edb6a53d8491eb", 
+                    "path": "c:\\takuc\\bin\\takuc.exe", 
+                    "ppid": "9064-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 5352
+                }
+            }, 
+            "message": "takuc.exe(9064):00001-10-000893:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "takuc.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

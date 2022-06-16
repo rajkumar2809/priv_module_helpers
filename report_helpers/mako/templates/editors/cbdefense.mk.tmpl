@@ -1,0 +1,66 @@
+#coding:utf-8
+
+## helix_squid.mk.tmpl Squid解析レポートエディタ
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="2"><h2>${headers["detailinfo"]}</h2></td></tr>
+  </table>
+  ${ func.verticaltable(cause_event, section="cause_event") }
+  % if processinfo:
+    <br />
+    <p class="subsection">${ subheaders["processinfo"] }</p>
+    <table>
+      <tr>
+        % for each in processinfo[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in processinfo:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${value["content"]}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+
+  % if detected_malware_summary:
+    <br />
+    <p class="subsection">${ subheaders["detected_malware_summary"] }</p>
+    <table>
+      <tr>
+        % for each in detected_malware_summary[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in detected_malware_summary:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${value["content"]}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  %endif
+  ${ func.lateraltable(outbound, section="outbound") }
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+  % if nw_contain:
+    <br />
+    ${ func.lateraltable(nw_contain) }
+  % endif
+</%block>

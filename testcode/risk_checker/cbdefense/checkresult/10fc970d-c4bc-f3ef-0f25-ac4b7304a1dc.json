@@ -1,0 +1,229 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "ENUMERATE_PROCESSES", 
+                    "NETWORK_ACCESS", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "UNKNOWN_APP", 
+                    "MONITOR_USER_INPUT", 
+                    "NON_STANDARD_PORT", 
+                    "ACTIVE_CLIENT", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sumi008", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "19dd15431e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:44:15"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\sumi008", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "19dd15411e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 03:44:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "SetWindowsHookEx", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\sumi008", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3b960.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "19dd153e1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:44:08"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\sumi008", 
+                        "ev_type": "NETWORK", 
+                        "description": "30.12.9.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "19dd15271e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None:None-(None:OUT)->None:None(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:44:03"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": null, 
+                            "local_port": null, 
+                            "proto": null, 
+                            "local_ipv4": null, 
+                            "is_inbound": null, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "hash": "1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8", 
+                    "pid": 14500, 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3B960.EXE\" ", 
+                    "parent_path": "d:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "d:\\canvas\\bin\\v3b960.exe", 
+                    "ppid": "14500-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7684
+                }
+            }, 
+            "message": "canvas_tmp_exe(14500):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "3460-98155a0237de9ebfdab6515003e0cc50ffd1b516a2a4d7b803ecb2666885ca47-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\sumi008", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "62086d5e1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:45:58"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3460-98155a0237de9ebfdab6515003e0cc50ffd1b516a2a4d7b803ecb2666885ca47-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "98155a0237de9ebfdab6515003e0cc50ffd1b516a2a4d7b803ecb2666885ca47", 
+                    "pid": 3460, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" /automation -Embedding", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\program files (x86)\\microsoft office\\updates\\download\\packagefiles\\efd31db0-1767-4d30-b61e-ece02b8c99fc\\root\\office16\\excel.exe", 
+                    "ppid": "3460-98155a0237de9ebfdab6515003e0cc50ffd1b516a2a4d7b803ecb2666885ca47-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1088
+                }
+            }, 
+            "message": "excel.exe(3460):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

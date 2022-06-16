@@ -1,0 +1,479 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "4152-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "4152-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                        "description": "FindFirstFile(find \"c:\\windows\\assembly\\gac_32\\mscorlib\\2.0.0.0__b77a5c561934e089\\mscorlib.INI\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:36:00"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "557fa3c21e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "4152-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                        "description": "FindFirstFile(find \"c:\\Windows\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:35:59"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "557fa3c11e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "parent_pid": 7324, 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy RemoteSigned -Command Get-EventLog -LogName Application -Source MsiInstaller -EntryType Information -After 2020/05/01 | ?{ $_.EventID -eq \"1040\"} | Select-Object TimeWritten,Message | Export-CSV -NoTypeInformation -Encoding Default \"C:\\Users\\PB003ZJF\\AppData\\Local\\Temp\\eventlog.csv\"", 
+                    "pid": 4152, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "hash": "6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "4152-6c05e11399b7e3c8ed31bae72014cf249c144a8f4a2c54a758eb2e6fad47aec7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(4152):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "7620-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "7620-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 6, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:6436[REG  ADD \"HKCU\\Software\\VB and VBA Program Settings\\DATABASE\\ZENSHA\" /v PASSWORD /t REG_SZ /d ZENSHA /f]", 
+                        "occurred": [
+                            "2021/09/26 04:35:50", 
+                            "2021/09/26 04:35:50", 
+                            "2021/09/26 04:35:50", 
+                            "2021/09/26 04:35:50", 
+                            "2021/09/26 04:35:50", 
+                            "2021/09/26 04:35:50"
+                        ], 
+                        "event_detail": {
+                            "command_line": "REG  ADD \"HKCU\\Software\\VB and VBA Program Settings\\DATABASE\\ZENSHA\" /v PASSWORD /t REG_SZ /d ZENSHA /f", 
+                            "pid": 6436, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "36414c7e57afa6136d77fd47f4c55102e35f2475fbcd719728da7d14b1590e2a", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "55747fcf1e8311ec871fb75d4dae9b8a", 
+                            "55747fce1e8311ec871fb75d4dae9b8a", 
+                            "55747fcd1e8311ec871fb75d4dae9b8a", 
+                            "55747fcb1e8311ec871fb75d4dae9b8a", 
+                            "55747fc91e8311ec871fb75d4dae9b8a", 
+                            "55747fc71e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "eproad.tool.distribution.distributionclient.exe", 
+                    "parent_pid": 4128, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"D:\\Sekisui\\SFCISv3\\Client\\AplStart.cmd\" \"D:\\Sekisui\\SFCISv3\\Client\"\"", 
+                    "pid": 7620, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\receive\\eproad.tool.distribution.distributionclient.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d558e265e46fc147d4c7d771a4c109390febe817586dd37aab3c6ebcfec05321", 
+                    "hash": "f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\aplstart.cmd", 
+                    "ppid": "7620-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(7620):00001-10-000861:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "7328-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "7328-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:36:48"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "79aa858b1e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sekiwafudousan.chintai.as83121.exe", 
+                    "parent_pid": 2808, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\agencyMenu\\Sekiwafudousan.Agency.ASE3123.exe\" M057 MTQyLDE0MjAwMCznqY3msLTjg4/jgqbjgrnkuI3li5XnlKPplqLopb/moKrlvI/kvJrnpL4sMzMwNDUwLOWkp+S5heS/neWWtualreaJgCwzLEFBMTQ2MCwwMEFBMTQ2MCzmnKvmsLjjgIDku4Hlv5csQzAwMDA1Nyw0NSwyMDIxMDksMjAyMTA5MjYsOTAuNTMuNTMuNjYsUDEzMTItNTAsMjAyMTA5MjYxMzM2NDMxMDcsMSwwM++8mk0wNTfvvJrku7Lku4vjgrfjgrnjg4bjg6AsICwxNDIwMDAsMDMsMTQyLDE0MjAwMCwgLDA=", 
+                    "pid": 7328, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\login\\sekiwafudousan.chintai.as83121.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed", 
+                    "hash": "42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\agencymenu\\sekiwafudousan.agency.ase3123.exe", 
+                    "ppid": "7328-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.agency.ase3123.exe(7328):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.agency.ase3123.exe", 
+            "shell_type": 0
+        }, 
+        "6992-7e58bbe22db242130d8dd0fe3623fa1eaf0195290b2899fc23c9662c7543ea48-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "6992-7e58bbe22db242130d8dd0fe3623fa1eaf0195290b2899fc23c9662c7543ea48-0", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:3520[C:\\Windows\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\11.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"]", 
+                        "occurred": [
+                            "2021/09/26 04:36:12"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\Windows\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\11.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"", 
+                            "pid": 3520, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "557fa3eb1e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "parent_pid": 7324, 
+                    "command_line": "cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat", 
+                    "pid": 6992, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "hash": "7e58bbe22db242130d8dd0fe3623fa1eaf0195290b2899fc23c9662c7543ea48", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\apl\\odpver.bat", 
+                    "ppid": "6992-7e58bbe22db242130d8dd0fe3623fa1eaf0195290b2899fc23c9662c7543ea48-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(6992):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "7144-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "7144-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:36:51"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "79aa85981e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sekiwafudousan.agency.ase3123.exe", 
+                    "parent_pid": 7328, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\agency\\Sekiwafudousan.Chintai.Relay.exe\" MTQyLDE0MjAwMCznqY3msLTjg4/jgqbjgrnkuI3li5XnlKPplqLopb/moKrlvI/kvJrnpL4sMzMwNDUwLOWkp+S5heS/neWWtualreaJgCwzLEFBMTQ2MCwwMEFBMTQ2MCzmnKvmsLjjgIDku4Hlv5csQzAwMDA1Nyw0NSwyMDIxMDksMjAyMTA5MjYsOTAuNTMuNTMuNjYsUDEzMTItNTAsMjAyMTA5MjYxMzM2NDMxMDcsMSwwMCwgLDE0MjAwMCwwMywxNDIsMTQyMDAwLCAsMA== ASA100100", 
+                    "pid": 7144, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\agencymenu\\sekiwafudousan.agency.ase3123.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07", 
+                    "hash": "df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\agency\\sekiwafudousan.chintai.relay.exe", 
+                    "ppid": "7144-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.chintai.relay.exe(7144):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.chintai.relay.exe", 
+            "shell_type": 0
+        }, 
+        "2808-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "2808-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:35:59"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "557f7ca81e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "parent_pid": 7620, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\login\\Sekiwafudousan.Chintai.AS83121.exe\"  \"D:\\Sekisui\\SFCISv3\\Client\"", 
+                    "pid": 2808, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                    "hash": "b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\login\\sekiwafudousan.chintai.as83121.exe", 
+                    "ppid": "2808-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.chintai.as83121.exe(2808):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.chintai.as83121.exe", 
+            "shell_type": 0
+        }, 
+        "7324-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\suenaga0013", 
+                        "ppid": "7324-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:6992[cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat]", 
+                        "occurred": [
+                            "2021/09/26 04:36:12", 
+                            "2021/09/26 04:36:06"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat", 
+                            "pid": 6992, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "557fa3e81e8311ec871fb75d4dae9b8a", 
+                            "557fa3cb1e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "aplstart.cmd", 
+                    "parent_pid": 7620, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\APL\\SoftColl.exe\" ", 
+                    "pid": 7324, 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\aplstart.cmd", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e", 
+                    "hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "ppid": "7324-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "softcoll.exe(7324):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "softcoll.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

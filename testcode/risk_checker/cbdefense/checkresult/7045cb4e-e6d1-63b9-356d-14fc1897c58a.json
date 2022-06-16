@@ -1,0 +1,177 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "52.109.44.44", 
+            "port": 443, 
+            "name": null, 
+            "location": "Seoul,11,Korea, Republic of"
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "15464-44a6d65442c80b5db26742ff1f2a2a2363177f232917b714947b5cc520a4b5a7-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "OPTEXGROUP\\g-nakajima", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files\\windows nt\\accessories\\wordpad.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "3343b6121d9911ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:39:42"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "15464-44a6d65442c80b5db26742ff1f2a2a2363177f232917b714947b5cc520a4b5a7-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "msoxmled.exe", 
+                    "parent_pid": 9056, 
+                    "pid": 15464, 
+                    "command_line": "\"C:\\Program Files\\Windows NT\\Accessories\\WORDPAD.EXE\" \"C:\\Users\\g-nakajima\\AppData\\Local\\Temp\\error096160_01.xml\"", 
+                    "parent_path": "c:\\program files\\microsoft office\\root\\vfs\\programfilescommonx64\\microsoft shared\\office16\\msoxmled.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "f161852987e4f53ad57d02e3a2d302ec7f9ea20d20dc356bf3a86363cfcaca63", 
+                    "path": "c:\\program files\\windows nt\\accessories\\wordpad.exe", 
+                    "ppid": "15464-44a6d65442c80b5db26742ff1f2a2a2363177f232917b714947b5cc520a4b5a7-0", 
+                    "parent_command_line": null, 
+                    "hash": "44a6d65442c80b5db26742ff1f2a2a2363177f232917b714947b5cc520a4b5a7"
+                }
+            }, 
+            "message": "wordpad.exe(15464):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "wordpad.exe", 
+            "shell_type": 0
+        }, 
+        "9616-738371ad73f514664bf9cb887be3cd320003f7eca41be724cadcfca705a5f04d-0": {
+            "details": {
+                "indicators": [
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "RUN_ANOTHER_APP", 
+                    "NETWORK_ACCESS", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "OPTEXGROUP\\g-nakajima", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files\\microsoft office\\root\\vfs\\programfilescommonx64\\microsoft shared\\office16\\msoxmled.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "0e6ed9c71d9911ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files\\microsoft office\\root\\vfs\\programfilescommonx64\\microsoft shared\\office16\\msoxmled.exe:9056[\"C:\\Program Files\\Microsoft Office\\root\\vfs\\ProgramFilesCommonX64\\Microsoft Shared\\OFFICE16\\MSOXMLED.EXE\" /verb open \"C:\\Users\\G-NAKA~1\\AppData\\Local\\Temp\\error096160_01.xml\"]", 
+                        "occurred": [
+                            "2021/09/25 00:39:33"
+                        ], 
+                        "event_detail": {
+                            "pid": 9056, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files\\Microsoft Office\\root\\vfs\\ProgramFilesCommonX64\\Microsoft Shared\\OFFICE16\\MSOXMLED.EXE\" /verb open \"C:\\Users\\G-NAKA~1\\AppData\\Local\\Temp\\error096160_01.xml\"", 
+                            "name": "c:\\program files\\microsoft office\\root\\vfs\\programfilescommonx64\\microsoft shared\\office16\\msoxmled.exe", 
+                            "hash": "f161852987e4f53ad57d02e3a2d302ec7f9ea20d20dc356bf3a86363cfcaca63"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9616-738371ad73f514664bf9cb887be3cd320003f7eca41be724cadcfca705a5f04d-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "OPTEXGROUP\\g-nakajima", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.44.44:443(located in Seoul 11, Korea, Republic of)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "3343b6191d9911ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "172.16.252.230:54770-(TCP:OUT)->52.109.44.44:443(None)[Seoul,11,Korea, Republic of]", 
+                        "occurred": [
+                            "2021/09/25 00:39:52"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.44.44", 
+                            "remote_port": 443, 
+                            "proto": "TCP", 
+                            "local_ipv4": "172.16.252.230", 
+                            "is_inbound": false, 
+                            "local_port": 54770, 
+                            "remote_domain": null, 
+                            "remote_location": "Seoul,11,Korea, Republic of"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "9616-738371ad73f514664bf9cb887be3cd320003f7eca41be724cadcfca705a5f04d-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 9952, 
+                    "pid": 9616, 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\g-nakajima\\Desktop\\\u4ed5\u5165\u5148\u4e0d\u5177\u5408\u5831\u544a\u30ea\u30b9\u30c8.xlsx\"", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "COMPANY_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "c:\\users\\g-nakajima\\desktop\\\u4ed5\u5165\u5148\u4e0d\u5177\u5408\u5831\u544a\u30ea\u30b9\u30c8.xlsx", 
+                    "ppid": "9616-738371ad73f514664bf9cb887be3cd320003f7eca41be724cadcfca705a5f04d-0", 
+                    "parent_command_line": null, 
+                    "hash": "738371ad73f514664bf9cb887be3cd320003f7eca41be724cadcfca705a5f04d"
+                }
+            }, 
+            "message": "excel(9616):[00001-10-000532:<Office Tool boot from excel.>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "OPT1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

@@ -1,0 +1,72 @@
+{
+  "headers" : {
+    "title"       : "Paloalto アラート解析一次レポート",
+    "company"     : "株式会社デジタルハーツ",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 通信詳細",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "helix4pa_mssreport_html_data_view"
+  },
+  "subheaders" : {
+    "detail_network" : "通信詳細",
+    "emerg_block" : "緊急対応の要否"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "summary_info" : [
+    { "name" : "アラートID",     "src" : "alert_id"     },
+    { "name" : "発生日時",       "src" : "createdtime"  },
+    { "name" : "危険度",         "src" : "severity"     },
+    { "name" : "キルチェーン",   "src" : "killchain_ja" },
+    { "name" : "カテゴリ",       "src" : "category"     },
+    { "name" : "アラートタイプ", "src" : "alert_desc"   },
+    { "name" : "アクション",     "src" : "action"       }
+  ],
+  "detail_network" : [
+    { "name" : "ドメイン",     "src" : "domain"      },
+    { "name" : "サービス",     "src" : "service"     },
+    { "name" : "プロトコル",   "src" : "proto_wport" },
+    { "name" : "方向性",       "src" : "direction"   },
+    { "name" : "対象ルール",   "src" : "rule"        }
+  ],
+  "emerg_block" : [
+    { "name" : "要否",       "src" : "need_action" },
+    { "name" : "対象ゾーン", "src" : "src_zone", "post" : false },
+    { "name" : "ソースIP",   "src" : "src_ipv4", "post" : false },
+    { "name" : "宛先IP",     "src" : "dst_ipv4", "post" : false }
+  ],
+  "matrix_tables" : {
+    "forward_detail" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : null,
+      "headers"  : [
+        { "name" : "項目",   "prefix" : null,  "row_header" : true  },
+        { "name" : "ソース", "prefix" : "src", "row_header" : false },
+        { "name" : "宛先", "prefix"   : "dst", "row_header" : false }
+      ],
+      "fields"   : [
+        { "name" : "ゾーン",  "src" : "zone"    },
+        { "name" : "IP",      "src" : "ipv4"    },
+        { "name" : "国家",    "src" : "country" },
+        { "name" : ":ポート", "src" : "port"    }
+      ]
+    }
+  },
+  "hidden_fields" : [
+    { "src" : "summary_en"     },
+    { "src" : "remediation_en" },
+    { "src" : "killchain"      },
+    { "src" : "with_eng"       },
+    { "src" : "report_type"    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+    "alerted_process": [
+        "explorer.exe"
+    ], 
+    "incident_id": "0CA945E9", 
+    "threat_cause_actor_name": "explorer.exe", 
+    "threat_cause_vector": "UNKNOWN", 
+    "attack_phase": [
+        "INSTALL_RUN"
+    ], 
+    "threat_cause_reputation": "TRUSTED_WHITE_LIST", 
+    "threat_cause_event_id": "b0c67ab1e37811eb8cd09383a70544f7", 
+    "occurred": 1626106907, 
+    "summary": " nc.exe on the Company Black List was detected running. A Deny Policy Action was applied.", 
+    "threat_cause_event_detail": {
+        "incident_id": "0CA945E9", 
+        "process": {
+            "processId": 3768, 
+            "milisSinceProcessStart": 0, 
+            "interpreterName": null, 
+            "parentName": "c:\\windows\\system32\\userinit.exe", 
+            "parentCommandLine": null, 
+            "targetCommandLine": null, 
+            "targetName": "c:\\users\\testadmin\\desktop\\nc.exe", 
+            "name": "c:\\windows\\explorer.exe", 
+            "parentPid": 5000, 
+            "commandLine": "C:\\WINDOWS\\Explorer.EXE", 
+            "targetPid": null, 
+            "fullUserName": "DESKTOP-LLVAM1D\\testadmin"
+        }, 
+        "alert_type": "THREAT", 
+        "event_create_time": "2021/07/13 10:21:58", 
+        "description": "C:\\users\\testadmin\\desktop\\nc.exe", 
+        "target_app": {
+            "applicationName": "nc.exe", 
+            "virusSubCategory": null, 
+            "reputationProperty": "COMPANY_BLACK_LIST", 
+            "virusCategory": null, 
+            "sha256Hash": "7379c5f5989be9b790d071481ee4fdfaeeb0dc7c4566cad8363cb016acc8145e", 
+            "applicationPath": "c:\\users\\testadmin\\desktop\\nc.exe", 
+            "hasSignature": null, 
+            "virusName": null, 
+            "effectiveReputationSource": "HASH_REP"
+        }, 
+        "event_id": "b0c67ab1e37811eb8cd09383a70544f7", 
+        "eventtype": "CREATE_PROCESS", 
+        "event_info": {
+            "file_action": {
+                "filemod_publisher_state": null, 
+                "filemod_name": null, 
+                "filemod_action": null, 
+                "filemod_reputation": null, 
+                "file_scan_result": null, 
+                "filemod_hash": null
+            }, 
+            "nw_action": {
+                "local_port": null, 
+                "remote_ipv4": null, 
+                "proto": null, 
+                "remote_port": null, 
+                "remote_domain": null, 
+                "is_inbound": null, 
+                "remote_location": null, 
+                "local_ipv4": null
+            }, 
+            "reg_action": {
+                "reg_name": null, 
+                "reg_action": null
+            }, 
+            "api_action": {
+                "api_name": null, 
+                "api_target": null, 
+                "api_action": null
+            }
+        }, 
+        "select_app": {
+            "applicationName": "explorer.exe", 
+            "virusSubCategory": null, 
+            "reputationProperty": "TRUSTED_WHITE_LIST", 
+            "virusCategory": null, 
+            "sha256Hash": "ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1", 
+            "applicationPath": "c:\\windows\\explorer.exe", 
+            "hasSignature": null, 
+            "virusName": null, 
+            "effectiveReputationSource": "CLOUD"
+        }, 
+        "parent_app": {
+            "applicationName": "userinit.exe", 
+            "virusSubCategory": null, 
+            "reputationProperty": "TRUSTED_WHITE_LIST", 
+            "virusCategory": null, 
+            "sha256Hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+            "applicationPath": "c:\\windows\\system32\\userinit.exe", 
+            "hasSignature": null, 
+            "virusName": null, 
+            "effectiveReputationSource": "APPROVED_DATABASE"
+        }, 
+        "attack_phase": [
+            "INSTALL_RUN"
+        ], 
+        "score": 0, 
+        "raw_eventtype": "childproc", 
+        "time": "2021/07/13 01:20:59", 
+        "device": {
+            "policyId": 40207, 
+            "deviceName": "desktop-llvam1d", 
+            "deviceVersion": "Windows 10 x64", 
+            "deviceType": "WINDOWS", 
+            "targetPriorityType": "MEDIUM", 
+            "policyName": "standard", 
+            "deviceHostName": "desktop-llvam1d", 
+            "deviceIpAddress": "192.168.129.111", 
+            "email": "testadmin", 
+            "deviceId": 38331299
+        }, 
+        "netflow": {
+            "event_network_inbound": null, 
+            "peerFqdn": null, 
+            "service": null, 
+            "destAddress": null, 
+            "sourcePort": null, 
+            "sourceAddress": null, 
+            "peerSiteReputation": null, 
+            "peerIpAddress": null, 
+            "peerLocation": null, 
+            "destPort": null
+        }, 
+        "categories": [
+            "RUN_BLACKLIST_APP", 
+            "POLICY_DENY"
+        ]
+    }, 
+    "score": 4, 
+    "malicious_activity": [
+        {
+            "process_name": "explorer.exe", 
+            "sha256": "ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1", 
+            "ttps": [
+                "POLICY_DENY", 
+                "RUN_BLACKLIST_APP"
+            ]
+        }
+    ], 
+    "network_access": [], 
+    "threat_cause_category": "NON_MALWARE", 
+    "threat_cause_actor_sha256": "ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1", 
+    "malware_info": [
+        {
+            "applicationName": "nc.exe", 
+            "virusSubCategory": null, 
+            "reputationProperty": "COMPANY_BLACK_LIST", 
+            "virusCategory": null, 
+            "sha256Hash": "7379c5f5989be9b790d071481ee4fdfaeeb0dc7c4566cad8363cb016acc8145e", 
+            "applicationPath": "c:\\users\\testadmin\\desktop\\nc.exe", 
+            "hasSignature": null, 
+            "virusName": null, 
+            "effectiveReputationSource": "HASH_REP"
+        }, 
+        {
+            "applicationName": null, 
+            "virusSubCategory": null, 
+            "reputationProperty": "PUP", 
+            "virusCategory": null, 
+            "sha256Hash": "7379c5f5989be9b790d071481ee4fdfaeeb0dc7c4566cad8363cb016acc8145e", 
+            "applicationPath": null, 
+            "hasSignature": null, 
+            "virusName": null, 
+            "effectiveReputationSource": "HASH_REP"
+        }
+    ], 
+    "category": "THREAT", 
+    "events": [
+        {
+            "attack_phase": "INSTALL_RUN", 
+            "description": "C:\\users\\testadmin\\desktop\\nc.exe", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1", 
+                "name": "explorer.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "path": "c:\\windows\\explorer.exe", 
+                "ppid": "3768-ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1-0", 
+                "pid": 3768, 
+                "command_line": "C:\\WINDOWS\\Explorer.EXE", 
+                "reputation_effective_source": "CLOUD", 
+                "user": "DESKTOP-LLVAM1D\\testadmin"
+            }, 
+            "event_summary": "c:\\users\\testadmin\\desktop\\nc.exe:None[None]", 
+            "occurred": "2021/07/13 01:20:59", 
+            "event_detail": {
+                "command_line": null, 
+                "pid": null, 
+                "name": "c:\\users\\testadmin\\desktop\\nc.exe"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "CREATE_PROCESS", 
+            "categories": [
+                "RUN_BLACKLIST_APP", 
+                "POLICY_DENY"
+            ], 
+            "runuser": "DESKTOP-LLVAM1D\\testadmin", 
+            "network": {}, 
+            "event_id": "b0c67ab1e37811eb8cd09383a70544f7", 
+            "parent_process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+                "name": "explorer.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "path": "c:\\windows\\system32\\userinit.exe", 
+                "ppid": "5000-eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740-0", 
+                "pid": 5000, 
+                "command_line": null, 
+                "reputation_effective_source": "APPROVED_DATABASE", 
+                "user": null
+            }, 
+            "raw_ev_type": "childproc"
+        }, 
+        {
+            "attack_phase": "", 
+            "description": "was prevented from accessing the file \"C:\\users\\testadmin\\desktop\\nc.exe\"", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1", 
+                "name": "explorer.exe", 
+                "reputation_effective": null, 
+                "path": "c:\\windows\\explorer.exe", 
+                "ppid": "3768-ef8f1572b02157ee8d4d16903c963de0d026fc1a1c565bfa6448ddc9cb0a8da1-0", 
+                "pid": 3768, 
+                "command_line": "C:\\WINDOWS\\Explorer.EXE", 
+                "reputation_effective_source": null, 
+                "user": "DESKTOP-LLVAM1D\\testadmin"
+            }, 
+            "event_summary": "None:None[None]", 
+            "occurred": "2021/07/13 01:20:48", 
+            "event_detail": {
+                "command_line": null, 
+                "pid": null, 
+                "name": null
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "POLICY_ACTION", 
+            "categories": [
+                "POLICY_DENY"
+            ], 
+            "runuser": "DESKTOP-LLVAM1D\\testadmin", 
+            "network": {}, 
+            "event_id": "b0c67a99e37811eb8cd09383a70544f7", 
+            "parent_process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+                "name": "explorer.exe", 
+                "reputation_effective": null, 
+                "path": "c:\\windows\\system32\\userinit.exe", 
+                "ppid": "5000-eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740-0", 
+                "pid": 5000, 
+                "command_line": null, 
+                "reputation_effective_source": null, 
+                "user": null
+            }, 
+            "raw_ev_type": "childproc"
+        }
+    ], 
+    "categories": [
+        "POLICY_DENY", 
+        "RUN_BLACKLIST_APP"
+    ]
+}

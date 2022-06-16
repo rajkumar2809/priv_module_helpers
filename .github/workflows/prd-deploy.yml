@@ -1,0 +1,56 @@
+name: "EC2 PRD CD"
+
+on:
+  push:
+    branches: [main]
+
+env:
+  BRANCH_NAME: main
+  AWS_REGION: ap-northeast-1
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    environment: prd
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Public IP Install
+        id: ip
+        uses: haythem/public-ip@v1.2
+
+      - name: AWS CLI install
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install --update
+          aws --version
+
+      - name: AWS set Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_PRD }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PRD }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Deploy
+        run: |
+          aws ec2 authorize-security-group-ingress --group-id ${{ secrets.EC2_SECURITY_GROUP_ID_PRD }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32 --region ${{ env.AWS_REGION }}
+          echo "${{ secrets.GIT_PRIVATE_KEY_PRD }}" > github_key
+          chmod 400 github_key
+          ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME_PRD }}@${{ secrets.EC2_HOST_NAME_PRD }} -i github_key "cd /opt/python_private_modules/priv_module_helpers && git fetch --prune && git checkout ${{ env.BRANCH_NAME }} && git pull origin ${{ env.BRANCH_NAME }}"
+          aws ec2 revoke-security-group-ingress --group-id ${{ secrets.EC2_SECURITY_GROUP_ID_PRD }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32 --region ${{ env.AWS_REGION }}
+
+      #- uses: act10ns/slack@v1
+      #  with:
+      #    status: ${{ job.status }}
+      #    steps: ${{ toJson(steps) }}
+      #  env:
+      #    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #  if: always()

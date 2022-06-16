@@ -1,0 +1,834 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8816-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "8816-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0db1e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:17"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "8816-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0d31e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:16"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "setup.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"", 
+                    "pid": 8816, 
+                    "parent_path": "c:\\support\\sac_32_ja\\setup.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4574924964e7d584111a4c7acdb61ef19799527e7d5e102beb29f118de9dcede", 
+                    "parent_pid": 6344, 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "8816-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(8816):00001-10-000503:<powershell show appxpackage>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "6100-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6100-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "052a2ec51e7511ecbe5f0b485d60d2e2"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 02:53:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k wusvcs -p -s WaaSMedicSvc", 
+                    "pid": 6100, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "parent_pid": 816, 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "6100-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "svchost.exe(6100):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "10524-103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "10524-103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1-0", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0d51e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:17"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "powershell.exe", 
+                    "hash": "103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1", 
+                    "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                    "pid": 10524, 
+                    "parent_path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "parent_pid": 8816, 
+                    "path": "c:\\windows\\system32\\conhost.exe", 
+                    "ppid": "10524-103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "conhost.exe(10524):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "conhost.exe", 
+            "shell_type": 0
+        }, 
+        "2104-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "INJECT_CODE", 
+                    "RUN_SYSTEM_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "2104-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                        "description": "C:\\windows\\syswow64\\schtasks.exe", 
+                        "event_count": 4, 
+                        "event_id": [
+                            "4b3712b11e7511ecb967579b05c7c1eb", 
+                            "bac673271e7411eca37edf7fd4a3675a", 
+                            "bac673261e7411eca37edf7fd4a3675a", 
+                            "bac673091e7411eca37edf7fd4a3675a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\schtasks.exe:3236[\"schtasks.exe\" /delete /f /tn \"Microsoft\\Office\\Office 15 Subscription Heartbeat\"]", 
+                        "occurred": [
+                            "2021/09/26 02:55:40", 
+                            "2021/09/26 02:51:46", 
+                            "2021/09/26 02:51:46", 
+                            "2021/09/26 02:51:06"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"schtasks.exe\" /delete /f /tn \"Microsoft\\Office\\Office 15 Subscription Heartbeat\"", 
+                            "pid": 3236, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "9a121acf7686d2883e524332111d5e4bcc0c1a8e81136486fba4ca65ca614407", 
+                            "name": "c:\\windows\\syswow64\\schtasks.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "2104-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bac6731d1e7411eca37edf7fd4a3675a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 02:51:21"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "485d1a.msi", 
+                    "hash": "3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7", 
+                    "command_line": "C:\\Windows\\syswow64\\MsiExec.exe -Embedding C41436E049DE884A07362FB7BBE35B41 E Global\\MSI0000", 
+                    "pid": 2104, 
+                    "parent_path": "c:\\windows\\installer\\485d1a.msi", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "e1736bc598069465337ab6c92b1b2358bfdda9914cf81a0e68e3ad2057c6367e", 
+                    "parent_pid": 17780, 
+                    "path": "c:\\windows\\syswow64\\msiexec.exe", 
+                    "ppid": "2104-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "msiexec.exe(2104):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "msiexec.exe", 
+            "shell_type": 0
+        }, 
+        "6588-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS", 
+                    "HAS_SCRIPT_DLL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\NETWORK SERVICE", 
+                        "ppid": "6588-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "019201231e7711ecafce9379ab23d8be"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:18"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "HAS_SCRIPT_DLL", 
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3", 
+                    "command_line": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe -secured -Embedding", 
+                    "pid": 6588, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 960, 
+                    "path": "c:\\windows\\system32\\wbem\\wmiprvse.exe", 
+                    "ppid": "6588-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "wmiprvse.exe(6588):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "wmiprvse.exe", 
+            "shell_type": 0
+        }, 
+        "836-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "836-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "019201251e7711ecafce9379ab23d8be"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:19"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "wininit.exe", 
+                    "hash": "362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427", 
+                    "command_line": "C:\\WINDOWS\\system32\\lsass.exe", 
+                    "pid": 836, 
+                    "parent_path": "c:\\windows\\system32\\wininit.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "24a0e0ace66aeb97d101df232a571368c4068d9b46b9d3e9c22f8c10d0be7dc4", 
+                    "parent_pid": 768, 
+                    "path": "c:\\windows\\system32\\lsass.exe", 
+                    "ppid": "836-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "lsass.exe(836):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "lsass.exe", 
+            "shell_type": 0
+        }, 
+        "11248-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "BYPASS_POLICY", 
+                    "INJECT_CODE", 
+                    "CODE_DROP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11248-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0a61e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:04"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11248-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\users\\c8044310\\appdata\\local\\temp\\__psscriptpolicytest_dlgodz1w.xwr.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0df1e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\c8044310\\appdata\\local\\temp\\__psscriptpolicytest_dlgodz1w.xwr.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/26 03:06:59"
+                        ], 
+                        "event_detail": {
+                            "file_scan_result": "/", 
+                            "filemod_name": "c:\\users\\c8044310\\appdata\\local\\temp\\__psscriptpolicytest_dlgodz1w.xwr.psm1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "filemod_publisher_state": null, 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11248-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0a21e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:03"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "powershell  -NoProfile -ExecutionPolicy unrestricted -Command \"Start-Process SAC_32_ja.bat -Verb runas\" -Wait", 
+                    "pid": 11248, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "parent_pid": 8688, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "11248-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(11248):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "11840-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MODIFY_SERVICE", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11840-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 2, 
+                        "event_id": [
+                            "dfb122601e7411ecab742b9735217651", 
+                            "bac6731c1e7411eca37edf7fd4a3675a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 02:52:14", 
+                            "2021/09/26 02:51:18"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11840-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dfb122651e7411ecab742b9735217651"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 02:52:27"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "11840-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                        "description": "ControlService(pass commands to the Service Control Manager)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bac673081e7411eca37edf7fd4a3675a"
+                        ], 
+                        "event_summary": "ControlService(False)", 
+                        "occurred": [
+                            "2021/09/26 02:51:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "ControlService", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_SERVICE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "msiexec.exe", 
+                    "hash": "3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7", 
+                    "command_line": "C:\\Windows\\syswow64\\MsiExec.exe -Embedding E2128040BF06F2C62351F3FE8D2A9888", 
+                    "pid": 11840, 
+                    "parent_path": "c:\\windows\\system32\\msiexec.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad", 
+                    "parent_pid": 17780, 
+                    "path": "c:\\windows\\syswow64\\msiexec.exe", 
+                    "ppid": "11840-3a90ede157d40a4db7859158c826f7b4d0f19a5768f6483c9be6ee481c6e1af7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "msiexec.exe(11840):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "msiexec.exe", 
+            "shell_type": 0
+        }, 
+        "6344-4574924964e7d584111a4c7acdb61ef19799527e7d5e102beb29f118de9dcede-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "6344-4574924964e7d584111a4c7acdb61ef19799527e7d5e102beb29f118de9dcede-0", 
+                        "description": "C:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0b41e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe:8816[\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"]", 
+                        "occurred": [
+                            "2021/09/26 03:07:12"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\c8044310\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"", 
+                            "pid": 8816, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                            "name": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sac_32_ja.bat", 
+                    "hash": "4574924964e7d584111a4c7acdb61ef19799527e7d5e102beb29f118de9dcede", 
+                    "command_line": "setup.exe  /configure config-SAC_32_ja_install.xml", 
+                    "pid": 6344, 
+                    "parent_path": "c:\\support\\sac_32_ja\\sac_32_ja.bat", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "540a9ab53ef20b0dab56b8bc6d4623a8046284ef939b82fea4956fd5c86df674", 
+                    "parent_pid": 6508, 
+                    "path": "c:\\support\\sac_32_ja\\setup.exe", 
+                    "ppid": "6344-4574924964e7d584111a4c7acdb61ef19799527e7d5e102beb29f118de9dcede-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "setup.exe(6344):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "setup.exe", 
+            "shell_type": 0
+        }, 
+        "960-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "960-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0da1e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:17"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p", 
+                    "pid": 960, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "parent_pid": 816, 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "960-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "svchost.exe(960):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "6508-540a9ab53ef20b0dab56b8bc6d4623a8046284ef939b82fea4956fd5c86df674-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\c8044310", 
+                        "ppid": "6508-540a9ab53ef20b0dab56b8bc6d4623a8046284ef939b82fea4956fd5c86df674-0", 
+                        "description": "The script \"c:\\support\\sac_32_ja\\sac_32_ja.bat\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "dbffa0c41e7611ec9248394b169093c3"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:07:13"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "540a9ab53ef20b0dab56b8bc6d4623a8046284ef939b82fea4956fd5c86df674", 
+                    "command_line": "\"C:\\WINDOWS\\System32\\cmd.exe\" /C \"C:\\support\\SAC_32_ja\\SAC_32_ja.bat\" ", 
+                    "pid": 6508, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 5556, 
+                    "path": "c:\\support\\sac_32_ja\\sac_32_ja.bat", 
+                    "ppid": "6508-540a9ab53ef20b0dab56b8bc6d4623a8046284ef939b82fea4956fd5c86df674-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(6508):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

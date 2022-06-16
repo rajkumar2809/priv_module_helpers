@@ -1,0 +1,378 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "117.18.237.29", 
+            "location": "Taipei,03,Taiwan", 
+            "name": "ocsp.digicert.com", 
+            "port": 80
+        }
+    ], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "11148-423eef07c85b6c0b6956323c89494cfeb99436c00cbf86db19150d408339f3bf-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "ADAPTIVE_WHITE_APP", 
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\yo_nakamura", 
+                        "ev_type": "NETWORK", 
+                        "description": "117.18.237.29:80(ocsp.digicert.com, located in Taipei 03, Taiwan)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e9f72fb51dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "10.2.20.22:50177-(TCP:OUT)->117.18.237.29:80(ocsp.digicert.com)[Taipei,03,Taiwan]", 
+                        "occurred": [
+                            "2021/09/25 06:43:13"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "117.18.237.29", 
+                            "local_port": 50177, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.2.20.22", 
+                            "is_inbound": false, 
+                            "remote_domain": "ocsp.digicert.com", 
+                            "remote_location": "Taipei,03,Taiwan", 
+                            "remote_port": 80
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "11148-423eef07c85b6c0b6956323c89494cfeb99436c00cbf86db19150d408339f3bf-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ADAPTIVE_WHITE_APP", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "423eef07c85b6c0b6956323c89494cfeb99436c00cbf86db19150d408339f3bf", 
+                    "pid": 11148, 
+                    "command_line": "\"C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.21072.161.0_x64__8wekyb3d8bbwe\\YourPhone.exe\" -ServerName:App.AppX9yct9q388jvt4h7y0gn06smzkxcsnt8m.mca", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\program files\\windowsapps\\microsoft.yourphone_1.21072.161.0_x64__8wekyb3d8bbwe\\yourphone.exe", 
+                    "ppid": "11148-423eef07c85b6c0b6956323c89494cfeb99436c00cbf86db19150d408339f3bf-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 688
+                }
+            }, 
+            "message": "yourphone.exe(11148):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "yourphone.exe", 
+            "shell_type": 0
+        }, 
+        "9996-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MODIFY_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"C:\\Windows\\explorer.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e9d500c21dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 06:40:08"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9996-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ctlcli.exe", 
+                    "hash": "e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8", 
+                    "pid": 9996, 
+                    "command_line": "\"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\AstAgent.exe\" -getassets", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\ctlcli.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "a6707d6393e60da4c1a449e93e03778badbc2cf3a65dea16d5beda47da696dde", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\astagent.exe", 
+                    "ppid": "9996-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8168
+                }
+            }, 
+            "message": "astagent.exe(9996):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "astagent.exe", 
+            "shell_type": 0
+        }, 
+        "8688-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "RUN_SYSTEM_APP", 
+                    "COMPROMISED_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\consent.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e96130b01dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\consent.exe:9524[consent.exe 8688 452 000002395C43B2F0]", 
+                        "occurred": [
+                            "2021/09/25 06:39:27"
+                        ], 
+                        "event_detail": {
+                            "hash": "56b2d516376328129132b815e22379ae8e7176825f059c9374a33cc844482e64", 
+                            "pid": 9524, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "consent.exe 8688 452 000002395C43B2F0", 
+                            "name": "c:\\windows\\system32\\consent.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8688-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtOpenProcess(open the process \"C:\\Windows\\System32\\DellTPad\\Apoint.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e96130ae1dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtOpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 06:39:27"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtOpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8688-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e96130781dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 06:39:20"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtAllocateVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8688-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "pid": 8688, 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Appinfo", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "8688-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 916
+                }
+            }, 
+            "message": "svchost.exe(8688):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "10500-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\yo_nakamura", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"C:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll\" attempted to inject code into the process \"C:\\Windows\\explorer.exe\", by calling the function \"CreateRemoteThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e98e33ed1dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 06:39:33"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10500-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "skyseahs.exe", 
+                    "hash": "c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536", 
+                    "pid": 10500, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\rundll32.exe\" \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\",InjectDll \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\" 9844", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\skyseahs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "3c6d7ac52939b9123beb41ad15ae3dcb5c5a9ae6a33250e4dbc3d2e2ec502479", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll", 
+                    "ppid": "10500-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4776
+                }
+            }, 
+            "message": "dll_file(10500):00001-10-000769:<AssetMgmt:SkySea>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dll_file", 
+            "shell_type": 0
+        }, 
+        "9116-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"C:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll\" attempted to inject code into the process \"C:\\Windows\\System32\\svchost.exe\", by calling the function \"CreateRemoteThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "e96130771dcb11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 06:39:20"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9116-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "skyseahs.exe", 
+                    "hash": "c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536", 
+                    "pid": 9116, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\rundll32.exe\" \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\",InjectDll \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\" 8688", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\skyseahs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "3c6d7ac52939b9123beb41ad15ae3dcb5c5a9ae6a33250e4dbc3d2e2ec502479", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll", 
+                    "ppid": "9116-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4776
+                }
+            }, 
+            "message": "dll_file(9116):00001-10-000769:<AssetMgmt:SkySea>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dll_file", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "AHS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

@@ -1,0 +1,39 @@
+SELECT
+    ARRAY_JOIN(ARRAY_AGG(DISTINCT meta_hostname), CHR(10)) AS ep_list,
+    COUNT(DISTINCT meta_hostname) AS ep_count,
+    DATE_FORMAT(FROM_UNIXTIME(MIN(time)), '%Y-%m-%dT%H:%i:%SZ') AS first_seen,
+    DATE_FORMAT(FROM_UNIXTIME(MAX(time)), '%Y-%m-%dT%H:%i:%SZ') AS last_seen,
+    sha256,
+    path,
+    CASE
+        WHEN ml_score >= 30 THEN 'Malicious : ' || CAST(ml_score AS varchar)
+        WHEN ml_score >= 27 THEN 'High suspicion : ' || CAST(ml_score AS varchar)
+        WHEN ml_score >= 24 THEN 'Medium suspicion : ' || CAST(ml_score AS varchar)
+        WHEN ml_score >= 20 THEN 'Low suspicion : ' || CAST(ml_score AS varchar)
+        ELSE ''
+    END AS ml_suspicion,
+    CASE
+        WHEN pua_score > 20 THEN 'Suspect PUA : ' || CAST(pua_score AS varchar)
+        ELSE ''
+    END AS pua_suspicion,
+    local_rep,
+    global_rep,
+    ARRAY_JOIN(ARRAY_AGG(DISTINCT sophos_pid), CHR(10)) AS sophos_pid_list,
+    ARRAY_JOIN(ARRAY_AGG(DISTINCT parent_sophos_pid), CHR(10)) AS parent_sophos_pid_list
+FROM
+    xdr_data
+WHERE
+    query_name = 'running_processes_windows_sophos'
+    AND (ml_score >= 20 OR pua_score > 20)
+    AND (local_rep < 91)
+GROUP BY
+    sha256,
+    path,
+    local_rep,
+    global_rep,
+    ml_score,
+    pua_score
+ORDER BY
+    ml_score DESC,
+    last_seen DESC
+

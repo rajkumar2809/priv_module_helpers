@@ -1,0 +1,223 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "30.13.9.161", 
+            "location": ",,United States", 
+            "name": null, 
+            "port": 21
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "10872-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "SUSPICIOUS_BEHAVIOR"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kurihara008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\temp\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "843ae4bd1e7d11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\takuc\\bin\\temp\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm.exe:6152[C:\\TAKUC\\Bin\\TEMP\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm.EXE]", 
+                        "occurred": [
+                            "2021/09/26 03:54:37"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\TAKUC\\Bin\\TEMP\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm.EXE", 
+                            "hash": "bf8efe4833cada7b1102ac5ace6ab0c8b1b3cd82cb30d37ac7096803960b726c", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 6152, 
+                            "name": "c:\\takuc\\bin\\temp\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "10872-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                        "categories": [
+                            "RUN_UNKNOWN_APP", 
+                            "SUSPICIOUS_BEHAVIOR", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3n010.exe", 
+                    "parent_pid": 9508, 
+                    "pid": 10872, 
+                    "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm\"", 
+                    "parent_path": "c:\\canvas\\bin\\v3n010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d57db31642401f5e58516b2edf3bce6335c09abd7e37f357f9ef66494ff3cc2", 
+                    "path": "c:\\takuc\\bin\\takuc.exe", 
+                    "ppid": "10872-4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2-0", 
+                    "parent_command_line": null, 
+                    "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2"
+                }
+            }, 
+            "message": "takuc.exe(10872):00001-10-000806:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "takuc.exe", 
+            "shell_type": 0
+        }, 
+        "3176-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "UNKNOWN_APP", 
+                    "NON_STANDARD_PORT", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kurihara008", 
+                        "ev_type": "NETWORK", 
+                        "description": "30.13.9.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "843ae5021e7d11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "30.13.9.177:59829-(TCP:OUT)->30.13.9.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/26 03:54:51"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "30.13.9.161", 
+                            "local_port": 59829, 
+                            "proto": "TCP", 
+                            "local_ipv4": "30.13.9.177", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States", 
+                            "remote_port": 21
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "3176-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "FILE_TRANSFER", 
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NETWORK_ACCESS", 
+                            "NON_STANDARD_PORT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "parent_pid": 6388, 
+                    "pid": 3176, 
+                    "command_line": "C:\\CANVAS\\BIN\\V3Z020 REPLACE 314003 298150 \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_298150.XDW\" 0010", 
+                    "parent_path": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152", 
+                    "path": "c:\\canvas\\bin\\v3z020.exe", 
+                    "ppid": "3176-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                    "parent_command_line": null, 
+                    "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3"
+                }
+            }, 
+            "message": "canvas_tmp_exe(3176):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "6388-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kurihara008", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\takuc.exe", 
+                        "event_count": 2, 
+                        "event_id": [
+                            "843ae4f51e7d11ec871fb75d4dae9b8a", 
+                            "843ae4ec1e7d11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\takuc\\bin\\takuc.exe:10824[C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_298150.XDW\"]", 
+                        "occurred": [
+                            "2021/09/26 03:54:49", 
+                            "2021/09/26 03:54:48"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_298150.XDW\"", 
+                            "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 10824, 
+                            "name": "c:\\takuc\\bin\\takuc.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "6388-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3n010.exe", 
+                    "parent_pid": 9508, 
+                    "pid": 6388, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm\"", 
+                    "parent_path": "c:\\canvas\\bin\\v3n010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d57db31642401f5e58516b2edf3bce6335c09abd7e37f357f9ef66494ff3cc2", 
+                    "path": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "ppid": "6388-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0", 
+                    "parent_command_line": null, 
+                    "hash": "115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152"
+                }
+            }, 
+            "message": "excel(6388):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

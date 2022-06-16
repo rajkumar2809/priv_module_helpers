@@ -1,0 +1,349 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "31080-c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "31080-c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1-0", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 4, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:29312[C:\\WINDOWS\\system32\\cmd.exe /c DIR C:\\unyo_tools\\Tableau\\log\\dayliy_flow2_DayliyPublish_*.log /b /o:-N]", 
+                        "occurred": [
+                            "2021/09/26 04:01:53", 
+                            "2021/09/26 04:01:53", 
+                            "2021/09/26 04:01:53", 
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c DIR C:\\unyo_tools\\Tableau\\log\\dayliy_flow2_DayliyPublish_*.log /b /o:-N", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 29312, 
+                            "name": "c:\\windows\\system32\\cmd.exe", 
+                            "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450"
+                        }, 
+                        "event_id": [
+                            "9b25efda1e7e11eca1c1f75e8d19c125", 
+                            "9b25efd91e7e11eca1c1f75e8d19c125", 
+                            "9b25efd81e7e11eca1c1f75e8d19c125", 
+                            "9b25efd71e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1", 
+                    "command_line": "C:\\WINDOWS\\SYSTEM32\\cmd.exe /c \"C:\\unyo_tools\\Tableau\\bin\\DayliyPublish.bat\"", 
+                    "pid": 31080, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\unyo_tools\\tableau\\bin\\dayliypublish.bat", 
+                    "ppid": "31080-c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1864
+                }
+            }, 
+            "message": "win_batch(31080):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "14300-a70166dea478fc08262fccc4adb8e63480ce51a963150d2effccd196254d7a31-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "EMAIL_CLIENT", 
+                    "UNKNOWN_APP", 
+                    "ACTIVE_CLIENT", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-a70166dea478fc08262fccc4adb8e63480ce51a963150d2effccd196254d7a31-0", 
+                        "description": "192.168.105.3:25(smtp02.tmn.office)", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.100.70:63839-(TCP:OUT)->192.168.105.3:25(smtp02.tmn.office)[None]", 
+                        "occurred": [
+                            "2021/09/26 04:01:54"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.105.3", 
+                            "proto": "TCP", 
+                            "remote_port": 25, 
+                            "local_port": 63839, 
+                            "local_ipv4": "192.168.100.70", 
+                            "remote_domain": "smtp02.tmn.office", 
+                            "is_inbound": false, 
+                            "remote_location": null
+                        }, 
+                        "event_id": [
+                            "9b25efe21e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "EMAIL_CLIENT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "dayliypublish.bat", 
+                    "hash": "a70166dea478fc08262fccc4adb8e63480ce51a963150d2effccd196254d7a31", 
+                    "command_line": "PowerShell  -ExecutionPolicy RemoteSigned -Command C:\\unyo_tools\\Tableau\\bin\\send_mail_dayliy_success.ps1", 
+                    "pid": 14300, 
+                    "parent_path": "c:\\unyo_tools\\tableau\\bin\\dayliypublish.bat", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1", 
+                    "path": "c:\\unyo_tools\\tableau\\bin\\send_mail_dayliy_success.ps1", 
+                    "ppid": "14300-a70166dea478fc08262fccc4adb8e63480ce51a963150d2effccd196254d7a31-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 31080
+                }
+            }, 
+            "message": "ps_script(14300):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "CODE_DROP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\users\\corpstrategy-share\\appdata\\local\\temp\\__psscriptpolicytest_iyzx0viz.pun.ps1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\corpstrategy-share\\appdata\\local\\temp\\__psscriptpolicytest_iyzx0viz.pun.ps1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\users\\corpstrategy-share\\appdata\\local\\temp\\__psscriptpolicytest_iyzx0viz.pun.ps1", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "9b25efe71e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateWindowExW(create a viewable window)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateWindowExW(False)", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateWindowExW", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "9b25efe01e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtQuerySystemInformation", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "9b25efdf1e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "9b25efde1e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "OpenProcess(open itself for modification)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "9b25efdd1e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TMN\\corpstrategy-share", 
+                        "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "FindFirstFileExW(find \"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/26 04:01:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFileExW", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "9b25efdc1e7e11eca1c1f75e8d19c125"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "dayliypublish.bat", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "PowerShell  -ExecutionPolicy RemoteSigned -Command C:\\unyo_tools\\Tableau\\bin\\send_mail_dayliy_success.ps1", 
+                    "pid": 14300, 
+                    "parent_path": "c:\\unyo_tools\\tableau\\bin\\dayliypublish.bat", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "c9f33bfb1007078b68c98eaaab7481d4640c9a07e805ec36d546538b0c3e17e1", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "14300-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 31080
+                }
+            }, 
+            "message": "powershell.exe(14300):[00001-10-000007:<normaly alert by customer script(*PSScriptPolicyTest*.ps1).>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TMN1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

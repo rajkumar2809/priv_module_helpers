@@ -1,0 +1,35 @@
+{
+	"id" : "00001-10-000002",
+	"rev" : "0002",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "explorer.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "INJECT_CODE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "C:\\Windows\\System32\\cmd.exe",
+				"type" : "include"
+			},
+			{
+				"field" : "description",
+				"value" : "CreateRemoteThread",
+				"type" : "include"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/13",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert(INJECT_CODE:cmd.exe) by explorer."
+}

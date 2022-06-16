@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000037",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "msiexec.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "SYSTEM_API_CALL",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "ControlService(pass commands to the Service Control Manager)",
+				"type" : "exact"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/3/4",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by msiexec."
+}

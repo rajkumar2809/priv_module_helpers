@@ -1,0 +1,436 @@
+{# sample for statement #}
+<html>
+  <head>
+    <title>{{ headers["title"] }}</title>
+  </head>
+    <style type="text/css">
+      body {
+        width: 205mm;
+        height: 306mm;
+        margin-right : auto;
+        margin-left : auto;
+        margin-top : auto;
+        margin-bottom : auto;
+      }
+      table {
+        border-collapse: collapse;
+        margin-right : auto;
+        margin-left : auto;
+      }
+      td {
+        border: solid 1px;
+        padding: 0.5em;
+        font-family:"Meiryo UI";
+      }
+      .title_box{
+        margin-right:auto;
+        margin-left:auto;
+        width:800px;
+        border:2px solid #666;
+        font-family:"Meiryo UI";
+        text-align:center;
+        font:bold;
+      }
+      .center_box{
+        margin-right:auto;
+        margin-left:auto;
+        width:800px;
+        height:500px;
+        text-align:center;
+      }
+      .signature{
+        margin-right:auto;
+        margin-left:auto;
+        font-family:"Meiryo UI";
+        text-align:center;
+        font-size:x-large;
+      }
+      .none_boader {
+        border-style: none;
+      }
+      .section {
+        font:bold;
+        font-size:x-large;
+        font-family:"Meiryo UI";
+      }
+      .subsection {
+        font:bold;
+        font-size:large;
+        font-family:"Meiryo UI";
+      }
+      .report_text {
+        margin-left:12px;
+        text-align:left;
+        font-family:"Meiryo UI";
+      }
+      .description {
+        font-family:"Meiryo UI";
+      }
+      .item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:250px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .sub_item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:100px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .min_item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        font-size: medium;
+        width:100px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .min_content {
+        font-family:"Meiryo UI";
+        font-size: medium;
+        width:100px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .content {
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .desc_content{
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:left;
+        word-break:break-all;
+      }
+      .value {
+        font-family:"Meiryo UI";
+        width:700px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .hvalue {
+        font-family:"Meiryo UI";
+        width:350px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .fheader {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:350px;
+        padding:2px;
+        text-align:center;
+      }
+      .comments {
+        font-family:"Meiryo UI";
+      }
+
+    </style>
+  <body>
+    <div style="height:300px"></div>
+    <div class="title_box">
+      <h2>{{ headers["customer_name"] }}</h2>
+      <h1>{{ headers["title"] }}</h1>
+      <h2>{{ headers["sub_title"] }}</h2>
+    </div>
+    <div style="height:500px"></div>
+    <h3 class="signature">{{ headers["date"] }}</p>
+    <h3 class="signature">{{ headers["company"] }}</p>
+    <div style="page-break-after: always;" ><br /></div>
+    <br />
+    <h3 class="section">{{ headers["top_message"] }}</h3>
+    <br />
+    <p>本書は、MSSで提供される月次でのアラートサマリー報告書です。</p>
+    <p>本書は、お客様のシステム、ネットワーク、及びセキュリティのご担当者の方を対象としているため、<B><U>お客様に関係する機密情報</U></B>が含まれております。第三者に対して提供することがないよう、取り扱いには十分にご注意ください。</p>
+    <list><li>{{ report_target["title"] }}</li></list>
+    <br />
+    <table>
+      <tr>
+        <td class="item">{{ report_target["table_header"]["name"] }}</td>
+        <td class="item">{{ report_target["table_header"]["content"] }}</td>
+      </tr>
+      {% for each in report_target["table_item"] %}
+        <tr>
+          <td class="item">{{ each["name"] }}</td>
+          <td class="content">{{ each["content"] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <div style="page-break-before: always;" ><br/></div>
+    {% if summary is defined %}
+      <h3 class="section">{{ headers["summary"] }}</h3>
+      <h3 class="subsection">{{ sub_headers["1month"] }}</h3>
+      {% if summary["alert_sum"]["total"] == 0 %}
+        <div class="report_text">
+          <p class="description">当月中に、アラートは発生いたしませんでした。<p>
+        </div>
+      {% else %}
+        <div class="report_text">
+          <p class="description">当月中には、{{ summary["alert_sum"]["total"] }}件のアラートが発生しました。そのうち、解析対応などが必要なアラートは{{ summary["alert_sum"]["middle_over"] }}件でした。<p>
+        </div>
+        <div style="page-break-inside: avoid;" >
+          <table class="none_boader">
+            <tr class="none_boader">
+              <div class="report_text">
+                <p class="description">当月中に発生したアラートの危険度別分析は以下の通りです。<p>
+              </div>
+              <td class="none_boader">
+                <table>
+                  <tr>
+                    <td class="min_item">{{ summary['risklevel_data']['header'][0] }}</td>
+                    <td class="min_item">{{ summary['risklevel_data']['header'][1] }}</td>
+                  </tr>
+                  {% for each in summary['risklevel_data']['table'] %}
+                    <tr>
+                      <td class="min_item">{{ each[0] }}</td>
+                      <td class="min_content">{{ each[1] }}</td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              </td>
+              <td class="none_boader">
+                <img src = data:image/png;base64,{{ summary['risklevel_data']['img']}}
+                width="80%" hspace="0" border="0" />
+              </td>
+            </tr>
+          </table>
+          <br />
+          <div class="report_text">
+            <p class="description">当月中に発生したアラートの日別推移は以下の通りです。<p>
+          </div>
+          <img src = data:image/png;base64,{{ summary['timechart_1month']['img']}} />
+        </div>
+      {% endif %}
+      <br />
+      <h3 class="subsection">{{ sub_headers["6month"] }}</h3>
+      {% if summary["timechart_6month"] == None %}
+        <div class="report_text">
+          <p class="description">当月を含めた過去半年において、アラートはございませんでした。<p>
+        </div>
+      {% else %}
+        <div class="report_text">
+          <p class="description">当月分を含め、半年間のアラート推移が以下の通りです。<p>
+        </div>
+        <table class="none_boader">
+          <tr class="none_boader">
+            <td class="none_boader">
+              <table>
+                <tr>
+                  {% for each in summary['timechart_6month']['table_head'] %}
+                    <td class="min_item">{{ each }}</td>
+                  {% endfor %}
+                </tr>
+                {% for each in summary['timechart_6month']['table'] %}
+                  <tr>
+                    <td class="min_item">{{ each[0] }}</td>
+                    <td class="min_content">{{ each[1] }}</td>
+                    <td class="min_content">{{ each[2] }}</td>
+                    <td class="min_content">{{ each[3] }}</td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </td>
+            <td class="none_boader">
+              <img src = data:image/png;base64,{{ summary['timechart_6month']['img']}}
+              width="85%" hspace="0" border="0" />
+            </td>
+          </tr>
+        </table>
+      {% endif %}
+      {% if summary["alert_sum"]["total"] != 0 %}
+        <div style="page-break-before: always;" ><br /></div>
+      {% else %}
+        <br />
+      {% endif %}
+      <h3 class="subsection">{{ sub_headers["alert_traffic"] }}</h3>
+      {% if alert_traffic == None %}
+        <div class="report_text">
+          <p class="description">当月中はアラートの発生がございませんでした。<p>
+        </div>
+      {% else %}
+        <div class="report_text">
+          <p class="description">発生したアラート関連の通信につき、以下の観点でまとめました。<p>
+        </div>
+        <ul>
+          {% for each in alert_traffic %}
+            <div style="page-break-inside: avoid;" >
+              <li>{{ each["name"] }}</li>
+                <p>{{ each["comment"] }}</p>
+                {% if "table" in each %}
+                <table class="none_boader">
+                  <tr class="none_boader">
+                    <td class="none_boader">
+                      <img src = data:image/png;base64,{{ each['img']}}
+                      width="100%" hspace="0" border="0" />
+                    </td>
+                    <td class="none_boader">
+                      <table>
+                        <tr>
+                          {% for each in each['table_head'] %}
+                            <td class="min_item">{{ each }}</td>
+                          {% endfor %}
+                        </tr>
+                        {% for each in each['table'] %}
+                          <tr>
+                            <td class="item">{{ each[0] }}</td>
+                            <td class="min_content">{{ each[1] }}</td>
+                          </tr>
+                        {% endfor %}
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                {% endif %}
+            </div>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <br />
+      <div class="report_text">
+        <p class="description">以降の項目では、<U><B>解析を要したアラートに対して</B></U>ご報告させて頂きます。<p>
+      </div>
+    {% endif %}
+    {% if detail is defined %}
+      <div style="page-break-before: always;" ><br /></div>
+      <h3 class="section">{{ headers["alertinfo"] }}</h3>
+      <div class="report_text">
+        <p class="description">本項目では、解析が必要となった中レベル以上のアラートについてご報告致します。なお、確認した結果、過検知と判定したアラートも件数として含めさせて頂いております。<p>
+      </div>
+      <div style="page-break-inside: avoid;" >
+        <h3 class="subsection">{{ sub_headers["type_base"] }}</h3>
+        <div class="report_text">
+          <p>下表に各タイプの説明を記載致します。
+        </div>
+        <table>
+          <tr>
+            {% for each in detail["alert_type"]["desc_head"] %}
+              <td class="item">{{ each }}</td>
+            {% endfor %}
+          </tr>
+          {% for each in detail["alert_type"]["description"] %}
+            <tr>
+              <td class="item">{{ each[0] }}</td>
+              <td class="desc_content">{{ each[1] }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+        <br />
+        {% if detail["alert_type"]["total_num"] != 0 %}
+          <div class="report_text">
+            <p>調査を要するアラートの総数は{{ detail["alert_type"]["total_num"] }}でした。攻撃タイプ毎のアラート発生状況は以下の通りです。
+          </div>
+          <table class="none_boader">
+            <tr class="none_boader">
+              <td class="none_boader">
+                <img src = data:image/png;base64,{{ detail["alert_type"]['img']}}
+                width="100%" hspace="0" border="0" />
+              </td>
+              <td class="none_boader">
+                <table>
+                  <tr>
+                    {% for each in detail["alert_type"]['table_head'] %}
+                      <td class="min_item">{{ each }}</td>
+                    {% endfor %}
+                    <td class="min_item">正検知</td>
+                  </tr>
+                  {% for each in detail["alert_type"]['table'] %}
+                    <tr>
+                      <td class="item">{{ each[0] }}</td>
+                      <td class="min_content">{{ each[1] }}</td>
+                      <td class="min_content">{{ 0 }}</td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              </td>
+            </tr>
+          </table>
+        {% else %}
+          <div class="report_text">
+            <p>当月中には、調査を要するアラートは発生しませんでした。
+          </div>
+        {% endif %}
+        <br />
+      </div>
+      <div style="page-break-inside: avoid;" >
+        <h3 class="subsection">{{ sub_headers["killchain_base"] }}</h3>
+        <div class="report_text">
+          <p>サイバー攻撃の多くは、手順を踏んで実行されます。この手順を、「サイバーキルチェーン」と呼びます。
+          <p>下表に各フェーズの説明を記載致します。表は攻撃手順の進行順となっており、下にいくほど深刻度が高い（攻撃が進行している）状況です。
+        </div>
+        <table>
+          <tr>
+            {% for each in detail["killchain"]["desc_head"] %}
+              <td class="item">{{ each }}</td>
+            {% endfor %}
+          </tr>
+          {% for each in detail["killchain"]["description"] %}
+            <tr>
+              <td class="min_item">{{ each[0] }}</td>
+              <td class="min_content">{{ each[1] }}</td>
+              <td class="desc_content">{{ each[2] }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+        <br />
+        {% if detail["killchain"]["total_num"] != 0 %}
+          <div class="report_text">
+            <p>当月中の攻撃フェーズに関わるアラート総数は{{ detail["killchain"]["total_num"] }}でした。攻撃フェーズ毎のアラート発生状況は以下の通りです。
+          </div>
+          <table class="none_boader">
+            <tr class="none_boader">
+              <td class="none_boader">
+                <img src = data:image/png;base64,{{ detail["killchain"]['img']}}
+                width="100%" hspace="0" border="0" />
+              </td>
+              <td class="none_boader">
+                <table>
+                  <tr>
+                    {% for each in detail["killchain"]['table_head'] %}
+                      <td class="min_item">{{ each }}</td>
+                    {% endfor %}
+                      <td class="min_item">正検知</td>
+                  </tr>
+                  {% for each in detail["killchain"]['table'] %}
+                    <tr>
+                      <td class="item">{{ each[0] }}</td>
+                      <td class="min_content">{{ each[1] }}</td>
+                      <td class="min_content">{{ 0 }}</td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              </td>
+            </tr>
+          </table>
+        {% else %}
+          <div class="report_text">
+            <p>当月中には、解析を要する危険度の高いアラートは発生しませんでした。
+          </div>
+        {% endif %}
+        <br />
+      </div>
+    {% endif %}
+    {% if 'logo' in headers %}
+      <div style="page-break-before: always;" ><br /></div>
+      <div style="height:300px;"></div>
+      <div class="center_box">
+        <img src = data:image/png;base64,{{ headers['logo']}}
+        width="100%" hspace="0" border="0" />
+      </div>
+    {% endif %}
+  </body>
+</html>

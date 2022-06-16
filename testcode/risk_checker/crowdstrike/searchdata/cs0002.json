@@ -1,0 +1,45 @@
+{
+    "id": "00002-10-000002",
+    "rev": "0001", 
+    "reputation": "white", 
+    "enable": "yes", 
+    "score": 5, 
+    "value": "cmd.exe", 
+    "type": "condition", 
+    "detail": {
+        "expected": [
+            {
+                "data_position": "process_detail", 
+                "conditions": [
+                    {
+                        "section": null, 
+                        "field"  : "gparent_name", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\explorer\\.exe$"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "parent_name", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\Internet\\s+Explorer\\\\iexplore\\.exe$"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "ps_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)cmd\\.exe.*c:\\\\fsal_st\\\\fsal_[^\\\\]+\\.bat\".*\\.ini\"*\\s*$"
+                    }
+                ]
+            }
+        ],
+        "excepted" : []
+    }, 
+    "message": "Customer Script with iexplore.exe", 
+    "source": "manual", 
+    "registered": "2020/9/30", 
+    "product": "crowdstrike", 
+    "user": "PIS1"
+}

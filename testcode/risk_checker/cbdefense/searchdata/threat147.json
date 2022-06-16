@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000047",
+	"rev" : "0003",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "renamehelper.exe",
+	"detail" : {
+		"data_position" : "process_info",
+		"expected" : [
+			{
+				"field" : "path",
+				"value" : "(?i)c:\\\\program\\s*files\\s*(\\(x86\\))?\\s*\\\\rename\\s*helper\\\\renamehelper\\.exe",
+				"type" : "regexp"
+			},
+			{
+				"field" : "parent_command_line",
+				"value" : "c:\\windows\\explorer.exe",
+				"type" : "ciexact"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/5/17",
+	"user" : "sanrio",
+	"source" : "manual",
+	"message" : "alert by FreeTool:RenameHelper(this is extend rename function)"
+}

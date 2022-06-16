@@ -1,0 +1,1092 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "90.52.72.81", 
+            "location": "Valence,B9,France", 
+            "name": null, 
+            "port": 2425
+        }, 
+        {
+            "ip": "90.52.42.115", 
+            "location": "Lyon,B9,France", 
+            "name": null, 
+            "port": 2425
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6040-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6040-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 10:51:49"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a85ad6e91dee11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cscript.exe", 
+                    "hash": "8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf", 
+                    "pid": 6040, 
+                    "command_line": "\"C:\\Program Files (x86)\\Hitachi\\jp1itdma\\bin\\jdngsappscan.exe\"  /execute", 
+                    "parent_path": "c:\\windows\\syswow64\\cscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a80e2d4b10e53c5f1d1bb41fd117fc5b6c358b87e3b2c197fc9af484bc44e5c6", 
+                    "parent_pid": 16848, 
+                    "path": "c:\\program files (x86)\\hitachi\\jp1itdma\\bin\\jdngsappscan.exe", 
+                    "ppid": "6040-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "jdngsappscan.exe(6040):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "jdngsappscan.exe", 
+            "shell_type": 0
+        }, 
+        "16228-51ccc709882c8b5c56643d39c1cb6b696063360beb8fc509dfd2c36f6c30983a-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "16228-51ccc709882c8b5c56643d39c1cb6b696063360beb8fc509dfd2c36f6c30983a-0", 
+                        "description": "90.52.42.115:2425(located in Lyon B9, France)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "90.52.17.61:2425-(UDP:OUT)->90.52.42.115:2425(None)[Lyon,B9,France]", 
+                        "occurred": [
+                            "2021/09/25 10:56:40"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "90.52.42.115", 
+                            "local_port": 2425, 
+                            "proto": "UDP", 
+                            "local_ipv4": "90.52.17.61", 
+                            "remote_domain": null, 
+                            "is_inbound": false, 
+                            "remote_location": "Lyon,B9,France", 
+                            "remote_port": 2425
+                        }, 
+                        "event_id": [
+                            "5e5b66111def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NETWORK_ACCESS", 
+                            "NON_STANDARD_PORT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "16228-51ccc709882c8b5c56643d39c1cb6b696063360beb8fc509dfd2c36f6c30983a-0", 
+                        "description": "90.52.72.81:2425(located in Valence B9, France)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "90.52.17.61:2425-(UDP:OUT)->90.52.72.81:2425(None)[Valence,B9,France]", 
+                        "occurred": [
+                            "2021/09/25 10:45:07"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "90.52.72.81", 
+                            "local_port": 2425, 
+                            "proto": "UDP", 
+                            "local_ipv4": "90.52.17.61", 
+                            "remote_domain": null, 
+                            "is_inbound": false, 
+                            "remote_location": "Valence,B9,France", 
+                            "remote_port": 2425
+                        }, 
+                        "event_id": [
+                            "a997df931ded11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NETWORK_ACCESS", 
+                            "NON_STANDARD_PORT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "51ccc709882c8b5c56643d39c1cb6b696063360beb8fc509dfd2c36f6c30983a", 
+                    "pid": 16228, 
+                    "command_line": "\"C:\\Program Files (x86)\\IPMsg\\ipmsg.exe\" ", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae", 
+                    "parent_pid": 10252, 
+                    "path": "c:\\program files (x86)\\ipmsg\\ipmsg.exe", 
+                    "ppid": "16228-51ccc709882c8b5c56643d39c1cb6b696063360beb8fc509dfd2c36f6c30983a-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ipmsg.exe(16228):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ipmsg.exe", 
+            "shell_type": 0
+        }, 
+        "14432-321266423f06c200e4cafafa23d8b2d6d28f34fcd053f7b18c7eecc83b2e4102-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_ANOTHER_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "14432-321266423f06c200e4cafafa23d8b2d6d28f34fcd053f7b18c7eecc83b2e4102-0", 
+                        "description": "C:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe:2872[\"C:\\PROGRA~2\\FUJIXE~1\\DOCUWO~1\\bin\\dwviewer.exe\" \"C:\\Users\\kimura0033\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\RIWDY7A5\\\u6851\u540d\u5e02\u5927\u5b57\u77e2\u7530\u3001\u5927\u5b57\u672c\u9858\u5bfa\u3000\u8ca9\u58f2\u8cc7\u6599.xdw\"]", 
+                        "occurred": [
+                            "2021/09/25 10:42:44"
+                        ], 
+                        "event_detail": {
+                            "hash": "ccd06b5bc574cb100fa0f57fbe6aa23a8eb87b1d0fe7b4fa06a2226ec34b1205", 
+                            "pid": 2872, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\PROGRA~2\\FUJIXE~1\\DOCUWO~1\\bin\\dwviewer.exe\" \"C:\\Users\\kimura0033\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\RIWDY7A5\\\u6851\u540d\u5e02\u5927\u5b57\u77e2\u7530\u3001\u5927\u5b57\u672c\u9858\u5bfa\u3000\u8ca9\u58f2\u8cc7\u6599.xdw\"", 
+                            "name": "c:\\program files (x86)\\fuji xerox\\docuworks\\bin\\dwviewer.exe"
+                        }, 
+                        "event_id": [
+                            "6126f4261ded11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "officeclicktorun.exe", 
+                    "hash": "321266423f06c200e4cafafa23d8b2d6d28f34fcd053f7b18c7eecc83b2e4102", 
+                    "pid": 14432, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE\" /restore", 
+                    "parent_path": "c:\\program files\\common files\\microsoft shared\\clicktorun\\officeclicktorun.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "af1c8116014c108a8393a767fba66cbf5e9aa836dc599d00b8f794460548254f", 
+                    "parent_pid": 13548, 
+                    "path": "c:\\program files (x86)\\microsoft office\\updates\\download\\packagefiles\\e145cbf3-f0fa-4510-8236-95537c518ff3\\root\\office16\\outlook.exe", 
+                    "ppid": "14432-321266423f06c200e4cafafa23d8b2d6d28f34fcd053f7b18c7eecc83b2e4102-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "outlook.exe(14432):[00001-10-000440:<Outlook Boot already installed application.>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "outlook.exe", 
+            "shell_type": 0
+        }, 
+        "11424-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "11424-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:48"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "cbfc47e21def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sekiwafudousan.agency.ase3123.exe", 
+                    "hash": "df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439", 
+                    "pid": 11424, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\agency\\Sekiwafudousan.Chintai.Relay.exe\" MTQ0LDE0NDAwOSznqY3msLTjg4/jgqbjgrnkuI3li5XnlKPkuK3pg6jmoKrlvI/kvJrnpL4sMjA4MDAwLOWQjemnheWWtualreaJgCw0LEFDMDMwMywwMEFDMDMwMyzmnKjmnZHjgIDpmoYsQzAwMDA1OSw0MSwyMDIxMDksMjAyMTA5MjUsOTAuNTIuMTcuNjEsUDE0NEMxNTQsMjAyMTA5MjUxOTU5Mzg3NzgsMSwwRywgLDE0NDAwOSwwMywxNDQsMTQ0MDA5LCAsMA== ASA240100", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\agencymenu\\sekiwafudousan.agency.ase3123.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07", 
+                    "parent_pid": 17348, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\agency\\sekiwafudousan.chintai.relay.exe", 
+                    "ppid": "11424-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.chintai.relay.exe(11424):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.chintai.relay.exe", 
+            "shell_type": 0
+        }, 
+        "16608-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "16608-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:11404[cmd /C \"C:\\app\\product\\12.2.0\\client_1\\.patch_storage\\getEnv.bat\"]", 
+                        "occurred": [
+                            "2021/09/25 10:59:17"
+                        ], 
+                        "event_detail": {
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "pid": 11404, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "cmd /C \"C:\\app\\product\\12.2.0\\client_1\\.patch_storage\\getEnv.bat\"", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "a7a992c31def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "opatch.bat", 
+                    "hash": "7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971", 
+                    "pid": 16608, 
+                    "command_line": "C:\\app\\product\\12.2.0\\client_1\\jdk\\bin\\java.exe    -cp \"\"C:\\app\\product\\12.2.0\\client_1\\OPatch\\ocm\\lib\\emocmclnt.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;\"C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraInstaller.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraPrereq.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\share.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\orai18n-mapping.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\xmlparserv2.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;C:\\app\\product\\12.2.0\\client_1\\oui\\lib\\ojmisc.jar\";C:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatch.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\automation.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\apache-commons\\commons-cli-1.0.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatchsdk.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\activation.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-api.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-impl.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jsr173_1.0_api.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\OsysModel.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\osysmodel-utils.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\CRSProductDriver.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\oracle.opatch.classpath.jar;C:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\oracle.oplan.classpath.jar\";.\\;.\" -DOPatch.ORACLE_HOME=\"C:\\app\\product\\12.2.0\\client_1\" -DOPatch.DEBUG=\"false\" -DOPatch.RUNNING_DIR=\"C:\\app\\product\\12.2.0\\client_1\\OPatch\" -DOPatch.MW_HOME=\"\" -DOPatch.WL_HOME=\"\" -DOPatch.COMMON_COMPONENTS_HOME=\"\" -DOPatch.OUI_LOCATION=\"\" -DOPatch.FMW_COMPONENT_HOME=\"\" -DOPatch.WEBLOGIC_CLASSPATH=\"\" -DOPatch.OPATCH_CLASSPATH=\"\"   oracle/opatch/OPatch lsinventory -detail ", 
+                    "parent_path": "c:\\app\\product\\12.2.0\\client_1\\opatch\\opatch.bat", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4", 
+                    "parent_pid": 9336, 
+                    "path": "c:\\app\\product\\12.2.0\\client_1\\opatch\\jlib\\opatch.jar", 
+                    "ppid": "16608-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "opatch.jar(16608):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "opatch.jar", 
+            "shell_type": 0
+        }, 
+        "9336-1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "9336-1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4-0", 
+                        "description": "The script \"c:\\app\\product\\12.2.0\\client_1\\opatch\\opatch.bat\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:19"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7f1becf1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4", 
+                    "pid": 9336, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\12.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"", 
+                    "parent_path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                    "parent_pid": 2448, 
+                    "path": "c:\\app\\product\\12.2.0\\client_1\\opatch\\opatch.bat", 
+                    "ppid": "9336-1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(9336):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "16440-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "16440-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:25"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7f1bf1c1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed", 
+                    "pid": 16440, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\login\\Sekiwafudousan.Chintai.AS83121.exe\"  \"D:\\Sekisui\\SFCISv3\\Client\"", 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "parent_pid": 8936, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\login\\sekiwafudousan.chintai.as83121.exe", 
+                    "ppid": "16440-b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.chintai.as83121.exe(16440):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.chintai.as83121.exe", 
+            "shell_type": 0
+        }, 
+        "2448-1388181615869c770ff41ec038724c4fea237e21fdf782ef73a3107d4f4ff370-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "2448-1388181615869c770ff41ec038724c4fea237e21fdf782ef73a3107d4f4ff370-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:9336[C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\12.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"]", 
+                        "occurred": [
+                            "2021/09/25 10:59:15"
+                        ], 
+                        "event_detail": {
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "pid": 9336, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" C:\\app\\product\\12.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "a7a992aa1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "1388181615869c770ff41ec038724c4fea237e21fdf782ef73a3107d4f4ff370", 
+                    "pid": 2448, 
+                    "command_line": "cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "parent_pid": 17136, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\apl\\odpver.bat", 
+                    "ppid": "2448-1388181615869c770ff41ec038724c4fea237e21fdf782ef73a3107d4f4ff370-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(2448):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "15260-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "15260-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 11:01:55"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "1517f19c1df011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cscript.exe", 
+                    "hash": "8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf", 
+                    "pid": 15260, 
+                    "command_line": "\"C:\\Program Files (x86)\\Hitachi\\jp1itdma\\bin\\jdngsappscan.exe\"  /execute", 
+                    "parent_path": "c:\\windows\\syswow64\\cscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a80e2d4b10e53c5f1d1bb41fd117fc5b6c358b87e3b2c197fc9af484bc44e5c6", 
+                    "parent_pid": 1204, 
+                    "path": "c:\\program files (x86)\\hitachi\\jp1itdma\\bin\\jdngsappscan.exe", 
+                    "ppid": "15260-8caf936e234195947a2c411f3c4822c208aa06c6716751b0e5d382090d01a7bf-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "jdngsappscan.exe(15260):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "jdngsappscan.exe", 
+            "shell_type": 0
+        }, 
+        "17136-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "17136-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:2448[cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat]", 
+                        "occurred": [
+                            "2021/09/25 10:59:15", 
+                            "2021/09/25 10:59:11"
+                        ], 
+                        "event_detail": {
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "pid": 2448, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "cmd /c D:\\Sekisui\\SFCISv3\\Client\\APL\\ODPVer.bat", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "a7a992a71def11ec871fb75d4dae9b8a", 
+                            "a7a992871def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "aplstart.cmd", 
+                    "hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "pid": 17136, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\APL\\SoftColl.exe\" ", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\aplstart.cmd", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e", 
+                    "parent_pid": 8936, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "ppid": "17136-66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "softcoll.exe(17136):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "softcoll.exe", 
+            "shell_type": 0
+        }, 
+        "8936-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "8936-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0", 
+                        "description": "C:\\windows\\system32\\reg.exe", 
+                        "event_count": 6, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\reg.exe:14620[REG  ADD \"HKCU\\Software\\VB and VBA Program Settings\\DATABASE\\ZENSHA\" /v PASSWORD /t REG_SZ /d ZENSHA /f]", 
+                        "occurred": [
+                            "2021/09/25 10:59:04", 
+                            "2021/09/25 10:59:04", 
+                            "2021/09/25 10:59:04", 
+                            "2021/09/25 10:59:04", 
+                            "2021/09/25 10:59:04", 
+                            "2021/09/25 10:59:04"
+                        ], 
+                        "event_detail": {
+                            "hash": "c0e25b1f9b22de445298c1e96ddfcead265ca030fa6626f61a4a4786cc4a3b7d", 
+                            "pid": 14620, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "REG  ADD \"HKCU\\Software\\VB and VBA Program Settings\\DATABASE\\ZENSHA\" /v PASSWORD /t REG_SZ /d ZENSHA /f", 
+                            "name": "c:\\windows\\system32\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "a78c95011def11ec871fb75d4dae9b8a", 
+                            "a78c95001def11ec871fb75d4dae9b8a", 
+                            "a78c94ff1def11ec871fb75d4dae9b8a", 
+                            "a78c94fe1def11ec871fb75d4dae9b8a", 
+                            "a78c94fd1def11ec871fb75d4dae9b8a", 
+                            "a78c94fc1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "eproad.tool.distribution.distributionclient.exe", 
+                    "hash": "f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e", 
+                    "pid": 8936, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"D:\\Sekisui\\SFCISv3\\Client\\AplStart.cmd\" \"D:\\Sekisui\\SFCISv3\\Client\"\"", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\receive\\eproad.tool.distribution.distributionclient.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d558e265e46fc147d4c7d771a4c109390febe817586dd37aab3c6ebcfec05321", 
+                    "parent_pid": 1172, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\aplstart.cmd", 
+                    "ppid": "8936-f34d175e55437cb545e13b1d0f2c1ddfbdb6f4af7d3787de24306e6d88de800e-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(8936):00001-10-000861:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "FindFirstFile(find \"c:\\program files\\fujitsu\\safetydomain\\api32\\Get-EventLog\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a992a11def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtAllocateVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a9928c1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a9928b1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:10"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a992821def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:10"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a992831def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 10:59:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "a7a992971def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:13448[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 10:59:06"
+                        ], 
+                        "event_detail": {
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "pid": 13448, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "a78c950c1def11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "pid": 10276, 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy RemoteSigned -Command Get-EventLog -LogName Application -Source MsiInstaller -EntryType Information -After 2020/05/01 | ?{ $_.EventID -eq \"1040\"} | Select-Object TimeWritten,Message | Export-CSV -NoTypeInformation -Encoding Default \"C:\\Users\\KIMURA~1\\AppData\\Local\\Temp\\eventlog.csv\"", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\apl\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "66cbee13d347381c9b19794ae77bd1e8ea6ea72012d0ebe63aa4b03993a72b2d", 
+                    "parent_pid": 17136, 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "10276-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(10276):00001-10-000799:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "13908-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "13908-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 11:03:07"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "3be061f41df011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sekiwafudousan.agency.ase3123.exe", 
+                    "hash": "df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439", 
+                    "pid": 13908, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\agency\\Sekiwafudousan.Chintai.Relay.exe\" MTQ0LDE0NDAwOSznqY3msLTjg4/jgqbjgrnkuI3li5XnlKPkuK3pg6jmoKrlvI/kvJrnpL4sMjA4MDAwLOWQjemnheWWtualreaJgCw0LEFDMDMwMywwMEFDMDMwMyzmnKjmnZHjgIDpmoYsQzAwMDA1OSw0MSwyMDIxMDksMjAyMTA5MjUsOTAuNTIuMTcuNjEsUDE0NEMxNTQsMjAyMTA5MjUxOTU5Mzg3NzgsMSwwRywgLDE0NDAwOSwwMywxNDQsMTQ0MDA5LCAsMA== ASA240100", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\agencymenu\\sekiwafudousan.agency.ase3123.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07", 
+                    "parent_pid": 17348, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\agency\\sekiwafudousan.chintai.relay.exe", 
+                    "ppid": "13908-df9cff17892afd721b86b674d96403ca1ef4e46e82771479654d762d8d06b439-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.chintai.relay.exe(13908):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.chintai.relay.exe", 
+            "shell_type": 0
+        }, 
+        "17348-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kimura0033", 
+                        "ppid": "17348-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 11:02:26"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "1517f1ce1df011ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "sekiwafudousan.chintai.as83121.exe", 
+                    "hash": "42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07", 
+                    "pid": 17348, 
+                    "command_line": "\"D:\\Sekisui\\SFCISv3\\Client\\agencyMenu\\Sekiwafudousan.Agency.ASE3123.exe\" M059 MTQ0LDE0NDAwOSznqY3msLTjg4/jgqbjgrnkuI3li5XnlKPkuK3pg6jmoKrlvI/kvJrnpL4sMjA4MDAwLOWQjemnheWWtualreaJgCw0LEFDMDMwMywwMEFDMDMwMyzmnKjmnZHjgIDpmoYsQzAwMDA1OSw0MSwyMDIxMDksMjAyMTA5MjUsOTAuNTIuMTcuNjEsUDE0NEMxNTQsMjAyMTA5MjUxOTU5Mzg3NzgsMSwwM++8mk0wNTnvvJrku7Lku4vjgrfjgrnjg4bjg6DvvL8sICwxNDQwMDksMDMsMTQ0LDE0NDAwOSwgLDA=", 
+                    "parent_path": "d:\\sekisui\\sfcisv3\\client\\login\\sekiwafudousan.chintai.as83121.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b402be768f49ec59816c7403df21d7b180dae43177bd9aa2f93f759b0c6016ed", 
+                    "parent_pid": 16440, 
+                    "path": "d:\\sekisui\\sfcisv3\\client\\agencymenu\\sekiwafudousan.agency.ase3123.exe", 
+                    "ppid": "17348-42638ab85c60d9b5a458acf569d74dae3a37780c4d0524e49a487fc6d7095f07-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "sekiwafudousan.agency.ase3123.exe(17348):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sekiwafudousan.agency.ase3123.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

@@ -1,0 +1,143 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEyeNx解析レポート用 
+
+## define function
+<%namespace file="./util.mk.tmpl" name="func" />
+
+<%inherit file="base.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+  .mltable {
+    border-collapse: collapse;
+  }
+  .mltable th, .s-tbl td {
+    border: 1px solid #000;
+  }
+  .mltable tr:nth-child(2n+1) {
+    background: #eee;
+  }
+  .mltable tr:first-child, .s-tbl th:first-child {
+    background: #0ff;
+  }
+  .mltable tr:hover {
+    background:#ff0;
+  }
+</%block>
+
+<%block name="alert_by_severity">
+  ${parent.alert_by_severity()}
+  ${ func.graph_wLegend("./images/severity_circle.png",
+                        alertdata["severity_table"]["legend"])
+  }
+  <br />
+  ${ func.mltable(alertdata["severity_table"]) }
+</%block>
+
+<%block name="alert_by_daily">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/dailychart_stack_by_severity.png",
+                        alertdata["dailychart_table"]["legend"])
+  }
+##  ${ func.mltable(alertdata["dailychart_table"], True) }
+</%block>
+
+<%block name="alert_by_traffic">
+  ${parent.alert_by_traffic()}
+  % if len(alertdata["topnum_by_app_table"]["fields"]) is 0:
+    <p class="description">内部から外部への通信でアラートとなるものはございませんでした。</p>
+  % else:
+    <p class="description">発生したアラート関連の通信のうち内部から外部に向けた通信について、以下の観点でまとめました。</p>
+    <div style="page-break-inside: avoid;">
+      <p  class="subsection">・アプリケーション(プロトコル)TOP5</p>
+      <p class="description">アラートが発生した通信について利用されたプロトコルのTOP5は以下の通りです</p>
+      ${ func.graph_wTable("./images/topnum_by_appname.png",
+                            alertdata["topnum_by_app_table"])
+      }
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">・通信元(IPアドレス)TOP5</p>
+      <p class="description">アラートの発生が多い通信元ホストのTOP5は以下の通りです。</p>
+      ${ func.graph_wTable("./images/topnum_by_srcip.png",
+                            alertdata["topnum_by_srcip_table"])
+      }
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">・通信先(IPアドレス)TOP5</p>
+      <p class="description">アラート発生時の通信先について、IPアドレスベースのTOP5は以下の通りです。</p>
+      ${ func.graph_wTable("./images/topnum_by_dstip.png",
+                            alertdata["topnum_by_dstip_table"])
+      }
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">・通信先(国家)TOP5</p>
+      <p class="description">アラート発生時の通信先について、国家ベースのTOP5は以下の通りです。</p>
+      ${ func.graph_wTable("./images/topnum_by_dstip_geo.png",
+                            alertdata["topnum_by_dstip_geo_table"])
+      }
+    </div>
+  % endif
+  ##${ func.mltable(alertdata["malware_table"]) }
+</%block>
+
+<%block name="alert_by_monthly">
+  ${parent.alert_by_monthly()}
+  ${ func.graph_wLegend("./images/monthlychart_stack_by_severity.png",
+                        alertdata["monthlychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["monthlychart_table"], True) }
+</%block>
+
+<%block name="alert_detail">
+  ${parent.alert_detail()}
+  <div style="page-break-inside: avoid;">
+    <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][1]["name"] }</p>
+    % if len(alertdata["alert_type_table"]["fields"]) is 0 or alertdata["alert_num"] is 0:
+      <p class="description">当月中には該当するアラートはございませんでした。<p>
+      <br />
+    % else:
+      ${ func.mltable(alertdata["alert_type_desc_table"], True) }
+      <br />
+      ${ func.graph_wTable("./images/alert_type_stats.png",
+                            alertdata["alert_type_table"])
+      }
+    % endif
+  </div>
+  <div style="page-break-inside: avoid;">
+    <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][2]["name"] }</p>
+    % if len(alertdata["killchain_table"]["fields"]) is 0 or alertdata["alert_num"] is 0:
+      <p class="description">当月中には該当するアラートはございませんでした。<p>
+      <br />
+    % else:
+      ${ func.mltable(alertdata["killchain_desc_table"], True) }
+      <br />
+      ${ func.graph_wTable("./images/killchain_stats.png",
+                            alertdata["killchain_table"])
+      }
+    % endif
+  </div>
+</%block>
+
+<%block name="blk_security_news">
+  <ol>
+    % for each in security_news["news"]:
+      <div style="page-break-inside: avoid;">
+        <li class="subsection">${ each["title"] }</li>
+        <p class="description">${ func.replace2br(each["content"]) }<p>
+      </div>
+      <br />
+    % endfor
+  </ol>
+</%block>
+
+<%block name="blk_other_comment">
+  % for each in userdata["comments"]:
+    <div style="page-break-inside: avoid;">
+      <li class="subsection">${ each["title"] }</li>
+      <p class="description">${ func.replace2br(each["content"]) }<p>
+    </div>
+    <br />
+  % endfor
+</%block>
+

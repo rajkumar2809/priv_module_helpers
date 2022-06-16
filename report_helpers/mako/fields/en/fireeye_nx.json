@@ -1,0 +1,51 @@
+{
+  "headers" : {
+    "title"       : "Trellix Nx Alert Report",
+    "summary"     : "1. Summary",
+    "remediation" : "2. Recommended",
+    "endpointav"  : "Detection by AV on EndPoint"
+  },
+  "subheaders" : {
+    "outbound" : "detected web site",
+    "known_callback" : "callback domain if execute malware",
+    "malware_file" : "detected file"
+  },
+  "_form" : {
+    "action" : "html_data_view"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "endpointav" : {
+    "src" : "endpointav"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "outbound" : {
+    "src" : "url"
+  },
+  "summary_info" : [
+    { "name" : "ip adderss of victim", "src" : "ipaddr"      },
+    { "name" : "hostname of victim",   "src" : "hostname"    },
+    { "name" : "username of PC",       "src" : "username"    },
+    { "name" : "alert ID",             "src" : "targetid"    },
+    { "name" : "Severity",             "src" : "severity"    },
+    { "name" : "outbound by malware",  "src" : "outboundcom" },
+    { "name" : "block",                "src" : "block"       },
+    { "name" : "alert name",           "src" : "alertname"   },
+    { "name" : "alert date(JST)",      "src" : "alertdate"   }
+  ],
+  "malware_object" : {
+    "malware_file" : [
+      { "name" : "file name",      "src" : "fname" },
+      { "name" : "file hash(md5)", "src" : "fhash" }
+    ],
+    "known_callback" : {
+      "src" : "objcnc"
+    }
+  }
+}

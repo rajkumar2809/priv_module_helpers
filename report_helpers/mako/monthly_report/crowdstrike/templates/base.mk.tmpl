@@ -1,0 +1,496 @@
+#coding:utf-8
+## define function
+<%namespace file="util.mk.tmpl" name="func" />
+
+## main
+
+<html>
+  <head>
+    <title>${ headers["title"]["use"] }</title>
+  </head>
+    <style type="text/css">
+      body {
+        width: 205mm;
+        height: 306mm;
+        margin-right : auto;
+        margin-left : auto;
+        margin-top : auto;
+        margin-bottom : auto;
+        font-family:"Meiryo UI";
+      }
+      table {
+        border-collapse: collapse;
+        margin-right : auto;
+        margin-left : auto;
+        font-family:"Meiryo UI";
+      }
+      td {
+        border: solid 1px;
+        padding: 0.5em;
+        font-family:"Meiryo UI";
+      }
+      caption {
+        font-family:"Meiryo UI";
+      }
+      .title_box{
+        margin-right:auto;
+        margin-left:auto;
+        width:800px;
+        border:2px solid #666;
+        font-family:"Meiryo UI";
+        text-align:center;
+        font:bold;
+      }
+      .center_box{
+        margin-right:auto;
+        margin-left:auto;
+        width:800px;
+        height:500px;
+        text-align:center;
+      }
+      .signature{
+        margin-right:auto;
+        margin-left:auto;
+        font-family:"Meiryo UI";
+        text-align:center;
+        font-size:x-large;
+      }
+      .none_boader {
+        border-style: none;
+      }
+      .section {
+        font:bold;
+        font-size:x-large;
+        font-family:"Meiryo UI";
+      }
+      .subsection {
+        font:bold;
+        font-size:large;
+        font-family:"Meiryo UI";
+      }
+      .report_text {
+        margin-left:12px;
+        text-align:left;
+        font-family:"Meiryo UI";
+      }
+      .description {
+        font-family:"Meiryo UI";
+      }
+      .item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:250px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .sub_item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:100px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .min_item {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        font-size: medium;
+        width:200px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .min_content {
+        font-family:"Meiryo UI";
+        font-size: medium;
+        width:200px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .content {
+        font-family:"Meiryo UI";
+        width:450px;
+        padding:2px;
+        text-align:center;
+        word-break:break-all;
+      }
+      .desc_content{
+        font-family:"Meiryo UI";
+        width:550px;
+        padding:2px;
+        text-align:left;
+        word-break:break-all;
+      }
+      .wide_content{
+        font-family:"Meiryo UI";
+        width:950px;
+        padding:2px;
+        text-align:left;
+        word-break:break-all;
+      }
+      .value {
+        font-family:"Meiryo UI";
+        width:700px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .hvalue {
+        font-family:"Meiryo UI";
+        width:350px;
+        padding:2px;
+        word-break:break-all;
+      }
+      .fheader {
+        font-family:"Meiryo UI";
+        background-color:#CCECFF;
+        font-weight:bold;
+        width:350px;
+        padding:2px;
+        text-align:center;
+      }
+      .comments {
+        font-family:"Meiryo UI";
+      }
+      <%block name="stylesheet_blk">
+      </%block>
+    </style>
+  <body>
+    <div style="height:300px"></div>
+    <div class="title_box">
+      <h1>${ report_target["customer_name"] }様</h1>
+      <h1>${ headers["title"]["use"] }</h1>
+      <h1>${ headers["sub_title"] }</h1>
+      <h1>（ ${report_target["report_month"]} ）</h1>
+    </div>
+    <div style="height:50px"></div>
+    <h3 class="signature">${ headers["date"] } 初版</p>
+    <!-- <h3 class="signature">${ headers["company"] }</p> -->
+    <div style="height:350px"></div>
+    <image src="./images/${ format["logo"]["use"]["s"] }">
+    <div style="page-break-after: always;" ><br /></div>
+    <br />
+    <h3 class="section">${ headers["sections"]["top_message"]["number"] }. ${ headers["sections"]["top_message"]["title"] }</h3>
+    <p class="description">本書は、MDRサービスによって提供されるアラートサマリー報告書です。</p>
+    <p class="description">本書は、お客様のシステム、ネットワーク、及びセキュリティのご担当者の方を対象としているため、<B><U>お客様に関係する機密情報</U></B>が含まれております。第三者に対して漏洩することがないよう、取り扱いには十分にご注意ください。</p>
+    <br />
+    <p class="subsection">${ report_target["chapters"][0]["name"] }</p>
+    <table>
+      <!--
+      <tr>
+        % for each in report_target["table"]["header"]:
+          <td class="item">${ each }</td>
+        % endfor
+      </tr>
+      -->
+      % for each in report_target["table"]["contents"]:
+        <tr>
+          <td class="item">${ each["name"] }</td>
+          <td class="content">${ each["content"] }</td>
+        </tr>
+      % endfor
+    </table>
+    <br />
+    <div style="page-break-after: always;" ><br /></div>
+    <h3 class="section">${ headers["sections"]["alert_analysis"]["number"] }. ${ headers["sections"]["alert_analysis"]["title"] }</h3>
+    <p class="description">CrowdStrike Falcon がセキュリティ侵害を検知した場合、以下のアラート判定基準に基づきアラート判定を行います。<p>
+    <table>
+      <caption>アラート判定基準</caption>
+      <tr>
+        <td class="min_item">危険度</td>
+        <td class="item">内容</td>
+      </tr>
+      <tr>
+        <td class="min_content">高</td>
+        <td class="desc_content">マルウェア感染や外部への不正な通信など、お客様の資産にとって重大な脅威となりうるイベントが確認されたインシデント。エンドポイントの隔離が必要です。</td>
+      </tr>
+      <tr>
+        <td class="min_content">中</td>
+        <td class="desc_content">アラート検知時点ではセキュリティ侵害活動を防止していますが、マルウェアの除去などエンドポイント において何らかの処置が必要なインシデント。<br />
+(マルウェアの実行を CrowdStrike Falcon が検知・停止して、セキュリティ侵害活動は防止できているが、 マルウェア自体は隔離されておらず、駆除が必要な場合など)</td>
+      </tr>
+      <tr>
+        <td class="min_content">低</td>
+        <td class="desc_content">攻撃活動の可能性が低いインシデント。特に対応は必要ありません。<br />
+(検知後に隔離が完了しているマルウェア、アドウェア、リスクウェアなど)</td>
+      </tr>
+    </table>
+    <div style="page-break-after: always;" ><br /></div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["name"] }</p>
+      % if alertdata["alert_num"] is 0:
+        <p class="description">当月中にはアラートはございませんでした。<p>
+        <br />
+      % else:
+        <p class="description">当月中に確認されたアラートの集計を以下に示します。<p>
+      % endif
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["chapters"][0]["name"] }</p>
+        % if alertdata["alert_num"] is 0:
+          <p class="description">当月中にはアラートはございませんでした。<p>
+          <br />
+        % else:
+          <%block name="alert_by_severity">
+          </%block>
+          <div style="page-break-after: always;" ><br /></div>
+        % endif
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["chapters"][1]["name"] }</p>
+        % if alertdata["alert_num"] is 0:
+          <p class="description">当月中にはアラートはございませんでした。<p>
+          <br />
+        % else:
+          <%block name="alert_by_daily">
+          </%block>
+          <div style="page-break-after: always;" ><br /></div>
+        % endif
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["chapters"][2]["name"] }</p>
+        % if alertdata["alert_num"] is 0:
+          <p class="description">当月中にはアラートはございませんでした。<p>
+          <br />
+        % else:
+          <%block name="alert_by_malware_type">
+          </%block>
+          <br />
+        % endif
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["chapters"][3]["name"] }</p>
+        % if alertdata["alert_num"] is 0:
+          <p class="description">当月中にはアラートはございませんでした。<p>
+          <br />
+        % else:
+          <%block name="alert_by_host">
+          </%block>
+          <br />
+        % endif
+    </div>
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][0]["chapters"][4]["name"] }</p>
+        % if alertdata["alert_num"] is 0:
+          <p class="description">当月中にはアラートはございませんでした。<p>
+          <br />
+        % else:
+          <%block name="alert_by_os">
+          </%block>
+          <br />
+        % endif
+    </div>
+    
+    <div style="page-break-inside: avoid;">
+      <p class="subsection">${ headers["sections"]["alert_analysis"]["number"] }.${ alert_analysis["chapters"][1]["name"] }</p>
+      % if alertdata["alert_num_6month"] is 0:
+        <p class="description">過去 6 ヶ月にアラートはございませんでした。<p>
+        <br />
+      % else:
+        <p class="description">過去 6 ヶ月のアラート件数の月別の推移を以下に示します。<p>
+        <%block name="alert_by_monthly">
+        </%block>
+      % endif
+    </div>
+
+    <div style="page-break-after: always;" ></div>
+    <div style="page-break-inside: avoid;">
+      <h3 class="section">${ headers["sections"]["incident"]["number"] }. ${ headers["sections"]["incident"]["title"] }</h3>
+      % if len(alertdata["incident_table"]["fields"]) is 0:
+        <p class="description">当月中には対応が必要なアラートはございませんでした。<p>
+      % else:
+        <%block name="incident">
+        </%block>
+      % endif
+    </div>
+
+    <div style="page-break-after: always;" ></div>
+    <div style="page-break-inside: avoid;">
+      <h3 class="section">${ headers["sections"]["agent_release"]["number"] }. ${ headers["sections"]["agent_release"]["title"] }</h3>
+      <%block name="blk_agent_release">
+      </%block>
+    </div>
+    % if config_history["enable"]:
+      <div style="page-break-inside: avoid;">
+        <h3 class="section">${ headers["sections"]["config_history"]["number"] }. ${ headers["sections"]["config_history"]["title"] }</h3>
+        % if len(config_history["results"]["fields"]) is 0:
+          <p class="description">当該期間中は、設定変更作業はございませんでした。<p>
+        % else:
+          <%block name="blk_config_history">
+          </%block>
+        % endif
+        <br />
+      </div>
+    % endif
+
+    ##% if alertdata["alert_num"] is 0:
+      <div style="page-break-after: always;" ><br /></div>
+    ##% endif
+    % if threat_hunting["enable"]:
+      <div style="page-break-inside: avoid;">
+        <h3 class="section">${ headers["sections"]["threat_hunting"]["number"] }. ${ headers["sections"]["threat_hunting"]["title"] }</h3>
+        <p class="description">弊社保有の脅威インテリジェンスをもとに、すでに侵入している脅威の有無を調査した結果を以下に示します。<p>
+        <p class="subsection">${ headers["sections"]["threat_hunting"]["number"] }.${ threat_hunting["chapters"][0]["name"] }</p>
+        <table>
+          <tr>
+            <td class="item">脅威インテリジェンス概要</td>
+          </tr>
+          <tr>
+            <td class="wide_content">
+              <list >
+              % for each in threat_hunting["ioc_type"]:
+                <li>${ each["desc"] }</li>
+              % endfor
+              </list>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
+      <div style="page-break-inside: avoid;">
+        <p class="subsection">${ headers["sections"]["threat_hunting"]["number"] }.${ threat_hunting["chapters"][1]["name"] }</p>
+        % if len(threat_hunting["results"]["fields"]) is 0:
+          <p class="description">脅威は検出されませんでした。<p>
+        % else:
+          <%block name="blk_threat_hunting">
+          </%block>
+        % endif
+        <br />
+      </div>
+      <div style="page-break-after: always;" ><br /></div>
+    % endif
+
+    % if discover["enable"]:
+      <div style="page-break-inside: avoid;">
+        <h3 class="section">${ headers["sections"]["discover"]["number"] }. ${ headers["sections"]["discover"]["title"] }</h3>
+        % if len(discover["results"]["fields"]) is 0:
+          <p class="description">Discoverで確認した結果、脅威は検出されませんでした。<p>
+        % else:
+          <p class="description">Discover実施結果をもとに、貴社環境内で存在を確認された問題点と、その問題点を持つ端末情報を以下に示します。<p>
+          <%block name="blk_discover">
+          </%block>
+        % endif
+        <br />
+      </div>
+      ##% if alertdata["alert_num"] is 0:
+        <div style="page-break-after: always;" ><br /></div>
+      ##% endif
+    % endif
+
+    % if spotlight["enable"]:
+      <div style="page-break-inside: avoid;">
+        <h3 class="section">${ headers["sections"]["spotlight"]["number"] }. ${ headers["sections"]["spotlight"]["title"] }</h3>
+        % if spotlight["exists"]:
+          <p class="description">Spotlight実施結果をもとに、貴社環境内で存在を確認された問題点と、その問題点を持つ端末情報を以下に示します。<p>
+          <%block name="blk_spotlight">
+          </%block>
+        % else:
+          <p class="description">Spotlightで確認した結果、脅威は検出されませんでした。<p>
+        % endif
+        <br />
+      </div>
+      ##% if alertdata["alert_num"] is 0:
+        <div style="page-break-after: always;" ><br /></div>
+      ##% endif
+    % endif
+
+    % if digitalrisk["enable"]:
+        <h3 class="section">${ headers["sections"]["digitalrisk"]["number"] }. ${ headers["sections"]["digitalrisk"]["title"] }</h3>
+        <p class="description">ご登録頂いた以下の情報につき、DeCYFIR&trade;での監視結果をご報告致します。<br />
+        ${ func.mltable( digitalrisk["monitor_target"]["results"] ) }
+        <br />
+        <div style="page-break-inside: avoid;">
+          <p class="subsection">${ headers["sections"]["digitalrisk"]["number"] }.${ digitalrisk["vuln_domain"]["name"] }</p>
+          % if digitalrisk["vuln_domain"]["results"]:
+            <p class="description">登録頂いたドメインにつき、確認されたサブドメインと、その脆弱性情報、オープンポートを以下に示します。<br />
+リスクスコアが「中」以上のものは、脆弱性やオープンポートを放置することにより攻撃される危険性が高いものになりますので、セキュリティアップデートの適用や、不要なポートの閉鎖を推奨いたします。<br />
+また、リスクスコアに関わらず、組織で管理されていないサブドメインが存在する場合は、利用目的等をご確認の上必要に応じて組織の管理下に置く、または閉鎖するなどの対応を推奨致します。<br />
+関連資料: vuln_domain.csv</p>
+            ${ func.mltable( digitalrisk["vuln_domain"]["description"] ) }
+            <%block name="blk_digitalrisk_vuln_domain">
+            </%block>
+          % else:
+            <p class="description">登録頂いたドメインにつき、脆弱性やオープンポート情報などはございませんでした。</p>
+          % endif
+        </div>
+        <div style="page-break-inside: avoid;">
+          <p class="subsection">${ headers["sections"]["digitalrisk"]["number"] }.${ digitalrisk["vuln_ipaddr"]["name"] }</p>
+          % if digitalrisk["vuln_ipaddr"]["results"]:
+            <p class="description">登録いただいたIPアドレスにつき、確認されたオープンポートと脆弱性情報を以下に示します。<br />
+不必要なオープンポートの閉鎖および、脆弱性に対するセキュリティアップデートを実施されることを推奨いたします。<br />
+関連資料: vuln_ipaddr.csv</p>
+            <%block name="blk_digitalrisk_vuln_ipaddr">
+            </%block>
+          % else:
+            <p class="description">登録頂いたIPアドレスにつき、脆弱性やオープンポート情報などはございませんでした。</p>
+          % endif
+        </div>
+        <div style="page-break-inside: avoid;">
+          <p class="subsection">${ headers["sections"]["digitalrisk"]["number"] }.${ digitalrisk["impersonate_domain"]["name"] }</p>
+          % if digitalrisk["impersonate_domain"]["results"]:
+            <p class="description">登録いただいたドメインに似た、なりすましの可能性があるドメイン情報のうち、脅威アクターに関連する情報を持つものの一覧を以下に示します。<br />
+なりすましドメインやそのIPアドレスへの通信をブロックされることを推奨いたします。<br />
+※1 なりすましドメインのホストIPアドレスと関連する脅威アクター名<br />
+※2 EDR製品導入済みのお客様のエンドポイントから、なりすましドメインのホストIPアドレスへの通信有無をクラウド上のEDR製品のログに対してハンティングした結果<br />
+関連資料: impersonate_domain.csv</p>
+            <%block name="blk_digitalrisk_impersonate_domain">
+            </%block>
+          % else:
+            <p class="description">登録頂いたドメインにつき、なりすましドメイン情報はございませんでした。</p>
+          % endif
+        </div>
+        <div style="page-break-inside: avoid;">
+          <p class="subsection">${ headers["sections"]["digitalrisk"]["number"] }.${ digitalrisk["dataleak"]["name"] }</p>
+          % if digitalrisk["dataleak"]["results"]:
+            <p class="description">ご連絡いただきましたキーワードに関連した情報漏洩が疑われるものを検出しました。<br />
+関連資料: dataleak.csv</p>
+            <%block name="blk_digitalrisk_dataleak">
+            </%block>
+          % else:
+            <p class="description">登録頂いたキーワードにつき、情報漏洩が疑われるようなものはございませんでした。</p>
+          % endif
+        </div>
+        <br />
+      ##% if alertdata["alert_num"] is 0:
+        <div style="page-break-after: always;" ><br /></div>
+      ##% endif
+    % endif
+
+    <h3 class="section">${ headers["sections"]["security_news"]["number"] }. ${ headers["sections"]["security_news"]["title"] }</h3>
+    % if len(security_news["news"]) is 0:
+      <p class="description">今月は周知が必要な重大なセキュリティ情報はございませんでした。<p>
+      <br />
+    % else:
+      <%block name="blk_security_news">
+      </%block>
+    % endif
+    <div style="page-break-inside: avoid;">
+      <h3 class="section">${ headers["sections"]["other_comment"]["number"] }. ${ headers["sections"]["other_comment"]["title"] }</h3>
+      % if len(userdata["comments"]) is 0:
+        <p class="description">特になし<p>
+        <br />
+      % else:
+        <%block name="blk_other_comment">
+        </%block>
+      % endif
+    </div>
+    <div style="page-break-inside: avoid;">
+      <h3 class="section">${ headers["sections"]["conclusion"]["number"] }. ${ headers["sections"]["conclusion"]["title"] }</h3>
+      <%block name="blk_conclusion">
+      </%block>
+    </div>
+    <div style="page-break-inside: avoid;">
+      <div style="height:380px"></div>
+      <div style="text-align:center;">
+        <image src="./images/${ format["logo"]["use"]["m"] }">
+      </div>
+      % if "デジタルハーツ" in headers["company"]:
+        <div style="height:650px"></div>
+      % else:
+        <div style="height:750px"></div>
+      % endif
+    </div>
+  </body>
+</html>

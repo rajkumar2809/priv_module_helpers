@@ -1,0 +1,76 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "488-8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52-0": {
+            "details": {
+                "indicators": [
+                    "SET_APP_CONFIG", 
+                    "HAS_SCRIPT_DLL", 
+                    "MITRE_T1546_EVENT_TRIGGERED_EXEC"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "488-8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52-0", 
+                        "description": "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Narrator.exe\\Debugger", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "ACTION_WRITE_VALUE(\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Narrator.exe\\Debugger)", 
+                        "occurred": [
+                            "2021/09/26 04:07:19"
+                        ], 
+                        "event_detail": {
+                            "reg_name": "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\Narrator.exe\\Debugger", 
+                            "reg_action": "ACTION_WRITE_VALUE"
+                        }, 
+                        "event_id": [
+                            "4b92472f1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "regmod", 
+                        "ev_type": "REGISTRY_ACCESS", 
+                        "categories": [
+                            "SET_APP_CONFIG", 
+                            "MITRE_T1546_EVENT_TRIGGERED_EXEC", 
+                            "HAS_SCRIPT_DLL"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52", 
+                    "pid": 488, 
+                    "command_line": "C:\\Windows\\System32\\svchost.exe -k netsvcs", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "0de07554ec1b0b73ef454373446a3a5da7f60a47d392f3a66558379fdd236dd6", 
+                    "parent_pid": 780, 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "488-8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "svchost.exe(488):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "ESI1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

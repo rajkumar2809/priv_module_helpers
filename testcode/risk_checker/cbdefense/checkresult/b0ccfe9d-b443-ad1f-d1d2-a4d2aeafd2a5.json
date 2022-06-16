@@ -1,0 +1,145 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "11192-be279f10d7ff4c18d69724ef0eb04c91d8a34aac0db610e638b000991dfb8b02-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "YONEKYU\\kento.yamazaki", 
+                        "ev_type": "NETWORK", 
+                        "description": "10.33.1.1:21", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "150.8.6.97:54275-(TCP:OUT)->10.33.1.1:21(None)[None]", 
+                        "occurred": [
+                            "2021/09/25 05:29:08"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "10.33.1.1", 
+                            "proto": "TCP", 
+                            "remote_port": 21, 
+                            "local_port": 54275, 
+                            "local_ipv4": "150.8.6.97", 
+                            "remote_domain": null, 
+                            "is_inbound": false, 
+                            "remote_location": null
+                        }, 
+                        "event_id": [
+                            "8ac7183b1dc111ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "11192-be279f10d7ff4c18d69724ef0eb04c91d8a34aac0db610e638b000991dfb8b02-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "excel.exe", 
+                    "hash": "be279f10d7ff4c18d69724ef0eb04c91d8a34aac0db610e638b000991dfb8b02", 
+                    "pid": 11192, 
+                    "command_line": "ftp -n -s:C:\\Users\\kento.yamazaki\\Desktop\\ISS\\ftppara.dat", 
+                    "parent_path": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "cd36a7be212addba5ed836f5a7922edf70db2e39c81ed74a7bde50446f922a1b", 
+                    "path": "c:\\windows\\syswow64\\ftp.exe", 
+                    "ppid": "11192-be279f10d7ff4c18d69724ef0eb04c91d8a34aac0db610e638b000991dfb8b02-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4276
+                }
+            }, 
+            "message": "ftp.exe(11192):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ftp.exe", 
+            "shell_type": 0
+        }, 
+        "4276-cd36a7be212addba5ed836f5a7922edf70db2e39c81ed74a7bde50446f922a1b-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_NET_UTILITY", 
+                    "HAS_SCRIPT_DLL", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "YONEKYU\\kento.yamazaki", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\ftp.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\ftp.exe:11192[ftp -n -s:C:\\Users\\kento.yamazaki\\Desktop\\ISS\\ftppara.dat]", 
+                        "occurred": [
+                            "2021/09/25 05:29:08"
+                        ], 
+                        "event_detail": {
+                            "command_line": "ftp -n -s:C:\\Users\\kento.yamazaki\\Desktop\\ISS\\ftppara.dat", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 11192, 
+                            "name": "c:\\windows\\syswow64\\ftp.exe", 
+                            "hash": "be279f10d7ff4c18d69724ef0eb04c91d8a34aac0db610e638b000991dfb8b02"
+                        }, 
+                        "event_id": [
+                            "8ac718391dc111ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4276-cd36a7be212addba5ed836f5a7922edf70db2e39c81ed74a7bde50446f922a1b-0", 
+                        "categories": [
+                            "RUN_NET_UTILITY", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "HAS_SCRIPT_DLL"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "cd36a7be212addba5ed836f5a7922edf70db2e39c81ed74a7bde50446f922a1b", 
+                    "pid": 4276, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\" /dde", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "15611e85ec0275dd37e1550bcd5005092414099da2c18edf7e0b2c04f26ca30c", 
+                    "path": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                    "ppid": "4276-cd36a7be212addba5ed836f5a7922edf70db2e39c81ed74a7bde50446f922a1b-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7172
+                }
+            }, 
+            "message": "excel.exe(4276):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "excel.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "IYS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

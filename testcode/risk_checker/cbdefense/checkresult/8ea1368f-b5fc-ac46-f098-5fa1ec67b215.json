@@ -1,0 +1,176 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 52410, 
+            "ip": "50.27.153.19", 
+            "location": "Lubbock,TX,United States", 
+            "name": null
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8364-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_SERVER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\nakamura087", 
+                        "ev_type": "NETWORK", 
+                        "description": "50.28.1.119:54434", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "50.28.1.119:54434<-(UDP:IN)-50.27.153.19:52410(None)[Lubbock,TX,United States]", 
+                        "occurred": [
+                            "2021/09/26 04:08:18"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.27.153.19", 
+                            "proto": "UDP", 
+                            "local_port": 54434, 
+                            "local_ipv4": "50.28.1.119", 
+                            "remote_domain": null, 
+                            "is_inbound": true, 
+                            "remote_location": "Lubbock,TX,United States", 
+                            "remote_port": 52410
+                        }, 
+                        "event_id": [
+                            "6e27e1c31e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8364-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9", 
+                    "pid": 8364, 
+                    "command_line": "\"C:\\ADTool\\Bin\\iNotify.exe\" ", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae", 
+                    "path": "c:\\adtool\\bin\\inotify.exe", 
+                    "ppid": "8364-fa4c5cd950cdecf2b87efea5c761f576397f37a7ec05718aefc91e4c420005f9-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 3224
+                }
+            }, 
+            "message": "inotify.exe(8364):00001-10-000803:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "inotify.exe", 
+            "shell_type": 0
+        }, 
+        "11288-c07977b708e7edfe4f9cbe080858ad879dc461e23f0a9fdc22ceb1366ede44a0-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "MONITOR_USER_INPUT", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\nakamura087", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\canvas\\bin\\afa056_\uff41\uff53\u4f9d\u983c\u53d7\u4ed8\u66f8.xlsm\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:34"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "6e27e1ce1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11288-c07977b708e7edfe4f9cbe080858ad879dc461e23f0a9fdc22ceb1366ede44a0-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\nakamura087", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 04:08:34"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "event_id": [
+                            "6e27e1cd1e7f11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11288-c07977b708e7edfe4f9cbe080858ad879dc461e23f0a9fdc22ceb1366ede44a0-0", 
+                        "categories": [
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "MONITOR_USER_INPUT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gss080.exe", 
+                    "hash": "c07977b708e7edfe4f9cbe080858ad879dc461e23f0a9fdc22ceb1366ede44a0", 
+                    "pid": 11288, 
+                    "command_line": "\"C:\\PROGRAM FILES (X86)\\MICROSOFT OFFICE\\ROOT\\OFFICE16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\AFA056_\uff21\uff33\u4f9d\u983c\u53d7\u4ed8\u66f8.XLSM\"", 
+                    "parent_path": "c:\\canvas\\bin\\gss080.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "25f56a9938fd6da6f58dad2a2efb541ec5b2f54219075608a34389e08d9c3b22", 
+                    "path": "c:\\canvas\\bin\\afa056_\uff41\uff53\u4f9d\u983c\u53d7\u4ed8\u66f8.xlsm", 
+                    "ppid": "11288-c07977b708e7edfe4f9cbe080858ad879dc461e23f0a9fdc22ceb1366ede44a0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 2940
+                }
+            }, 
+            "message": "excel(11288):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

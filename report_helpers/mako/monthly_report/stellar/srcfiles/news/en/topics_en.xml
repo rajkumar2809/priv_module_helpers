@@ -1,0 +1,279 @@
+<root>
+<each>
+<title>
+Microsoft Corporation - March 2022 Security Updates
+</title>
+<content>
+The March 2022 security release consists of security updates for the following software.
+
+This includes a security update with a severity of "Urgent". The vulnerabilities in Microsoft Exchange Server (CVE-2022-23277 and CVE-2022-24463), are also classified as "Urgent" and taking early actions is recommended.
+
+We highly recommend to apply the security update as soon as possible. 
+
+ - .NET and Visual Studio
+ - Azure Site Recovery
+ - Microsoft Defender for Endpoint
+ - Microsoft Defender for IoT
+ - Microsoft Edge (Chromium-based)
+ - Microsoft Exchange Server
+ - Microsoft Intune
+ - Microsoft Office Visio
+ - Microsoft Office Word
+ - Microsoft Windows ALPC
+ - Microsoft Windows Codecs Library
+ - Paint 3D
+ - Role: Windows Hyper-V
+ - Skype Extension for Chrome
+ - Tablet Windows User Interface
+ - Visual Studio Code
+ - Windows Ancillary Function Driver for WinSock
+ - Windows CD-ROM Driver
+ - Windows Cloud Files Mini Filter Driver
+ - Windows COM
+ - Windows Common Log File System Driver
+ - Windows DWM Core Library
+ - Windows Event Tracing
+ - Windows Fastfat Driver
+ - Windows Fax and Scan Service
+ - Windows HTML Platform
+ - Windows Installer
+ - Windows Kernel
+ - Windows Media
+ - Windows PDEV
+ - Windows Point-to-Point Tunneling Protocol
+ - Windows Print Spooler Components
+ - Windows Remote Desktop
+ - Windows Security Support Provider Interface
+ - Windows SMB Server
+ - Windows Update Stack
+ - Xbox
+
+Related Sites:
+"March 2022 Security Updates", Microsoft Security Response Center
+https://msrc.microsoft.com/update-guide/releaseNote/2022-Mar
+
+"Microsoft Exchange Server Remote Code Execution Vulnerability", Microsoft
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-23277
+
+"Microsoft Exchange Server Spoofing Vulnerability", Microsoft
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24463
+
+</content>
+</each>
+<each>
+<title>
+Re-spreading of the Emotet infection
+</title>
+<content>
+The number of cases infected with Emotet has been increasing rapidly in Japan since February 2022. The spread of the infection has not slowed down and the situation continues to require attention. According to information from JPCERT, the number of email addresses with ".jp" domains that are infected with Emotet and can be misused to send emails, has further increased sharply since the beginning of March, reaching more than five times the number at the peak of infection in 2020.
+
+The typical attack patterns of Emotet that we have confirmed are as follows:
+
+ - Posing as a reply to an email sent in the past.
+ - The password for the attached file is listed in the text.
+ - Many attachments are distributed with only the date and time, or 16-digit numbers, as file
+　 names.
+　 (Example: 20220201-12-34.zip, 1357924680123456.zip)
+ - Contains the word "report" (*confirmed since late February)
+ - The extension of the unzipped file is .xls or .xlsm
+ - The documentation includes a prompt to disable protected mode
+
+The attack method remains unchanged from previous attacks. Attack emails are distributed to encourage users to execute attached Office files such as Excel and Word, their encrypted Zip files, or to click on links in the body of the email.
+
+Since November 2021, we have also seen distribution via Windows app installer packages disguised as Adobe PDF software, using the App Installer feature pre-installed in Windows 10 and Windows 11. Attack methods may change in the future, so please continue to check the information provided by IPA and JPCERT. Also, on March 7, JPCERT released a video on YouTube explaining the malware Emotet, how to check for it and take countermeasures, so we recommend that you watch the video.
+
+Since the target software and methods have changed from those before the suspension measures in January 2021, we recommend that employees check the information on the following reference sites and implement the following reminders within their organizations.
+
+ - Do not open suspicious emails, and do not click any link contained in such emails.
+ - Do not open suspicious emails attachment file even if those mails seem to be a reply to mail
+　 you sent.
+　 (Check the sender's email address or the text of the reply email for anything suspicious,
+　  etc.)
+ - Disable automatic execution function of Word and Excel macros*
+ - Do not activate the macro or content until you are sure that the file is secure if you see a
+　 macro or security warning when opening a Word document or Excel file.
+ - If you receive an unfamiliar email, or if you are asked to install an additional program when 
+　 opening an attachment or linked document, contact your system administration 
+　 department immediately. If you have opened an attachment, clicked on a URL, or installed 
+　 a program, inform them of the situation as well.
+
+* For details on how to disable the automatic macro execution function, refer to the following 
+  reference site: "[Updated] Alert Regarding Emotet Malware Infection".
+
+We also recommend that the systems administration department take the following actions.
+
+ - Regularly apply OS patches (measures against spreading infection with SMB vulnerabilities)
+ - Obtain periodic offline backup (measures against targeted ransomware attacks)
+ - Enable email audit log
+
+Related Sites:
+"Emotet now spreads via fake Adobe Windows App Installer packages", Bleeping Computer
+https://www.bleepingcomputer.com/news/security/emotet-now-spreads-via-fake-adobe-windows-app-installer-packages/
+
+
+"Emotet Redux", Black Lotus Labs
+https://blog.lumen.com/emotet-redux/
+
+"About the analysis result of Emotet", National Police Agency (Japanese)
+https://www.npa.go.jp/cyberpolice/important/2020/202012111.html
+
+"[Updated] Alert Regarding Emotet Malware Infection", JPCERT
+https://www.jpcert.or.jp/english/at/2019/at190044.html
+
+"Malware Emotet that spreads throughout Japan", JPCERT (Japanese)
+https://www.youtube.com/watch?v=wvu9sWiB2_U
+
+"How to check for Emotet infection and how to deal with it", JPCERT (Japanese)
+https://www.youtube.com/watch?v=nqxikr1x2ag
+</content>
+</each>
+<each>
+<title>
+Linux Kernel Elevation of Privilege Vulnerability (Dirty Pipe)
+</title>
+<content>
+The vulnerability (CVE-2022-0847, commonly known as Dirty Pipe), that allows privilege escalation in Linux kernel, has been released. If this vulnerability is exploited, there is a risk of losing control through privilege escalation. Details of the vulnerability and the verification code are now available, and Max Kellermann of CM4all, who discovered the vulnerability, noted that this vulnerability is relatively easy to exploit. A security update has already been released, so if you are using a version that is affected by this vulnerability, we recommend that you update immediately.
+
+Affected Versions
+ - Linux kernel version 5.8 or later
+
+Fixed Versions
+ - Linux kernel version 5.16.11
+ - Linux kernel version 5.15.25
+ - Linux kernel version 5.10.102
+
+Related Sites:
+"The Dirty Pipe Vulnerability", CM4all GmbH
+https://dirtypipe.cm4all.com/
+
+"CVE-2022-0847", Red Hat Customer Portal
+https://access.redhat.com/security/cve/cve-2022-0847
+
+"CVE-2022-0847", Debian
+https://security-tracker.debian.org/tracker/CVE-2022-0847
+
+"CVE-2022-0847", Ubuntu
+https://ubuntu.com/security/CVE-2022-0847
+
+"CVE-2022-0847", SUSE
+https://www.suse.com/security/cve/CVE-2022-0847.html
+
+"Dirty Pipe Privilege Escalation Vulnerability in Linux", US-CERT
+https://www.cisa.gov/uscert/ncas/current-activity/2022/03/10/dirty-pipe-privilege-escalation-vulnerability-linux
+</content>
+</each>
+<each>
+<title>
+Security Update for Multiple Apple Products
+</title>
+<content>
+On March 14 and March 15 (local time), security updates were released for vulnerabilities in several Apple products that, if exploited, could lead to arbitrary code execution with kernel privileges. 
+
+This problem can be solved by updating to the following corrected version provided by Apple.
+
+For more details, please see the information provided by Apple. 
+
+ - macOS Monterey
+ - macOS Catalina
+ - macOS Big Sur
+ - iOS and iPadOS
+ - Safari
+
+Related Sites:
+"About the security content of macOS Monterey 12.3", Apple
+https://support.apple.com/en-us/HT213183
+
+"About the security content of Security Update 2022-003 Catalina", Apple
+https://support.apple.com/en-us/HT213185
+
+"About the security content of macOS Big Sur 11.6.5", Apple
+https://support.apple.com/en-us/HT213184
+
+"About the security content of iOS 15.4 and iPadOS 15.4", Apple
+https://support.apple.com/en-us/HT213182
+
+"About the security content of Safari 15.4", Apple
+https://support.apple.com/en-us/HT213187
+
+"Apple Releases Security Updates for Multiple Products", US-CERT
+https://www.cisa.gov/uscert/ncas/current-activity/2022/03/16/apple-releases-security-updates-multiple-products
+</content>
+</each>
+<each>
+<title>
+Security Update for Google Chrome
+</title>
+<content>
+On March 15 (local time), a security update was released to fix vulnerabilities in Google Chrome that could be exploited to take control of the target system. 
+
+This problem can be solved by updating to the following corrected version provided by Google.
+
+For more details, please see the information provided by Google. 
+
+ - Chrome 99.0.4844.74
+
+Related Sites:
+"Stable Channel Update for Desktop", Google
+https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_15.html
+
+"Google Releases Security Updates for Chrome", US-CERT
+https://www.cisa.gov/uscert/ncas/current-activity/2022/03/16/google-releases-security-updates-chrome</content>
+</each>
+<each>
+<title>
+Security Update for Microsoft Edge
+</title>
+<content>
+On March 17 (local time), a security update was released that fixes vulnerabilities in Microsoft Edge that could be exploited to take control of the target system. 
+
+This problem can be solved by updating to the following corrected version provided by Microsoft.
+
+For more details, please see the information provided by Microsoft. 
+
+ - Microsoft Edge (Chromium-based) 99.0.1150.46
+
+Related Sites:
+"Release notes for Microsoft Edge Stable Channel", Microsoft
+https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel
+</content>
+</each>
+<each>
+<title>
+Security Updates for Multiple Mozilla Products
+</title>
+<content>
+On March 8 (local time), security updates were released to fix vulnerabilities in several Mozilla products. Some of these vulnerabilities could be used to gain control over the target systems.
+
+A security update for a critical vulnerability in the NSS (Network Security Services) library has also been released on December 1. This is believed to affect email clients and PDF viewers that use NSS for signature verification, such as Thunderbird, LibreOffice, Evolution, and Evince.
+
+This problem can be solved by updating to the following corrected version provided by Mozilla.
+
+For more details, please see the information provided by Mozilla.
+
+ - Firefox 98
+ - Firefox ESR 91.7
+ - Thunderbird 91.7
+ - NSS 3.73
+ - NSS 3.68.1ESR
+
+Related Sites:
+"Security Vulnerabilities fixed in Firefox 98", Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-10/
+
+"Security Vulnerabilities fixed in Firefox ESR 91.7", Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-11/
+
+"Security Vulnerabilities fixed in Thunderbird 91.7", Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-12/
+
+"Memory corruption in NSS via DER-encoded DSA and RSA-PSS signatures", Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/
+
+"Mozilla Releases Security Updates", US-CERT
+https://www.cisa.gov/uscert/ncas/current-activity/2022/03/08/mozilla-releases-security-updates
+
+"Mozilla Releases Security Updates for Network Security Services", US-CERT
+https://us-cert.cisa.gov/ncas/current-activity/2021/12/02/mozilla-releases-security-updates-network-security-services
+</content>
+</each>
+</root>

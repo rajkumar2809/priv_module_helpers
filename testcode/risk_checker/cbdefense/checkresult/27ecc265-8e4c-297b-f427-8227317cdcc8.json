@@ -1,0 +1,247 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "5676-4c714be5c70fb77f1f299eb173f9daef5e98a483e43b8081ca0b0fbda01236fa-0": {
+            "details": {
+                "indicators": [
+                    "EMAIL_CLIENT", 
+                    "FILELESS", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-4c714be5c70fb77f1f299eb173f9daef5e98a483e43b8081ca0b0fbda01236fa-0", 
+                        "description": "FindFirstFile(find \"f:\\app\\oracleadmin\\product\\12.1.0\\dbhome_1\\bin\\Get-ScheduledTask.ps1\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be2562d21d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 00:58:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-4c714be5c70fb77f1f299eb173f9daef5e98a483e43b8081ca0b0fbda01236fa-0", 
+                        "description": "10.203.1.79:25(smtp.shinmaywa.co.jp)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be2562a51d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "10.42.0.73:61904-(TCP:OUT)->10.203.1.79:25(smtp.shinmaywa.co.jp)[None]", 
+                        "occurred": [
+                            "2021/09/25 00:58:01"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "10.203.1.79", 
+                            "proto": "TCP", 
+                            "remote_port": 25, 
+                            "local_port": 61904, 
+                            "local_ipv4": "10.42.0.73", 
+                            "is_inbound": false, 
+                            "remote_domain": "smtp.shinmaywa.co.jp", 
+                            "remote_location": null
+                        }, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "EMAIL_CLIENT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "taskeng.exe", 
+                    "parent_pid": 2772, 
+                    "pid": 5676, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command \".\\CheckTaskResult.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\taskeng.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b1e251bd937be1b147fbf9fb894aee7503b35b1a5f95281c5b0423b1c7093f67", 
+                    "hash": "4c714be5c70fb77f1f299eb173f9daef5e98a483e43b8081ca0b0fbda01236fa", 
+                    "path": "e:\\\u30b5\u30fc\u30d0\u76e3\u8996\\\u30bf\u30b9\u30af\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u30c1\u30a7\u30c3\u30af\\checktaskresult.ps1", 
+                    "ppid": "5676-4c714be5c70fb77f1f299eb173f9daef5e98a483e43b8081ca0b0fbda01236fa-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(5676):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0", 
+                        "description": "FindFirstFile(find \"c:\\Windows\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be2562c01d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 00:58:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be2562ad1d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 00:58:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be25629f1d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 00:58:00"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SHINMAYWA\\TASrvAdmin", 
+                        "ppid": "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "be25629d1d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:3948[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff]", 
+                        "occurred": [
+                            "2021/09/25 00:58:00"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff", 
+                            "pid": 3948, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "42a43bf18f7c0fa4db997e8b7688711c9b36bd73d5f013fa5b418f0956a92266", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "taskeng.exe", 
+                    "parent_pid": 2772, 
+                    "pid": 5676, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -Command \".\\CheckTaskResult.ps1\"", 
+                    "parent_path": "c:\\windows\\system32\\taskeng.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b1e251bd937be1b147fbf9fb894aee7503b35b1a5f95281c5b0423b1c7093f67", 
+                    "hash": "6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "5676-6a785adc0263238dab3eb37f4c185c8fba7feb5d425d034ca9864f1be1c1b473-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(5676):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SMW1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

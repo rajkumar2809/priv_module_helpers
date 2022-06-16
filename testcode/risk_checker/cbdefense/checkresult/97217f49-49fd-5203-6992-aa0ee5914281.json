@@ -1,0 +1,504 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "17828-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:41:58"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "d24487c41e7b11ec9eaebdbb091c98b4"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "17828-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 8864, 
+                    "command_line": "\"C:\\Users\\f8001410\\py\\tiff\\dist\\TiffFilter_v0.exe\" ", 
+                    "pid": 17828, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "c:\\users\\f8001410\\py\\tiff\\dist\\tifffilter_v0.exe", 
+                    "ppid": "17828-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0", 
+                    "parent_command_line": null, 
+                    "hash": "40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b"
+                }
+            }, 
+            "message": "tifffilter_v0.exe(17828):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "tifffilter_v0.exe", 
+            "shell_type": 0
+        }, 
+        "18124-f45ccf3f2f6c43264dbb1f62bc449d67e5b2148a77f535a2aa2e7f6341b8654a-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\users\\f8001410\\anaconda3\\pkgs\\conda-4.10.3-py38haa244fe_2\\scripts\\conda.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:41:34"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "b149d8a31e7b11ec85971da9afab5f80"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "18124-f45ccf3f2f6c43264dbb1f62bc449d67e5b2148a77f535a2aa2e7f6341b8654a-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "python.exe", 
+                    "parent_pid": 14268, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"C:\\Users\\f8001410\\Anaconda3\\Library\\bin\\conda.bat env list --json\"", 
+                    "pid": 18124, 
+                    "parent_path": "c:\\users\\f8001410\\anaconda3\\python.exe", 
+                    "reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "8a411515d0d5832d26e585a7ea1cd4a28f73e0e5892489d22fac88b4168f30c2", 
+                    "path": "c:\\users\\f8001410\\anaconda3\\library\\bin\\conda.bat", 
+                    "ppid": "18124-f45ccf3f2f6c43264dbb1f62bc449d67e5b2148a77f535a2aa2e7f6341b8654a-0", 
+                    "parent_command_line": null, 
+                    "hash": "f45ccf3f2f6c43264dbb1f62bc449d67e5b2148a77f535a2aa2e7f6341b8654a"
+                }
+            }, 
+            "message": "win_batch(18124):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "14280-8956ea3417fff553d49e130abbd1b4e5f81c2dfacf20749919e19cafa1a93ec3-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\users\\f8001410\\anaconda3\\scripts\\activate.bat\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:42:24"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "d24487e21e7b11ec9eaebdbb091c98b4"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "14280-8956ea3417fff553d49e130abbd1b4e5f81c2dfacf20749919e19cafa1a93ec3-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 8864, 
+                    "command_line": "\"C:\\Windows\\System32\\cmd.exe\" \"/K\" C:\\Users\\f8001410\\Anaconda3\\Scripts\\activate.bat C:\\Users\\f8001410\\Anaconda3", 
+                    "pid": 14280, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "c:\\users\\f8001410\\anaconda3\\scripts\\activate.bat", 
+                    "ppid": "14280-8956ea3417fff553d49e130abbd1b4e5f81c2dfacf20749919e19cafa1a93ec3-0", 
+                    "parent_command_line": null, 
+                    "hash": "8956ea3417fff553d49e130abbd1b4e5f81c2dfacf20749919e19cafa1a93ec3"
+                }
+            }, 
+            "message": "win_batch(14280):00001-10-000149:<Python Env Setup tool anaconda.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "17492-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:41:16"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b149d8581e7b11ec85971da9afab5f80"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "17492-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 8864, 
+                    "command_line": "\"C:\\Users\\f8001410\\py\\tiff\\dist\\TiffFilter_v0.exe\" ", 
+                    "pid": 17492, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "c:\\users\\f8001410\\py\\tiff\\dist\\tifffilter_v0.exe", 
+                    "ppid": "17492-40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b-0", 
+                    "parent_command_line": null, 
+                    "hash": "40013c9ce82550bd995cc315db723ca13110201a24063874aaf48d5e0a9f2e2b"
+                }
+            }, 
+            "message": "tifffilter_v0.exe(17492):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "tifffilter_v0.exe", 
+            "shell_type": 0
+        }, 
+        "17716-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\users\\f8001410\\anaconda3\\scripts\\conda-env-script.py\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:42:36"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "d24487f91e7b11ec9eaebdbb091c98b4"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "17716-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "conda-env.exe", 
+                    "parent_pid": 3932, 
+                    "command_line": "C:\\Users\\f8001410\\Anaconda3\\python.exe \"C:\\Users\\f8001410\\Anaconda3\\Scripts\\conda-env-script.py\" \"list\" \"--json\"", 
+                    "pid": 17716, 
+                    "parent_path": "c:\\users\\f8001410\\anaconda3\\pkgs\\conda-4.10.3-py38haa244fe_2\\scripts\\conda-env.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "28b001bb9a72ae7a24242bfab248d767a1ac5dec981c672a3944f7a072375e9a", 
+                    "path": "c:\\users\\f8001410\\anaconda3\\scripts\\conda-env-script.py", 
+                    "ppid": "17716-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0", 
+                    "parent_command_line": null, 
+                    "hash": "e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4"
+                }
+            }, 
+            "message": "python_script(17716):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "python_script", 
+            "shell_type": 0
+        }, 
+        "19400-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\users\\f8001410\\anaconda3\\scripts\\conda-env-script.py\" attempted to inject code into the process \"c:\\program files\\internet explorer\\iexplore.exe\", by calling the function \"NtQueueApcThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:41:37"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b18755d91e7b11ecaf4e298b066b4743"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "19400-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "conda-env.exe", 
+                    "parent_pid": 17636, 
+                    "command_line": "C:\\Users\\f8001410\\Anaconda3\\python.exe \"C:\\Users\\f8001410\\Anaconda3\\Scripts\\conda-env-script.py\" \"list\" \"--json\"", 
+                    "pid": 19400, 
+                    "parent_path": "c:\\users\\f8001410\\anaconda3\\pkgs\\conda-4.10.3-py38haa244fe_2\\scripts\\conda-env.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "28b001bb9a72ae7a24242bfab248d767a1ac5dec981c672a3944f7a072375e9a", 
+                    "path": "c:\\users\\f8001410\\anaconda3\\scripts\\conda-env-script.py", 
+                    "ppid": "19400-e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4-0", 
+                    "parent_command_line": null, 
+                    "hash": "e9ab6d076ed6e4142e85752d5f657709f2208acd206fbbd2f242f4b36ef1a1a4"
+                }
+            }, 
+            "message": "python_script(19400):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "python_script", 
+            "shell_type": 0
+        }, 
+        "14268-75f6d900d2a10a97b720f72c0dc8968df53631d553281e976e75155ac0e1c8e0-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\users\\f8001410\\anaconda3\\scripts\\spyder-script.py\" attempted to inject code into the process \"c:\\windows\\system32\\cmd.exe\", by calling the function \"CreateRemoteThread\". The operation was successful.", 
+                        "event_count": 2, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:42:34", 
+                            "2021/09/26 03:41:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "d24487e81e7b11ec9eaebdbb091c98b4", 
+                            "b149d8a01e7b11ec85971da9afab5f80"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "14268-75f6d900d2a10a97b720f72c0dc8968df53631d553281e976e75155ac0e1c8e0-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "spyder.exe", 
+                    "parent_pid": 13004, 
+                    "command_line": "C:\\Users\\f8001410\\Anaconda3\\python.exe C:\\Users\\f8001410\\Anaconda3\\Scripts\\spyder-script.py ", 
+                    "pid": 14268, 
+                    "parent_path": "c:\\users\\f8001410\\anaconda3\\pkgs\\spyder-4.2.5-py38haa95532_0\\scripts\\spyder.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "5ea569f2b5bc9c273351641a1a3c52821ce2a9370bc8202f0247c793ebd8a618", 
+                    "path": "c:\\users\\f8001410\\anaconda3\\scripts\\spyder-script.py", 
+                    "ppid": "14268-75f6d900d2a10a97b720f72c0dc8968df53631d553281e976e75155ac0e1c8e0-0", 
+                    "parent_command_line": null, 
+                    "hash": "75f6d900d2a10a97b720f72c0dc8968df53631d553281e976e75155ac0e1c8e0"
+                }
+            }, 
+            "message": "python_script(14268):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "python_script", 
+            "shell_type": 0
+        }, 
+        "18124-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\f8001410", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:41:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "b149d8a11e7b11ec85971da9afab5f80"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "18124-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "python.exe", 
+                    "parent_pid": 14268, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"C:\\Users\\f8001410\\Anaconda3\\Library\\bin\\conda.bat env list --json\"", 
+                    "pid": 18124, 
+                    "parent_path": "c:\\users\\f8001410\\anaconda3\\python.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "8a411515d0d5832d26e585a7ea1cd4a28f73e0e5892489d22fac88b4168f30c2", 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "18124-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null, 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450"
+                }
+            }, 
+            "message": "cmd.exe(18124):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

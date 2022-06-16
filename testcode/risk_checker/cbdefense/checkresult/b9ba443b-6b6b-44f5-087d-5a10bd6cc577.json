@@ -1,0 +1,116 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6612-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "CODE_DROP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6612-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\temp\\4pjyntkp\\4pjyntkp.dll", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\4pjyntkp\\4pjyntkp.dll:5fc1b99900c31bc0cc1f3fb832a593f1bf8fd437db093d9c2ecce1c3e1747155)(NOT_LISTED:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 02:51:22"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\windows\\temp\\4pjyntkp\\4pjyntkp.dll", 
+                            "filemod_hash": "5fc1b99900c31bc0cc1f3fb832a593f1bf8fd437db093d9c2ecce1c3e1747155", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "a7120c371e7411ecaca1496e7d0078af"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6612-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\temp\\ttjxfkbx\\ttjxfkbx.dll", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\ttjxfkbx\\ttjxfkbx.dll:047a7b7fc0a2bcf14bbb3cd6b903ba53e17df66340d3af66995409e70be99016)(NOT_LISTED:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 02:51:21"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\windows\\temp\\ttjxfkbx\\ttjxfkbx.dll", 
+                            "filemod_hash": "047a7b7fc0a2bcf14bbb3cd6b903ba53e17df66340d3af66995409e70be99016", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "a7120c361e7411ecaca1496e7d0078af"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": null, 
+                    "parent_pid": null, 
+                    "pid": 6612, 
+                    "command_line": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\Downloads\\UnicastScannerV1.7.5.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\Downloads\\UnicastScannerV1.7.5.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq 'b9a0a1d21072d3509623adefec97bc6a26448471ceb6ec138dcc6f13c741c13e')) { exit 323;};Start-Transcript -Path 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\Temp\\PSScriptOutputs\\PSScript_Transcript_{CD19F5C1-9481-496C-9EF9-5D316B870210}.txt'; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\Downloads\\UnicastScannerV1.7.5.ps1' -ParamsAsBase64 eyJTY2FubmVyQXJncyI6IntcIklwc1RvU2NhblwiOlwiMTAuODkuMTIyLjIyXCIsXCJHdWlkXCI6XCI4MDdhNTIxNC1iMmQ5LTRiMmQtYjA1Ni00ZjU2N2IyYzFjZjdcIixcIk1hY2hpbmVJZFwiOlwiNzBjNTllZjliMzE5M2I4OTIyY2NkMDM2YWVlZWJhNmE0NmEzODJkM1wiLFwiTWFjaGluZUNvbm5lY3Rpb25zXCI6W3tcIkRlZmF1bHRHYXRld2F5TWFjXCI6XCIwMC0wOC1FMy1GRi1GRC05MFwiLFwiQWRhcHRlcklkXCI6XCJ7NTMzREJBRjMtMTc1Ny00NDAwLUI5MTgtNUMzOUYwNURGQzIzfVwiLFwiTmV0d29ya05hbWVzXCI6W1wicmFsbnRkb20ucnRwdGdjcy5jb21cIl0sXCJMYXN0U2VlblwiOlwiMjAyMS0wOS0yNlQwMDowNzo0MC4zNjcxMTQ5WlwifV0sXCJTY2FubmVkRGV2aWNlSWRcIjpcIjMzM2M3NWE0ZmYwMjA0YTQ0ZWQzOGU2Mjg0MmVjZGQxNjQ0NWFjYjFcIixcIkV4cGlyYXRpb25EYXRlVGltZVwiOlwiMjAyMS0wOS0yN1QwMjo0ODozNC4wNDI4NzA2WlwifSIsIlNIQTI1NlNpZ25hdHVyZSI6IkNzaUNWQ0N1cVhiQUlXSFQ3azBDOWJ1UlZtQS9ZNTh4WEkxN1d5d0FWck50aTdkekpPRUpySnU1SXlUcnB6bEhlcWd6ZkR1TXYxT1FwU20wWC8yYWdtdldMK0V5REZwNEwyZzlwUmpkLzEwS041TktxOXBBV0I3YVVUNHd4M1RmK2tiVGV3Y2pDM0ZtdFI5SThpUUJ5c3Raa0N2R2RJQTF0YjBRbFJMc1lTc0RSamhsZGpBMXd6eStnbGtUM2lUZUh2aHNUNFdWY2M4ZGlPLy9DeU1mTWE4eWJRdW41T2RLdmhmcFZISTZGaDNPV3NNRUJvMGlwcXZRYzk2ZXFRa01wNEM1ZEtuL2s3NHVRNHV3L2pJeG5tQStjeFczRWs2UVJFTFAycU8yZEJUdEszWTBsbTRWYlRUdEdRYlRuVWIzWjZTVmpqSk53RVFnZnNxVHQ2R2U5QT09In0=}\"", 
+                    "parent_path": null, 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": null, 
+                    "parent_hash": null, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "6612-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f"
+                }
+            }, 
+            "message": "powershell.exe(6612):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

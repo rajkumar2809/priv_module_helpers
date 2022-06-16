@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000004",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "win_batch",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "CREATE_PROCESS",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)c:\\\\windows\\\\system32\\\\netsh\\.exe",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/13",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by customer script(remoteFW.bat)."
+}

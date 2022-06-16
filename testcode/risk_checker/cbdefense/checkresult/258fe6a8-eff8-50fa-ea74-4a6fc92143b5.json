@@ -1,0 +1,182 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 443, 
+            "ip": "202.238.246.20", 
+            "location": ",,Japan", 
+            "name": "storage-dag.iijgio.com"
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "3984-5471056c540427e607f99fb8c7455db27c0d3835ac9aaed20aa942bbaf4ef374-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "BYPASS_POLICY", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "CCSDM01\\winsrv", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:05"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "55bcc6511e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3984-5471056c540427e607f99fb8c7455db27c0d3835ac9aaed20aa942bbaf4ef374-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "CCSDM01\\winsrv", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:00:01"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtAllocateVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "55bcc63e1e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3984-5471056c540427e607f99fb8c7455db27c0d3835ac9aaed20aa942bbaf4ef374-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "5471056c540427e607f99fb8c7455db27c0d3835ac9aaed20aa942bbaf4ef374", 
+                    "command_line": "powershell  -NoProfile -ExecutionPolicy Unrestricted -Command .\\dag_rep.ps1", 
+                    "pid": 3984, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "17f746d82695fa9b35493b41859d39d786d32b23a9d2e00f4011dec7a02402ae", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "3984-5471056c540427e607f99fb8c7455db27c0d3835ac9aaed20aa942bbaf4ef374-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4880
+                }
+            }, 
+            "message": "powershell.exe(3984):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "3984-9c3bc5199efc8a05c392e76587ebf14fa65e7df1d292449b7686bd4a1485dfea-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "ACTIVE_CLIENT", 
+                    "NETWORK_ACCESS", 
+                    "FILELESS", 
+                    "UNKNOWN_APP", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "CCSDM01\\winsrv", 
+                        "ev_type": "NETWORK", 
+                        "description": "202.238.246.20:443(storage-dag.iijgio.com, located in Japan)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.0.101:62807-(TCP:OUT)->202.238.246.20:443(storage-dag.iijgio.com)[,,Japan]", 
+                        "occurred": [
+                            "2021/09/26 04:00:06"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "202.238.246.20", 
+                            "local_port": 62807, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.0.101", 
+                            "is_inbound": false, 
+                            "remote_domain": "storage-dag.iijgio.com", 
+                            "remote_location": ",,Japan", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "55bcc6561e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "3984-9c3bc5199efc8a05c392e76587ebf14fa65e7df1d292449b7686bd4a1485dfea-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "ACTIVE_CLIENT", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "NETWORK_ACCESS", 
+                            "FILELESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "dag_rep.bat", 
+                    "hash": "9c3bc5199efc8a05c392e76587ebf14fa65e7df1d292449b7686bd4a1485dfea", 
+                    "command_line": "powershell  -NoProfile -ExecutionPolicy Unrestricted -Command .\\dag_rep.ps1", 
+                    "pid": 3984, 
+                    "parent_path": "c:\\gio\u30b9\u30c8\u30ec\u30fc\u30b8\\dag_rep\\dag_rep.bat", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8ad83a65e9ceadcd22042a3ae67f1a962f18a6aedd6e3d5185c5ea26623e20f9", 
+                    "path": "c:\\gio\u30b9\u30c8\u30ec\u30fc\u30b8\\dag_rep\\dag_rep.ps1", 
+                    "ppid": "3984-9c3bc5199efc8a05c392e76587ebf14fa65e7df1d292449b7686bd4a1485dfea-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4880
+                }
+            }, 
+            "message": "ps_script(3984):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "OPT1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

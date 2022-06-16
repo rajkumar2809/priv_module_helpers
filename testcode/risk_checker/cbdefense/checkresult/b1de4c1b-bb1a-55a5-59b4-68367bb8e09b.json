@@ -1,0 +1,454 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "3416-46cc8c8ee601b49e4da6fd5e439ec988f08ac9708f1776403cdb4470e6d50e9d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MODIFY_PROCESS", 
+                    "ENUMERATE_PROCESSES", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\explorer.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:26:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "9ae3f7e61e7911ec9a944d31ab95f980"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3416-46cc8c8ee601b49e4da6fd5e439ec988f08ac9708f1776403cdb4470e6d50e9d-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:26:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "9ae3f7e51e7911ec9a944d31ab95f980"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3416-46cc8c8ee601b49e4da6fd5e439ec988f08ac9708f1776403cdb4470e6d50e9d-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 848, 
+                    "command_line": "\"C:\\ksgapp\\LOOM\\CLOOM.exe\"", 
+                    "pid": 3416, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\ksgapp\\loom\\cloom.exe", 
+                    "ppid": "3416-46cc8c8ee601b49e4da6fd5e439ec988f08ac9708f1776403cdb4470e6d50e9d-0", 
+                    "parent_command_line": null, 
+                    "hash": "46cc8c8ee601b49e4da6fd5e439ec988f08ac9708f1776403cdb4470e6d50e9d"
+                }
+            }, 
+            "message": "cloom.exe(3416):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cloom.exe", 
+            "shell_type": 0
+        }, 
+        "13800-77aa121b4704858311d27a1aae6ead568ce1361a1df69eba09b24c34af099605-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\w2067eng", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:32:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a09284351e7b11ec83157ba1a46816da"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13800-77aa121b4704858311d27a1aae6ead568ce1361a1df69eba09b24c34af099605-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 3720, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\OUTLOOK.EXE\" ", 
+                    "pid": 13800, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae", 
+                    "path": "c:\\program files (x86)\\microsoft office\\office16\\outlook.exe", 
+                    "ppid": "13800-77aa121b4704858311d27a1aae6ead568ce1361a1df69eba09b24c34af099605-0", 
+                    "parent_command_line": null, 
+                    "hash": "77aa121b4704858311d27a1aae6ead568ce1361a1df69eba09b24c34af099605"
+                }
+            }, 
+            "message": "outlook.exe(13800):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "outlook.exe", 
+            "shell_type": 0
+        }, 
+        "3720-a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\w2067eng", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:36:06"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a13701db1e7b11ec8a2b755679cc4134"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3720-a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\w2067eng", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\common files\\macrovision shared\\flexnet publisher\\fnplicensingservice64.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:33:06"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a10ee0601e7b11ecb806a5b3bdc735d6"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3720-a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "userinit.exe", 
+                    "parent_pid": 2280, 
+                    "command_line": "C:\\WINDOWS\\Explorer.EXE", 
+                    "pid": 3720, 
+                    "parent_path": "c:\\windows\\system32\\userinit.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+                    "path": "c:\\windows\\explorer.exe", 
+                    "ppid": "3720-a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae-0", 
+                    "parent_command_line": null, 
+                    "hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae"
+                }
+            }, 
+            "message": "explorer.exe(3720):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "explorer.exe", 
+            "shell_type": 0
+        }, 
+        "4268-7de9389060f73927f07ae29c45a08e20ce6549673f04a371de888a4c2acce224-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:7296[\"C:\\WINDOWS\\system32\\cmd.exe\" /c Schtasks /Delete /F /TN SS1LoaderRecovery(TOSHIBA_w2067eng)]", 
+                        "occurred": [
+                            "2021/09/26 03:22:11"
+                        ], 
+                        "event_detail": {
+                            "pid": 7296, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c Schtasks /Delete /F /TN SS1LoaderRecovery(TOSHIBA_w2067eng)", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22"
+                        }, 
+                        "event_id": [
+                            "99ae5d3b1e7911eca97e11ebfff79060"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4268-7de9389060f73927f07ae29c45a08e20ce6549673f04a371de888a4c2acce224-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 848, 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1CollectServer.exe\"", 
+                    "pid": 4268, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "ppid": "4268-7de9389060f73927f07ae29c45a08e20ce6549673f04a371de888a4c2acce224-0", 
+                    "parent_command_line": null, 
+                    "hash": "7de9389060f73927f07ae29c45a08e20ce6549673f04a371de888a4c2acce224"
+                }
+            }, 
+            "message": "ss1collectserver.exe(4268):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1collectserver.exe", 
+            "shell_type": 0
+        }, 
+        "7296-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "RUN_SYSTEM_UTILITY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\schtasks.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\schtasks.exe:7372[Schtasks  /Delete /F /TN SS1LoaderRecovery(TOSHIBA_w2067eng)]", 
+                        "occurred": [
+                            "2021/09/26 03:22:11"
+                        ], 
+                        "event_detail": {
+                            "pid": 7372, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "Schtasks  /Delete /F /TN SS1LoaderRecovery(TOSHIBA_w2067eng)", 
+                            "name": "c:\\windows\\syswow64\\schtasks.exe", 
+                            "hash": "9a121acf7686d2883e524332111d5e4bcc0c1a8e81136486fba4ca65ca614407"
+                        }, 
+                        "event_id": [
+                            "99ae5d3d1e7911eca97e11ebfff79060"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7296-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1collectserver.exe", 
+                    "parent_pid": 4268, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c Schtasks /Delete /F /TN SS1LoaderRecovery(TOSHIBA_w2067eng)", 
+                    "pid": 7296, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "7de9389060f73927f07ae29c45a08e20ce6549673f04a371de888a4c2acce224", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "7296-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                    "parent_command_line": null, 
+                    "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22"
+                }
+            }, 
+            "message": "cmd.exe(7296):00001-10-000348:<AssertMgmt:SS1>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "8956-be6a6c91609db9699eeafecb230d20347b025ba0a508bc4e0732ee8b31867d0f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MONITOR_USER_INPUT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\w2067eng", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 03:27:40"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "event_id": [
+                            "9d7936ce1e7b11ec97f4058fe6cc8c5a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8956-be6a6c91609db9699eeafecb230d20347b025ba0a508bc4e0732ee8b31867d0f-0", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\w2067eng", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files\\claunch\\claunch.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:27:40"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "9d7936cd1e7b11ec97f4058fe6cc8c5a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8956-be6a6c91609db9699eeafecb230d20347b025ba0a508bc4e0732ee8b31867d0f-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 3720, 
+                    "command_line": "\"C:\\Program Files\\CLaunch\\CLaunch.exe\" ", 
+                    "pid": 8956, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae", 
+                    "path": "c:\\program files\\claunch\\claunch.exe", 
+                    "ppid": "8956-be6a6c91609db9699eeafecb230d20347b025ba0a508bc4e0732ee8b31867d0f-0", 
+                    "parent_command_line": null, 
+                    "hash": "be6a6c91609db9699eeafecb230d20347b025ba0a508bc4e0732ee8b31867d0f"
+                }
+            }, 
+            "message": "claunch.exe(8956):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "claunch.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

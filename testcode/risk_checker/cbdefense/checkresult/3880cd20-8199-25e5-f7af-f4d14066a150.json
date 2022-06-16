@@ -1,0 +1,480 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "62192-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "62192-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffa71e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:48"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 62192, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"OneNote for Windows 10\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "62192-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(62192):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "49076-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "49076-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffba1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 49076, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"Microsoft Print to PDF\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "49076-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(49076):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "37124-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "37124-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffc01e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:55"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 37124, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"DocuPrint C4000 d\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "37124-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(37124):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "59316-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "59316-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d21524681e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:46:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 59316, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"DocuPrint C4000 d\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "59316-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(59316):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "50236-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "50236-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffc51e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:58"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 50236, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"OneNote for Windows 10\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "50236-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(50236):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "49180-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "49180-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffd21e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:46:02"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 49180, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"Microsoft Print to PDF\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "49180-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(49180):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "61044-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "61044-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffb41e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:51"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 61044, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"Microsoft XPS Document Writer\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "61044-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(61044):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "61628-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0": {
+            "details": {
+                "indicators": [
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "H21463_IOKUNO\\honishi", 
+                        "ppid": "61628-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a8aeffcb1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:46:00"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cntnrstsapp.exe", 
+                    "parent_pid": 60812, 
+                    "pid": 61628, 
+                    "command_line": "PowerShell -Command \" \n    try \n    { \n         $ret = (Get-PrinterProperty -PrinterName \\\"Microsoft XPS Document Writer\\\" -PropertyName \\\"Config:PrinterInfoTonerStatus\\\" -ErrorAction Stop).Value \n\n         switch ($ret) \n         { \n\t\t\t\t\\\"Supported\\\" {exit 1001} \n         } \n    } \n    catch \n    { \n\t\texit 1000 \n    } \n\n    exit 0 \n\"", 
+                    "parent_path": "c:\\program files (x86)\\canon\\oiptonerstatus\\cntnrstsapp.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "43590a9cdbcfc74ef0b60c6d3705cdda5bde6e358f30f66d88417e5f29304327", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "61628-7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6-0", 
+                    "parent_command_line": null, 
+                    "hash": "7762a4766bc394b4cb2d658144b207183ff23b3139181cd74e615db63e6e57d6"
+                }
+            }, 
+            "message": "powershell.exe(61628):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "MRS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

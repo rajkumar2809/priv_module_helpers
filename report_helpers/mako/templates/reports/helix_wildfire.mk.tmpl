@@ -1,0 +1,38 @@
+#coding:utf-8
+
+## helix_squid.mk.tmpl Squid解析レポート
+
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_report.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <div style="page-break-before: avoid;">
+    <h2 class="head">${ headers["detailinfo"] }</h2>
+    % if len(detail_network) > 0:
+      ${ func.verticaltable( detail_network, section="detail_network" ) }
+    % endif
+  </div>
+  <br />
+  <div style="page-break-before: avoid;">
+    % if forward_detail and len(forward_detail) > 0:
+      ${ func.matrixtable( forward_detail, section="forward_detail" ) }
+    % endif
+  </div>
+  <div style="page-break-before: avoid;">
+    % if forward_mail and len(forward_mail) > 0:
+      <br />
+      ${ func.matrixtable( forward_mail, section="forward_mail" ) }
+    % endif
+  </div>
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+</%block>

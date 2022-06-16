@@ -1,0 +1,982 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "40.20.3.161", 
+            "location": ",,United States", 
+            "port": 21, 
+            "name": null
+        }, 
+        {
+            "ip": "40.23.3.161", 
+            "location": ",,United States", 
+            "port": 21, 
+            "name": null
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "13924-8797e51256713e74c5c3c82089e1d438f8a5aaf11b6a2f7c9fd3dc03ff0cca82-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\v3q040.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:49:47"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "934b7e321d9a11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13924-8797e51256713e74c5c3c82089e1d438f8a5aaf11b6a2f7c9fd3dc03ff0cca82-0", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 13916, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V3Q040.EXE\" ", 
+                    "pid": 13924, 
+                    "parent_path": "c:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "c:\\canvas\\bin\\v3q040.exe", 
+                    "ppid": "13924-8797e51256713e74c5c3c82089e1d438f8a5aaf11b6a2f7c9fd3dc03ff0cca82-0", 
+                    "parent_command_line": null, 
+                    "hash": "8797e51256713e74c5c3c82089e1d438f8a5aaf11b6a2f7c9fd3dc03ff0cca82"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13924):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "5616-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:52:10"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "db1e2ef51d9a11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5616-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "pha010.exe", 
+                    "parent_pid": 5636, 
+                    "command_line": "cmd.exe /c /q NET USE \\\\40.20.3.161\\aesv7rts_V7ARAES1$ SSS%531 /USER:40.20.3.161\\Administrator ", 
+                    "pid": 5616, 
+                    "parent_path": "c:\\sabics\\bin\\pha010.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "5616-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                    "parent_command_line": null, 
+                    "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723"
+                }
+            }, 
+            "message": "cmd.exe(5616):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "NON_STANDARD_PORT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "INJECT_CODE", 
+                    "FILE_TRANSFER", 
+                    "MONITOR_USER_INPUT", 
+                    "NETWORK_ACCESS", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:17:03"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "6adb55ab1d9e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\v3b960.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:16:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "46f08a9a1d9e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/25 01:17:03"
+                        ], 
+                        "event_detail": {
+                            "api_name": "SetWindowsHookEx", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "6adb55a91d9e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.20.3.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "40.20.3.88:53332-(TCP:OUT)->40.20.3.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 01:16:41"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.20.3.161", 
+                            "local_port": 53332, 
+                            "proto": "TCP", 
+                            "local_ipv4": "40.20.3.88", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "46f08a8b1d9e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 13916, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V3B960.EXE\" ", 
+                    "pid": 13768, 
+                    "parent_path": "c:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "c:\\canvas\\bin\\v3b960.exe", 
+                    "ppid": "13768-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                    "parent_command_line": null, 
+                    "hash": "1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13768):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "10124-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:08:47"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "232f0e581d9d11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10124-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "userinit.exe", 
+                    "parent_pid": 3560, 
+                    "command_line": "C:\\WINDOWS\\Explorer.EXE", 
+                    "pid": 10124, 
+                    "parent_path": "c:\\windows\\system32\\userinit.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "eda7ee39d4db8142a1e0788e205e80ae798035d60273e74981e09e98c8d0e740", 
+                    "path": "c:\\windows\\explorer.exe", 
+                    "ppid": "10124-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                    "parent_command_line": null, 
+                    "hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625"
+                }
+            }, 
+            "message": "explorer.exe(10124):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "explorer.exe", 
+            "shell_type": 0
+        }, 
+        "13256-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "FILE_TRANSFER", 
+                    "NETWORK_ACCESS", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.23.3.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "40.20.3.88:53426-(TCP:OUT)->40.23.3.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 01:17:50"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.23.3.161", 
+                            "local_port": 53426, 
+                            "proto": "TCP", 
+                            "local_ipv4": "40.20.3.88", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "6adb55dd1d9e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13256-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 13916, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V3B960.EXE\" ", 
+                    "pid": 13256, 
+                    "parent_path": "c:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "c:\\canvas\\bin\\v3b960.exe", 
+                    "ppid": "13256-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                    "parent_command_line": null, 
+                    "hash": "1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13256):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "9416-7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:12536[cmd.exe /c /q NET USE \\\\40.20.3.161\\aesv7rts_V7ARAES1$ SSS%531 /USER:40.20.3.161\\Administrator ]", 
+                        "occurred": [
+                            "2021/09/25 00:50:58", 
+                            "2021/09/25 00:50:58"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd.exe /c /q NET USE \\\\40.20.3.161\\aesv7rts_V7ARAES1$ SSS%531 /USER:40.20.3.161\\Administrator ", 
+                            "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 12536, 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "b73475291d9a11ec871fb75d4dae9b8a", 
+                            "b73475271d9a11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9416-7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "RUN_CMD_SHELL", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\sabics\\bin\\pha010.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:51:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "b734755c1d9a11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9416-7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab-0", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "pha020.exe", 
+                    "parent_pid": 5756, 
+                    "command_line": "C:\\SABICS\\BIN\\PHA010.EXE 1", 
+                    "pid": 9416, 
+                    "parent_path": "c:\\sabics\\bin\\pha020.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "e230a10e312fdcd0d70cdbd6e387365ae92a5152ac80ca1a9e677402d9da2987", 
+                    "path": "c:\\sabics\\bin\\pha010.exe", 
+                    "ppid": "9416-7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab-0", 
+                    "parent_command_line": null, 
+                    "hash": "7166face01a91965017c29b13a25f42532c04b54f2002bc90de2281e666903ab"
+                }
+            }, 
+            "message": "sabics_tmp_exe(9416):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sabics_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "13916-8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:14:29"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "fcb9f96b1d9d11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13916-8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3z031.exe", 
+                    "parent_pid": 13812, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V4Z060.exe\" V3Z031", 
+                    "pid": 13916, 
+                    "parent_path": "c:\\canvas\\bin\\v3z031.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "COMPANY_WHITE_LIST", 
+                    "parent_hash": "ca2baa402f4bca7d02d551db156f5bc09134be43f09e3ccf8a6a969aa12245fc", 
+                    "path": "c:\\canvas\\bin\\v4z060.exe", 
+                    "ppid": "13916-8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a-0", 
+                    "parent_command_line": null, 
+                    "hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13916):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "5756-e230a10e312fdcd0d70cdbd6e387365ae92a5152ac80ca1a9e677402d9da2987-0": {
+            "details": {
+                "indicators": [
+                    "HAS_PACKED_CODE", 
+                    "INJECT_INPUT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SendInput(send input data to the process)", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "SendInput(False)", 
+                        "occurred": [
+                            "2021/09/25 00:50:40"
+                        ], 
+                        "event_detail": {
+                            "api_name": "SendInput", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "b734751f1d9a11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5756-e230a10e312fdcd0d70cdbd6e387365ae92a5152ac80ca1a9e677402d9da2987-0", 
+                        "categories": [
+                            "HAS_PACKED_CODE", 
+                            "INJECT_INPUT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "mha001.exe", 
+                    "parent_pid": 6124, 
+                    "command_line": "C:\\SABICS\\BIN\\PHA020.EXE 1", 
+                    "pid": 5756, 
+                    "parent_path": "c:\\sabics\\bin\\mha001.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b466c2498a118bc4eb24dea79d2a921904bbea12009ac5481e10509bc57bd0b4", 
+                    "path": "c:\\sabics\\bin\\pha020.exe", 
+                    "ppid": "5756-e230a10e312fdcd0d70cdbd6e387365ae92a5152ac80ca1a9e677402d9da2987-0", 
+                    "parent_command_line": null, 
+                    "hash": "e230a10e312fdcd0d70cdbd6e387365ae92a5152ac80ca1a9e677402d9da2987"
+                }
+            }, 
+            "message": "sabics_tmp_exe(5756):00001-10-000896:<customer tool in sabics>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "sabics_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "8488-c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm:11036[\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/25 01:07:12"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm\"", 
+                            "hash": "115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 11036, 
+                            "name": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm"
+                        }, 
+                        "event_id": [
+                            "ff0da2851d9c11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8488-c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:04:52"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "b73c78a41d9c11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8488-c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\v3n010.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:55:00"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "49a0bd9e1d9b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8488-c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e-0", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 13916, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\V3N010.EXE\" ", 
+                    "pid": 8488, 
+                    "parent_path": "c:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "c:\\canvas\\bin\\v3n010.exe", 
+                    "ppid": "8488-c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e-0", 
+                    "parent_command_line": null, 
+                    "hash": "c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e"
+                }
+            }, 
+            "message": "canvas_tmp_exe(8488):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "13396-80500ceb7f278f1aed472dc220bee8f8d50d1c6d93004d03d2558365ad4537a1-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\canvas\\bin\\pzz620_\u5de5\u4e8b\u53f0\u5e33.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\canvas\\bin\\pzz620_\u5de5\u4e8b\u53f0\u5e33.xlsm:8124[\"C:\\PROGRAM FILES (X86)\\MICROSOFT OFFICE\\ROOT\\OFFICE16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\PZZ620_\u5de5\u4e8b\u53f0\u5e33.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/25 01:14:31"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\PROGRAM FILES (X86)\\MICROSOFT OFFICE\\ROOT\\OFFICE16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\PZZ620_\u5de5\u4e8b\u53f0\u5e33.xlsm\"", 
+                            "hash": "d32744716b785fa95250901f378a8dd4d9c4a3f1beb9dfc76ddcfb6cbe3bac56", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 8124, 
+                            "name": "c:\\canvas\\bin\\pzz620_\u5de5\u4e8b\u53f0\u5e33.xlsm"
+                        }, 
+                        "event_id": [
+                            "fcc1e8351d9d11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "13396-80500ceb7f278f1aed472dc220bee8f8d50d1c6d93004d03d2558365ad4537a1-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\pzz620.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 01:14:33"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "fcc1e8391d9d11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13396-80500ceb7f278f1aed472dc220bee8f8d50d1c6d93004d03d2558365ad4537a1-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3zapp.exe", 
+                    "parent_pid": 8904, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\PZZ620.exe\" 1", 
+                    "pid": 13396, 
+                    "parent_path": "c:\\canvas\\bin\\v3zapp.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "a01194fe32c9da83bd2212386e087da5d5738bfc9f5673f6fda3ce6694bd9425", 
+                    "path": "c:\\canvas\\bin\\pzz620.exe", 
+                    "ppid": "13396-80500ceb7f278f1aed472dc220bee8f8d50d1c6d93004d03d2558365ad4537a1-0", 
+                    "parent_command_line": null, 
+                    "hash": "80500ceb7f278f1aed472dc220bee8f8d50d1c6d93004d03d2558365ad4537a1"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13396):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "13156-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "FILE_TRANSFER", 
+                    "NETWORK_ACCESS", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.20.3.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "40.20.3.88:53123-(TCP:OUT)->40.20.3.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 01:07:21"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.20.3.161", 
+                            "local_port": 53123, 
+                            "proto": "TCP", 
+                            "local_ipv4": "40.20.3.88", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "ff36d5b21d9c11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13156-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "parent_pid": 11036, 
+                    "command_line": "C:\\CANVAS\\BIN\\V3Z020 REPLACE 407005 210002 \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_210002.XDW\" 0010", 
+                    "pid": 13156, 
+                    "parent_path": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152", 
+                    "path": "c:\\canvas\\bin\\v3z020.exe", 
+                    "ppid": "13156-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                    "parent_command_line": null, 
+                    "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3"
+                }
+            }, 
+            "message": "canvas_tmp_exe(13156):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "11036-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\masada002", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\takuc\\bin\\takuc.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\takuc\\bin\\takuc.exe:6792[C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_210002.XDW\"]", 
+                        "occurred": [
+                            "2021/09/25 01:07:18", 
+                            "2021/09/25 01:07:17"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\TAKUC\\Bin\\TakuC.exe N \"C:\\CANVAS\\BIN\\V3TEMP\\DOCU0010_210002.XDW\"", 
+                            "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 6792, 
+                            "name": "c:\\takuc\\bin\\takuc.exe"
+                        }, 
+                        "event_id": [
+                            "ff25e6271d9c11ec871fb75d4dae9b8a", 
+                            "ff0dc9d31d9c11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "11036-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3n010.exe", 
+                    "parent_pid": 8488, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\CANVAS\\BIN\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm\"", 
+                    "pid": 11036, 
+                    "parent_path": "c:\\canvas\\bin\\v3n010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "c0b15fe58a861d07a10d0fef0a916831601eada6144153fbae462eb7b0a7384e", 
+                    "path": "c:\\canvas\\bin\\\u8ffd\u52a0\u539f\u4fa1\u7533\u8acb\u66f8.xlsm", 
+                    "ppid": "11036-115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152-0", 
+                    "parent_command_line": null, 
+                    "hash": "115b7a0b15fd6b991fe71e0c18fe7f17b184f4244ee420a6df2ea2d53b695152"
+                }
+            }, 
+            "message": "excel(11036):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

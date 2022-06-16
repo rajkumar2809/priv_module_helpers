@@ -1,0 +1,144 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8756-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "MITRE_T1036_MASQUERADING"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\okabe0036", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:11564[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 04:03:06"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 11564, 
+                            "name": "c:\\windows\\system32\\conhost.exe", 
+                            "hash": "57b0ccd3aebc6c7126e7c19f5dac492df51d904a505c5f5b0cb02270d53f8684"
+                        }, 
+                        "event_id": [
+                            "a72fc1891e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8756-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1036_MASQUERADING", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy RemoteSigned -Command Get-EventLog -LogName Application -Source MsiInstaller -EntryType Information -After 2020/05/01 | ?{ $_.EventID -eq \"1040\"} | Select-Object TimeWritten,Message | Export-CSV -NoTypeInformation -Encoding Default \"C:\\Users\\OKABE0~1\\AppData\\Local\\Temp\\eventlog.csv\"", 
+                    "pid": 8756, 
+                    "parent_path": "d:\\white\\bin\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "path": "c:\\windows\\winsxs\\wow64_microsoft-windows-powershell-exe_31bf3856ad364e35_10.0.19041.546_none_5163f0069562aff6\\powershell.exe", 
+                    "ppid": "8756-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10964
+                }
+            }, 
+            "message": "powershell.exe(8756):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "10964-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\okabe0036", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\winsxs\\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.19041.546_none_735ab80fad8c95e1\\cmd.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\winsxs\\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.19041.546_none_735ab80fad8c95e1\\cmd.exe:7212[cmd /c wevtutil qe \"Fujitsu AuthConductor Client\" /rd:true /f:text /q:\"*[System[(EventID=1001 or EventID=1004)]]\" > D:\\WHITE\\BIN\\SEITAI.txt]", 
+                        "occurred": [
+                            "2021/09/26 04:03:05", 
+                            "2021/09/26 04:03:03"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /c wevtutil qe \"Fujitsu AuthConductor Client\" /rd:true /f:text /q:\"*[System[(EventID=1001 or EventID=1004)]]\" > D:\\WHITE\\BIN\\SEITAI.txt", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 7212, 
+                            "name": "c:\\windows\\winsxs\\wow64_microsoft-windows-commandprompt_31bf3856ad364e35_10.0.19041.546_none_735ab80fad8c95e1\\cmd.exe", 
+                            "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723"
+                        }, 
+                        "event_id": [
+                            "a72fc16d1e7e11ec871fb75d4dae9b8a", 
+                            "a72fc1621e7e11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "10964-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "wbah01.exe", 
+                    "hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "command_line": "D:\\WHITE\\BIN\\SoftColl.exe WHITE", 
+                    "pid": 10964, 
+                    "parent_path": "d:\\white\\bin\\wbah01.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "77b826dabd28f11a908eac5d787d9abef9fc82dfabe47f22b5c3a1bb239fe2f2", 
+                    "path": "d:\\white\\bin\\softcoll.exe", 
+                    "ppid": "10964-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13276
+                }
+            }, 
+            "message": "softcoll.exe(10964):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "softcoll.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

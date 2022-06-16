@@ -1,0 +1,399 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "104.47.29.22", 
+            "location": "Dublin,07,Ireland", 
+            "name": "dataservice.protection.outlook.com", 
+            "port": 443
+        }, 
+        {
+            "ip": "52.109.76.32", 
+            "location": "Dublin,07,Ireland", 
+            "name": "nexusrules.officeapps.live.com", 
+            "port": 443
+        }, 
+        {
+            "ip": "52.109.44.44", 
+            "location": "Seoul,11,Korea, Republic of", 
+            "name": "roaming.officeapps.live.com", 
+            "port": 443
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "7236-25d6bedc1f1ef92ba177311099286c4b0d57160f1f5750ebd252692a1f502119-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "007bbdac1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/24 23:55:33"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "7236-25d6bedc1f1ef92ba177311099286c4b0d57160f1f5750ebd252692a1f502119-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "lspsrvany.exe", 
+                    "hash": "25d6bedc1f1ef92ba177311099286c4b0d57160f1f5750ebd252692a1f502119", 
+                    "command_line": "\"C:\\Program Files (x86)\\MOTEX\\LanScope Cat MR\\Lspcmr.exe\" svc", 
+                    "pid": 7236, 
+                    "parent_path": "c:\\program files (x86)\\motex\\lanscope cat mr\\lspsrvany.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "5a420a433c3f724ca2d59feaa4625fcdc223dca47cef383eda3bbbc40500bcd7", 
+                    "path": "c:\\program files (x86)\\motex\\lanscope cat mr\\lspcmr.exe", 
+                    "ppid": "7236-25d6bedc1f1ef92ba177311099286c4b0d57160f1f5750ebd252692a1f502119-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 6164
+                }
+            }, 
+            "message": "lspcmr.exe(7236):00001-10-000280:<LanScope Module.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "lspcmr.exe", 
+            "shell_type": 0
+        }, 
+        "8168-b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\LP2546", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.76.32:443(nexusrules.officeapps.live.com, located in Dublin 07, Ireland)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "92c7ac631d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "192.168.100.135:51103-(TCP:OUT)->52.109.76.32:443(nexusrules.officeapps.live.com)[Dublin,07,Ireland]", 
+                        "occurred": [
+                            "2021/09/24 23:59:20"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.76.32", 
+                            "proto": "TCP", 
+                            "local_port": 51103, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.100.135", 
+                            "is_inbound": false, 
+                            "remote_domain": "nexusrules.officeapps.live.com", 
+                            "remote_location": "Dublin,07,Ireland"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8168-b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\LP2546", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.44.44:443(roaming.officeapps.live.com, located in Seoul 11, Korea, Republic of)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6c1a667d1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "192.168.100.135:51078-(TCP:OUT)->52.109.44.44:443(roaming.officeapps.live.com)[Seoul,11,Korea, Republic of]", 
+                        "occurred": [
+                            "2021/09/24 23:58:22"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.44.44", 
+                            "proto": "TCP", 
+                            "local_port": 51078, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.100.135", 
+                            "is_inbound": false, 
+                            "remote_domain": "roaming.officeapps.live.com", 
+                            "remote_location": "Seoul,11,Korea, Republic of"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8168-b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOKYU-CNST\\LP2546", 
+                        "ev_type": "NETWORK", 
+                        "description": "104.47.29.22:443(dataservice.protection.outlook.com, located in Dublin 07, Ireland)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "6c1a66761d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "192.168.100.135:51071-(TCP:OUT)->104.47.29.22:443(dataservice.protection.outlook.com)[Dublin,07,Ireland]", 
+                        "occurred": [
+                            "2021/09/24 23:58:22"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "104.47.29.22", 
+                            "proto": "TCP", 
+                            "local_port": 51071, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.100.135", 
+                            "is_inbound": false, 
+                            "remote_domain": "dataservice.protection.outlook.com", 
+                            "remote_location": "Dublin,07,Ireland"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8168-b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\LP2546\\Dropbox (\u6771\u6025\u5efa\u8a2d)\\\u571f\u30fb\u6280\uff09\u571f\u6728\u6280\u8853\u90e8\\3.\u500b\u4eba\\\u524d\u7530\\0\u696d\u52d9\u9032\u6357\u8868\\2021\u5e74\u5ea6\u696d\u52d9\u9032\u6357\u8868\\\u30c6\u30ec\u30ef\u30fc\u30af\u74b0\u5883\u30fb\u5c31\u52b4\u5185\u5bb9\u30fb\u5065\u5eb7\u72b6\u614b.xlsx\"", 
+                    "pid": 8168, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "path": "c:\\users\\lp2546\\dropbox (\u6771\u6025\u5efa\u8a2d)\\\u571f\u30fb\u6280\uff09\u571f\u6728\u6280\u8853\u90e8\\3.\u500b\u4eba\\\u524d\u7530\\0\u696d\u52d9\u9032\u6357\u8868\\2021\u5e74\u5ea6\u696d\u52d9\u9032\u6357\u8868\\\u30c6\u30ec\u30ef\u30fc\u30af\u74b0\u5883\u30fb\u5c31\u52b4\u5185\u5bb9\u30fb\u5065\u5eb7\u72b6\u614b.xlsx", 
+                    "ppid": "8168-b311876fe570072e2d3bc9b8d935160f36a82e1aac0f457be082023fa9ee094e-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12400
+                }
+            }, 
+            "message": "excel(8168):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "12400-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\LP2546", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\common files\\macrovision shared\\flexnet publisher\\fnplicensingservice64.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "007bbdbc1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/24 23:55:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12400-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "werfault.exe", 
+                    "hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "command_line": "\"C:\\Windows\\explorer.exe\" /LOADSAVEDWINDOWS", 
+                    "pid": 12400, 
+                    "parent_path": "c:\\windows\\system32\\werfault.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "f69ff67fd26f7659d6d92c1a6d060d9bc6915e4fe048671c46bb42e57cc64518", 
+                    "path": "c:\\windows\\explorer.exe", 
+                    "ppid": "12400-04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8812
+                }
+            }, 
+            "message": "explorer.exe(12400):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "explorer.exe", 
+            "shell_type": 0
+        }, 
+        "15448-59b86c305d6ab3867b4f7099438dbfd2ef9f9662323628e2473af153e503f8f0-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOKYU-CNST\\LP2546", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files\\windows nt\\accessories\\wordpad.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "8fdc1b721d9211ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/24 23:52:40"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "15448-59b86c305d6ab3867b4f7099438dbfd2ef9f9662323628e2473af153e503f8f0-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "openwith.exe", 
+                    "hash": "59b86c305d6ab3867b4f7099438dbfd2ef9f9662323628e2473af153e503f8f0", 
+                    "command_line": "\"C:\\Program Files\\Windows NT\\Accessories\\WORDPAD.EXE\" \"C:\\Users\\LP2546\\Desktop\\\u696d\u52d9SC\\datamail.nik\"", 
+                    "pid": 15448, 
+                    "parent_path": "c:\\windows\\system32\\openwith.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "e108bac5a0d02952ea6b2ef4eafdcb38017934525175e85be70012d406476d22", 
+                    "path": "c:\\program files\\windows nt\\accessories\\wordpad.exe", 
+                    "ppid": "15448-59b86c305d6ab3867b4f7099438dbfd2ef9f9662323628e2473af153e503f8f0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 17972
+                }
+            }, 
+            "message": "wordpad.exe(15448):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "wordpad.exe", 
+            "shell_type": 0
+        }, 
+        "11060-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "da52261e1d9211ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/24 23:54:39"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11060-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\Windows\\System32\\svchost.exe -k Camera -s FrameServer", 
+                    "pid": 11060, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2e18dc3466566df55792d6afad818d1e28ffa2c32017770a959419736db577ee", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "11060-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 568
+                }
+            }, 
+            "message": "svchost.exe(11060):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TKC1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

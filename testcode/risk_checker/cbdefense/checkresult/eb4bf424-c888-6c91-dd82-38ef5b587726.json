@@ -1,0 +1,573 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9536-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 4, 
+                        "event_id": [
+                            "2ab1948c1e8411ec871fb75d4dae9b8a", 
+                            "2ab1946c1e8411ec871fb75d4dae9b8a", 
+                            "2aa7aa3e1e8411ec871fb75d4dae9b8a", 
+                            "2aa7aa2f1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:12948[cmd /c D:\\CANVAS\\BIN\\ODPVer.bat]", 
+                        "occurred": [
+                            "2021/09/26 04:41:58", 
+                            "2021/09/26 04:41:51", 
+                            "2021/09/26 04:41:42", 
+                            "2021/09/26 04:41:40"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /c D:\\CANVAS\\BIN\\ODPVer.bat", 
+                            "pid": 12948, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9536-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3u710.exe", 
+                    "hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "command_line": "D:\\CANVAS\\BIN\\SoftColl.exe S_STAFF REG", 
+                    "pid": 9536, 
+                    "parent_path": "d:\\canvas\\bin\\v3u710.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b", 
+                    "parent_pid": 8208, 
+                    "path": "d:\\canvas\\bin\\softcoll.exe", 
+                    "ppid": "9536-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(9536):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "10352-7448421fb0ce57ac15d38fb6eac41f22886bfc637686352594078a6aec453648-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3u850.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "068ad2111e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:13"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10352-7448421fb0ce57ac15d38fb6eac41f22886bfc637686352594078a6aec453648-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3u710.exe", 
+                    "hash": "7448421fb0ce57ac15d38fb6eac41f22886bfc637686352594078a6aec453648", 
+                    "command_line": "D:\\CANVAS\\BIN\\V3U850.EXE", 
+                    "pid": 10352, 
+                    "parent_path": "d:\\canvas\\bin\\v3u710.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b", 
+                    "parent_pid": 8208, 
+                    "path": "d:\\canvas\\bin\\v3u850.exe", 
+                    "ppid": "10352-7448421fb0ce57ac15d38fb6eac41f22886bfc637686352594078a6aec453648-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(10352):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "10352-48c469f0c544f160055eb32f772bdd1984757bd596abcfe15c17eec733cbea4c-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2ab194c51e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:42:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10352-48c469f0c544f160055eb32f772bdd1984757bd596abcfe15c17eec733cbea4c-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "48c469f0c544f160055eb32f772bdd1984757bd596abcfe15c17eec733cbea4c", 
+                    "command_line": "D:\\app\\product\\12.2.0\\client_1\\jdk\\bin\\java.exe    -cp \"\"D:\\app\\product\\12.2.0\\client_1\\OPatch\\ocm\\lib\\emocmclnt.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;\"D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraInstaller.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraPrereq.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\share.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\orai18n-mapping.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\xmlparserv2.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\ojmisc.jar\";D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatch.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\automation.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\apache-commons\\commons-cli-1.0.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatchsdk.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\activation.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-api.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-impl.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jsr173_1.0_api.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\OsysModel.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\osysmodel-utils.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\CRSProductDriver.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\oracle.opatch.classpath.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\oracle.oplan.classpath.jar\";.\\;.\" -DOPatch.ORACLE_HOME=\"D:\\app\\product\\12.2.0\\client_1\" -DOPatch.DEBUG=\"false\" -DOPatch.RUNNING_DIR=\"D:\\app\\product\\12.2.0\\client_1\\OPatch\" -DOPatch.MW_HOME=\"\" -DOPatch.WL_HOME=\"\" -DOPatch.COMMON_COMPONENTS_HOME=\"\" -DOPatch.OUI_LOCATION=\"\" -DOPatch.FMW_COMPONENT_HOME=\"\" -DOPatch.WEBLOGIC_CLASSPATH=\"\" -DOPatch.OPATCH_CLASSPATH=\"\"   oracle/opatch/OPatch lsinventory -detail ", 
+                    "pid": 10352, 
+                    "parent_path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                    "parent_pid": 11224, 
+                    "path": "d:\\app\\product\\12.2.0\\client_1\\jdk\\bin\\java.exe", 
+                    "ppid": "10352-48c469f0c544f160055eb32f772bdd1984757bd596abcfe15c17eec733cbea4c-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "java.exe(10352):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "java.exe", 
+            "shell_type": 0
+        }, 
+        "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "MODIFY_MEMORY_PROTECTION"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"d:\\sidecs64\\bin\\Get-EventLog\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2ab1946a1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2aa7aa791e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtAllocateVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2aa7aa781e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2aa7aa741e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2aa7aa721e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2aa7aa431e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:15572[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 04:41:43"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 15572, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy RemoteSigned -Command Get-EventLog -LogName Application -Source MsiInstaller -EntryType Information -After 2020/05/01 | ?{ $_.EventID -eq \"1040\"} | Select-Object TimeWritten,Message | Export-CSV -NoTypeInformation -Encoding Default \"C:\\Users\\SHIBAT~1\\AppData\\Local\\Temp\\eventlog.csv\"", 
+                    "pid": 6652, 
+                    "parent_path": "d:\\canvas\\bin\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "parent_pid": 9536, 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "6652-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(6652):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "10352-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2ab194bc1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:11376[cmd /C \"D:\\app\\product\\12.2.0\\client_1\\.patch_storage\\getEnv.bat\"]", 
+                        "occurred": [
+                            "2021/09/26 04:42:03"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /C \"D:\\app\\product\\12.2.0\\client_1\\.patch_storage\\getEnv.bat\"", 
+                            "pid": 11376, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "10352-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "opatch.bat", 
+                    "hash": "7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971", 
+                    "command_line": "D:\\app\\product\\12.2.0\\client_1\\jdk\\bin\\java.exe    -cp \"\"D:\\app\\product\\12.2.0\\client_1\\OPatch\\ocm\\lib\\emocmclnt.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;\"D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraInstaller.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\OraPrereq.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\share.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\orai18n-mapping.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\xmlparserv2.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\emCfg.jar;D:\\app\\product\\12.2.0\\client_1\\oui\\lib\\ojmisc.jar\";D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatch.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\automation.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\apache-commons\\commons-cli-1.0.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\opatchsdk.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\activation.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-api.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jaxb-impl.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\jaxb\\jsr173_1.0_api.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\OsysModel.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\osysmodel-utils.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\CRSProductDriver.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\jlib\\oracle.opatch.classpath.jar;D:\\app\\product\\12.2.0\\client_1\\OPatch\\oplan\\jlib\\oracle.oplan.classpath.jar\";.\\;.\" -DOPatch.ORACLE_HOME=\"D:\\app\\product\\12.2.0\\client_1\" -DOPatch.DEBUG=\"false\" -DOPatch.RUNNING_DIR=\"D:\\app\\product\\12.2.0\\client_1\\OPatch\" -DOPatch.MW_HOME=\"\" -DOPatch.WL_HOME=\"\" -DOPatch.COMMON_COMPONENTS_HOME=\"\" -DOPatch.OUI_LOCATION=\"\" -DOPatch.FMW_COMPONENT_HOME=\"\" -DOPatch.WEBLOGIC_CLASSPATH=\"\" -DOPatch.OPATCH_CLASSPATH=\"\"   oracle/opatch/OPatch lsinventory -detail ", 
+                    "pid": 10352, 
+                    "parent_path": "d:\\app\\product\\12.2.0\\client_1\\opatch\\opatch.bat", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "1f149b5e70010e8cc955a54bfe9d34a871b6514ea9415cfe777de0521a9a3ee4", 
+                    "parent_pid": 11224, 
+                    "path": "d:\\app\\product\\12.2.0\\client_1\\opatch\\jlib\\opatch.jar", 
+                    "ppid": "10352-7b81435061996b07c0f102f4952aac74ec8e1dffa8d5c9d09fcfcdd8897fb971-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "opatch.jar(10352):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "opatch.jar", 
+            "shell_type": 0
+        }, 
+        "12948-ed72f541a496b8db93b5dc6dfedb15dc5907a66646a3c9f69b18882dffbdefc2-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2ab1948f1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:11224[C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" D:\\app\\product\\12.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"]", 
+                        "occurred": [
+                            "2021/09/26 04:41:58"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe  /S /D /c\" D:\\app\\product\\12.2.0\\client_1\\OPatch\\opatch lsinventory -detail \"", 
+                            "pid": 11224, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "12948-ed72f541a496b8db93b5dc6dfedb15dc5907a66646a3c9f69b18882dffbdefc2-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "ed72f541a496b8db93b5dc6dfedb15dc5907a66646a3c9f69b18882dffbdefc2", 
+                    "command_line": "cmd /c D:\\CANVAS\\BIN\\ODPVer.bat", 
+                    "pid": 12948, 
+                    "parent_path": "d:\\canvas\\bin\\softcoll.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "parent_pid": 9536, 
+                    "path": "d:\\canvas\\bin\\odpver.bat", 
+                    "ppid": "12948-ed72f541a496b8db93b5dc6dfedb15dc5907a66646a3c9f69b18882dffbdefc2-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(12948):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "8208-d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\shibata039", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3u710.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "068ad1e21e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:02"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8208-d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3u010.exe", 
+                    "hash": "d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b", 
+                    "command_line": "D:\\CANVAS\\BIN\\V3U710.EXE", 
+                    "pid": 8208, 
+                    "parent_path": "d:\\canvas\\bin\\v3u010.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "6c34f5b255d69ebbddcbc7e55e42b470a8a4f00da01f0acc8d01df81205db43e", 
+                    "parent_pid": 15596, 
+                    "path": "d:\\canvas\\bin\\v3u710.exe", 
+                    "ppid": "8208-d4fe3372f3e8b66ba258ed443c253fbbb03dea5e458cf3bf4e367bd5d66bbe9b-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(8208):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

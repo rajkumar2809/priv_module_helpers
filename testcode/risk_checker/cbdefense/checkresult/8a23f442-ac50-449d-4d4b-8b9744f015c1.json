@@ -1,0 +1,77 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9096-7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "SUSPICIOUS_BEHAVIOR"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "9096-7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6-0", 
+                        "description": "C:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe:12800[\"C:\\Program Files x86\\Microsoft Office\\Office16\\EXCEL.EXE\" C:\\Users\\d6003887\\Desktop\\\u30ec\u30b7\u30d4\u4f5c\u6210\u72b6\u6cc1.xlsx.lnk]", 
+                        "occurred": [
+                            "2021/09/26 01:55:54"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Program Files x86\\Microsoft Office\\Office16\\EXCEL.EXE\" C:\\Users\\d6003887\\Desktop\\\u30ec\u30b7\u30d4\u4f5c\u6210\u72b6\u6cc1.xlsx.lnk", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 12800, 
+                            "name": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                            "hash": "2b50107538c9aa52657a8d0fe99563085b4440b6efff194a7cc279881b0e211c"
+                        }, 
+                        "event_id": [
+                            "ec8e1ba11e6c11ecb562cf532252918e"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_UNKNOWN_APP", 
+                            "SUSPICIOUS_BEHAVIOR"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Appinfo", 
+                    "pid": 9096, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "7ef551eb51992b5f0f3c76fcf1996bca5ca8efaa87ab527f55835936165f420d", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "9096-7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 840
+                }
+            }, 
+            "message": "svchost.exe(9096):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

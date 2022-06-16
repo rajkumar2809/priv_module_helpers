@@ -1,0 +1,45 @@
+{
+    "id": "00002-10-000004",
+    "rev": "0001", 
+    "reputation": "white", 
+    "enable": "yes", 
+    "score": 5, 
+    "value": "wscript.exe", 
+    "type": "condition", 
+    "detail": {
+        "expected": [
+            {
+                "data_position": "process_detail", 
+                "conditions": [
+                    {
+                        "section": null, 
+                        "field"  : "gparent_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\windows\\\\system32\\\\svchost\\.exe\\s+-k\\s+netsvcs\\s+-p\\s+-s\\s+schedule"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "parent_name", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\win10_hurryupg_popup\\\\win10_\\d+_dunning_kick.exe$"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "ps_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)wscript(\\.exe)?.*\\\\temp\\\\win10_\\d+_dunning_kick\\.vbs\"\\s*$"
+                    }
+                ]
+            }
+        ],
+        "excepted" : []
+    }, 
+    "message": "Customer Script", 
+    "source": "manual", 
+    "registered": "2020/9/30", 
+    "product": "crowdstrike", 
+    "user": "PIS1"
+}

@@ -1,0 +1,608 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "40.24.1.254", 
+            "location": ",,United States", 
+            "port": 21, 
+            "name": null
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "11804-a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59-0": {
+            "details": {
+                "indicators": [
+                    "MONITOR_USER_INPUT", 
+                    "RUN_UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "RUN_ANOTHER_APP", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1056_INPUT_CAPTURE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "11804-a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59-0", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 04:46:31"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "event_id": [
+                            "c8634d451e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "MONITOR_USER_INPUT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "11804-a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59-0", 
+                        "description": "The application \"d:\\canvas\\bin\\v3g030.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:46:31"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "c8634d441e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "11804-a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59-0", 
+                        "description": "D:\\canvas\\bin\\v3temp\\v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3temp\\v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm:7928[\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/26 04:46:46"
+                        ], 
+                        "event_detail": {
+                            "hash": "efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7", 
+                            "pid": 7928, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm\"", 
+                            "name": "d:\\canvas\\bin\\v3temp\\v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm"
+                        }, 
+                        "event_id": [
+                            "c8634d4c1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g000.exe", 
+                    "parent_pid": 12704, 
+                    "pid": 11804, 
+                    "command_line": "D:\\CANVAS\\BIN\\V3G030.exe", 
+                    "parent_path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617", 
+                    "path": "d:\\canvas\\bin\\v3g030.exe", 
+                    "ppid": "11804-a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59-0", 
+                    "parent_command_line": null, 
+                    "hash": "a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59"
+                }
+            }, 
+            "message": "canvas_tmp_exe(11804):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "1220-5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "RUN_ANOTHER_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "1220-5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af-0", 
+                        "description": "The application \"d:\\canvas\\bin\\v3g037.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:47:15"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "ec7772191e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "1220-5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af-0", 
+                        "description": "D:\\canvas\\bin\\v3temp\\v3g037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3temp\\v3g037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm:10096[\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/26 04:47:28"
+                        ], 
+                        "event_detail": {
+                            "hash": "8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a", 
+                            "pid": 10096, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm\"", 
+                            "name": "d:\\canvas\\bin\\v3temp\\v3g037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm"
+                        }, 
+                        "event_id": [
+                            "ec77721f1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g000.exe", 
+                    "parent_pid": 12704, 
+                    "pid": 1220, 
+                    "command_line": "D:\\CANVAS\\BIN\\V3G037.exe", 
+                    "parent_path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617", 
+                    "path": "d:\\canvas\\bin\\v3g037.exe", 
+                    "ppid": "1220-5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af-0", 
+                    "parent_command_line": null, 
+                    "hash": "5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af"
+                }
+            }, 
+            "message": "canvas_tmp_exe(1220):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "5220-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0": {
+            "details": {
+                "indicators": [
+                    "FILE_TRANSFER", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "NETWORK_ACCESS", 
+                    "NON_STANDARD_PORT", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "5220-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                        "description": "40.24.1.254:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "40.24.2.92:54341-(TCP:OUT)->40.24.1.254:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/26 04:46:56"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.24.1.254", 
+                            "proto": "TCP", 
+                            "local_port": 54341, 
+                            "local_ipv4": "40.24.2.92", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "c88442c51e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm", 
+                    "parent_pid": 7928, 
+                    "pid": 5220, 
+                    "command_line": "D:\\CANVAS\\BIN\\V3Z020 REPLACE 408002 233991 \"D:\\CANVAS\\BIN\\V3TEMP\\\u5730\u76e4\u306e\u9577\u671f\u8a31\u5bb9\u5fdc\u529b\u5ea6_\u5c0f\u898f\u6a21\u5f0f.XDW\" 1302", 
+                    "parent_path": "d:\\canvas\\bin\\v3temp\\v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7", 
+                    "path": "d:\\canvas\\bin\\v3z020.exe", 
+                    "ppid": "5220-ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3-0", 
+                    "parent_command_line": null, 
+                    "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3"
+                }
+            }, 
+            "message": "canvas_tmp_exe(5220):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "10096-8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "10096-8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a-0", 
+                        "description": "D:\\canvas\\bin\\v3z020.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3z020.exe:8336[D:\\CANVAS\\BIN\\V3Z020 REPLACE 408002 233991 \"D:\\CANVAS\\BIN\\V3TEMP\\\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.XDW\" 1302]", 
+                        "occurred": [
+                            "2021/09/26 04:47:36"
+                        ], 
+                        "event_detail": {
+                            "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3", 
+                            "pid": 8336, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "D:\\CANVAS\\BIN\\V3Z020 REPLACE 408002 233991 \"D:\\CANVAS\\BIN\\V3TEMP\\\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.XDW\" 1302", 
+                            "name": "d:\\canvas\\bin\\v3z020.exe"
+                        }, 
+                        "event_id": [
+                            "ec7772411e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "10096-8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a-0", 
+                        "description": "D:\\takuc\\bin\\takuc.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\takuc\\bin\\takuc.exe:10116[D:\\TAKUC\\Bin\\TakuC.exe N \"D:\\CANVAS\\BIN\\V3TEMP\\\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.XDW\"]", 
+                        "occurred": [
+                            "2021/09/26 04:47:36", 
+                            "2021/09/26 04:47:35"
+                        ], 
+                        "event_detail": {
+                            "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                            "pid": 10116, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "D:\\TAKUC\\Bin\\TakuC.exe N \"D:\\CANVAS\\BIN\\V3TEMP\\\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.XDW\"", 
+                            "name": "d:\\takuc\\bin\\takuc.exe"
+                        }, 
+                        "event_id": [
+                            "ec7772401e8411ec871fb75d4dae9b8a", 
+                            "ec77723f1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g037.exe", 
+                    "parent_pid": 1220, 
+                    "pid": 10096, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm\"", 
+                    "parent_path": "d:\\canvas\\bin\\v3g037.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "5dc05f8c207c89a070fa2fff7068e1d4d0c0f4227c851c80b13549e069c925af", 
+                    "path": "d:\\canvas\\bin\\v3temp\\v3g037_\u6db2\u72b6\u5316\u5371\u967a\u5ea6\u5224\u5b9a.xlsm", 
+                    "ppid": "10096-8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a-0", 
+                    "parent_command_line": null, 
+                    "hash": "8a8e4295f3850f4c86e3644d972bb6fd35806e747428452f9d6b3df982d0f10a"
+                }
+            }, 
+            "message": "excel(10096):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "12728-b423276ab73f8a09cd2f45cd05676a24be3302d69e8d0277b929a1bd49b93769-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "12728-b423276ab73f8a09cd2f45cd05676a24be3302d69e8d0277b929a1bd49b93769-0", 
+                        "description": "The application \"d:\\canvas\\bin\\v3g010.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "c8634d2a1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g000.exe", 
+                    "parent_pid": 12704, 
+                    "pid": 12728, 
+                    "command_line": "D:\\CANVAS\\BIN\\V3G010.exe", 
+                    "parent_path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617", 
+                    "path": "d:\\canvas\\bin\\v3g010.exe", 
+                    "ppid": "12728-b423276ab73f8a09cd2f45cd05676a24be3302d69e8d0277b929a1bd49b93769-0", 
+                    "parent_command_line": null, 
+                    "hash": "b423276ab73f8a09cd2f45cd05676a24be3302d69e8d0277b929a1bd49b93769"
+                }
+            }, 
+            "message": "canvas_tmp_exe(12728):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "7928-efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "7928-efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7-0", 
+                        "description": "D:\\canvas\\bin\\v3z020.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3z020.exe:5220[D:\\CANVAS\\BIN\\V3Z020 REPLACE 408002 233991 \"D:\\CANVAS\\BIN\\V3TEMP\\\u5730\u76e4\u306e\u9577\u671f\u8a31\u5bb9\u5fdc\u529b\u5ea6_\u5c0f\u898f\u6a21\u5f0f.XDW\" 1302]", 
+                        "occurred": [
+                            "2021/09/26 04:46:54"
+                        ], 
+                        "event_detail": {
+                            "hash": "ab08e07407831982803c2d06e2ff67c59ce44a98995db04b27a4bac0aa90c3a3", 
+                            "pid": 5220, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "D:\\CANVAS\\BIN\\V3Z020 REPLACE 408002 233991 \"D:\\CANVAS\\BIN\\V3TEMP\\\u5730\u76e4\u306e\u9577\u671f\u8a31\u5bb9\u5fdc\u529b\u5ea6_\u5c0f\u898f\u6a21\u5f0f.XDW\" 1302", 
+                            "name": "d:\\canvas\\bin\\v3z020.exe"
+                        }, 
+                        "event_id": [
+                            "c8634d811e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "7928-efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7-0", 
+                        "description": "D:\\takuc\\bin\\takuc.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\takuc\\bin\\takuc.exe:9680[D:\\TAKUC\\Bin\\TakuC.exe N \"D:\\CANVAS\\BIN\\V3TEMP\\\u5730\u76e4\u306e\u9577\u671f\u8a31\u5bb9\u5fdc\u529b\u5ea6_\u5c0f\u898f\u6a21\u5f0f.XDW\"]", 
+                        "occurred": [
+                            "2021/09/26 04:46:53", 
+                            "2021/09/26 04:46:53"
+                        ], 
+                        "event_detail": {
+                            "hash": "4b2f49d7892aa2f2c2f9c6ca8802b8de153ec5a94c488af1f78682577aa01ce2", 
+                            "pid": 9680, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "D:\\TAKUC\\Bin\\TakuC.exe N \"D:\\CANVAS\\BIN\\V3TEMP\\\u5730\u76e4\u306e\u9577\u671f\u8a31\u5bb9\u5fdc\u529b\u5ea6_\u5c0f\u898f\u6a21\u5f0f.XDW\"", 
+                            "name": "d:\\takuc\\bin\\takuc.exe"
+                        }, 
+                        "event_id": [
+                            "c8634d7d1e8411ec871fb75d4dae9b8a", 
+                            "c8634d701e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g030.exe", 
+                    "parent_pid": 11804, 
+                    "pid": 7928, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3G030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm\"", 
+                    "parent_path": "d:\\canvas\\bin\\v3g030.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "a5f94b05d61681301957ac96aca67489f8a425f0ab2988503e1aab637e5a3e59", 
+                    "path": "d:\\canvas\\bin\\v3temp\\v3g030_\u5e03\u57fa\u790e\u652f\u6301\u529b\u7b97\u5b9a_\u5f0f3.xlsm", 
+                    "ppid": "7928-efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7-0", 
+                    "parent_command_line": null, 
+                    "hash": "efc48ec01224a7153044fe302d8d345d5ee85b4e03e0c424733a9a4116ffd5a7"
+                }
+            }, 
+            "message": "excel(7928):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "12704-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yamazaki038", 
+                        "ppid": "12704-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0", 
+                        "description": "The application \"d:\\canvas\\bin\\v3g000.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:45:46"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a46c9b4a1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 12096, 
+                    "pid": 12704, 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3G000.EXE\" ", 
+                    "parent_path": "d:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "ppid": "12704-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0", 
+                    "parent_command_line": null, 
+                    "hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617"
+                }
+            }, 
+            "message": "canvas_tmp_exe(12704):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

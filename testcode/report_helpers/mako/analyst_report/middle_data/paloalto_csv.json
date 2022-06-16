@@ -1,0 +1,238 @@
+{
+    "subheaders": {
+        "detail_history": "\u30a4\u30d9\u30f3\u30c8\u767a\u751f\u6570", 
+        "detail_alert": "\u30a2\u30e9\u30fc\u30c8\u8a73\u7d30", 
+        "detail_network": "\u901a\u4fe1\u8a73\u7d30", 
+        "detail_headers": "\u30d8\u30c3\u30c0\u60c5\u5831"
+    }, 
+    "forward_detail": {
+        "header": [
+            {
+                "prefix": null, 
+                "name": "\u9805\u76ee", 
+                "row_header": true
+            }, 
+            {
+                "prefix": "fwd_in", 
+                "name": "\u5165\u529b\u5143", 
+                "row_header": false
+            }, 
+            {
+                "prefix": "fwd_out", 
+                "name": "\u51fa\u529b\u5148", 
+                "row_header": false
+            }
+        ], 
+        "fields": [
+            [
+                {
+                    "content": "\u30be\u30fc\u30f3", 
+                    "src": "name"
+                }, 
+                {
+                    "content": "KDDI_IP64", 
+                    "src": "fwd_in_zone"
+                }, 
+                {
+                    "content": "DMZ", 
+                    "src": "fwd_out_zone"
+                }
+            ], 
+            [
+                {
+                    "content": "\u30a4\u30f3\u30bf\u30d5\u30a7\u30fc\u30b9", 
+                    "src": "name"
+                }, 
+                {
+                    "content": "ethernet1/3", 
+                    "src": "fwd_in_interface"
+                }, 
+                {
+                    "content": "ethernet1/2", 
+                    "src": "fwd_out_interface"
+                }
+            ], 
+            [
+                {
+                    "content": "\u30bd\u30fc\u30b9IP:\u30dd\u30fc\u30c8", 
+                    "src": "name"
+                }, 
+                {
+                    "content": "86.171.113.52:59547", 
+                    "src": "fwd_in_srcip_wport"
+                }, 
+                {
+                    "content": "86.171.113.52:59547", 
+                    "src": "fwd_out_srcip_wport"
+                }
+            ], 
+            [
+                {
+                    "content": "\u5b9b\u5148IP:\u30dd\u30fc\u30c8", 
+                    "src": "name"
+                }, 
+                {
+                    "content": "113.157.197.79:80", 
+                    "src": "fwd_in_dstip_wport"
+                }, 
+                {
+                    "content": "192.168.203.15:80", 
+                    "src": "fwd_out_dstip_wport"
+                }
+            ]
+        ]
+    }, 
+    "remediation": {
+        "content": "test_remediation", 
+        "src": "remediation"
+    }, 
+    "detail_network": [
+        {
+            "content": "setup.cgi", 
+            "src": "domain", 
+            "name": "\u30c9\u30e1\u30a4\u30f3"
+        }, 
+        {
+            "content": "web-browsing", 
+            "src": "service", 
+            "name": "\u30b5\u30fc\u30d3\u30b91"
+        }, 
+        {
+            "content": "any", 
+            "src": "group", 
+            "name": "\u30b5\u30fc\u30d3\u30b92"
+        }, 
+        {
+            "content": "tcp:80", 
+            "src": "proto_wport", 
+            "name": "\u30d7\u30ed\u30c8\u30b3\u30eb"
+        }, 
+        {
+            "content": "\u30a4\u30ae\u30ea\u30b9", 
+            "src": "country", 
+            "name": "\u901a\u4fe1\u5148\u56fd\u5bb6"
+        }, 
+        {
+            "content": "client-to-server", 
+            "src": "direction", 
+            "name": "\u65b9\u5411\u6027"
+        }, 
+        {
+            "content": "61514", 
+            "src": "sessionid", 
+            "name": "\u30bb\u30c3\u30b7\u30e7\u30f3ID"
+        }, 
+        {
+            "content": "rule01_12", 
+            "src": "rule", 
+            "name": "\u5bfe\u8c61\u30eb\u30fc\u30eb"
+        }
+    ], 
+    "company": "\u682a\u5f0f\u4f1a\u793e\u30c7\u30b8\u30bf\u30eb\u30cf\u30fc\u30c4", 
+    "summary": {
+        "content": "\u30d5\u30a1\u30a4\u30a2\u30a6\u30a9\u30fc\u30eb\u300c001801004511\u300d\u3067xxxxxxxxxxxxx \u901a\u4fe1\u5bfe\u8c61\u306f\u30a4\u30ae\u30ea\u30b9\u3067\u3042\u308a\u3001web-browsing(tcp:80)\u306b\u95a2\u3059\u308b\u901a\u4fe1\u3068\u306a\u308a\u307e\u3059\u3002 \u65e2\u306b\u30d6\u30ed\u30c3\u30af\u3055\u308c\u3066\u304a\u308a\u3001\u7dca\u6025\u5bfe\u5fdc\u306f\u5fc5\u8981\u3054\u3056\u3044\u307e\u305b\u3093\u3002", 
+        "src": "summary"
+    }, 
+    "_form": {
+        "action": "securityanalyzer4pa_mssreport_html_data_view"
+    }, 
+    "headers": {
+        "remediation": "3. \u63a8\u5968\u5bfe\u5fdc", 
+        "detailinfo": "2. \u901a\u4fe1\u8a73\u7d30", 
+        "company": "\u682a\u5f0f\u4f1a\u793e\u30c7\u30b8\u30bf\u30eb\u30cf\u30fc\u30c4", 
+        "title": "Paloalto \u30a2\u30e9\u30fc\u30c8\u89e3\u6790\u4e00\u6b21\u30ec\u30dd\u30fc\u30c8", 
+        "summary": "1. \u89e3\u6790\u7d50\u679c"
+    }, 
+    "hidden_fields": [
+        {
+            "content": "", 
+            "src": "summary_en"
+        }, 
+        {
+            "content": "", 
+            "src": "remediation_en"
+        }, 
+        {
+            "content": "", 
+            "src": "with_eng"
+        }
+    ], 
+    "date": {
+        "content": "2019\u5e7412\u670816\u65e5", 
+        "src": "JPN"
+    }, 
+    "summary_info": [
+        {
+            "content": "001801004511(vsys1)", 
+            "src": "src_firewall", 
+            "name": "\u767a\u751f\u5143FW"
+        }, 
+        {
+            "content": "2019/12/16 9:06", 
+            "src": "createdtime", 
+            "name": "\u767a\u751f\u65e5\u6642"
+        }, 
+        {
+            "content": "vulnerability", 
+            "src": "category", 
+            "name": "\u30ab\u30c6\u30b4\u30ea"
+        }, 
+        {
+            "content": "Netgear DGN Device Remote Command Execution Vulnerability(40741)", 
+            "src": "alert_desc", 
+            "name": "\u30a2\u30e9\u30fc\u30c8\u30bf\u30a4\u30d7"
+        }, 
+        {
+            "content": "critical", 
+            "src": "pa_severity", 
+            "name": "\u5371\u967a\u5ea6"
+        }, 
+        {
+            "content": "reset-both", 
+            "src": "action", 
+            "name": "\u30a2\u30af\u30b7\u30e7\u30f3"
+        }
+    ], 
+    "matrix_tables": {
+        "forward_detail": {
+            "datatype": null, 
+            "headers": [
+                {
+                    "prefix": null, 
+                    "name": "\u9805\u76ee", 
+                    "row_header": true
+                }, 
+                {
+                    "prefix": "fwd_in", 
+                    "name": "\u5165\u529b\u5143", 
+                    "row_header": false
+                }, 
+                {
+                    "prefix": "fwd_out", 
+                    "name": "\u51fa\u529b\u5148", 
+                    "row_header": false
+                }
+            ], 
+            "prefix": null, 
+            "from": null, 
+            "fields": [
+                {
+                    "src": "zone", 
+                    "name": "\u30be\u30fc\u30f3"
+                }, 
+                {
+                    "src": "interface", 
+                    "name": "\u30a4\u30f3\u30bf\u30d5\u30a7\u30fc\u30b9"
+                }, 
+                {
+                    "src": "srcip_wport", 
+                    "name": "\u30bd\u30fc\u30b9IP:\u30dd\u30fc\u30c8"
+                }, 
+                {
+                    "src": "dstip_wport", 
+                    "name": "\u5b9b\u5148IP:\u30dd\u30fc\u30c8"
+                }
+            ]
+        }
+    }
+}

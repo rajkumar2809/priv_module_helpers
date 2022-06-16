@@ -1,0 +1,340 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "10764-29f04d5f4b8d798038cb9647178a8b9c68e16dc50da850937f6e993fc7967b75-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "10764-29f04d5f4b8d798038cb9647178a8b9c68e16dc50da850937f6e993fc7967b75-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 06:29:53"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "050c16251dca11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "29f04d5f4b8d798038cb9647178a8b9c68e16dc50da850937f6e993fc7967b75", 
+                    "pid": 10764, 
+                    "command_line": "c:\\windows\\system32\\svchost.exe -k printworkflow -s PrintWorkflowUserSvc", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "be42e4a901d6ac8885882d2cd9372a64023794428e0ac8cc87ee3121dd5dc402", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "10764-29f04d5f4b8d798038cb9647178a8b9c68e16dc50da850937f6e993fc7967b75-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 896
+                }
+            }, 
+            "message": "svchost.exe(10764):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "CODE_DROP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:1816[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 06:27:29"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 1816, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "04b6a35bc504401989b9e674c57c9e84d0cbdbbd9d8ce0ce83d7ceca0b7175ed", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "bd1207931dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "C:\\users\\can_user\\appdata\\local\\temp\\__psscriptpolicytest_fnhpsc5x.cba.psm1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\can_user\\appdata\\local\\temp\\__psscriptpolicytest_fnhpsc5x.cba.psm1:5931c2a0623f406b0bc9f5d0eaecabc628600919716503bca19088f5c7084157)(NOT_LISTED:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/25 06:27:30"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": null, 
+                            "filemod_name": "c:\\users\\can_user\\appdata\\local\\temp\\__psscriptpolicytest_fnhpsc5x.cba.psm1", 
+                            "filemod_hash": "5931c2a0623f406b0bc9f5d0eaecabc628600919716503bca19088f5c7084157", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "event_id": [
+                            "bd1207b21dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ev_type": "FILE_CREATE", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "FindFirstFile(find \"c:\\program files (x86)\\intel\\intel(r) management engine components\\icls\\Get-AuthenticodeSignature\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:35"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd1207ac1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd12079d1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtAllocateVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd12079e1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\explorer.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd12079c1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd12079b1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "FindFirstFile(find \"c:\\Windows\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd12079a1dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "PK707C004\\UK707C004", 
+                        "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 06:27:34"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "bd1207981dc911ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "labelyasan 10.exe", 
+                    "hash": "d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677", 
+                    "pid": 11272, 
+                    "command_line": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Users\\CAN_USER\\AppData\\Local\\label_desktop-updater\\pending\\temp-label_desktop Setup 1.3.1.exe' | ConvertTo-Json -Compress\"", 
+                    "parent_path": "c:\\users\\can_user\\appdata\\local\\programs\\label_desktop\\labelyasan 10.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "39fad8f30dbab2a0e8b1619934e30db967a1e11ec70f059fad218add434e0d63", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "11272-d3f8fade829d2b7bd596c4504a6dae5c034e789b6a3defbe013bda7d14466677-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9212
+                }
+            }, 
+            "message": "powershell.exe(11272):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

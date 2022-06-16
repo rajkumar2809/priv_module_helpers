@@ -1,0 +1,534 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "52.109.112.104", 
+            "location": "Sydney,02,Australia", 
+            "port": 443, 
+            "name": "officeclient.microsoft.com"
+        }, 
+        {
+            "ip": "52.109.88.39", 
+            "location": "Amsterdam,07,Netherlands", 
+            "port": 443, 
+            "name": "nexus.officeapps.live.com"
+        }
+    ], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "8264-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "8264-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                        "description": "The script \"C:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll\" attempted to inject code into the process \"C:\\Windows\\System32\\svchost.exe\", by calling the function \"CreateRemoteThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:40:57"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "8e0a524d1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "skyseahs.exe", 
+                    "parent_pid": 4712, 
+                    "pid": 8264, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\rundll32.exe\" \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\",InjectDll \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\" 5792", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\skyseahs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "3c6d7ac52939b9123beb41ad15ae3dcb5c5a9ae6a33250e4dbc3d2e2ec502479", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll", 
+                    "ppid": "8264-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                    "parent_command_line": null, 
+                    "hash": "c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536"
+                }
+            }, 
+            "message": "dll_file(8264):00001-10-000769:<AssetMgmt:SkySea>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dll_file", 
+            "shell_type": 0
+        }, 
+        "3096-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_suzuki", 
+                        "ppid": "3096-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0", 
+                        "description": "C:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe:7000[\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\"]", 
+                        "occurred": [
+                            "2021/09/26 04:44:38"
+                        ], 
+                        "event_detail": {
+                            "hash": "ca302a11b59f1d47041d3945b7eeb43b18792e7a0019a6dcd765eef2a1617e44", 
+                            "pid": 7000, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\"", 
+                            "name": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe"
+                        }, 
+                        "event_id": [
+                            "8ee067681e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "iexplore.exe", 
+                    "parent_pid": 2508, 
+                    "pid": 3096, 
+                    "command_line": "\"C:\\Program Files (x86)\\Internet Explorer\\IEXPLORE.EXE\" SCODEF:2508 CREDAT:9474 /prefetch:2", 
+                    "parent_path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "826d59b40d332b10c06c4acb34e41c60e5213e3a5049d14a250868d2075cfc65", 
+                    "path": "c:\\program files (x86)\\internet explorer\\iexplore.exe", 
+                    "ppid": "3096-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0", 
+                    "parent_command_line": null, 
+                    "hash": "a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43"
+                }
+            }, 
+            "message": "iexplore.exe(3096):00001-10-000236:<iexplorer normaly work.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }, 
+        "5792-dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "RUN_ANOTHER_APP", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "COMPROMISED_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048-0", 
+                        "description": "NtOpenProcess(open the process \"C:\\Windows\\System32\\DellTPad\\Apoint.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "NtOpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtOpenProcess"
+                        }, 
+                        "event_id": [
+                            "8e0a52831e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "COMPROMISED_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048-0", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:40:57"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtAllocateVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "8e0a524e1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5792-dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048-0", 
+                        "description": "C:\\windows\\system32\\consent.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\consent.exe:9912[consent.exe 5792 452 0000027B8CE340C0]", 
+                        "occurred": [
+                            "2021/09/26 04:41:04"
+                        ], 
+                        "event_detail": {
+                            "hash": "968327e7ec7ed8061f7db870fcd2e6b84e638a4b4b10cae90753ed925c62b682", 
+                            "pid": 9912, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "consent.exe 5792 452 0000027B8CE340C0", 
+                            "name": "c:\\windows\\system32\\consent.exe"
+                        }, 
+                        "event_id": [
+                            "8e0a52841e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 836, 
+                    "pid": 5792, 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Appinfo", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "1ade2588a552f715758ed74cf0c6da2bac5eeaafde27cb9e74cf14e56f1c7f12", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "5792-dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048-0", 
+                    "parent_command_line": null, 
+                    "hash": "dd191a5b23df92e12a8852291f9fb5ed594b76a28a5a464418442584afd1e048"
+                }
+            }, 
+            "message": "svchost.exe(5792):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "10712-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_suzuki", 
+                        "ppid": "10712-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                        "description": "The script \"C:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll\" attempted to inject code into the process \"C:\\Windows\\explorer.exe\", by calling the function \"CreateRemoteThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:41:18"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "8e4909501e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "skyseahs.exe", 
+                    "parent_pid": 4712, 
+                    "pid": 10712, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\rundll32.exe\" \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\",InjectDll \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\" 10328", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\skyseahs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "3c6d7ac52939b9123beb41ad15ae3dcb5c5a9ae6a33250e4dbc3d2e2ec502479", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll", 
+                    "ppid": "10712-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                    "parent_command_line": null, 
+                    "hash": "c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536"
+                }
+            }, 
+            "message": "dll_file(10712):00001-10-000769:<AssetMgmt:SkySea>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dll_file", 
+            "shell_type": 0
+        }, 
+        "2624-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_suzuki", 
+                        "ppid": "2624-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0", 
+                        "description": "C:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe:11480[\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\"]", 
+                        "occurred": [
+                            "2021/09/26 04:42:20"
+                        ], 
+                        "event_detail": {
+                            "hash": "ca302a11b59f1d47041d3945b7eeb43b18792e7a0019a6dcd765eef2a1617e44", 
+                            "pid": 11480, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\"", 
+                            "name": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe"
+                        }, 
+                        "event_id": [
+                            "8ea46f8d1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "iexplore.exe", 
+                    "parent_pid": 1436, 
+                    "pid": 2624, 
+                    "command_line": "\"C:\\Program Files (x86)\\Internet Explorer\\IEXPLORE.EXE\" SCODEF:1436 CREDAT:9474 /prefetch:2", 
+                    "parent_path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "826d59b40d332b10c06c4acb34e41c60e5213e3a5049d14a250868d2075cfc65", 
+                    "path": "c:\\program files (x86)\\internet explorer\\iexplore.exe", 
+                    "ppid": "2624-a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43-0", 
+                    "parent_command_line": null, 
+                    "hash": "a389977229b2114fcc7b6ea80fc480d9ee06840eec994a3ee31a5ecf946f0a43"
+                }
+            }, 
+            "message": "iexplore.exe(2624):00001-10-000236:<iexplorer normaly work.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }, 
+        "10084-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MODIFY_PROCESS", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "10084-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0", 
+                        "description": "OpenProcess(open the process \"C:\\Windows\\explorer.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:42:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "8ea46fc51e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ctlcli.exe", 
+                    "parent_pid": 8232, 
+                    "pid": 10084, 
+                    "command_line": "\"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\AstAgent.exe\" -getassets", 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\ctlcli.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "a6707d6393e60da4c1a449e93e03778badbc2cf3a65dea16d5beda47da696dde", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\astagent.exe", 
+                    "ppid": "10084-e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8-0", 
+                    "parent_command_line": null, 
+                    "hash": "e17f084d6c44ecf08c7482b65b47b2deafb0df5ee053d03ef5c9c950c31c43b8"
+                }
+            }, 
+            "message": "astagent.exe(10084):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "astagent.exe", 
+            "shell_type": 0
+        }, 
+        "11980-698a6bc066c75f15de433919ce405612defe207492ad51a7842a89060da23cdc-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_suzuki", 
+                        "ppid": "11980-698a6bc066c75f15de433919ce405612defe207492ad51a7842a89060da23cdc-0", 
+                        "description": "52.109.88.39:443(nexus.officeapps.live.com, located in Amsterdam 07, Netherlands)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.0.8:50905-(TCP:OUT)->52.109.88.39:443(nexus.officeapps.live.com)[Amsterdam,07,Netherlands]", 
+                        "occurred": [
+                            "2021/09/26 04:45:32"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.88.39", 
+                            "proto": "TCP", 
+                            "local_port": 50905, 
+                            "local_ipv4": "192.168.0.8", 
+                            "is_inbound": false, 
+                            "remote_domain": "nexus.officeapps.live.com", 
+                            "remote_location": "Amsterdam,07,Netherlands", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "b7fc152d1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SUNAC\\y_suzuki", 
+                        "ppid": "11980-698a6bc066c75f15de433919ce405612defe207492ad51a7842a89060da23cdc-0", 
+                        "description": "52.109.112.104:443(officeclient.microsoft.com, located in Sydney 02, Australia)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.0.8:50841-(TCP:OUT)->52.109.112.104:443(officeclient.microsoft.com)[Sydney,02,Australia]", 
+                        "occurred": [
+                            "2021/09/26 04:44:25"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.112.104", 
+                            "proto": "TCP", 
+                            "local_port": 50841, 
+                            "local_ipv4": "192.168.0.8", 
+                            "is_inbound": false, 
+                            "remote_domain": "officeclient.microsoft.com", 
+                            "remote_location": "Sydney,02,Australia", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "8ee0675b1e8411ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 10328, 
+                    "pid": 11980, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\POWERPNT.EXE\" \"C:\\Users\\y_suzuki\\Documents\\\u305d\u306e\u4ed6\\\u4e3b\u4efb\u7814\u4fee\\97\u671f\\[97\u4e3b\u4efb\u7814\u4fee]\u3010AD\u3011\u5f53\u793e\u3092\u53d6\u5dfb\u304f\u74b0\u5883.pptx\" /ou \"\"", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "464ef42cc572389e77f99112b2de86d5e71650390f7251f5e56274d2a0dced8a", 
+                    "path": "c:\\users\\y_suzuki\\documents\\\u305d\u306e\u4ed6\\\u4e3b\u4efb\u7814\u4fee\\97\u671f\\[97\u4e3b\u4efb\u7814\u4fee]\u3010ad\u3011\u5f53\u793e\u3092\u53d6\u5dfb\u304f\u74b0\u5883.pptx", 
+                    "ppid": "11980-698a6bc066c75f15de433919ce405612defe207492ad51a7842a89060da23cdc-0", 
+                    "parent_command_line": null, 
+                    "hash": "698a6bc066c75f15de433919ce405612defe207492ad51a7842a89060da23cdc"
+                }
+            }, 
+            "message": "powerpnt(11980):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powerpnt", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "AHS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

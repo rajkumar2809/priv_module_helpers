@@ -1,0 +1,30 @@
+{
+	"id": "00001-10-000023",
+	"rev": "0001",
+	"enable": "yes",
+	"product": "cbdefense",
+	"type": "condition",
+	"reputation": "white",
+	"score": 5,
+	"value": "cmd.exe",
+	"detail": {
+		"data_position": "events",
+		"expected": [
+			{
+				"field": "ev_type",
+				"value": "CREATE_PROCESS",
+				"type": "exact"
+			},
+			{
+				"field": "description",
+				"value": "(?i)c:\\\\program\\s*files\\s*(\\(x86\\))?\\s*\\\\adobe\\\\acrobat\\s*reader\\s*dc\\\\reader\\\\browser\\\\wcchromeextn\\\\wcchromenativemessaginghost\\.exe",
+				"type": "regexp"
+			}
+		],
+		"exclusion": []
+	},
+	"registered": "2019/3/4",
+	"user": "gdo",
+	"source": "manual",
+	"message": "normaly alert with adobe and chrome."
+}

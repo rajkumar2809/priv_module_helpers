@@ -1,0 +1,1352 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 53023, 
+            "ip": "50.26.8.105", 
+            "location": "Amarillo,TX,United States", 
+            "name": null
+        }, 
+        {
+            "port": 21, 
+            "ip": "50.27.153.11", 
+            "location": "Lubbock,TX,United States", 
+            "name": null
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "11208-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "POLICY_DENY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"C:\\program files (x86)\\d.o.s\\ss1agent\\package\\ss1loaderrecovery.vbs\" attempted to inject code into the process \"C:\\Windows\\System32\\cmd.exe\", by calling the function \"NtCreateThreadEx\". The operation was blocked by Cb Defense.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "947da1d01dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11208-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "POLICY_DENY", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736", 
+                    "command_line": "C:\\Windows\\System32\\wscript.exe \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Package\\SS1LoaderRecovery.vbs\"", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 11208, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\package\\ss1loaderrecovery.vbs", 
+                    "parent_hash": "c9a28dc8004c3e043cbf8e3a194fda2b756ce90740df2175488337281b485f69", 
+                    "parent_pid": 1612, 
+                    "ppid": "11208-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "vb_script(11208):00001-10-000334:<AssertMgmt SS1>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "4228-ba50b5a2a1c577639417d7337265641850944ef0f4ed4c504e20465a7bb02660-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "HAS_INJECTED_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"c:\\windows\\temp\\scrootca2\\scrootca2.bat\" attempted to inject code into the process \"c:\\windows\\syswow64\\find.exe\", by calling the function \"CreateRemoteThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:29:58"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "dcde137b1dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "4228-ba50b5a2a1c577639417d7337265641850944ef0f4ed4c504e20465a7bb02660-0", 
+                        "categories": [
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "scrootca2.exe", 
+                    "hash": "ba50b5a2a1c577639417d7337265641850944ef0f4ed4c504e20465a7bb02660", 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\Temp\\SCRootCA2\\SCRootCA2.bat\" \"", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 4228, 
+                    "parent_path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{e6538e8c-7f8b-49c0-829c-4ed01e850c98}\\user\\scripts\\logoff\\scrootca2.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\windows\\temp\\scrootca2\\scrootca2.bat", 
+                    "parent_hash": "bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160", 
+                    "parent_pid": 7972, 
+                    "ppid": "4228-ba50b5a2a1c577639417d7337265641850944ef0f4ed4c504e20465a7bb02660-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "win_batch(4228):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "7972-bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\syswow64\\cmd.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:29:58"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "dcde136e1dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "7972-bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:4228[C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\Temp\\SCRootCA2\\SCRootCA2.bat\" \"]", 
+                        "occurred": [
+                            "2021/09/25 08:29:53"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\Temp\\SCRootCA2\\SCRootCA2.bat\" \"", 
+                            "pid": 4228, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "dcd44f941dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7972-bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160", 
+                    "command_line": "\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{E6538E8C-7F8B-49C0-829C-4ED01E850C98}\\User\\Scripts\\Logoff\\SCRootCA2.exe\" ", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 7972, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{e6538e8c-7f8b-49c0-829c-4ed01e850c98}\\user\\scripts\\logoff\\scrootca2.exe", 
+                    "parent_hash": "f64347b76cec0bc7825471874a4a30df81baaed99e3f14ba707fb9daecc14e30", 
+                    "parent_pid": 10484, 
+                    "ppid": "7972-bca485ebafeac25902286c61f350cf0c02395c2effb5aa5ef94fd51f68097160-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "scrootca2.exe(7972):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "scrootca2.exe", 
+            "shell_type": 0
+        }, 
+        "2492-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:44"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b86a41321dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2492-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1ghloaderx64.exe", 
+                    "hash": "eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1GH.exe\"", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 2492, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghloaderx64.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe", 
+                    "parent_hash": "33e54f984d45770e96f3ad583f7126f574a0e64ee7bbb6e4e1ae80a878e9dceb", 
+                    "parent_pid": 7812, 
+                    "ppid": "2492-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ss1gh.exe(2492):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1gh.exe", 
+            "shell_type": 0
+        }, 
+        "5348-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\syswow64\\cmd.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:38"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b86a41181dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5348-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:9116[cmd /c wmic diskdrive get status > C:\\WHITE\\BIN\\SMART.txt]", 
+                        "occurred": [
+                            "2021/09/25 08:28:34"
+                        ], 
+                        "event_detail": {
+                            "command_line": "cmd /c wmic diskdrive get status > C:\\WHITE\\BIN\\SMART.txt", 
+                            "pid": 9116, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "947da21b1dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "5348-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "wbah01.exe", 
+                    "hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "command_line": "C:\\WHITE\\BIN\\SoftColl.exe WHITE", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 5348, 
+                    "parent_path": "c:\\white\\bin\\wbah01.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\white\\bin\\softcoll.exe", 
+                    "parent_hash": "77b826dabd28f11a908eac5d787d9abef9fc82dfabe47f22b5c3a1bb239fe2f2", 
+                    "parent_pid": 6120, 
+                    "ppid": "5348-bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "softcoll.exe(5348):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "softcoll.exe", 
+            "shell_type": 0
+        }, 
+        "9116-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "COMPROMISED_PROCESS", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:38"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "b86a411b1dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9116-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:38"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "b86a41191dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9116-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "softcoll.exe", 
+                    "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                    "command_line": "cmd /c wmic diskdrive get status > C:\\WHITE\\BIN\\SMART.txt", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 9116, 
+                    "parent_path": "c:\\white\\bin\\softcoll.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "parent_hash": "bf83e11457cf5b0561ccd654b07b372ea04074ab04dcc9d2231309a2bb7a659d", 
+                    "parent_pid": 5348, 
+                    "ppid": "9116-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(9116):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "9308-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 08:31:36"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "04b29b471ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9308-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1collectserver.exe", 
+                    "hash": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Ss1Inject2x64.exe\" services.exe ss1h003x64.DLL", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 9308, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1inject2x64.exe", 
+                    "parent_hash": "c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784", 
+                    "parent_pid": 7652, 
+                    "ppid": "9308-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d:ss1 assert mgmt tool", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1inject2x64.exe", 
+            "shell_type": 0
+        }, 
+        "9092-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 08:30:19"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "dcde13ac1dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9092-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1collectserver.exe", 
+                    "hash": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Ss1Inject2x64.exe\" services.exe ss1h003x64.DLL", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 9092, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1inject2x64.exe", 
+                    "parent_hash": "c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784", 
+                    "parent_pid": 7652, 
+                    "ppid": "9092-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d:ss1 assert mgmt tool", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1inject2x64.exe", 
+            "shell_type": 0
+        }, 
+        "8364-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghx64.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:31:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "04a1842c1ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8364-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1ghloaderx64.exe", 
+                    "hash": "33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1GHx64.exe\"", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 8364, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghloaderx64.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghx64.exe", 
+                    "parent_hash": "33e54f984d45770e96f3ad583f7126f574a0e64ee7bbb6e4e1ae80a878e9dceb", 
+                    "parent_pid": 7812, 
+                    "ppid": "8364-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3:ss1 assert mgmt tool", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1ghx64.exe", 
+            "shell_type": 0
+        }, 
+        "1944-5a091dbfa08c0ee8225d5820ef030409bc72f587cc93423f32419dce0130a5ee-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "50.27.153.11:21(located in Lubbock TX, United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "50.26.31.102:65353-(TCP:OUT)->50.27.153.11:21(None)[Lubbock,TX,United States]", 
+                        "occurred": [
+                            "2021/09/25 08:01:58"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.27.153.11", 
+                            "proto": "TCP", 
+                            "local_port": 65353, 
+                            "local_ipv4": "50.26.31.102", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Lubbock,TX,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "ebaf3e541dd611ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "1944-5a091dbfa08c0ee8225d5820ef030409bc72f587cc93423f32419dce0130a5ee-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "5a091dbfa08c0ee8225d5820ef030409bc72f587cc93423f32419dce0130a5ee", 
+                    "command_line": "\"C:\\Program Files\\Fujitsu\\SafetyDomain\\F5FUSENS.exe\"", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 1944, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files\\fujitsu\\safetydomain\\f5fusens.exe", 
+                    "parent_hash": "be42e4a901d6ac8885882d2cd9372a64023794428e0ac8cc87ee3121dd5dc402", 
+                    "parent_pid": 780, 
+                    "ppid": "1944-5a091dbfa08c0ee8225d5820ef030409bc72f587cc93423f32419dce0130a5ee-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "f5fusens.exe(1944):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "f5fusens.exe", 
+            "shell_type": 0
+        }, 
+        "5396-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "INJECT_CODE", 
+                    "POLICY_DENY", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"C:\\program files (x86)\\d.o.s\\ss1agent\\package\\ss1loaderrecovery.vbs\" attempted to inject code into the process \"C:\\Windows\\System32\\cmd.exe\", by calling the function \"NtCreateThreadEx\". The operation was blocked by Cb Defense.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:13:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "793599bc1dd811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5396-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "POLICY_DENY", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:1728[C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Package\\SS1LoaderRecovery.bat\" \"]", 
+                        "occurred": [
+                            "2021/09/25 08:13:04"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Package\\SS1LoaderRecovery.bat\" \"", 
+                            "pid": 1728, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "9a7c58bd98d70631aa1473f7b57b426db367d72429a5455b433a05ee251f3236", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "793599bb1dd811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "5396-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736", 
+                    "command_line": "C:\\Windows\\System32\\wscript.exe \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Package\\SS1LoaderRecovery.vbs\"", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 5396, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\package\\ss1loaderrecovery.vbs", 
+                    "parent_hash": "c9a28dc8004c3e043cbf8e3a194fda2b756ce90740df2175488337281b485f69", 
+                    "parent_pid": 1612, 
+                    "ppid": "5396-2ef0cd87b53758dbe6a241d561622dc03036db75056f4e29a69bdd26409bb736-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "vb_script(5396):00001-10-000334:<AssertMgmt SS1>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "1512-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghx64.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:28:51"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b86a68781dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1512-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1ghloaderx64.exe", 
+                    "hash": "33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1GHx64.exe\"", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 1512, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghloaderx64.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghx64.exe", 
+                    "parent_hash": "33e54f984d45770e96f3ad583f7126f574a0e64ee7bbb6e4e1ae80a878e9dceb", 
+                    "parent_pid": 7812, 
+                    "ppid": "1512-33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "33e8a886aae0394dd978459a985677d2b15718533c1387dceb68d3238b9130d3:ss1 assert mgmt tool", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1ghx64.exe", 
+            "shell_type": 0
+        }, 
+        "1844-b5f289a53a614785cf0aa842826e61981337c14d228db9b6d4d6e7a09d46030c-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\oomura0056", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 08:29:22"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "event_id": [
+                            "b8aa58771dda11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1844-b5f289a53a614785cf0aa842826e61981337c14d228db9b6d4d6e7a09d46030c-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "b5f289a53a614785cf0aa842826e61981337c14d228db9b6d4d6e7a09d46030c", 
+                    "command_line": "\"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{383627B0-5B95-4EF0-AD3D-4A02FAC5A848}\\User\\Scripts\\Logoff\\GetClientSetInfoRecovery.exe\" ", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 1844, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{383627b0-5b95-4ef0-ad3d-4a02fac5a848}\\user\\scripts\\logoff\\getclientsetinforecovery.exe", 
+                    "parent_hash": "f64347b76cec0bc7825471874a4a30df81baaed99e3f14ba707fb9daecc14e30", 
+                    "parent_pid": 10484, 
+                    "ppid": "1844-b5f289a53a614785cf0aa842826e61981337c14d228db9b6d4d6e7a09d46030c-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "getclientsetinforecovery.exe(1844):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "getclientsetinforecovery.exe", 
+            "shell_type": 0
+        }, 
+        "1984-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:31:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "04a184231ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1984-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1ghloaderx64.exe", 
+                    "hash": "eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1GH.exe\"", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "pid": 1984, 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghloaderx64.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe", 
+                    "parent_hash": "33e54f984d45770e96f3ad583f7126f574a0e64ee7bbb6e4e1ae80a878e9dceb", 
+                    "parent_pid": 7812, 
+                    "ppid": "1984-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ss1gh.exe(1984):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1gh.exe", 
+            "shell_type": 0
+        }, 
+        "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP", 
+                    "ACTIVE_SERVER", 
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_ANOTHER_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "50.26.31.102:21650", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "50.26.31.102:21650<-(TCP:IN)-50.26.8.105:57153(None)[Amarillo,TX,United States]", 
+                        "occurred": [
+                            "2021/09/25 08:31:37", 
+                            "2021/09/25 08:01:51"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.26.8.105", 
+                            "proto": "TCP", 
+                            "local_port": 21650, 
+                            "local_ipv4": "50.26.31.102", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": "Amarillo,TX,United States", 
+                            "remote_port": 57153
+                        }, 
+                        "event_id": [
+                            "04bc11291ddb11ec871fb75d4dae9b8a", 
+                            "ebaf3e4e1dd611ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\reg.exe", 
+                        "event_count": 21, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\reg.exe:10160[\"C:\\Windows\\system32\\reg.exe\" unload HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444884]", 
+                        "occurred": [
+                            "2021/09/25 08:31:33", 
+                            "2021/09/25 08:31:32", 
+                            "2021/09/25 08:31:30", 
+                            "2021/09/25 08:31:30", 
+                            "2021/09/25 08:31:28", 
+                            "2021/09/25 08:31:28", 
+                            "2021/09/25 08:31:26", 
+                            "2021/09/25 08:31:26", 
+                            "2021/09/25 08:31:25", 
+                            "2021/09/25 08:31:24", 
+                            "2021/09/25 08:31:21", 
+                            "2021/09/25 08:31:19", 
+                            "2021/09/25 08:31:18", 
+                            "2021/09/25 08:31:18", 
+                            "2021/09/25 08:31:17", 
+                            "2021/09/25 08:31:15", 
+                            "2021/09/25 08:31:15", 
+                            "2021/09/25 08:31:14", 
+                            "2021/09/25 08:31:13", 
+                            "2021/09/25 08:31:12", 
+                            "2021/09/25 08:31:12"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" unload HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444884", 
+                            "pid": 10160, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "829206fb125010140c40f9a8d08ecebcbd437a50b351d420b473c13f931191cc", 
+                            "name": "c:\\windows\\syswow64\\reg.exe"
+                        }, 
+                        "event_id": [
+                            "04a184491ddb11ec871fb75d4dae9b8a", 
+                            "04a1843e1ddb11ec871fb75d4dae9b8a", 
+                            "04a184311ddb11ec871fb75d4dae9b8a", 
+                            "04a1841d1ddb11ec871fb75d4dae9b8a", 
+                            "04a1841a1ddb11ec871fb75d4dae9b8a", 
+                            "04a1840b1ddb11ec871fb75d4dae9b8a", 
+                            "04a184081ddb11ec871fb75d4dae9b8a", 
+                            "04a15cee1ddb11ec871fb75d4dae9b8a", 
+                            "045e61621ddb11ec871fb75d4dae9b8a", 
+                            "045e61441ddb11ec871fb75d4dae9b8a", 
+                            "045e61361ddb11ec871fb75d4dae9b8a", 
+                            "041dfcba1ddb11ec871fb75d4dae9b8a", 
+                            "041dfcad1ddb11ec871fb75d4dae9b8a", 
+                            "041dfc981ddb11ec871fb75d4dae9b8a", 
+                            "041dfc961ddb11ec871fb75d4dae9b8a", 
+                            "041dfc821ddb11ec871fb75d4dae9b8a", 
+                            "041dfc761ddb11ec871fb75d4dae9b8a", 
+                            "041dfc701ddb11ec871fb75d4dae9b8a", 
+                            "041dfc6a1ddb11ec871fb75d4dae9b8a", 
+                            "040f7d811ddb11ec871fb75d4dae9b8a", 
+                            "040f7d7f1ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444884\\ntuser.dat", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444884\\ntuser.dat:2836[\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444884 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-444884\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/25 08:31:33"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444884 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-444884\\ntuser.dat\"", 
+                            "pid": 2836, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "76a4182a3d31f3953a03a75f62b6bdc8eb1139871ff609b570c190bffb0b06d1", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444884\\ntuser.dat"
+                        }, 
+                        "event_id": [
+                            "04a184481ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444704\\ntuser.dat", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444704\\ntuser.dat:3740[\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444704 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-444704\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/25 08:31:32"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-444704 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-444704\\ntuser.dat\"", 
+                            "pid": 3740, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "829206fb125010140c40f9a8d08ecebcbd437a50b351d420b473c13f931191cc", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-444704\\ntuser.dat"
+                        }, 
+                        "event_id": [
+                            "04a1843d1ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-24876\\ntuser.dat", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-24876\\ntuser.dat:10816[\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-24876 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-24876\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/25 08:31:17"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-24876 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-24876\\ntuser.dat\"", 
+                            "pid": 10816, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "3cf25421e6c1b81d30c692cd233273005571f308940d4ac0f84f354cf921f666", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-24876\\ntuser.dat"
+                        }, 
+                        "event_id": [
+                            "041dfc921ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat:688[\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-1247 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/25 08:31:14"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-1247 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat\"", 
+                            "pid": 688, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "4563a4231f9a1a60cb75dc15dabf03f98be51cec6bb428b143d74b0f64a69a98", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat"
+                        }, 
+                        "event_id": [
+                            "041dfc6f1ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1276803216-69397073-358986406-1002\\ntuser.dat", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1276803216-69397073-358986406-1002\\ntuser.dat:4080[\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1276803216-69397073-358986406-1002 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1276803216-69397073-358986406-1002\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/25 08:31:12"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\system32\\reg.exe\" load HKU\\SS1WorkProfile_S-1-5-21-1276803216-69397073-358986406-1002 \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1276803216-69397073-358986406-1002\\ntuser.dat\"", 
+                            "pid": 4080, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "829206fb125010140c40f9a8d08ecebcbd437a50b351d420b473c13f931191cc", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1276803216-69397073-358986406-1002\\ntuser.dat"
+                        }, 
+                        "event_id": [
+                            "040f7d7e1ddb11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784", 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1CollectServer.exe\"", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 7652, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "parent_hash": "be42e4a901d6ac8885882d2cd9372a64023794428e0ac8cc87ee3121dd5dc402", 
+                    "parent_pid": 780, 
+                    "ppid": "7652-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ss1collectserver.exe(7652):00001-10-000140:<Asset Management Tool:ss1.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1collectserver.exe", 
+            "shell_type": 0
+        }, 
+        "2520-536abc6d36a44a42c41263b0b470a5d2db75b9291585ae4efd94190c08c1c233-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "FILE_TRANSFER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "50.27.153.11:21(located in Lubbock TX, United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "50.26.31.102:65356-(TCP:OUT)->50.27.153.11:21(None)[Lubbock,TX,United States]", 
+                        "occurred": [
+                            "2021/09/25 08:02:00"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "50.27.153.11", 
+                            "proto": "TCP", 
+                            "local_port": 65356, 
+                            "local_ipv4": "50.26.31.102", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Lubbock,TX,United States", 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "ebaf3e581dd611ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "2520-536abc6d36a44a42c41263b0b470a5d2db75b9291585ae4efd94190c08c1c233-0", 
+                        "categories": [
+                            "NETWORK_ACCESS", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "winlogon.exe", 
+                    "hash": "536abc6d36a44a42c41263b0b470a5d2db75b9291585ae4efd94190c08c1c233", 
+                    "command_line": "\"LogonUI.exe\" /flags:0x0 /state0:0xa2314055 /state1:0x41c64e6d", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 2520, 
+                    "parent_path": "c:\\windows\\system32\\winlogon.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\windows\\system32\\logonui.exe", 
+                    "parent_hash": "823ae63ba5fca8aebaffffc52ed32c4c128ab4801e59a220688460a6b3a1a43b", 
+                    "parent_pid": 4100, 
+                    "ppid": "2520-536abc6d36a44a42c41263b0b470a5d2db75b9291585ae4efd94190c08c1c233-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "logonui.exe(2520):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "logonui.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

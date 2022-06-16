@@ -1,0 +1,85 @@
+{
+    "alert_summary": {
+        "category": [
+            "indicator-executed"
+        ], 
+        "username": [
+            "MGCAD\\NRKANRI"
+        ], 
+        "domain": "MGCAD", 
+        "severity": "\u9ad8", 
+        "runuser": [
+            "MGCAD\\NRKANRI"
+        ], 
+        "hostname": "NR09-1701", 
+        "ipaddr": "10.42.1.30", 
+        "alert_id": "MGC1.NR09-1701_1623827703", 
+        "alert_name": "Detected IOC:[POSSIBLE PLINK USAGE (METHODOLOGY)]", 
+        "alert_time": "2021/06/16 16:11:32", 
+        "action": [
+            "ALERT"
+        ]
+    }, 
+    "versions": "1.0", 
+    "alert_src": {
+        "product": "Fireeye HX", 
+        "sensor_id": "86628149FD22", 
+        "sensor_name": "hexktk724-hx-webui-1.hex01.helix.apps.fireeye.com", 
+        "sensor_ipaddr": "", 
+        "customer_name": "MGC1"
+    }, 
+    "alert_detail": {
+        "status": "normal", 
+        "event_detail": [
+            {
+                "category": "indicator-executed", 
+                "ev_subtype": "start", 
+                "process_name": "PLINK.EXE", 
+                "alert_id": "44139", 
+                "process_id": "16192", 
+                "alert_time": "2021/06/16 16:11:32", 
+                "action": "ALERT", 
+                "ev_type": "processEvent", 
+                "ev_target": "C:\\winmos9\\wm_system\\bin\\PLINK.EXE"
+            }
+        ], 
+        "exploit_detail": [], 
+        "ioc_detail": [
+            {
+                "src": "Mandiant", 
+                "name": "POSSIBLE PLINK USAGE (METHODOLOGY)", 
+                "condition": {
+                    "enabled": "true", 
+                    "value": " -pw \n -P \n -R \n.showmypc.com:80\nhpispz", 
+                    "token": "processEvent/processCmdLine\nprocessEvent/processCmdLine\nprocessEvent/processCmdLine\nprocessEvent/processCmdLine\nprocessEvent/parentProcessPath", 
+                    "operator": "contains\ncontains\ncontains\ncontains\ncontains", 
+                    "type": "text\ntext\ntext\ntext\ntext", 
+                    "id": "PPRsi08IONiwD1v5XJ5mfw=="
+                }, 
+                "id": "204224b0-af4a-4f00-9fa0-04d54fb1a83d"
+            }
+        ], 
+        "risk_score": 5, 
+        "hostset": "default", 
+        "process_detail": [
+            {
+                "runuser": "MGCAD\\NRKANRI", 
+                "process_hash": "528248ae133191c591ec6d12732f2cfd", 
+                "process_path": "C:\\winmos9\\wm_system\\bin\\PLINK.EXE", 
+                "parent_pid": "7352", 
+                "parent_name": "winmostar.exe", 
+                "started": "2021-06-16T07:10:38.549Z", 
+                "process_name": "PLINK.EXE", 
+                "parent_path": "C:\\winmos9\\winmostar.exe", 
+                "process_id": "16192", 
+                "process_cmdline": "\"C:\\winmos9\\wm_system\\bin\\plink\" -P 22 -l espresso -pw mgcnr9 10.42.1.150 cd NRKANRI/quantumespresso/si/;echo 'bsub -o winmos.o -e winmos.e -J NRKANRI.si  -m vasp-pc7 -n 4 -R \"span[hosts=1]\" -o log/ < script.sh \">\" winmos.x \"2>&1\"' | sh"
+            }
+        ], 
+        "malware_detail": [], 
+        "os": "Windows 10 Pro", 
+        "agent_id": "5kuiPeVes5fcseK7aGVSxy"
+    }, 
+    "others": {
+        "sender_name": "dgh"
+    }
+}

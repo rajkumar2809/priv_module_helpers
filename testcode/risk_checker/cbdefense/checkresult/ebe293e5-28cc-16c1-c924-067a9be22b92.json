@@ -1,0 +1,371 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "FILELESS", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "D:\\bizforecast\\bizforecastweb\\primal.bizforecast.webservice\\app_data\\scripts\\7zip\\7za.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea181e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "d:\\bizforecast\\bizforecastweb\\primal.bizforecast.webservice\\app_data\\scripts\\7zip\\7za.exe:3404[\"D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\Scripts\\7zip\\7za.exe\" a D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\log\\ConglueWebTrace.2021-09.zip D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\log\\ConglueWebTrace.2021-09-24.log -MMT=ON -MX=9 -SSW]", 
+                        "occurred": [
+                            "2021/09/25 13:30:02"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\Scripts\\7zip\\7za.exe\" a D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\log\\ConglueWebTrace.2021-09.zip D:\\BizForecast\\BizForecastWeb\\Primal.BizForecast.WEBService\\App_Data\\log\\ConglueWebTrace.2021-09-24.log -MMT=ON -MX=9 -SSW", 
+                            "hash": "c136b1467d669a725478a6110ebaaab3cb88a3d389dfa688e06173c066b76fcf", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 3404, 
+                            "name": "d:\\bizforecast\\bizforecastweb\\primal.bizforecast.webservice\\app_data\\scripts\\7zip\\7za.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"d:\\bizforecast\\bizforecastweb\\primal.bizforecast.webservice\\app_data\\scripts\\7zip\\7za.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea261e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\system32\\get-date\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea251e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea1f1e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea201e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtAllocateVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959", 
+                    "pid": 2464, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -command \".\\CompressLog.ps1;exit $LASTEXITCODE\"", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6", 
+                    "path": "d:\\bizforecast\\bizforecastweb\\primal.bizforecast.webservice\\app_data\\scripts\\compresslog.ps1", 
+                    "ppid": "2464-c326941f54bb22d2856b759099dec20520ffd0f61445229268781474909ed959-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1968
+                }
+            }, 
+            "message": "ps_script(2464):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "CODE_DROP", 
+                    "ENUMERATE_PROCESSES", 
+                    "FILELESS", 
+                    "RUN_UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_vyu1gvne.eft.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea321e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_vyu1gvne.eft.psm1:9956e6f121ffb48f49222b60afdbc8a83c0def3599341292e3f3dcd83b027486)(NOT_LISTED:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/25 13:30:01"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": null, 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_vyu1gvne.eft.psm1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "file_scan_result": "/", 
+                            "filemod_hash": "9956e6f121ffb48f49222b60afdbc8a83c0def3599341292e3f3dcd83b027486"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea161e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:1112[\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 13:30:01"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\Windows\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "hash": "c5c145632b05ec2777a671bade087bcef1fa400b1e1760d58bfbb81116427105", 
+                            "reputation": "NOT_LISTED", 
+                            "pid": 1112, 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\programdata\\microsoft\\windows defender\\platform\\4.18.2108.7-0\\msmpeng.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea241e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea231e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea1e1e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc89ea1b1e0411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 13:30:05"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c", 
+                    "pid": 2464, 
+                    "command_line": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -command \".\\CompressLog.ps1;exit $LASTEXITCODE\"", 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "7fd065bac18c5278777ae44908101cdfed72d26fa741367f0ad4d02020787ab6", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "2464-de96a6e69944335375dc1ac238336066889d9ffc7d73628ef4fe1b1b160ab32c-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1968
+                }
+            }, 
+            "message": "powershell.exe(2464):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "MRS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

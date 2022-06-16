@@ -1,0 +1,98 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "10964-405f03534be8b45185695f68deb47d4daf04dcd6df9d351ca6831d3721b1efc4-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE", 
+                    "MODIFY_SERVICE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "ControlService(pass commands to the Service Control Manager)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a92f02721e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "ControlService(False)", 
+                        "occurred": [
+                            "2021/09/26 04:17:04"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "ControlService"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10964-405f03534be8b45185695f68deb47d4daf04dcd6df9d351ca6831d3721b1efc4-0", 
+                        "categories": [
+                            "MODIFY_SERVICE"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "a92f02761e8011ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:17:06"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10964-405f03534be8b45185695f68deb47d4daf04dcd6df9d351ca6831d3721b1efc4-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "taskeng.exe", 
+                    "hash": "405f03534be8b45185695f68deb47d4daf04dcd6df9d351ca6831d3721b1efc4", 
+                    "command_line": "C:\\Windows\\system32\\rundll32.exe C:\\Windows\\system32\\pla.dll,PlaHost \"New Data Collector Set (3)\" \"$(Arg0)\"", 
+                    "pid": 10964, 
+                    "parent_path": "c:\\windows\\system32\\taskeng.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "5fdcf73191bff9dbb03886755ffcf0bc15849f0e216884a5a8b9bb375fa7c1a5", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "10964-405f03534be8b45185695f68deb47d4daf04dcd6df9d351ca6831d3721b1efc4-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13148
+                }
+            }, 
+            "message": "rundll32.exe(10964):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

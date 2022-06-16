@@ -1,0 +1,30 @@
+{
+    "product": "cbdefense", 
+    "enable": "yes", 
+    "score": 5, 
+    "registered": "2019/3/4", 
+    "rev": "0005", 
+    "detail": {
+        "expected": [
+            {
+                "field": "ev_type", 
+                "type": "regexp", 
+                "value": "(?i)(SYSTEM_API_CALL|INJECT_CODE)"
+            }, 
+            {
+                "field": "description", 
+                "type": "regexp", 
+                "value": "(?i)setwindowshook(ex)?w\\((monitor\\s+keystrokes|.*claunch\\.exe)\\)"
+            }
+        ], 
+        "data_position": "events", 
+        "exclusion": []
+    }, 
+    "value": "claunch.exe", 
+    "source": "manual", 
+    "reputation": "white", 
+    "user": "all", 
+    "message": "normaly alert(monitor keystrokes or hook to itself) by claunch.exe", 
+    "type": "condition", 
+    "id": "00001-10-000021"
+}

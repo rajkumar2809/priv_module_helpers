@@ -1,0 +1,442 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "40.100.54.2", 
+            "location": "Central District,00,Hong Kong", 
+            "port": 443, 
+            "name": "outlook.office365.com"
+        }, 
+        {
+            "ip": "40.74.108.123", 
+            "location": "Osaka,32,Japan", 
+            "port": 443, 
+            "name": null
+        }
+    ], 
+    "alert_level": "2", 
+    "important_tags": [], 
+    "malicious_process": {
+        "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "CODE_DROP", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:16"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtQuerySystemInformation", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "582aac051e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "582aabef1e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open itself for modification)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "582aabee1e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFileExW(find \"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:11"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFileExW", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "582a84d91e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\windows\\temp\\__psscriptpolicytest_sdxhkac2.br1.psm1", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\windows\\temp\\__psscriptpolicytest_sdxhkac2.br1.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/26 02:05:16"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": null, 
+                            "filemod_name": "c:\\windows\\temp\\__psscriptpolicytest_sdxhkac2.br1.psm1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "event_id": [
+                            "582aac221e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "bghelper.exe", 
+                    "parent_pid": 11240, 
+                    "command_line": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\PowerShell.exe -ExecutionPolicy bypass -NoProfile -NonInteractive -WindowStyle Hidden -File C:\\ProgramData\\Lenovo\\ImController\\Plugins\\LenovoBatteryGaugePackage\\x64\\Install.ps1", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "pid": 12232, 
+                    "parent_path": "c:\\programdata\\lenovo\\imcontroller\\plugins\\lenovobatterygaugepackage\\x64\\bghelper.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "parent_hash": "390969c0b2dfec56a30dd44a0903d172cc2a10a50b63d25792d0319b5c2bc80b", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "ppid": "12232-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(12232):00001-10-000564:<Lenovo ImController.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "12232-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "POLICY_DENY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcessW(invoke the application \"C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:25"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcessW", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "585d7bf41e6e11ecb8f9b9e0554371b3"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.2108.7-0\\MsMpEng.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 02:05:19"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "582aac0e1e6e11ec8b005d642e5ad8c5"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12232-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe:12088[\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" C:\\WINDOWS\\System32\\schtasks.exe /Delete /TN \\Lenovo\\BatteryGauge\\BatteryGaugeMaintenance /F]", 
+                        "occurred": [
+                            "2021/09/26 02:05:25", 
+                            "2021/09/26 02:05:25"
+                        ], 
+                        "event_detail": {
+                            "pid": 12088, 
+                            "command_line": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" C:\\WINDOWS\\System32\\schtasks.exe /Delete /TN \\Lenovo\\BatteryGauge\\BatteryGaugeMaintenance /F", 
+                            "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                            "name": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                            "reputation": "TRUSTED_WHITE_LIST"
+                        }, 
+                        "event_id": [
+                            "585d7bf61e6e11ecb8f9b9e0554371b3", 
+                            "585d7bf51e6e11ecb8f9b9e0554371b3"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "12232-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "POLICY_DENY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "bghelper.exe", 
+                    "parent_pid": 11240, 
+                    "command_line": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\PowerShell.exe -ExecutionPolicy bypass -NoProfile -NonInteractive -WindowStyle Hidden -File C:\\ProgramData\\Lenovo\\ImController\\Plugins\\LenovoBatteryGaugePackage\\x64\\Install.ps1", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "pid": 12232, 
+                    "parent_path": "c:\\programdata\\lenovo\\imcontroller\\plugins\\lenovobatterygaugepackage\\x64\\bghelper.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\programdata\\lenovo\\imcontroller\\plugins\\lenovobatterygaugepackage\\x64\\install.ps1", 
+                    "parent_hash": "390969c0b2dfec56a30dd44a0903d172cc2a10a50b63d25792d0319b5c2bc80b", 
+                    "hash": "138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5", 
+                    "ppid": "12232-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(12232):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "11064-af987415b199db48b12bbd327bad6b4f9486facd00bdf0db2e1ee8cc9d8699e0-0": {
+            "details": {
+                "indicators": [
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "NETWORK_ACCESS", 
+                    "ADAPTIVE_WHITE_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "DESKTOP-N05E60I\\Lenovo", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.100.54.2:443(outlook.office365.com, located in Central District 00, Hong Kong)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.0.2:49878-(TCP:OUT)->40.100.54.2:443(outlook.office365.com)[Central District,00,Hong Kong]", 
+                        "occurred": [
+                            "2021/09/26 02:05:27"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.100.54.2", 
+                            "proto": "TCP", 
+                            "local_port": 49878, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.0.2", 
+                            "remote_domain": "outlook.office365.com", 
+                            "is_inbound": false, 
+                            "remote_location": "Central District,00,Hong Kong"
+                        }, 
+                        "event_id": [
+                            "585d7bfa1e6e11ecb8f9b9e0554371b3"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "11064-af987415b199db48b12bbd327bad6b4f9486facd00bdf0db2e1ee8cc9d8699e0-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ADAPTIVE_WHITE_APP", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 1108, 
+                    "command_line": "\"C:\\Program Files\\WindowsApps\\microsoft.windowscommunicationsapps_16005.14326.20436.0_x64__8wekyb3d8bbwe\\HxTsr.exe\" -ServerName:Hx.IPC.Server", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 11064, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "ADAPTIVE_WHITE_LIST", 
+                    "path": "c:\\program files\\windowsapps\\microsoft.windowscommunicationsapps_16005.14326.20436.0_x64__8wekyb3d8bbwe\\hxtsr.exe", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "hash": "af987415b199db48b12bbd327bad6b4f9486facd00bdf0db2e1ee8cc9d8699e0", 
+                    "ppid": "11064-af987415b199db48b12bbd327bad6b4f9486facd00bdf0db2e1ee8cc9d8699e0-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "hxtsr.exe(11064):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "hxtsr.exe", 
+            "shell_type": 0
+        }, 
+        "9460-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "NETWORK", 
+                        "description": "40.74.108.123:443(located in Osaka 32, Japan)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.0.2:50146-(TCP:OUT)->40.74.108.123:443(None)[Osaka,32,Japan]", 
+                        "occurred": [
+                            "2021/09/26 02:08:01"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "40.74.108.123", 
+                            "proto": "TCP", 
+                            "local_port": 50146, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.0.2", 
+                            "remote_domain": null, 
+                            "is_inbound": false, 
+                            "remote_location": "Osaka,32,Japan"
+                        }, 
+                        "event_id": [
+                            "a639e37f1e6e11eca43285efcb939185"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "9460-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 604, 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k wusvcs -p -s WaaSMedicSvc", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 9460, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "ppid": "9460-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "svchost.exe(9460):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "YSN1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

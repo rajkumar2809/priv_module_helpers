@@ -1,0 +1,107 @@
+{
+  "headers" : {
+    "title"       : "StellarCyber Starlight アラート解析一次レポート",
+    "company"     : "株式会社デジタルハーツ",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 詳細情報",
+    "remediation" : "3. 推奨対応",
+    "appendix"    : "参考情報"
+  },
+  "_form" : {
+    "action" : "aella_mssreport_html_data_view"
+  },
+  "subheaders" : {
+    "detail_alert"   : "アラート詳細",
+    "detail_network" : "通信詳細",
+    "detail_score"   : "アラートスコア"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "remediation_append" : [
+    { "name" : "緊急対処の要否", "src" : "need_block"  },
+    { "name" : "攻撃元IP",       "src" : "attacker_ip" }
+  ],
+  "summary_info" : [
+    { "name" : "アラートID",     "src" : "alert_id"              },
+    { "name" : "発生日時",       "src" : "detect_time"           },
+    { "name" : "アラート名称",   "src" : "incident_category_jpn" },
+    { "name" : "アラートタイプ", "src" : "alert_type_jpn"        },
+    { "name" : "危険度",         "src" : "risklevel_jpn"         },
+    { "name" : "検知機能",       "src" : "event_source"          },
+    { "name" : "検知センサー",   "src" : "sensor_name"           },
+    { "name" : "検知タイプ１",   "src" : "event_type"            },
+    { "name" : "検知タイプ２",   "src" : "event_name"            }
+  ],
+  "detail_score" : [
+    { "name" : "リスク値",           "src" : "score"          },
+    { "name" : "リスクレベル",       "src" : "score_level"    },
+    { "name" : "フィデリティ",       "src" : "fidelity"       },
+    { "name" : "フィデリティレベル", "src" : "fidelity_level" }
+  ],
+  "detail_network_comm_src" : [
+    { "name" : "IP",     "src" : "srcip" },
+    { "name" : "ホスト", "src" : "srcip_host" },
+    { "name" : "ポート", "src" : "srcport"  },
+    { "name" : "国家",   "src" : "srcip_country" },
+    { "name" : "レピュテーション", "src" : "srcip_reputation"  }
+  ],
+  "detail_network_comm_dst" : [
+    { "name" : "IP",     "src" : "dstip" },
+    { "name" : "ホスト", "src" : "dstip_host" },
+    { "name" : "ポート", "src" : "dstport"  },
+    { "name" : "国家",   "src" : "dstip_country" },
+    { "name" : "レピュテーション", "src" : "dstip_reputation"  }
+  ],
+  "detail_network_content" : [
+    { "name" : "アプリ",     "src" : "appid_name" },
+    { "name" : "プロトコル", "src" : "proto_name"  },
+    { "name" : "標準ポート利用有無", "src" : "appid_stdport" },
+    { "name" : "通信状況",           "src" : "state"  }
+  ],
+  "hidden_fields" : [
+    { "src" : "incident_category" },
+    { "src" : "traffic_type"      }
+  ],
+  "detail_alert_mal_anomaly" : [
+    { "name" : "バイト数", "src" : "totalbytes" },
+    { "name" : "状態",     "src" : "state" },
+    { "name" : "詳細",     "src" : "detail" }
+  ],
+  "detail_alert_callback" : [
+    { "name" : "バイト数", "src" : "totalbytes" },
+    { "name" : "状態",     "src" : "state" },
+    { "name" : "詳細",     "src" : "detail" }
+  ],
+  "detail_alert_ids" : [
+    { "name" : "バイト数",      "src" : "totalbytes" },
+    { "name" : "状態",          "src" : "state" },
+    { "name" : "IDSカテゴリ",   "src" : "ids_category" },
+    { "name" : "IDSの危険度",   "src" : "ids_severity" },
+    { "name" : "IDSシグネチャ", "src" : "ids_signature" },
+    { "name" : "詳細",          "src" : "detail" }
+  ],
+  "detail_alert_sandbox" : [
+    { "name" : "ファイル名",       "src" : "file_name" },
+    { "name" : "ファイルサイズ",   "src" : "file_size" },
+    { "name" : "ハッシュ(sha256)", "src" : "file_sha256" },
+    { "name" : "ファイルタイプ",   "src" : "file_type" },
+    { "name" : "詳細",             "src" : "detail" }
+  ],
+  "detail_alert_mal_access" : [
+    { "name" : "URL",         "src" : "url" },
+    { "name" : "URL評価情報", "src" : "url_reputation" },
+    { "name" : "情報ソース",  "src" : "url_reputation_source" }
+  ],
+  "detail_alert_phishing" : [
+    { "name" : "URL",         "src" : "url" },
+    { "name" : "URL評価情報", "src" : "url_reputation" },
+    { "name" : "情報ソース",  "src" : "url_reputation_source" }
+  ]
+}
