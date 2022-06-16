@@ -1,0 +1,80 @@
+{
+  "headers" : {
+    "title"       : "PaloaltoWildFire アラート解析一次レポート",
+    "company"     : "株式会社デジタルハーツ",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 通信詳細",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "helix4wildfire_mssreport_html_data_view"
+  },
+  "subheaders" : {
+    "detail_network" : "通信詳細",
+    "forward_detail" : "Source/Destination",
+    "forward_mail"   : "メール詳細"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "summary_info" : [
+    { "name" : "アラートID",   "src" : "alert_id"    },
+    { "name" : "発生日時",     "src" : "createdtime" },
+    { "name" : "危険度",       "src" : "severity"    },
+    { "name" : "キルチェーン", "src" : "killchain"   },
+    { "name" : "カテゴリ",     "src" : "category"    },
+    { "name" : "検知ファイル", "src" : "file_name"   },
+    { "name" : "検知ハッシュ", "src" : "file_hash"   }
+  ],
+  "detail_network" : [
+    { "name" : "サービス",     "src" : "service"     },
+    { "name" : "プロトコル",   "src" : "proto_wport" },
+    { "name" : "方向性",       "src" : "direction"   },
+    { "name" : "対象ルール",   "src" : "rule"        }
+  ],
+  "matrix_tables" : {
+    "forward_detail" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : null,
+      "headers"  : [
+        { "name" : "項目",   "prefix" : null,  "row_header" : true  },
+        { "name" : "ソース", "prefix" : "src", "row_header" : false },
+        { "name" : "宛先",   "prefix" : "dst", "row_header" : false }
+      ],
+      "fields"   : [
+        { "name" : "ゾーン", "src" : "zone" },
+        { "name" : "IP",     "src" : "ipv4" },
+        { "name" : "国家",   "src" : "isp"  },
+        { "name" : "ポート", "src" : "port" }
+      ]
+    },
+    "forward_mail" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : null,
+      "headers"  : [
+        { "name" : "項目",   "prefix" : null,  "row_header" : true  },
+        { "name" : "メール", "prefix" : "mail", "row_header" : false }
+      ],
+      "fields"   : [
+        { "name" : "宛先アドレス", "src" : "to"      },
+        { "name" : "fromアドレス", "src" : "from"    },
+        { "name" : "メール件名",   "src" : "subject" }
+      ]
+    }
+  },
+  "hidden_fields" : [
+    { "src" : "summary"      },
+    { "src" : "remediation"  },
+    { "src" : "killchain_ja" },
+    { "src" : "report_type"  },
+    { "src" : "with_eng"     }
+  ]
+}

@@ -1,0 +1,91 @@
+#coding:utf-8
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+## main
+
+<style type "text/css">
+  .value_table {
+    border-collapse: collapse;
+    border-style : all;
+    border-color : #FF0000;
+    border: solid 1px;
+    margin-right : auto;
+    margin-left : auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 500px;
+  }
+  .item {
+    border-collapse: collapse;
+    border-style : all;
+    border: solid 1px;
+    padding: 0.5em;
+    font-family:"Meiryo UI";
+    background-color:#CCECFF;
+    font-weight:bold;
+    width:250px;
+    padding:2px;
+    text-align:center;
+    word-break:break-all;
+  }
+  <%block name="stylesheet_blk">
+  </%block>
+</style>
+<script type="text/javascript">
+  function target_popup(form) {
+    window.open('', 'formpopup', 'width=1000,height=800,resizeable,scrollbars');
+    form.target = 'formpopup';
+  }
+  function insertRow(id) {
+    var table = document.getElementById(id);
+    var row_len = table.rows.length;
+    row_len = row_len;
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(-1);
+    var cell2 = row.insertCell(-1);
+    var cell3 = row.insertCell(-1);
+    var insbutton = '<input type="button" value="+" onclick="insertRow(\'url\')" />';
+    var delbutton = '<input type="button" value="-" onclick="deleteRow(this)" />';
+    var inputurl = '<textarea rows=1 cols=65 name="url">$url$</textarea>';
+    cell1.innerHTML = '<strong>' + row_len + '</strong>';
+    cell2.innerHTML = inputurl;
+    cell3.innerHTML = insbutton + delbutton;
+  }
+  
+  function deleteRow(obj) {
+    tr = obj.parentNode.parentNode;
+    tr.parentNode.deleteRow( tr.sectionRowIndex );
+  }
+</script>
+
+<form action="${_form["action"]}" method="get" name="inform" id="inform" onsubmit="target_popup( this );" >
+  <input type="submit" value="編集完了"/>
+  <div class="home" style="text-align:center"><center>
+    <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+      <tr><td colspan="2"><center><h1>${headers["title"]}</h1></center></td></tr>
+      <tr><td colspan="2"><h2>${headers["summary"]}</h2></td></tr>
+      <tr><td colspan="2"><p><textarea rows=5 cols=80 name="form.${summary["src"]}">${summary["content"]}</textarea></p></td></tr>
+    </table>
+    <%block name="summary_blk">
+      ${ func.verticaltable( summary_info ) }
+    </%block>
+
+    <%block name="detail_blk">
+    </%block>
+
+    <%block name="remediation_blk">
+      <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+        <tr><td colspan="2"><h2>${headers["remediation"]}</h2></td></tr>
+        <tr><td colspan="2" ><p><textarea rows=5 cols=80 name="form.${remediation["src"]}">${remediation["content"]}</textarea></p></td></tr>
+      </table>
+    </%block>
+    <%block name="hidden_blk">
+      % if hidden_fields:
+        % for each in hidden_fields:
+          <input type="hidden" name="form.${each["src"]}" value="${each["content"]}">
+        % endfor
+      % endif
+    </%block>
+  </center></div>
+</form>

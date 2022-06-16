@@ -1,0 +1,71 @@
+{
+  "headers" : {
+    "title"       : "Paloalto Alert Triage Report",
+    "summary"     : "1. Summary",
+    "detailinfo"  : "2. Alert Detail",
+    "remediation" : "3. Recommended Actions"
+  },
+  "_form" : {
+    "action" : "securityanalyzer4pa_mssreport_html_data_view"
+  },
+  "subheaders" : {
+    "detail_network" : "Detail of Traffic",
+    "emerg_block" : "Emergency Action"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "summary_info" : [
+    { "name" : "Alerted Firewall",       "src" : "src_firewall" },
+    { "name" : "detect time(JST)",       "src" : "createdtime"  },
+    { "name" : "category",               "src" : "category"     },
+    { "name" : "alert type",             "src" : "alert_desc"   },
+    { "name" : "severity",               "src" : "pa_severity"  },
+    { "name" : "action",                 "src" : "action"       }
+  ],
+  "detail_network" : [
+    { "name" : "domain",              "src" : "domain"      },
+    { "name" : "service",             "src" : "service"     },
+    { "name" : "service group",       "src" : "group"       },
+    { "name" : "protocol",            "src" : "proto_wport" },
+    { "name" : "destination country", "src" : "country"     },
+    { "name" : "direction",           "src" : "direction"   },
+    { "name" : "session ID",          "src" : "sessionid"   },
+    { "name" : "rule",                "src" : "rule"        }
+  ],
+  "emerg_block" : [
+    { "name" : "Need",           "src" : "need_action" },
+    { "name" : "zone",           "src" : "fwd_in_zone",        "post" : false },
+    { "name" : "srcip and port", "src" : "fwd_in_srcip_wport", "post" : false },
+    { "name" : "dstip and port", "src" : "fwd_in_dstip_wport", "post" : false }
+  ],
+  "matrix_tables" : {
+    "forward_detail" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : null,
+      "headers"  : [
+        { "name" : "name",   "prefix" : null,      "row_header" : true  },
+        { "name" : "input",  "prefix" : "fwd_in",  "row_header" : false },
+        { "name" : "output", "prefix" : "fwd_out", "row_header" : false }
+      ],
+      "fields"   : [
+        { "name" : "zone",                 "src" : "zone"        },
+        { "name" : "interface",            "src" : "interface"   },
+        { "name" : "SourceIP:Port",        "src" : "srcip_wport" },
+        { "name" : "DestinationIP:Port",   "src" : "dstip_wport" }
+      ]
+    }
+  },
+  "hidden_fields" : [
+    { "src" : "summary"      },
+    { "src" : "remediation"  },
+    { "src" : "with_eng"     }
+  ]
+}

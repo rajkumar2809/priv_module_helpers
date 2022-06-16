@@ -1,0 +1,523 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9484-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "ENUMERATE_PROCESSES", 
+                    "INJECT_CODE", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\system32\\svchost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd1b1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9484-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd1a1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9484-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd1d1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9484-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "rundll32.exe", 
+                    "hash": "b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6", 
+                    "command_line": "\"C:\\Windows\\system32\\rundll32.exe\" \"c:\\program files (x86)\\sky product\\skysea client view\\MLogHook64.dll\",RunDll32EntryPoint 8304", 
+                    "pid": 9484, 
+                    "parent_path": "c:\\windows\\syswow64\\rundll32.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "de51bae08fd7318c988ef54511b5c08d8c3d9bbb2fc03d76d97116a79afb9e81", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "9484-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13644
+                }
+            }, 
+            "message": "rundll32.exe(9484):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }, 
+        "1364-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\system32\\svchost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd1e1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1364-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd201d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1364-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "rundll32.exe", 
+                    "hash": "b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6", 
+                    "command_line": "\"C:\\Windows\\system32\\rundll32.exe\" \"c:\\program files (x86)\\sky product\\skysea client view\\MLogHook64.dll\",RunDll32EntryPoint 9060", 
+                    "pid": 1364, 
+                    "parent_path": "c:\\windows\\syswow64\\rundll32.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "de51bae08fd7318c988ef54511b5c08d8c3d9bbb2fc03d76d97116a79afb9e81", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "1364-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 6864
+                }
+            }, 
+            "message": "rundll32.exe(1364):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }, 
+        "16164-320e6c7ae3500e03f5750024c54e3a1142365037886279b46e493bd6b5c4b304-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "ENUMERATE_PROCESSES", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\explorer.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd0e1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "16164-320e6c7ae3500e03f5750024c54e3a1142365037886279b46e493bd6b5c4b304-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd0d1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "16164-320e6c7ae3500e03f5750024c54e3a1142365037886279b46e493bd6b5c4b304-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ctlcli.exe", 
+                    "hash": "320e6c7ae3500e03f5750024c54e3a1142365037886279b46e493bd6b5c4b304", 
+                    "command_line": "\"c:\\program files (x86)\\sky product\\skysea client view\\AstAgent.exe\" -getassets", 
+                    "pid": 16164, 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\ctlcli.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d667902c29f544a1f743d79d3a629b5bcd9b3e0973c401f71105d2715010531c", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\astagent.exe", 
+                    "ppid": "16164-320e6c7ae3500e03f5750024c54e3a1142365037886279b46e493bd6b5c4b304-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 11508
+                }
+            }, 
+            "message": "astagent.exe(16164):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "astagent.exe", 
+            "shell_type": 0
+        }, 
+        "8076-0e9389df86378a3fb1089712356c092121186dc1d4a1fcf585595a8e322c7d42-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "HAS_SCRIPT_DLL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "GASONE\\sekiguchi-a", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d8be226d1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 00:02:09"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8076-0e9389df86378a3fb1089712356c092121186dc1d4a1fcf585595a8e322c7d42-0", 
+                        "categories": [
+                            "UNKNOWN_APP", 
+                            "ENUMERATE_PROCESSES", 
+                            "HAS_SCRIPT_DLL", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "scvldr.exe", 
+                    "hash": "0e9389df86378a3fb1089712356c092121186dc1d4a1fcf585595a8e322c7d42", 
+                    "command_line": "\"c:\\program files (x86)\\sky product\\skysea client view\\MsgCli.exe\" -dsktpmsg -cache", 
+                    "pid": 8076, 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\scvldr.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "e62c73a558ffc4005207368146bd5f0b11b5336f9f1777e14141b8675c1a90b2", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\msgcli.exe", 
+                    "ppid": "8076-0e9389df86378a3fb1089712356c092121186dc1d4a1fcf585595a8e322c7d42-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 4424
+                }
+            }, 
+            "message": "msgcli.exe(8076):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "msgcli.exe", 
+            "shell_type": 0
+        }, 
+        "10996-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\system32\\svchost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d8be228a1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 00:02:11"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10996-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d8be228c1d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:02:11"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10996-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "rundll32.exe", 
+                    "hash": "b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6", 
+                    "command_line": "\"C:\\Windows\\system32\\rundll32.exe\" \"c:\\program files (x86)\\sky product\\skysea client view\\MLogHook64.dll\",RunDll32EntryPoint 12596", 
+                    "pid": 10996, 
+                    "parent_path": "c:\\windows\\syswow64\\rundll32.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "de51bae08fd7318c988ef54511b5c08d8c3d9bbb2fc03d76d97116a79afb9e81", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "10996-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7280
+                }
+            }, 
+            "message": "rundll32.exe(10996):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }, 
+        "13380-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0": {
+            "details": {
+                "indicators": [
+                    "MODIFY_PROCESS", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\system32\\svchost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd211d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13380-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "d833bd231d9311ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:01:50"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13380-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "rundll32.exe", 
+                    "hash": "b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6", 
+                    "command_line": "\"C:\\Windows\\system32\\rundll32.exe\" \"c:\\program files (x86)\\sky product\\skysea client view\\MLogHook64.dll\",RunDll32EntryPoint 11276", 
+                    "pid": 13380, 
+                    "parent_path": "c:\\windows\\syswow64\\rundll32.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "de51bae08fd7318c988ef54511b5c08d8c3d9bbb2fc03d76d97116a79afb9e81", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "ppid": "13380-b1e6a7a3e2597e51836277a32b2bc61aa781c8f681d44dfddea618b32e2bf2a6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 12040
+                }
+            }, 
+            "message": "rundll32.exe(13380):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SIS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

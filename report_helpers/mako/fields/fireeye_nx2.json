@@ -1,0 +1,64 @@
+{
+  "headers" : {
+    "title"       : "TrellixNxアラート解析結果レポート",
+    "summary"     : "1. 解析結果",
+    "remediation" : "2. 推奨対応"
+  },
+  "subheaders" : {
+    "outbound" : "検知したWebサイト",
+    "known_callback" : "ファイルが実行された場合の通信先",
+    "malware_file" : "検知したファイル",
+    "endpointav" : "EndPointのAVソフトによる検知"
+  },
+  "_form" : {
+    "action" : "html_data_view"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "outbound" : {
+    "src" : "url"
+  },
+  "comments" : {
+    "outbound" : "※ 誤アクセス防止のため、マスクしております"
+  },
+  "summary_info" : [
+    { "name" : "対象端末のIPアドレス",      "src" : "ipaddr"      },
+    { "name" : "ホスト名",                  "src" : "hostname"    },
+    { "name" : "ユーザID",                  "src" : "username"    },
+    { "name" : "対象ID",                    "src" : "targetid"    },
+    { "name" : "危険度",                    "src" : "severity"    },
+    { "name" : "外部への通信状況",          "src" : "outboundcom" },
+    { "name" : "Trellixによるブロック状況", "src" : "block"       },
+    { "name" : "アラート名称",              "src" : "alertname"   },
+    { "name" : "検出日時",                  "src" : "alertdate"   }
+  ],
+  "malware_object" : {
+    "malware_file" : [
+      { "name" : "ファイル名",    "src" : "fname" },
+      { "name" : "MD5ハッシュ値", "src" : "fhash" }
+    ],
+    "known_callback" : {
+      "src" : "objcnc"
+    }
+  },
+  "ref_av_detection" : {
+    "endpointav" : [
+      { "name" : "ホスト名",   "src" : "end_host"   },
+      { "name" : "検知対象",   "src" : "end_target" },
+      { "name" : "アクション", "src" : "end_action" }
+    ]
+  },
+  "hidden_fields" : [
+    { "src" : "customer_name"   },
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ]
+}

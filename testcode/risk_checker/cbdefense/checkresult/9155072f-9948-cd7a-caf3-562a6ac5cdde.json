@@ -1,0 +1,341 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 443, 
+            "ip": "52.109.88.35", 
+            "location": "Amsterdam,07,Netherlands", 
+            "name": "nexusrules.officeapps.live.com"
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "16468-17f285f9c67b687962d495f78401e30cdabb8c3602068292887389d90ce1d83c-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "MHM\\MHM-PR-0823", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:17708[C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Program Files (x86)\\Tap POS MasterSystem\\Regsvr.bat\"\"]", 
+                        "occurred": [
+                            "2021/09/26 02:03:54"
+                        ], 
+                        "event_detail": {
+                            "pid": 17708, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Program Files (x86)\\Tap POS MasterSystem\\Regsvr.bat\"\"", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe", 
+                            "hash": "4b2f2b322507f4e59204e8750dbdf4761825f546f617571e76461768f795fb55"
+                        }, 
+                        "event_id": [
+                            "06059ec61e6e11eca776fb93379c355d"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "16468-17f285f9c67b687962d495f78401e30cdabb8c3602068292887389d90ce1d83c-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 4200, 
+                    "command_line": "\"C:\\Program Files (x86)\\Tap POS MasterSystem\\PosMasterAutoUpdator.exe\" ", 
+                    "pid": 16468, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "51a95b92a9aacad81c07b862bfc577767646d5ea1050619cadfc92cc5e4d7e52", 
+                    "path": "c:\\program files (x86)\\tap pos mastersystem\\posmasterautoupdator.exe", 
+                    "ppid": "16468-17f285f9c67b687962d495f78401e30cdabb8c3602068292887389d90ce1d83c-0", 
+                    "parent_command_line": null, 
+                    "hash": "17f285f9c67b687962d495f78401e30cdabb8c3602068292887389d90ce1d83c"
+                }
+            }, 
+            "message": "posmasterautoupdator.exe(16468):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "posmasterautoupdator.exe", 
+            "shell_type": 0
+        }, 
+        "4936-0024d6af4641c5d3b25a7f5103a2d9d21a76673fde7559a48d621024de7f2199-0": {
+            "details": {
+                "indicators": [
+                    "COMPANY_BLACKLIST"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "OTHER_BEHAVIOR", 
+                        "description": "The application \"C:\\program files (x86)\\desktopcentral_agent\\bin\\dcondemand.exe\" was detected running.", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "None:None[None]", 
+                        "occurred": [
+                            "2021/09/26 01:57:56"
+                        ], 
+                        "event_detail": {
+                            "pid": null, 
+                            "reputation": null, 
+                            "command_line": null, 
+                            "name": null, 
+                            "hash": null
+                        }, 
+                        "event_id": [
+                            "4d2b62341e6d11ec8a4e7f87fe13c4ef"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4936-0024d6af4641c5d3b25a7f5103a2d9d21a76673fde7559a48d621024de7f2199-0", 
+                        "categories": [
+                            "COMPANY_BLACKLIST"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "dcagentservice.exe", 
+                    "parent_pid": 3604, 
+                    "command_line": "\"C:\\Program Files (x86)\\DesktopCentral_Agent\\bin\\dcondemand.exe\"", 
+                    "pid": 4936, 
+                    "parent_path": "c:\\program files (x86)\\desktopcentral_agent\\bin\\dcagentservice.exe", 
+                    "reputation": "COMPANY_BLACK_LIST", 
+                    "parent_reputation": "COMPANY_BLACK_LIST", 
+                    "parent_hash": "093f54fe0056f264b100eb1b38533c283d8fa733bc4d284181dc8a6ad8a07c77", 
+                    "path": "c:\\program files (x86)\\desktopcentral_agent\\bin\\dcondemand.exe", 
+                    "ppid": "4936-0024d6af4641c5d3b25a7f5103a2d9d21a76673fde7559a48d621024de7f2199-0", 
+                    "parent_command_line": null, 
+                    "hash": "0024d6af4641c5d3b25a7f5103a2d9d21a76673fde7559a48d621024de7f2199"
+                }
+            }, 
+            "message": "dcondemand.exe(4936):00001-10-001025:<temporary blackliste at desktopcentral_agent>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "dcondemand.exe", 
+            "shell_type": 0
+        }, 
+        "8572-d0dc7033583a1245f1c6e6b7c1f32e2329320463625d47008844344c4b1e52a3-0": {
+            "details": {
+                "indicators": [
+                    "NETWORK_ACCESS", 
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "MHM\\MHM-PR-0823", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.88.35:443(nexusrules.officeapps.live.com, located in Amsterdam 07, Netherlands)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "192.168.138.13:52615-(TCP:OUT)->52.109.88.35:443(nexusrules.officeapps.live.com)[Amsterdam,07,Netherlands]", 
+                        "occurred": [
+                            "2021/09/26 01:59:25"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.88.35", 
+                            "proto": "TCP", 
+                            "local_port": 52615, 
+                            "remote_port": 443, 
+                            "local_ipv4": "192.168.138.13", 
+                            "remote_domain": "nexusrules.officeapps.live.com", 
+                            "is_inbound": false, 
+                            "remote_location": "Amsterdam,07,Netherlands"
+                        }, 
+                        "event_id": [
+                            "7232c0d61e6d11eca7278bf498c7519d"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8572-d0dc7033583a1245f1c6e6b7c1f32e2329320463625d47008844344c4b1e52a3-0", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 4200, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\MHM-PR-0823\\Desktop\\\u8fd1\u90ca\u65bd\u8a2d\u30ec\u30b9\u30c8\u30e9\u30f3\u55b6\u696d\u6642\u9593 (3).xlsx\"", 
+                    "pid": 8572, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "51a95b92a9aacad81c07b862bfc577767646d5ea1050619cadfc92cc5e4d7e52", 
+                    "path": "c:\\users\\mhm-pr-0823\\desktop\\\u8fd1\u90ca\u65bd\u8a2d\u30ec\u30b9\u30c8\u30e9\u30f3\u55b6\u696d\u6642\u9593 (3).xlsx", 
+                    "ppid": "8572-d0dc7033583a1245f1c6e6b7c1f32e2329320463625d47008844344c4b1e52a3-0", 
+                    "parent_command_line": null, 
+                    "hash": "d0dc7033583a1245f1c6e6b7c1f32e2329320463625d47008844344c4b1e52a3"
+                }
+            }, 
+            "message": "excel(8572):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "17708-7bda6e11b98167652fc24404b2dd39363ee8c184af3a5e8d1210e35ced782682-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "RUN_SYSTEM_APP", 
+                    "SET_BROWSER_CONFIG", 
+                    "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC", 
+                    "PERSIST"
+                ], 
+                "events": [
+                    {
+                        "runuser": "MHM\\MHM-PR-0823", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\regsvr32.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\regsvr32.exe:14928[regsvr32  /s XlsReport.dll]", 
+                        "occurred": [
+                            "2021/09/26 02:03:55", 
+                            "2021/09/26 02:03:54"
+                        ], 
+                        "event_detail": {
+                            "pid": 14928, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "regsvr32  /s XlsReport.dll", 
+                            "name": "c:\\windows\\syswow64\\regsvr32.exe", 
+                            "hash": "f80b4224c670e76e05a70cc5403818b11c7a4ca10542a1f9b5d935e4fca08579"
+                        }, 
+                        "event_id": [
+                            "06059ecf1e6e11eca776fb93379c355d", 
+                            "06059eca1e6e11eca776fb93379c355d"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "17708-7bda6e11b98167652fc24404b2dd39363ee8c184af3a5e8d1210e35ced782682-0", 
+                        "categories": [
+                            "SET_BROWSER_CONFIG", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP", 
+                            "PERSIST", 
+                            "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "posmasterautoupdator.exe", 
+                    "parent_pid": 16468, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /c \"\"C:\\Program Files (x86)\\Tap POS MasterSystem\\Regsvr.bat\"\"", 
+                    "pid": 17708, 
+                    "parent_path": "c:\\program files (x86)\\tap pos mastersystem\\posmasterautoupdator.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "17f285f9c67b687962d495f78401e30cdabb8c3602068292887389d90ce1d83c", 
+                    "path": "c:\\program files (x86)\\tap pos mastersystem\\regsvr.bat", 
+                    "ppid": "17708-7bda6e11b98167652fc24404b2dd39363ee8c184af3a5e8d1210e35ced782682-0", 
+                    "parent_command_line": null, 
+                    "hash": "7bda6e11b98167652fc24404b2dd39363ee8c184af3a5e8d1210e35ced782682"
+                }
+            }, 
+            "message": "win_batch(17708):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "960-cc32fa84b2aff5e61e753e7b7931ccf8b0f98f7c4efbc0126c1d993c4ae6283c-0": {
+            "details": {
+                "indicators": [
+                    "COMPANY_BLACKLIST"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "OTHER_BEHAVIOR", 
+                        "description": "The application \"C:\\program files (x86)\\desktopcentral_agent\\dcconfig.exe\" was detected running.", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "None:None[None]", 
+                        "occurred": [
+                            "2021/09/26 01:57:56"
+                        ], 
+                        "event_detail": {
+                            "pid": null, 
+                            "reputation": null, 
+                            "command_line": null, 
+                            "name": null, 
+                            "hash": null
+                        }, 
+                        "event_id": [
+                            "4d2b62331e6d11ec8a4e7f87fe13c4ef"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "960-cc32fa84b2aff5e61e753e7b7931ccf8b0f98f7c4efbc0126c1d993c4ae6283c-0", 
+                        "categories": [
+                            "COMPANY_BLACKLIST"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "dcagentservice.exe", 
+                    "parent_pid": 3604, 
+                    "command_line": "1 0 0", 
+                    "pid": 960, 
+                    "parent_path": "c:\\program files (x86)\\desktopcentral_agent\\bin\\dcagentservice.exe", 
+                    "reputation": "COMPANY_BLACK_LIST", 
+                    "parent_reputation": "COMPANY_BLACK_LIST", 
+                    "parent_hash": "093f54fe0056f264b100eb1b38533c283d8fa733bc4d284181dc8a6ad8a07c77", 
+                    "path": "c:\\program files (x86)\\desktopcentral_agent\\dcconfig.exe", 
+                    "ppid": "960-cc32fa84b2aff5e61e753e7b7931ccf8b0f98f7c4efbc0126c1d993c4ae6283c-0", 
+                    "parent_command_line": null, 
+                    "hash": "cc32fa84b2aff5e61e753e7b7931ccf8b0f98f7c4efbc0126c1d993c4ae6283c"
+                }
+            }, 
+            "message": "dcconfig.exe(960):00001-10-001026:<temporary blackliste at desktopcentral_agent>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dcconfig.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u9ad8", 
+    "customer_name": "MYS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

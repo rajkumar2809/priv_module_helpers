@@ -1,0 +1,78 @@
+#coding:utf-8
+
+## helix_squid.mk.tmpl Squid解析レポートエディタ
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  ${parent.detail_blk()}
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="2"><h2>${headers["detailinfo"]}</h2></td></tr>
+  </table>
+  % if process_info:
+    <br />
+    <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+      <tr><td colspan="2"><p class="subsection">${ subheaders["process_info"] }</p></td></tr>
+      <tr><td colspan="2"><p><textarea rows=5 cols=80 name="form.${process_info["src"]}">${process_info["content"]}</textarea></p></td></tr>
+    </table>
+  % endif
+  % if ev_info_summary:
+    <h3 class="subsection">・${ subheaders["ev_info_summary"] }</h3>
+    <table>
+      <tr>
+        % for each in ev_info_summary[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in ev_info_summary:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${value["content"]}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+  % if network_info:
+    <h3 class="subsection">・${ subheaders["network_info"] }</h3>
+    <table>
+      <tr>
+        % for each in network_info[0]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each in network_info:
+        <tr>
+          % for value in each:
+            <td colspan="1"><p><textarea rows=2 cols=30 name="form.${value["prefix"]}${value["src"]}">${value["content"]}</textarea></p></td>
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+  % if process_detail_list:
+    <div style="page-break-inside: avoid;">
+      % for i in range(0, len(process_detail_list)):
+        <h3 class="subsection">・プロセス:${ i+1 }</h3>
+        ${ func.verticaltable(process_detail_list[i], prefix=process_detail_list[i][0]["prefix"]) }
+        <br />
+      % endfor
+    </div>
+  %endif
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+  % if nw_contain:
+    <br />
+    ${ func.lateraltable(nw_contain) }
+  % endif
+</%block>

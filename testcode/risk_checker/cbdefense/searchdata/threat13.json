@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000003",
+	"rev" : "0004",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "powershell.exe",
+	"detail" : {
+		"data_position" : "process_info",
+		"expected" : [
+			{
+				"field" : "command_line",
+				"value" : "Windows10build_uninst.ps1",
+				"type" : "include"
+			},
+			{
+				"field" : "parent_command_line",
+				"value" : "gpscript.exe /Logon",
+				"type" : "exact"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/13",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by customer script(Windows10build_uninst.ps1)."
+}

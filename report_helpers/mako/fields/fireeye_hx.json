@@ -1,0 +1,158 @@
+{
+  "headers" : {
+    "title"       : "Trellix HX アラート解析一次レポート",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 詳細情報",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "fehx_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "process_info" : "アラートプロセス詳細",
+    "event_info"   : "イベント詳細情報",
+    "ioc_info"     : "IOC詳細情報",
+    "exploit_info" : "エクスプロイト詳細情報",
+    "exploit_detail_ps" : "エクスプロイト関連プロセス一覧",
+    "exploit_detail_file" : "エクスプロイト関連のファイル操作一覧",
+    "exploit_detail_bootps" : "エクスプロイト関連のプロセス起動一覧",
+    "exploit_detail_network" : "エクスプロイト関連の通信先一覧"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "summary_info" : [
+    { "name" : "通知日時",       "src" : "detect_time" },
+    { "name" : "アラートID",     "src" : "alerts"      },
+    { "name" : "カテゴリ",       "src" : "categories"  },
+    { "name" : "イベントタイプ", "src" : "events"      },
+    { "name" : "危険度",         "src" : "severity"    },
+    { "name" : "アラート件数",   "src" : "alertnum"    },
+    { "name" : "アクション",     "src" : "blocked"     },
+    { "name" : "IPアドレス",     "src" : "ip"          },
+    { "name" : "対象ホスト",     "src" : "hostname"    },
+    { "name" : "ホストセット",   "src" : "hostset"     },
+    { "name" : "ホストOS",       "src" : "os"          },
+    { "name" : "ユーザID",       "src" : "runuser"     }
+  ],
+  "mltables" : {
+    "process_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.process_detail",
+      "fields"   : [
+        { "name" : "プロセス名",     "src" : "process_name"    },
+        { "name" : "プロセスID",     "src" : "process_id"      },
+        { "name" : "コマンドライン", "src" : "process_cmdline" },
+        { "name" : "親プロセス",     "src" : "parent_name"     },
+        { "name" : "実行ユーザ",     "src" : "runuser"         }
+      ]
+    },
+    "ioc_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.ioc_detail",
+      "fields"   : [
+        { "name" : "IOC名",     "src" : "name" },
+        { "name" : "IOCソース", "src" : "src"  },
+        { "name" : "IOC_ID",    "src" : "id"   }
+      ]
+    },
+    "event_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.event_detail",
+      "fields"   : [
+        { "name" : "発生時刻",   "src" : "alert_time"   },
+        { "name" : "プロセス名", "src" : "process_name" },
+        { "name" : "プロセスID", "src" : "process_id"   },
+        { "name" : "イベント",   "src" : "ev_type"      },
+        { "name" : "サブタイプ", "src" : "ev_subtype"   },
+        { "name" : "対象IOC",    "src" : "ev_target"    }
+      ]
+    },
+    "exploit_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.exploit_detail",
+      "fields"   : [
+        { "name" : "プロセス名", "src" : "process_name" },
+        { "name" : "プロセスID", "src" : "process_id"   },
+        { "name" : "防止",       "src" : "is_blocked"   },
+        { "name" : "メッセージ", "src" : "message"      }
+      ]
+    },
+    "exploit_detail_ps" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_process_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "プロセス名",         "src" : "process_name" },
+        { "name" : "プロセスID",         "src" : "process_id"   },
+        { "name" : "ファイル操作回数",   "src" : "file_num"     },
+        { "name" : "Network通信先数",    "src" : "network_num"  },
+        { "name" : "プロセス操作回数",   "src" : "process_num"  },
+        { "name" : "レジストリ操作回数", "src" : "regkey_num"   }
+      ]
+    },
+    "exploit_detail_network" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_network_list",
+      "fields"   : [
+        { "name" : "プロセス名", "src" : "process_name" },
+        { "name" : "操作内容",   "src" : "operation"    }
+      ]
+    },
+    "exploit_detail_file" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_file_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "プロセス名", "src" : "process_name" },
+        { "name" : "操作内容",   "src" : "operation"    }
+      ]
+    },
+    "exploit_detail_bootps" : {
+      "from"     : "exploit_analysis",
+      "datatype" : "json",
+      "prefix"   : "exploit_bootps_list",
+      "maskchar" : [ "\"", "," ],
+      "fields"   : [
+        { "name" : "プロセス名", "src" : "process_name" },
+        { "name" : "操作内容",   "src" : "operation"    }
+      ]
+    },
+    "malware_detail" : {
+      "from"     : "malware_info",
+      "datatype" : "json",
+      "prefix"   : "malwares",
+      "fields"   : [
+        { "name" : "検知名",     "src" : "detect_info" },
+        { "name" : "ファイル名", "src" : "file_name"   },
+        { "name" : "ハッシュ",   "src" : "file_hash"   },
+        { "name" : "操作ユーザ", "src" : "user_info"   },
+        { "name" : "アクション", "src" : "action_info" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "隔離要否", "src" : "need_contain" },
+    { "name" : "隔離対象", "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "customer_name"   },
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "RUN_ANOTHER_APP", 
+                    "ENUMERATE_PROCESSES", 
+                    "RUN_SYSTEM_APP", 
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b711fd351e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:49:06"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-34164\\usrclass.dat", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b67ac65a1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-34164\\usrclass.dat:10452[\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-34164\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-34164\\UsrClass.dat\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:39"
+                        ], 
+                        "event_detail": {
+                            "pid": 10452, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-34164\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-34164\\UsrClass.dat\"", 
+                            "hash": "052255cb06f8dc5949bc44f3fba35f0d913b999cfb9125d77f7c90c74fea28cd", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-34164\\usrclass.dat", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\reg.exe", 
+                        "event_count": 8, 
+                        "event_id": [
+                            "b67ac6541e7c11ec871fb75d4dae9b8a", 
+                            "b67ac6511e7c11ec871fb75d4dae9b8a", 
+                            "b67ac64c1e7c11ec871fb75d4dae9b8a", 
+                            "b67ac63c1e7c11ec871fb75d4dae9b8a", 
+                            "b661bf811e7c11ec871fb75d4dae9b8a", 
+                            "b67ac6321e7c11ec871fb75d4dae9b8a", 
+                            "b67ac6301e7c11ec871fb75d4dae9b8a", 
+                            "b661bf841e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\reg.exe:10332[\"C:\\Windows\\System32\\reg.exe\" \"unload\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-34164\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:39", 
+                            "2021/09/26 03:48:39", 
+                            "2021/09/26 03:48:39", 
+                            "2021/09/26 03:48:38", 
+                            "2021/09/26 03:48:38", 
+                            "2021/09/26 03:48:37", 
+                            "2021/09/26 03:48:37", 
+                            "2021/09/26 03:48:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 10332, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"unload\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-34164\"", 
+                            "hash": "829206fb125010140c40f9a8d08ecebcbd437a50b351d420b473c13f931191cc", 
+                            "name": "c:\\windows\\syswow64\\reg.exe", 
+                            "reputation": "TRUSTED_WHITE_LIST"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1004\\ntuser.dat", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b67ac6391e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1004\\ntuser.dat:10084[\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1004\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1004\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:38"
+                        ], 
+                        "event_detail": {
+                            "pid": 10084, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1004\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1004\\ntuser.dat\"", 
+                            "hash": "7a7e9d59f93d5ae447a1e0399f14a91bd08b27a9f30f0ca892b5784a7fe05cbb", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1004\\ntuser.dat", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b67ac6421e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat:9892[\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-1247\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:38"
+                        ], 
+                        "event_detail": {
+                            "pid": 9892, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1548663199-3071839786-1285335204-1247\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat\"", 
+                            "hash": "7830599af30bc4287f05f1aa41dd3adecde11d791c1e315f08eb76ab5b32cbe8", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1548663199-3071839786-1285335204-1247\\ntuser.dat", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1003\\ntuser.dat", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b67ac62f1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1003\\ntuser.dat:9700[\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1003\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1003\\ntuser.dat\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 9700, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1003\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1003\\ntuser.dat\"", 
+                            "hash": "c5a2bf143eedefe055ed842bb8093674cec9c65afe4a7fbd2b0dd0c502e1472b", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1003\\ntuser.dat", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1002\\usrclass.dat", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b67ac62a1e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1002\\usrclass.dat:9356[\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1002\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1002\\UsrClass.dat\"]", 
+                        "occurred": [
+                            "2021/09/26 03:48:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 9356, 
+                            "command_line": "\"C:\\Windows\\System32\\reg.exe\" \"load\" \"HKU\\SS1WorkProfile_S-1-5-21-1414968002-3799271764-530771714-1002\" \"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\history\\profile\\S-1-5-21-1414968002-3799271764-530771714-1002\\UsrClass.dat\"", 
+                            "hash": "829206fb125010140c40f9a8d08ecebcbd437a50b351d420b473c13f931191cc", 
+                            "name": "c:\\program files (x86)\\d.o.s\\ss1agent\\history\\profile\\s-1-5-21-1414968002-3799271764-530771714-1002\\usrclass.dat", 
+                            "reputation": "NOT_LISTED"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_SYSTEM_APP", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_UNKNOWN_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784", 
+                    "pid": 4708, 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1CollectServer.exe\"", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "be42e4a901d6ac8885882d2cd9372a64023794428e0ac8cc87ee3121dd5dc402", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1collectserver.exe", 
+                    "ppid": "4708-c10af4b778378d7e1b301e94639219ed76af1ead7af9d23b58e7e2b8eacc3784-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 964
+                }
+            }, 
+            "message": "ss1collectserver.exe(4708):00001-10-000140:<Asset Management Tool:ss1.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1collectserver.exe", 
+            "shell_type": 0
+        }, 
+        "10884-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b6ba3fe01e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 03:48:44"
+                        ], 
+                        "event_detail": {
+                            "api_name": "EnumProcesses", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10884-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1sa.exe", 
+                    "hash": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d", 
+                    "pid": 10884, 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\Ss1Inject2x64.exe\" svchost.exe ss1h003x64.DLL \"-k DcomLaunch -p\"", 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1sa.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "5727ae62e092a187edcdb17be71c633bf6db316e8f0058e762848fcb3e35921c", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1inject2x64.exe", 
+                    "ppid": "10884-0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10784
+                }
+            }, 
+            "message": "0d212810426f6a1f8f3d4c81958022bfdd840c8b0a8734d5173fc5044748b10d:ss1 assert mgmt tool", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1inject2x64.exe", 
+            "shell_type": 0
+        }, 
+        "12096-5cece21c14be927042004d59fd056f9ddf9120125101a5bc31eb6ddb255790e5-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SIDAW02\\Administrator", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b6d6f0541e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:11324[C:\\Windows\\system32\\cmd.exe  /K D:\\SIDECS64\\SI_INSTALL\\updCopy.bat]", 
+                        "occurred": [
+                            "2021/09/26 03:48:58"
+                        ], 
+                        "event_detail": {
+                            "pid": 11324, 
+                            "command_line": "C:\\Windows\\system32\\cmd.exe  /K D:\\SIDECS64\\SI_INSTALL\\updCopy.bat", 
+                            "hash": "9a7c58bd98d70631aa1473f7b57b426db367d72429a5455b433a05ee251f3236", 
+                            "name": "c:\\windows\\system32\\cmd.exe", 
+                            "reputation": "TRUSTED_WHITE_LIST"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "12096-5cece21c14be927042004d59fd056f9ddf9120125101a5bc31eb6ddb255790e5-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "5cece21c14be927042004d59fd056f9ddf9120125101a5bc31eb6ddb255790e5", 
+                    "pid": 12096, 
+                    "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\SysWOW64\\Repl\\Import\\Scripts\\sekkei64.bat\" \"", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "536b73beda8c4d69e377d92e5995a77b6129345e03b70b1c61105c168c7a5e0b", 
+                    "path": "c:\\windows\\syswow64\\repl\\import\\scripts\\sekkei64.bat", 
+                    "ppid": "12096-5cece21c14be927042004d59fd056f9ddf9120125101a5bc31eb6ddb255790e5-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 6104
+                }
+            }, 
+            "message": "win_batch(12096):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "8636-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "b6cf27501e7c11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:48:45"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8636-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "ss1ghloaderx64.exe", 
+                    "hash": "eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f", 
+                    "pid": 8636, 
+                    "command_line": "\"C:\\Program Files (x86)\\D.O.S\\SS1Agent\\SS1GH.exe\"", 
+                    "parent_path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1ghloaderx64.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "33e54f984d45770e96f3ad583f7126f574a0e64ee7bbb6e4e1ae80a878e9dceb", 
+                    "path": "c:\\program files (x86)\\d.o.s\\ss1agent\\ss1gh.exe", 
+                    "ppid": "8636-eaf416bfb070e2b756c857dc290f8244a6a306537939da69cfcdd5c36e1c512f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7408
+                }
+            }, 
+            "message": "ss1gh.exe(8636):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ss1gh.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

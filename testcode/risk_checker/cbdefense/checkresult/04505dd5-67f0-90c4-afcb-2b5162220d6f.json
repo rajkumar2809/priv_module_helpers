@@ -1,0 +1,79 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6424-f67355a6659e21d8d97e6982b28f22453f8c298e822e27faddb440da4a6de7c0-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC", 
+                    "RUN_BLACKLIST_APP", 
+                    "POLICY_DENY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6424-f67355a6659e21d8d97e6982b28f22453f8c298e822e27faddb440da4a6de7c0-0", 
+                        "description": "C:\\program files (x86)\\desktopcentral_agent\\bin\\dcagentservice.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files (x86)\\desktopcentral_agent\\bin\\dcagentservice.exe:None[None]", 
+                        "occurred": [
+                            "2021/09/26 04:32:50"
+                        ], 
+                        "event_detail": {
+                            "pid": null, 
+                            "reputation": "COMPANY_BLACK_LIST", 
+                            "command_line": null, 
+                            "name": "c:\\program files (x86)\\desktopcentral_agent\\bin\\dcagentservice.exe", 
+                            "hash": "093f54fe0056f264b100eb1b38533c283d8fa733bc4d284181dc8a6ad8a07c77"
+                        }, 
+                        "event_id": [
+                            "e00505d11e8211ecac9f67e91ebcacff"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_BLACKLIST_APP", 
+                            "POLICY_DENY", 
+                            "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "f67355a6659e21d8d97e6982b28f22453f8c298e822e27faddb440da4a6de7c0", 
+                    "pid": 6424, 
+                    "command_line": "\"C:\\Program Files (x86)\\Google\\Update\\GoogleUpdate.exe\" /svc", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a86d6a6d1f5a0efcd649792a06f3ae9b37158d48493d2eca7f52dcc1cb9b6536", 
+                    "path": "c:\\program files (x86)\\google\\update\\googleupdate.exe", 
+                    "ppid": "6424-f67355a6659e21d8d97e6982b28f22453f8c298e822e27faddb440da4a6de7c0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 768
+                }
+            }, 
+            "message": "googleupdate.exe(6424):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "googleupdate.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "MYS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

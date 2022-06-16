@@ -1,0 +1,142 @@
+{
+  "headers" : {
+    "title"       : "MDR for VMWare Carbon Black Alert Report",
+    "summary"     : "1. Summary",
+    "detailinfo"  : "2. Alert Detail",
+    "remediation" : "3. Recommended Actions"
+  },
+  "_form" : {
+    "action" : "cbdefense_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "processinfo" : "Alert Process Details",
+    "cause_event" : "Alert Trigger Event Details",
+    "outbound"    : "Destination IP Address",
+    "detected_malware_summary": "detected malware info",
+    "appendix_process_info" : "Process Detail",
+    "appendix_event_info"   : "Event Detail"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "summary_info" : [
+    { "name" : "detect time(JST)",  "src" : "occurred_time"        },
+    { "name" : "severity",          "src" : "severity"             },
+    { "name" : "Alert ID",          "src" : "incident_id"          },
+    { "name" : "category",          "src" : "category"             },
+    { "name" : "alert reason",      "src" : "threat_cause_evinfo_reason" },
+    { "name" : "AV Action",         "src" : "action"               },
+    { "name" : "hostname",          "src" : "hostname"             },
+    { "name" : "ip address",        "src" : "ip"                   },
+    { "name" : "os",                "src" : "os"                   },
+    { "name" : "user name",         "src" : "runuser"              },
+    { "name" : "event type",        "src" : "events"               },
+    { "name" : "alert tags",        "src" : "threat_app_tags"      },
+    { "name" : "alert score",       "src" : "threat_score"         }
+  ],
+  "outbound" : [
+    { "name" : "communications",        "src" : "outbound_flag" },
+    { "name" : "destination ipaddress", "src" : "outbound_ip"   },
+    { "name" : "host name",             "src" : "outbound_name" },
+    { "name" : "location",              "src" : "outbound_geo"  }
+  ],
+  "detail" : [
+    { "name" : "process name", "src" : "threat_app"      },
+    { "name" : "file path",    "src" : "threat_app_info" }
+  ],
+  "cause_event" : [
+    { "name" : "event type",        "src" : "threat_cause_evinfo_ev_type"      },
+    { "name" : "event description", "src" : "threat_cause_evinfo_description"  },
+    { "name" : "threat tags",       "src" : "threat_cause_evinfo_categories"   },
+    { "name" : "killchain",         "src" : "threat_cause_evinfo_attack_phase" },
+    { "name" : "process name",      "src" : "threat_cause_process_name"        },
+    { "name" : "parent name",       "src" : "threat_cause_parent_name"         },
+    { "name" : "target name",       "src" : "threat_cause_target_name"         },
+    { "name" : "target path",       "src" : "threat_cause_target_path"         },
+    { "name" : "target hash",       "src" : "threat_cause_target_hash"         }
+  ],
+  "mltables" : {
+    "detected_malware_summary" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : "malware_info",
+      "fields"   : [
+        { "name" : "applicationName", "src" : "applicationName"    },
+        { "name" : "category",        "src" : "virusCategory"      },
+        { "name" : "subCategory",     "src" : "virusSubCategory"   },
+        { "name" : "reputation",      "src" : "reputationProperty" },
+        { "name" : "malwareName",     "src" : "virusName"          },
+        { "name" : "sha256Hash",      "src" : "sha256Hash"         }
+      ]
+    },
+    "processinfo" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.threat_app_detail",
+      "fields"   : [
+        { "name" : "processId",  "src" : "process_info.pid"         },
+        { "name" : "FilePath",   "src" : "process_info.path"        },
+        { "name" : "sha256Hash", "src" : "process_info.hash"        },
+        { "name" : "ParentName", "src" : "process_info.parent_name" },
+        { "name" : "KillChain",  "src" : "events.attack_phase"      }
+      ]
+    },
+    "taginfo" : {
+      "from"     : "taginfo",
+      "datatype" : "json",
+      "prefix"   : "tags",
+      "fields"   : [
+        { "name" : "プロセスID",     "src" : "tag"      },
+        { "name" : "攻撃フェーズ",   "src" : "japanese" }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "target host",  "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "connector_id"    },
+    { "src" : "saved_report"    },
+    { "src" : "cb_appliance_id" },
+    { "src" : "threat_app"      },
+    { "src" : "threat_app_info" },
+    { "src" : "action_ja"       },
+    { "src" : "severity_ja"     },
+    { "src" : "summary"         },
+    { "src" : "remediation"     },
+    { "src" : "with_eng"        }
+  ],
+  "appendix": {
+    "process_detail" : {
+      "each" : [
+        { "name" : "processId",     "src" : "pid"          },
+        { "name" : "processUniqId", "src" : "ppid"         },
+        { "name" : "file_hash",     "src" : "hash"         },
+        { "name" : "file_path",     "src" : "path"         },
+        { "name" : "process_name",  "src" : "name"         },
+        { "name" : "commandLine",   "src" : "command_line" }
+      ],
+      "summary" : [
+        { "name" : "run user",     "src" : "runuser"       },
+        { "name" : "event type",   "src" : "ev_type"       },
+        { "name" : "attack phase", "src" : "attack_phase"  },
+        { "name" : "ThreatTags",   "src" : "categories"    }
+      ],
+      "events" : [
+        { "name" : "time",         "src" : "occurred"          },
+        { "name" : "processId",    "src" : "pid"               },
+        { "name" : "event type",   "src" : "ev_type"           },
+        { "name" : "description",  "src" : "short_description" },
+        { "name" : "attack phase", "src" : "attack_phase"      },
+        { "name" : "Threat Tags",  "src" : "categories"        }
+      ]
+    }
+  }
+}

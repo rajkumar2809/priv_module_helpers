@@ -1,0 +1,30 @@
+{
+    "product": "cbdefense", 
+    "enable": "yes", 
+    "score": 5, 
+    "registered": "2019/10/29", 
+    "rev": "0005", 
+    "detail": {
+        "expected": [
+            {
+                "field": "parent_name", 
+                "type": "regexp", 
+                "value": "(?i)(cmd.exe|psrun_v\\d+_bypass.bat)"
+            }, 
+            {
+                "field": "command_line", 
+                "type": "regexp", 
+                "value": "(?i)\\s*powershell\\s*(-version\\s*2\\.0\\s*)?-executionpolicy\\s*bypass\\s*..fs1\\\\nhs-q\\\\drivers\\\\lan\\\\rekkk\\\\nw\\\\.*\\\\nw.*(2test_v2)?.ps1"
+            }
+        ], 
+        "data_position": "process_info", 
+        "exclusion": []
+    }, 
+    "value": "powershell.exe", 
+    "source": "manual", 
+    "reputation": "white", 
+    "user": "all", 
+    "message": "boot customer script", 
+    "type": "condition", 
+    "id": "00001-10-000077"
+}

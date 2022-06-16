@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000018",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "notepad.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "CREATE_PROCESS",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)c:\\\\program\\s*files\\s*(\\(x86\\))?\\s*\\\\tortoisesvn\\\\bin\\\\tsvncache\\.exe",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/3/4",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "notepad usual boot this application if they use subversion client."
+}

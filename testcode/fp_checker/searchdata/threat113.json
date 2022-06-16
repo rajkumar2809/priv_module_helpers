@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000013",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "explorer.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "INJECT_CODE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)CreateRemoteThread(Ex)?\\(c:\\\\windows\\\\system32\\\\xcopy\\.exe\\)",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/26",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by explorer"
+}

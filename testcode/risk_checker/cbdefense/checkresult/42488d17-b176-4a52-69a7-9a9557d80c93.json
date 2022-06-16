@@ -1,0 +1,510 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "52.109.56.46", 
+            "location": "Pune,16,India", 
+            "port": 443, 
+            "name": "odc.officeapps.live.com"
+        }, 
+        {
+            "ip": "20.50.73.10", 
+            "location": "Dublin,07,Ireland", 
+            "port": 443, 
+            "name": "self.events.data.microsoft.com"
+        }, 
+        {
+            "ip": "52.109.44.23", 
+            "location": "Seoul,11,Korea, Republic of", 
+            "port": 443, 
+            "name": "ocws.officeapps.live.com"
+        }
+    ], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6980-d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27-0": {
+            "details": {
+                "indicators": [
+                    "SECURITY_CONFIG_DOWNGRADE", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_NET_UTILITY", 
+                    "MITRE_T1562_IMPAIR_DEFENSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6980-d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:5988[cmd.exe /c netsh advfirewall set allprofiles state off]", 
+                        "occurred": [
+                            "2021/09/25 00:11:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 5988, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "cmd.exe /c netsh advfirewall set allprofiles state off", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe", 
+                            "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723"
+                        }, 
+                        "event_id": [
+                            "abb0b6151d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "SECURITY_CONFIG_DOWNGRADE", 
+                            "RUN_NET_UTILITY", 
+                            "MITRE_T1562_IMPAIR_DEFENSES", 
+                            "RUN_SYSTEM_UTILITY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svcagent.exe", 
+                    "parent_pid": 4648, 
+                    "pid": 6980, 
+                    "command_line": "\"C:\\Program Files\\ProVision\\Agent\\Agent.exe\"", 
+                    "parent_path": "c:\\program files\\provision\\agent\\svcagent.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "d936ac3f84697c4ec43d18c427f03f86c6c3a84e2d9b0727756781b83ec9ad5e", 
+                    "hash": "d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27", 
+                    "path": "c:\\program files\\provision\\agent\\agent.exe", 
+                    "ppid": "6980-d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "agent.exe(6980):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "agent.exe", 
+            "shell_type": 0
+        }, 
+        "5988-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0": {
+            "details": {
+                "indicators": [
+                    "SECURITY_CONFIG_DOWNGRADE", 
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_NET_UTILITY", 
+                    "MITRE_T1562_IMPAIR_DEFENSES", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "5988-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                        "description": "C:\\windows\\syswow64\\netsh.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\netsh.exe:7272[netsh  advfirewall set allprofiles state off]", 
+                        "occurred": [
+                            "2021/09/25 00:11:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 7272, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "netsh  advfirewall set allprofiles state off", 
+                            "name": "c:\\windows\\syswow64\\netsh.exe", 
+                            "hash": "9efa9dafa09ae9ba6390a8f0f6751006c18a98b6692667ca08367cddb47ac634"
+                        }, 
+                        "event_id": [
+                            "abb0b6191d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "SECURITY_CONFIG_DOWNGRADE", 
+                            "RUN_NET_UTILITY", 
+                            "MITRE_T1562_IMPAIR_DEFENSES", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agent.exe", 
+                    "parent_pid": 6980, 
+                    "pid": 5988, 
+                    "command_line": "cmd.exe /c netsh advfirewall set allprofiles state off", 
+                    "parent_path": "c:\\program files\\provision\\agent\\agent.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27", 
+                    "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "5988-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(5988):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "10768-55716979a3e69ec0069caf61c4367d37c5ae3ed2f93703324adc964fc2d2fb9f-0": {
+            "details": {
+                "indicators": [
+                    "RAM_SCRAPING", 
+                    "MITRE_T1003_OS_CREDENTIAL_DUMP", 
+                    "POLICY_DENY", 
+                    "READ_SECURITY_DATA", 
+                    "MITRE_T1005_DATA_FROM_LOCAL_SYS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "10768-55716979a3e69ec0069caf61c4367d37c5ae3ed2f93703324adc964fc2d2fb9f-0", 
+                        "description": "NtReadVirtualMemory(read the memory of \"C:\\Windows\\System32\\lsass.exe\" (potentially scraping memory))", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "NtReadVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 00:16:49"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtReadVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "d8c4ee771d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "READ_SECURITY_DATA", 
+                            "MITRE_T1005_DATA_FROM_LOCAL_SYS", 
+                            "RAM_SCRAPING", 
+                            "POLICY_DENY", 
+                            "MITRE_T1003_OS_CREDENTIAL_DUMP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "parent_pid": 968, 
+                    "pid": 10768, 
+                    "command_line": "C:\\windows\\system32\\msiexec.exe /V", 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "f14cbe42e4c29c57acdf781388d387a01963075f255abf57d8486d7842257500", 
+                    "hash": "55716979a3e69ec0069caf61c4367d37c5ae3ed2f93703324adc964fc2d2fb9f", 
+                    "path": "c:\\windows\\{427ab09c-b3ad-4eb7-9d73-6d584684fe91}\\dellupdateapp.msi", 
+                    "ppid": "10768-55716979a3e69ec0069caf61c4367d37c5ae3ed2f93703324adc964fc2d2fb9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "msi_file(10768):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "msi_file", 
+            "shell_type": 0
+        }, 
+        "6072-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "RUN_SYSTEM_UTILITY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "6072-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                        "description": "C:\\windows\\syswow64\\schtasks.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\schtasks.exe:7268[schtasks  /change /disable /TN \\Microsoft\\Windows\\Defrag\\ScheduledDefrag]", 
+                        "occurred": [
+                            "2021/09/25 00:11:37"
+                        ], 
+                        "event_detail": {
+                            "pid": 7268, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "schtasks  /change /disable /TN \\Microsoft\\Windows\\Defrag\\ScheduledDefrag", 
+                            "name": "c:\\windows\\syswow64\\schtasks.exe", 
+                            "hash": "33c21c9dac8e26a6caf6d3f7d26dbe93674d196d567ab291b3793a34a8d8b8a0"
+                        }, 
+                        "event_id": [
+                            "abb0b6181d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agent.exe", 
+                    "parent_pid": 6980, 
+                    "pid": 6072, 
+                    "command_line": "cmd.exe /c schtasks /change /disable /TN \\Microsoft\\Windows\\Defrag\\ScheduledDefrag", 
+                    "parent_path": "c:\\program files\\provision\\agent\\agent.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d93fe7dfb6342452daa15069cc0471beea2f2474d4b2821c59ba8bbc37708e27", 
+                    "hash": "a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "6072-a47311af139d7cd7c8f4c8c29bc5c6df4ff8d592f2728f823a4ca96a7af48723-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(6072):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0": {
+            "details": {
+                "indicators": [
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "POLICY_DENY", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "The script \"c:\\users\\globis\\desktop\\\u3010\u6a2a\u6d5c\u3011\u30af\u30e9\u30b9\u524d\u30d5\u30a9\u30ed\u30fc\u3000\u5168\u90e8.pptx\" attempted to inject code into the process \"c:\\windows\\system32\\csrss.exe\", by calling the function \"CreateRemoteThread\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 00:14:16"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "ace9f9791d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }, 
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "C:\\windows\\splwow64.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\splwow64.exe:1900[C:\\windows\\splwow64.exe 8192]", 
+                        "occurred": [
+                            "2021/09/25 00:12:35"
+                        ], 
+                        "event_detail": {
+                            "pid": 1900, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\windows\\splwow64.exe 8192", 
+                            "name": "c:\\windows\\splwow64.exe", 
+                            "hash": "f00450b2dcea43504642c00c4d5b725003e23ad00928be0a5ad381e920561ea7"
+                        }, 
+                        "event_id": [
+                            "aca43dcc1d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "POLICY_DENY", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "20.50.73.10:443(located in Dublin 07, Ireland)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.138.48.27:50446-(TCP:OUT)->20.50.73.10:443(None)[Dublin,07,Ireland]", 
+                        "occurred": [
+                            "2021/09/25 00:17:53"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "20.50.73.10", 
+                            "local_port": 50446, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.138.48.27", 
+                            "remote_domain": null, 
+                            "is_inbound": false, 
+                            "remote_location": "Dublin,07,Ireland", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "fd75a17c1d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "20.50.73.10:443(self.events.data.microsoft.com, located in Dublin 07, Ireland)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.138.48.27:49958-(TCP:OUT)->20.50.73.10:443(self.events.data.microsoft.com)[Dublin,07,Ireland]", 
+                        "occurred": [
+                            "2021/09/25 00:12:44"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "20.50.73.10", 
+                            "local_port": 49958, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.138.48.27", 
+                            "remote_domain": "self.events.data.microsoft.com", 
+                            "is_inbound": false, 
+                            "remote_location": "Dublin,07,Ireland", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "ace05cd51d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "52.109.56.46:443(odc.officeapps.live.com, located in Pune 16, India)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.138.48.27:49901-(TCP:OUT)->52.109.56.46:443(odc.officeapps.live.com)[Pune,16,India]", 
+                        "occurred": [
+                            "2021/09/25 00:12:37"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.56.46", 
+                            "local_port": 49901, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.138.48.27", 
+                            "remote_domain": "odc.officeapps.live.com", 
+                            "is_inbound": false, 
+                            "remote_location": "Pune,16,India", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "ace05c8d1d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "MOB21215\\globis", 
+                        "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                        "description": "52.109.44.23:443(ocws.officeapps.live.com, located in Seoul 11, Korea, Republic of)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "10.138.48.27:49897-(TCP:OUT)->52.109.44.23:443(ocws.officeapps.live.com)[Seoul,11,Korea, Republic of]", 
+                        "occurred": [
+                            "2021/09/25 00:12:36"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.44.23", 
+                            "local_port": 49897, 
+                            "proto": "TCP", 
+                            "local_ipv4": "10.138.48.27", 
+                            "remote_domain": "ocws.officeapps.live.com", 
+                            "is_inbound": false, 
+                            "remote_location": "Seoul,11,Korea, Republic of", 
+                            "remote_port": 443
+                        }, 
+                        "event_id": [
+                            "ace05c841d9511ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ev_type": "NETWORK", 
+                        "categories": [
+                            "INTERNATIONAL_SITE", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 8236, 
+                    "pid": 1668, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\POWERPNT.EXE\" \"C:\\Users\\globis\\Desktop\\\u3010\u6a2a\u6d5c\u3011\u30af\u30e9\u30b9\u524d\u30d5\u30a9\u30ed\u30fc\u3000\u5168\u90e8.pptx\" /ou \"\"", 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "04441a2e82a4bd350b448b135d52f0a981cf8d011279bed98afe48f500767b66", 
+                    "hash": "ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028", 
+                    "path": "c:\\users\\globis\\desktop\\\u3010\u6a2a\u6d5c\u3011\u30af\u30e9\u30b9\u524d\u30d5\u30a9\u30ed\u30fc\u3000\u5168\u90e8.pptx", 
+                    "ppid": "1668-ecf805afedb107d752fdd7546402e608975c861dd7cc7665d5cee278ed378028-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powerpnt(1668):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powerpnt", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "GLB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

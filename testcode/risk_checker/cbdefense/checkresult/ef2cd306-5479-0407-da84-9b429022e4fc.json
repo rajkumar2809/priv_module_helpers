@@ -1,0 +1,280 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6644-f1dc9560d0c381c78304d94f7ba469490017d9728a03c2dd32c3be957fc9f923-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kamino001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "9fe370dd1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:23:31"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "6644-f1dc9560d0c381c78304d94f7ba469490017d9728a03c2dd32c3be957fc9f923-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 5132, 
+                    "command_line": "rundll32.exe AppXDeploymentExtensions.OneCore.dll,ShellRefresh", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 6644, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\windows\\system32\\rundll32.exe", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "hash": "f1dc9560d0c381c78304d94f7ba469490017d9728a03c2dd32c3be957fc9f923", 
+                    "ppid": "6644-f1dc9560d0c381c78304d94f7ba469490017d9728a03c2dd32c3be957fc9f923-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "rundll32.exe(6644):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "rundll32.exe", 
+            "shell_type": 0
+        }, 
+        "7728-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MONITOR_USER_INPUT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kamino001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "7bbc608f1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/26 04:22:28"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "7728-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kamino001", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\canvas\\bin\\login.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "7bbc608e1e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 04:22:28"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "7728-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 10200, 
+                    "command_line": "\"C:\\CANVAS\\BIN\\LOGIN.exe\" ", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 7728, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\canvas\\bin\\login.exe", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "hash": "7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f", 
+                    "ppid": "7728-7c6f7f40f8a67902389b53b0995756096df97c1d07ad680834b87d83e5e8d93f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(7728):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "12048-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kamino001", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "7bbc60901e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:22:31"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12048-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 10200, 
+                    "command_line": "\"C:\\ADTool\\Bin\\TwScheduler.exe\" ", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 12048, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "path": "c:\\adtool\\bin\\twscheduler.exe", 
+                    "parent_hash": "04dd313f7dbd4f392ada63d41db19eabb4b48c81a5f322ec6712f54f0dc70625", 
+                    "hash": "54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0", 
+                    "ppid": "12048-54e99f31ef210755a3e16338668da53e6f47eea4b9aa6e581af4e91ee7eca3d0-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "twscheduler.exe(12048):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "twscheduler.exe", 
+            "shell_type": 0
+        }, 
+        "8320-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kamino001", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "ca3cf6641e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe:7280[\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\" /medium]", 
+                        "occurred": [
+                            "2021/09/26 04:24:36"
+                        ], 
+                        "event_detail": {
+                            "hash": "0ff829117b90c9e770d84cbaa8eb5c8c387b3b60c45329e28cdc3e60fdd754e4", 
+                            "command_line": "\"C:\\Program Files (x86)\\Google\\Google Toolbar\\GoogleToolbarUser_32.exe\" /medium", 
+                            "pid": 7280, 
+                            "name": "c:\\program files (x86)\\google\\google toolbar\\googletoolbaruser_32.exe", 
+                            "reputation": "TRUSTED_WHITE_LIST"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8320-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "iexplore.exe", 
+                    "parent_pid": 11144, 
+                    "command_line": "\"C:\\Program Files (x86)\\Internet Explorer\\IEXPLORE.EXE\" SCODEF:11144 CREDAT:82946 APPID:MSEdge /prefetch:2", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 8320, 
+                    "parent_path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\program files (x86)\\internet explorer\\iexplore.exe", 
+                    "parent_hash": "f76f00939f1be76152809c37591ef75d3c150745232e35697d99cae09e31c2bc", 
+                    "hash": "e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3", 
+                    "ppid": "8320-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "iexplore.exe(8320):00001-10-000236:<iexplorer normaly work.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

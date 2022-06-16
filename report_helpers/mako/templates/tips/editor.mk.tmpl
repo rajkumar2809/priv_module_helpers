@@ -1,0 +1,114 @@
+#coding:utf-8
+
+## define function
+<%def name="replace2br(word)">
+  ${word.replace('\n', '<br />')}
+</%def>
+
+<%def name="escape4IllecalChar(word)">
+  ${word.replace('"', '\\"')}
+</%def>
+
+<%def name="maskURL(_url)">
+  ${_url.replace('http://', 'hxxp://').replace('https://', 'hxxps://').replace('.', '[.]')}
+</%def>
+
+<%def name="list2table(rows)">
+  <table><tr>
+    % for each in rows:
+      <td>${each}</td>
+    % endfor
+  </tr></table>
+</%def>
+
+<%def name="verticaltable(infos, section=None, prefix=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <p class="subsection">${ subheaders[section] }</p>
+    % endif
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+      % for each in infos:
+        <tr>
+          <td class="item"><strong>${ each["name"] }</strong></td>
+          % if prefix:
+            <td><textarea rows=1 cols=57 name="form.${prefix}${each["src"]}">${each["content"]}</textarea></td>
+          % else:
+            <td><textarea rows=1 cols=57 name="form.${each["src"]}">${each["content"]}</textarea></td>
+          % endif
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+
+<%def name="lateraltable(names, values=None, section=None, rowheads=None)">
+  % if names and len(names) > 0:
+    % if section:
+      <p class="subsection">${ subheaders[section] }</p>
+    % endif
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+      <tr>
+        % if rowheads:
+          <td class="item"><strong>${ rowheads[0] }</strong></td>
+        % endif
+        % for each in names:
+          <td class="item"><strong>${ each["name"] }</strong></td>
+        % endfor
+      </tr>
+      % if values:
+        % for i in range(0, len(values)):
+          <tr>
+            % if rowheads:
+              <td class="item"><strong>${ rowheads[i+1] }</strong></td>
+            % endif
+            % for each in values[i]:
+              % if "post" in each and each["post"] is False:
+                <td rows=1 cols=57>${each["content"]}</td>
+              % endif
+            % endfor
+          </tr>
+        % endfor
+      % else:
+        <tr>
+          % if rowheads:
+            <td class="item"><strong>${ rowheads[1] }</strong></td>
+          % endif
+          % for each in names:
+            % if "post" in each and each["post"] is False:
+              <td rows=1 cols=57>${each["content"]}</td>
+            % else:
+              <td><textarea rows=1 cols=57 name="form.${each["src"]}">${each["content"]}</textarea></td>
+            % endif
+          % endfor
+        </tr>
+      % endif
+    </table>
+  % endif
+</%def>
+
+<%def name="matrixtable(infos, section=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <p class="subsection">${ subheaders[section] }</p>
+    % endif
+    <table class="value_table" style="margin-top: 5px; margin-bottom: 5px; width: 500px;">
+      <tr>
+        % for each in infos["header"]:
+          <td class="item"><strong>${ each["name"] }</strong></td>
+        % endfor
+      </tr>
+      % for each_row in infos["fields"]:
+        <tr>
+          % for each in each_row:
+            % if each["src"] == "name":
+              <td class="item"><strong>${ each["content"] }</strong></td>
+            % else:
+              <td><textarea rows=1 cols=57 name="form.${each["src"]}">${each["content"]}</textarea></td>
+            % endif
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+

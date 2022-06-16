@@ -1,0 +1,13 @@
+SELECT 
+    global_rep, local_rep, ml_score, ingestion_timestamp,
+    pid, name, path, sha256, parent, parent_name, parent_path, parent_sophos_pid,
+    endpoint_id, meta_ip_address, meta_username, meta_hostname, meta_os_name, meta_os_version,
+    username, filename, category,subcategory, description, recommended, title, message
+
+FROM xdr_data
+WHERE
+    (  ( 70 > Global_Rep AND Global_Rep >= 30 ) OR
+       ( 70 >  local_rep AND  local_rep >= 30 )
+    )  AND
+    ( 30 > ml_score AND ml_score >= 20 ) AND
+    ingestion_timestamp > timestamp '{}'

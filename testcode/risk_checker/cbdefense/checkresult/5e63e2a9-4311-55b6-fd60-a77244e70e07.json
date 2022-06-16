@@ -1,0 +1,1593 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "port": 443, 
+            "ip": "210.57.92.102", 
+            "name": null, 
+            "location": "Central District,00,Hong Kong"
+        }, 
+        {
+            "port": 443, 
+            "ip": "210.57.92.108", 
+            "name": "uci.cdn.office.net", 
+            "location": "Central District,00,Hong Kong"
+        }, 
+        {
+            "port": 443, 
+            "ip": "52.109.124.127", 
+            "name": null, 
+            "location": "Singapore,00,Singapore"
+        }, 
+        {
+            "port": 443, 
+            "ip": "52.109.44.44", 
+            "name": "roaming.officeapps.live.com", 
+            "location": "Seoul,11,Korea, Republic of"
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "15348-e2da8344f9c314e38a5513cc9da9253f6dcce309181ce2e1a84c28ba096deae1-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "210.57.92.102:443(support.content.office.net, located in Central District 00, Hong Kong)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f2a51781da711ec9dd2ff17e5cb73e1"
+                        ], 
+                        "event_summary": "192.168.155.87:50925-(TCP:OUT)->210.57.92.102:443(support.content.office.net)[Central District,00,Hong Kong]", 
+                        "occurred": [
+                            "2021/09/25 02:21:01"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "210.57.92.102", 
+                            "proto": "TCP", 
+                            "local_port": 50925, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": "support.content.office.net", 
+                            "remote_location": "Central District,00,Hong Kong", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "15348-e2da8344f9c314e38a5513cc9da9253f6dcce309181ce2e1a84c28ba096deae1-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "e2da8344f9c314e38a5513cc9da9253f6dcce309181ce2e1a84c28ba096deae1", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\POWERPNT.EXE\" \"D:\\@loup2021\\N511212R\u5f8c\u6d41(2021)\\\u7c73\u539f\u3067\u306e\u8a66\u9a13\u306e\u8d85\u6982\u8981\uff08\u5f8c\u6d41\u30c6\u30fc\u30de\uff09.pptx\" /ou \"\"", 
+                    "pid": 15348, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "d:\\@loup2021\\n511212r\u5f8c\u6d41(2021)\\\u7c73\u539f\u3067\u306e\u8a66\u9a13\u306e\u8d85\u6982\u8981\uff08\u5f8c\u6d41\u30c6\u30fc\u30de\uff09.pptx", 
+                    "ppid": "15348-e2da8344f9c314e38a5513cc9da9253f6dcce309181ce2e1a84c28ba096deae1-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9856
+                }
+            }, 
+            "message": "powerpnt(15348):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powerpnt", 
+            "shell_type": 0
+        }, 
+        "2012-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "CODE_DROP", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc2b0d361da511ecac5e2ba8a3be796a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2012-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\users\\r9941407\\appdata\\local\\temp\\__psscriptpolicytest_pljhmkgx.udd.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc07f4f01da511ecaca41fd26ed35be0"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\r9941407\\appdata\\local\\temp\\__psscriptpolicytest_pljhmkgx.udd.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/25 02:08:16"
+                        ], 
+                        "event_detail": {
+                            "file_scan_result": "/", 
+                            "filemod_name": "c:\\users\\r9941407\\appdata\\local\\temp\\__psscriptpolicytest_pljhmkgx.udd.psm1", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "filemod_publisher_state": null, 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "2012-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": " -ExecutionPolicy ByPass -File SetRedirectedHomeAcl.ps1 ", 
+                    "pid": 2012, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "2012-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "powershell.exe(2012):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "13272-d170726f0248fdd05779bd3ee27eead51416cb24e36a641044a53f361e0c9b80-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "210.57.92.108:443(uci.cdn.office.net, located in Central District 00, Hong Kong)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f2a51581da711ec9dd2ff17e5cb73e1"
+                        ], 
+                        "event_summary": "192.168.155.87:50916-(TCP:OUT)->210.57.92.108:443(uci.cdn.office.net)[Central District,00,Hong Kong]", 
+                        "occurred": [
+                            "2021/09/25 02:20:48"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "210.57.92.108", 
+                            "proto": "TCP", 
+                            "local_port": 50916, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": "uci.cdn.office.net", 
+                            "remote_location": "Central District,00,Hong Kong", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13272-d170726f0248fdd05779bd3ee27eead51416cb24e36a641044a53f361e0c9b80-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "210.57.92.102:443(located in Central District 00, Hong Kong)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2a5749021da711ecadcc49e497cf667a"
+                        ], 
+                        "event_summary": "192.168.155.87:50872-(TCP:OUT)->210.57.92.102:443(None)[Central District,00,Hong Kong]", 
+                        "occurred": [
+                            "2021/09/25 02:20:32"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "210.57.92.102", 
+                            "proto": "TCP", 
+                            "local_port": 50872, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Central District,00,Hong Kong", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13272-d170726f0248fdd05779bd3ee27eead51416cb24e36a641044a53f361e0c9b80-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "d170726f0248fdd05779bd3ee27eead51416cb24e36a641044a53f361e0c9b80", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\POWERPNT.EXE\" \"D:\\@loup2021\\N511212R\u5f8c\u6d41(2021)\\4_\u5225\u7d19R2_WN\u65b0\u898f\u30c6\u30fc\u30de\u8aac\u660e\u7528PPT_\uff08\u5f8c\u6d41\uff0920201001.pptx\" /ou \"\"", 
+                    "pid": 13272, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "d:\\@loup2021\\n511212r\u5f8c\u6d41(2021)\\4_\u5225\u7d19r2_wn\u65b0\u898f\u30c6\u30fc\u30de\u8aac\u660e\u7528ppt_\uff08\u5f8c\u6d41\uff0920201001.pptx", 
+                    "ppid": "13272-d170726f0248fdd05779bd3ee27eead51416cb24e36a641044a53f361e0c9b80-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9856
+                }
+            }, 
+            "message": "powerpnt(13272):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powerpnt", 
+            "shell_type": 0
+        }, 
+        "10748-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc80ce551da511ecb4d2a7a1dee22bd6"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:28"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10748-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a", 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-XboxApps.ps1 ", 
+                    "pid": 10748, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-xboxapps.ps1", 
+                    "ppid": "10748-5a219670b098cfea131f364b5ad70c3611ccdf80e2441d1f8599447eb22dbd2a-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "ps_script(10748):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "11540-aa90ee8169edc485dce1d2ea9943ce70cc774b55ee05c93703d9a2d32dc0c33f-0": {
+            "details": {
+                "indicators": [
+                    "HAS_SCRIPT_DLL", 
+                    "ENUMERATE_PROCESSES", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "987fc6ad1da611ec8b7687b46583a8f7"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 02:16:01"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11540-aa90ee8169edc485dce1d2ea9943ce70cc774b55ee05c93703d9a2d32dc0c33f-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "HAS_SCRIPT_DLL", 
+                            "MITRE_T1057_PROCESS_DISCOVERY", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "toaclient.exe", 
+                    "hash": "aa90ee8169edc485dce1d2ea9943ce70cc774b55ee05c93703d9a2d32dc0c33f", 
+                    "command_line": "\"C:\\Users\\r9941407\\NoaClient\\Bin\\ToaBrowser.exe\" http://noalb/Noa/Menu/Login.aspx", 
+                    "pid": 11540, 
+                    "parent_path": "c:\\users\\r9941407\\appdata\\local\\apps\\2.0\\17vy90w2.mdg\\g371c2nc.jon\\toac..tion_4ed8781e95d89a40_0001.0001_3f699b90dd1f306f\\toaclient.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d606d0accd9764cbcf64f66e6c7b23bc96b55cc6e0996f1ec0e5875434c92898", 
+                    "path": "c:\\users\\r9941407\\noaclient\\bin\\toabrowser.exe", 
+                    "ppid": "11540-aa90ee8169edc485dce1d2ea9943ce70cc774b55ee05c93703d9a2d32dc0c33f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10424
+                }
+            }, 
+            "message": "toabrowser.exe(11540):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "toabrowser.exe", 
+            "shell_type": 0
+        }, 
+        "4892-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc585ee21da511ec9782f3ae68fc3f89"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "4892-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0", 
+                    "command_line": " -ExecutionPolicy ByPass -File SetRedirectedHomeAcl.ps1 ", 
+                    "pid": 4892, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{12189ccf-ee0a-4f4a-9c12-29b8363ad5f5}\\user\\scripts\\logon\\setredirectedhomeacl.ps1", 
+                    "ppid": "4892-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "ps_script(4892):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "21436-d92f62930700eb878a11e99343736c97893f12276c2fcb4344252e63586ac676-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.44.44:443(roaming.officeapps.live.com, located in Seoul 11, Korea, Republic of)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "29fe06391da711eca599c135d045df13"
+                        ], 
+                        "event_summary": "192.168.155.87:50840-(TCP:OUT)->52.109.44.44:443(roaming.officeapps.live.com)[Seoul,11,Korea, Republic of]", 
+                        "occurred": [
+                            "2021/09/25 02:20:13"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.44.44", 
+                            "proto": "TCP", 
+                            "local_port": 50840, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": "roaming.officeapps.live.com", 
+                            "remote_location": "Seoul,11,Korea, Republic of", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "21436-d92f62930700eb878a11e99343736c97893f12276c2fcb4344252e63586ac676-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "d92f62930700eb878a11e99343736c97893f12276c2fcb4344252e63586ac676", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\WINWORD.EXE\" /n \"D:\\@loup2021\\N511212R\u5f8c\u6d41(2021)\\2_\u5225\u7d19R1_WN\u65b0\u898f\u30c6\u30fc\u30de\u63d0\u6848\u66f8RGL_\uff08\u5f8c\u6d41\uff0920201001.docx\" /o \"\"", 
+                    "pid": 21436, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "d:\\@loup2021\\n511212r\u5f8c\u6d41(2021)\\2_\u5225\u7d19r1_wn\u65b0\u898f\u30c6\u30fc\u30de\u63d0\u6848\u66f8rgl_\uff08\u5f8c\u6d41\uff0920201001.docx", 
+                    "ppid": "21436-d92f62930700eb878a11e99343736c97893f12276c2fcb4344252e63586ac676-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9856
+                }
+            }, 
+            "message": "winword(21436):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "winword", 
+            "shell_type": 0
+        }, 
+        "8948-5d94a4cf28c4a274e1476b2799db8505274aa38265b1ff93cc50399c27810414-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.124.127:443(located in Singapore 00, Singapore)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2a0687041da611ec99533fdd15ef9639"
+                        ], 
+                        "event_summary": "192.168.155.87:50566-(TCP:OUT)->52.109.124.127:443(None)[Singapore,00,Singapore]", 
+                        "occurred": [
+                            "2021/09/25 02:13:18"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.124.127", 
+                            "proto": "TCP", 
+                            "local_port": 50566, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Singapore,00,Singapore", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "8948-5d94a4cf28c4a274e1476b2799db8505274aa38265b1ff93cc50399c27810414-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "5d94a4cf28c4a274e1476b2799db8505274aa38265b1ff93cc50399c27810414", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"C:\\Users\\r9941407\\Downloads\\\u5728\u5b85\u52e4\u52d9\u8a18\u9332\u8868_\u65b0\u67285\u6708.xlsx\"", 
+                    "pid": 8948, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "c:\\users\\r9941407\\downloads\\\u5728\u5b85\u52e4\u52d9\u8a18\u9332\u8868_\u65b0\u67285\u6708.xlsx", 
+                    "ppid": "8948-5d94a4cf28c4a274e1476b2799db8505274aa38265b1ff93cc50399c27810414-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9856
+                }
+            }, 
+            "message": "excel(8948):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "20632-eec69a2bd711880d9827c7b926a2d9b0737ad59c7804be62fd22de0dc7b521aa-0": {
+            "details": {
+                "indicators": [
+                    "ACTIVE_CLIENT", 
+                    "INTERNATIONAL_SITE", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "NETWORK", 
+                        "description": "52.109.124.127:443(located in Singapore 00, Singapore)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "29df9d9a1da611eca55e158f31f0ec59"
+                        ], 
+                        "event_summary": "192.168.155.87:50512-(TCP:OUT)->52.109.124.127:443(None)[Singapore,00,Singapore]", 
+                        "occurred": [
+                            "2021/09/25 02:12:40"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "52.109.124.127", 
+                            "proto": "TCP", 
+                            "local_port": 50512, 
+                            "local_ipv4": "192.168.155.87", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": "Singapore,00,Singapore", 
+                            "remote_port": 443
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "20632-eec69a2bd711880d9827c7b926a2d9b0737ad59c7804be62fd22de0dc7b521aa-0", 
+                        "categories": [
+                            "ACTIVE_CLIENT", 
+                            "INTERNATIONAL_SITE", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "eec69a2bd711880d9827c7b926a2d9b0737ad59c7804be62fd22de0dc7b521aa", 
+                    "command_line": "\"C:\\Program Files\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\\u5728\u5b85\u52e4\u52d9\u8a18\u9332\u8868(\u4e59\u90e8)_\u8eca\u4e21\u7a7a\u529b\u7279\u6027.xlsx\"", 
+                    "pid": 20632, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635", 
+                    "path": "d:\\\u5728\u5b85\u52e4\u52d9\u8a18\u9332\u8868(\u4e59\u90e8)_\u8eca\u4e21\u7a7a\u529b\u7279\u6027.xlsx", 
+                    "ppid": "20632-eec69a2bd711880d9827c7b926a2d9b0737ad59c7804be62fd22de0dc7b521aa-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9856
+                }
+            }, 
+            "message": "excel(20632):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "5176-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bd80d9b81da511ecadbb113b2af56a22"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5176-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agentexecutor.exe", 
+                    "hash": "ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -executionPolicy bypass -file  \"C:\\Program Files (x86)\\Microsoft Intune Management Extension\\Content\\DetectionScripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1\" ", 
+                    "pid": 5176, 
+                    "parent_path": "c:\\program files (x86)\\microsoft intune management extension\\agentexecutor.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "688c97508dea4a3d4c85465c0defd306b7f52ed7e39c115aed85bb9571af4428", 
+                    "path": "c:\\program files (x86)\\microsoft intune management extension\\content\\detectionscripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1", 
+                    "ppid": "5176-ac308e96d52b5437db78dae1d7eebcb9565daf29718f2ad82401ab0a016b6212-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8364
+                }
+            }, 
+            "message": "ps_script(5176):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "1268-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f1dea821da611ec821a85a77c673b6f"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 02:13:30"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1268-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p -s cbdhsvc", 
+                    "pid": 1268, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "1268-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 820
+                }
+            }, 
+            "message": "svchost.exe(1268):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "19248-9c530f1306aa1312fda938169e208a033341bc49ff956695c7616ad6c5d4bc94-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\dfshim.dll", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "987fc6b61da611ec8b7687b46583a8f7"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\dfshim.dll:8836[\"C:\\Windows\\System32\\rundll32.exe\" \"C:\\Windows\\System32\\dfshim.dll\",ShOpenVerbApplication https://noalb/Noa/SmartClient/ToaClient/ToaClient.application?exe=Mail.exe&aid=11826611&sid=ertxtqv31cozts55531crr45&srv=noalb]", 
+                        "occurred": [
+                            "2021/09/25 02:16:09"
+                        ], 
+                        "event_detail": {
+                            "pid": 8836, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Windows\\System32\\rundll32.exe\" \"C:\\Windows\\System32\\dfshim.dll\",ShOpenVerbApplication https://noalb/Noa/SmartClient/ToaClient/ToaClient.application?exe=Mail.exe&aid=11826611&sid=ertxtqv31cozts55531crr45&srv=noalb", 
+                            "name": "c:\\windows\\system32\\dfshim.dll", 
+                            "hash": "65cb5a9e02a25267ac0cedd9ca048dfe45c38b8d0fd224773450f9799bda7fb0"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "19248-9c530f1306aa1312fda938169e208a033341bc49ff956695c7616ad6c5d4bc94-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "toabrowser.exe", 
+                    "hash": "9c530f1306aa1312fda938169e208a033341bc49ff956695c7616ad6c5d4bc94", 
+                    "command_line": "\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" https://noalb/Noa/SmartClient/ToaClient/ToaClient.application?exe=Mail.exe&aid=11826611&sid=ertxtqv31cozts55531crr45&srv=noalb", 
+                    "pid": 19248, 
+                    "parent_path": "c:\\users\\r9941407\\noaclient\\bin\\toabrowser.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "aa90ee8169edc485dce1d2ea9943ce70cc774b55ee05c93703d9a2d32dc0c33f", 
+                    "path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "ppid": "19248-9c530f1306aa1312fda938169e208a033341bc49ff956695c7616ad6c5d4bc94-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 11540
+                }
+            }, 
+            "message": "iexplore.exe(19248):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }, 
+        "2012-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"\\\\rtri.local\\sysvol\\rtri.local\\policies\\{12189ccf-ee0a-4f4a-9c12-29b8363ad5f5}\\user\\scripts\\logon\\Get-Acl\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc5837aa1da511ec9782f3ae68fc3f89"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:22"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "2012-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0", 
+                    "command_line": " -ExecutionPolicy ByPass -File SetRedirectedHomeAcl.ps1 ", 
+                    "pid": 2012, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{12189ccf-ee0a-4f4a-9c12-29b8363ad5f5}\\user\\scripts\\logon\\setredirectedhomeacl.ps1", 
+                    "ppid": "2012-678adcbcfa3150d8d3ce79f762a89c759b13263646348d6116b16125236d89c0-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "ps_script(2012):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "10468-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc80ce211da511ecb4d2a7a1dee22bd6"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:25"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10468-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e", 
+                    "command_line": " -ExecutionPolicy ByPass -File PresetDavMailProperty.ps1 ", 
+                    "pid": 10468, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{46eee4a2-7714-4514-a0a2-0ea868ea8107}\\user\\scripts\\logon\\presetdavmailproperty.ps1", 
+                    "ppid": "10468-189654e3b01c1f050259b875c5a6a35d7c5efceb37dec87b73b6e3bd9d79476e-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "ps_script(10468):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "10748-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc80ce511da511ecb4d2a7a1dee22bd6"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:28"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10748-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-XboxApps.ps1 ", 
+                    "pid": 10748, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "10748-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "powershell.exe(10748):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "18840-d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "UNKNOWN_APP", 
+                    "ENUMERATE_PROCESSES", 
+                    "MONITOR_USER_INPUT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "04aa0d301da711ec979f930c450e5877"
+                        ], 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/25 02:19:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "18840-d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42-0", 
+                        "categories": [
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "MONITOR_USER_INPUT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bafef3fb1da611ec96330f77ae2f926b"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/25 02:16:47"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "18840-d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42-0", 
+                        "categories": [
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"c:\\users\\r9941407\\noaclient\\bin\\mail.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "04aa0d2f1da711ec979f930c450e5877"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 02:19:28"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "18840-d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42-0", 
+                        "categories": [
+                            "INJECT_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "toaclient.exe", 
+                    "hash": "d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42", 
+                    "command_line": "\"C:\\Users\\r9941407\\NoaClient\\Bin\\Mail.exe\" noalb ertxtqv31cozts55531crr45 11826611 1", 
+                    "pid": 18840, 
+                    "parent_path": "c:\\users\\r9941407\\appdata\\local\\apps\\2.0\\17vy90w2.mdg\\g371c2nc.jon\\toac..tion_4ed8781e95d89a40_0001.0001_3f699b90dd1f306f\\toaclient.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d606d0accd9764cbcf64f66e6c7b23bc96b55cc6e0996f1ec0e5875434c92898", 
+                    "path": "c:\\users\\r9941407\\noaclient\\bin\\mail.exe", 
+                    "ppid": "18840-d3428542bc7d48da2cefe6d863c7510e98b5a1b8ed3b86a6c7e5c847fcf74e42-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13704
+                }
+            }, 
+            "message": "mail.exe(18840):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "mail.exe", 
+            "shell_type": 0
+        }, 
+        "4892-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc585edc1da511ec9782f3ae68fc3f89"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "4892-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": " -ExecutionPolicy ByPass -File SetRedirectedHomeAcl.ps1 ", 
+                    "pid": 4892, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "4892-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "powershell.exe(4892):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "16148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bdc0537c1da511ecbd009785d2672b08"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:58"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "16148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agentexecutor.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -executionPolicy bypass -file  \"C:\\Program Files (x86)\\Microsoft Intune Management Extension\\Content\\DetectionScripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1\" ", 
+                    "pid": 16148, 
+                    "parent_path": "c:\\program files (x86)\\microsoft intune management extension\\agentexecutor.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "688c97508dea4a3d4c85465c0defd306b7f52ed7e39c115aed85bb9571af4428", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "16148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 16072
+                }
+            }, 
+            "message": "powershell.exe(16148):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "11352-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc80ce6a1da511ecb4d2a7a1dee22bd6"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11352-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-yourphoneapp.ps1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc585f0a1da511ec9782f3ae68fc3f89"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-yourphoneapp.ps1:4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152)(NOT_LISTED:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/25 02:08:24"
+                        ], 
+                        "event_detail": {
+                            "file_scan_result": "/", 
+                            "filemod_name": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-yourphoneapp.ps1", 
+                            "filemod_hash": "4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152", 
+                            "filemod_reputation": "NOT_LISTED", 
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_action": "ACTION_FILE_CREATE"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "11352-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-YourPhoneApp.ps1 ", 
+                    "pid": 11352, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "11352-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "powershell.exe(11352):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "1456-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bab81c441da511eca3481d6e17012380"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:1476[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 02:05:57"
+                        ], 
+                        "event_detail": {
+                            "pid": 1476, 
+                            "reputation": "ADAPTIVE_WHITE_LIST", 
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "name": "c:\\windows\\system32\\conhost.exe", 
+                            "hash": "103a0b9fbd9880194053ec76363aac086e71a56c27b4b696891e42a8424a00d1"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "1456-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": " -ExecutionPolicy ByPass -File SetAcceptRDPRule.ps1 ", 
+                    "pid": 1456, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "1456-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7864
+                }
+            }, 
+            "message": "powershell.exe(1456):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "11352-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RTRI\\r9941407", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc80ce6f1da511ecb4d2a7a1dee22bd6"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:29"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11352-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152", 
+                    "command_line": " -ExecutionPolicy ByPass -File Remove-YourPhoneApp.ps1 ", 
+                    "pid": 11352, 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "bb008deed1241ead9f245661d2cd629d02031433b614cdc2cd7b1291a753a6a7", 
+                    "path": "\\\\rtri.local\\sysvol\\rtri.local\\policies\\{98472771-f505-4681-a66b-61a3424a7d9d}\\user\\scripts\\logon\\remove-yourphoneapp.ps1", 
+                    "ppid": "11352-4ac3ffbe03571a72a0834c958a6dd0bebd52a153c1d027ea3dd305f4dac21152-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1648
+                }
+            }, 
+            "message": "ps_script(11352):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "5176-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bd80d9b51da511ecadbb113b2af56a22"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5176-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "agentexecutor.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -executionPolicy bypass -file  \"C:\\Program Files (x86)\\Microsoft Intune Management Extension\\Content\\DetectionScripts\\b3ae41c1-7415-4bd0-8513-d16e2b9ed1eb_1.ps1\" ", 
+                    "pid": 5176, 
+                    "parent_path": "c:\\program files (x86)\\microsoft intune management extension\\agentexecutor.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "688c97508dea4a3d4c85465c0defd306b7f52ed7e39c115aed85bb9571af4428", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "5176-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8364
+                }
+            }, 
+            "message": "powershell.exe(5176):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "3256-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0": {
+            "details": {
+                "indicators": [
+                    "BYPASS_POLICY", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\program files (x86)\\intel\\icls client\\Get-CimInstance\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "bc5837b01da511ec9782f3ae68fc3f89"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 02:08:22"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3256-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549", 
+                    "command_line": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy Bypass \"C:\\ProgramData\\SetTeamsFirewallRule.ps1\"", 
+                    "pid": 3256, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\programdata\\setteamsfirewallrule.ps1", 
+                    "ppid": "3256-bd7ab7c8ff4cc83e4579ee175d1c7e32f47915a6b4b780a81deab4ebd81e8549-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1628
+                }
+            }, 
+            "message": "ps_script(3256):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "RTR1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

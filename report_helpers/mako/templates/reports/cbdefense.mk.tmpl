@@ -1,0 +1,75 @@
+#coding:utf-8
+
+## cbdefense.mk.tmpl CBDefense解析レポート用 
+
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_report.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <div style="page-break-inside: avoid;">
+    <h2 class="head">${ headers["detailinfo"] }</h2>
+    ${ func.verticaltable(cause_event, section="cause_event") }
+  </div>
+  <div style="page-break-inside: avoid;">
+    % if processinfo:
+      <br />
+      <h3 class="subsection">・${ subheaders["processinfo"] }</h3>
+      <table>
+        <tr>
+          % for each in processinfo[0]:
+            <td class="item">${ each["name"] }</td>
+          % endfor
+        </tr>
+        % for each in processinfo:
+          <tr>
+            % for value in each:
+              <td class="content">${ value["content"] }</td>
+            % endfor
+          </tr>
+        % endfor
+      </table>
+    % else:
+      ${ func.verticaltable(detail,  section="processinfo") }
+    %endif
+  </div>
+
+  <div style="page-break-inside: avoid;">
+    % if detected_malware_summary:
+      <br />
+      <h3 class="subsection">・${ subheaders["detected_malware_summary"] }</h3>
+      <table>
+        <tr>
+          % for each in detected_malware_summary[0]:
+            <td class="item">${ each["name"] }</td>
+          % endfor
+        </tr>
+        % for each in detected_malware_summary:
+          <tr>
+            % for value in each:
+              <td class="content">${ value["content"] }</td>
+            % endfor
+          </tr>
+        % endfor
+      </table>
+    %endif
+  </div>
+  <div style="page-break-inside: avoid;">
+    ${ func.lateraltable(outbound, section="outbound") }
+  </div>
+</%block>
+<%block name="remediation_blk">
+  <div style="page-break-inside: avoid;">
+    ${parent.remediation_blk()}
+    % if nw_contain:
+      ${ func.lateraltable(nw_contain) }
+    % endif
+  </div>
+</%block>

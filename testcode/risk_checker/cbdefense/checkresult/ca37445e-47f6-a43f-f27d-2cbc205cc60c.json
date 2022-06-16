@@ -1,0 +1,297 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_SYSTEM_APP", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "RUN_CMD_SHELL", 
+                    "FILELESS", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "ENUMERATE_PROCESSES"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254b01e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\cmd.exe:11044[C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\system32\\winrm.cmd\" set winrm/config/service @{MaxConcurrentOperationsPerUser=\"4294967295\"}\"]", 
+                        "occurred": [
+                            "2021/09/26 01:48:47"
+                        ], 
+                        "event_detail": {
+                            "command_line": "C:\\Windows\\system32\\cmd.exe /c \"\"C:\\Windows\\system32\\winrm.cmd\" set winrm/config/service @{MaxConcurrentOperationsPerUser=\"4294967295\"}\"", 
+                            "pid": 11044, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "2bf37651c5ba456e32cdf1cdb9860d0496acd535e70e28e45e391b825ca57998", 
+                            "name": "c:\\windows\\system32\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "FILELESS", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "RUN_CMD_SHELL", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcessW(invoke the application \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254b11e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:47"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcessW", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateWindowExW(create a viewable window)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254af1e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "CreateWindowExW(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateWindowExW", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254ae1e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtQuerySystemInformation", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254ad1e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFileExW(find \"C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254ac1e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "FindFirstFileExW(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFileExW", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open itself for modification)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254ab1e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "api_name": "OpenProcess", 
+                            "api_target": false
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436", 
+                    "command_line": "powershell  -encodedcommand JABFAHIAcgBvAHIAQQBjAHQAaQBvAG4AUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAiAFMAdABvAHAAIgAKAFQAcgB5ACAAewAKAHcAaQBuAHIAbQAgAHMAZQB0ACAAdwBpAG4AcgBtAC8AYwBvAG4AZgBpAGcALwBzAGUAcgB2AGkAYwBlACAAJwBAAHsATQBhAHgAQwBvAG4AYwB1AHIAcgBlAG4AdABPAHAAZQByAGEAdABpAG8AbgBzAFAAZQByAFUAcwBlAHIAPQAiADQAMgA5ADQAOQA2ADcAMgA5ADUAIgB9ACcAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0ARABlAHAAdABoACAAMQAwAAoAfQAgAEMAYQB0AGMAaAAgAHsACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAKAAkAF8AIAB8ACAAQwBvAG4AdgBlAHIAdABUAG8ALQBKAHMAbwBuACkACgB0AGgAcgBvAHcACgB9AA==", 
+                    "pid": 12632, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "935c1861df1f4018d698e8b65abfa02d7e9037d8f68ca3c2065b6ca165d44ad2", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "12632-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 11560
+                }
+            }, 
+            "message": "powershell.exe(12632):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "6232-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "CODE_DROP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA-TTDA\\Administrator", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\users\\administrator.toshiba-ttda\\appdata\\local\\temp\\__psscriptpolicytest_nc3vpazl.zcu.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "07c254c61e6c11ec8938a5ca3e428803"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\administrator.toshiba-ttda\\appdata\\local\\temp\\__psscriptpolicytest_nc3vpazl.zcu.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:[u'FILE_SIGNATURE_STATE_NOT_SIGNED']>", 
+                        "occurred": [
+                            "2021/09/26 01:48:46"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": [
+                                "FILE_SIGNATURE_STATE_NOT_SIGNED"
+                            ], 
+                            "filemod_name": "c:\\users\\administrator.toshiba-ttda\\appdata\\local\\temp\\__psscriptpolicytest_nc3vpazl.zcu.psm1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "6232-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436", 
+                    "command_line": "powershell  -encodedcommand JABFAHIAcgBvAHIAQQBjAHQAaQBvAG4AUAByAGUAZgBlAHIAZQBuAGMAZQAgAD0AIAAiAFMAdABvAHAAIgAKAFQAcgB5ACAAewAKAHcAaQBuAHIAbQAgAHMAZQB0ACAAdwBpAG4AcgBtAC8AYwBvAG4AZgBpAGcALwBzAGUAcgB2AGkAYwBlACAAJwBAAHsATQBhAHgAQwBvAG4AYwB1AHIAcgBlAG4AdABPAHAAZQByAGEAdABpAG8AbgBzAFAAZQByAFUAcwBlAHIAPQAiADQAMgA5ADQAOQA2ADcAMgA5ADUAIgB9ACcAfAAgAEMAbwBuAHYAZQByAHQAVABvAC0ASgBzAG8AbgAgAC0ARABlAHAAdABoACAAMQAwAAoAfQAgAEMAYQB0AGMAaAAgAHsACgBXAHIAaQB0AGUALQBIAG8AcwB0ACAAKAAkAF8AIAB8ACAAQwBvAG4AdgBlAHIAdABUAG8ALQBKAHMAbwBuACkACgB0AGgAcgBvAHcACgB9AA==", 
+                    "pid": 6232, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "935c1861df1f4018d698e8b65abfa02d7e9037d8f68ca3c2065b6ca165d44ad2", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "6232-ba4038fd20e474c047be8aad5bfacdb1bfc1ddbe12f803f473b7918d8d819436-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 13860
+                }
+            }, 
+            "message": "powershell.exe(6232):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

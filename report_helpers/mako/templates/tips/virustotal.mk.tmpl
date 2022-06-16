@@ -1,0 +1,110 @@
+#coding:utf-8
+
+## define function
+<%namespace file="report.mk.tmpl" name="func" />
+
+<%def name="vtTable4ip(vtinfo)">
+  <div style="page-break-before: avoid;">
+  <table>
+    <caption>IPベースの確認</caption>
+    <tr>
+      <td class="item">VirusTotalでの情報有無</td>
+      % if vtinfo["exist"]:
+        <td class="content">あり</td>
+      % else:
+        <td class="content">なし</td>
+      % endif
+    </tr>
+    % if vtinfo["exist"]:
+      <tr>
+        <td class="item">オーナー情報</td>
+        <td class="content">${vtinfo["as_owner"]}</td>
+      </tr>
+      <tr>
+        <td class="item">直近で紐づけらたホスト名</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["current_resolved"])}</td>
+      </tr>
+      <tr>
+        <td class="item">過去に検知されたURLの件数</td>
+        <td class="content" style="text-align:left;">${ len(vtinfo["detected_urls"])}</td>
+        <!--
+        <td class="content" style="text-align:left;">${'<br/>'.join(
+          [ func.maskURL(each) for each in vtinfo["detected_urls"] ])}</td>
+        -->
+      </tr>
+    % endif
+  </table>
+  </div>
+  <br />
+</%def>
+
+<%def name="vtTable4domain(vtinfo)">
+  <div style="page-break-before: avoid;">
+  <table>
+    <caption>ホスト名ベースの確認</caption>
+    <tr>
+      <td class="item">VirusTotalでの情報有無</td>
+      % if vtinfo["exist"]:
+        <td class="content">あり</td>
+      % else:
+        <td class="content">なし</td>
+      % endif
+    </tr>
+    % if vtinfo["exist"]:
+      <tr>
+        <td class="item">カテゴリ情報</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["categories"])}</td>
+      </tr>
+      <tr>
+        <td class="item">ドメイン取得日</td>
+        <td class="content" style="text-align:left;">${vtinfo["create_date"]}</td>
+      </tr>
+      <tr>
+        <td class="item">過去に検知されたURL</td>
+        <td class="content" style="text-align:left;">${ len(vtinfo["detected_urls"])}</td>
+        <!--
+        <td class="content" style="text-align:left;">${'<br/>'.join(
+          [ func.maskURL(each) for each in vtinfo["detected_urls"] ])}</td>
+        -->
+      </tr>
+    % endif
+  </table>
+  </div>
+  <br />
+</%def>
+
+<%def name="vtTable4hash(vtinfo)">
+  <div style="page-break-before: avoid;">
+  <table>
+    <caption>ハッシュベースの確認</caption>
+    <tr>
+      <td class="item">VirusTotalでの情報有無</td>
+      % if vtinfo["exist"]:
+        <td class="content">あり</td>
+      % else:
+        <td class="content">なし</td>
+      % endif
+    </tr>
+    % if vtinfo["exist"]:
+      <tr>
+        <td class="item">スキャン日時</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["scan_date"])}</td>
+      </tr>
+      <tr>
+        <td class="item">サマリ</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["result"])}</td>
+      </tr>
+      <tr>
+        <td class="item">検知情報</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["detected_detail"])}</td>
+      </tr>
+      <tr>
+        <td class="item">詳細URL</td>
+        <td class="content" style="text-align:left;">${'<br/>'.join(vtinfo["permalink"])}</td>
+      </tr>
+    % endif
+  </table>
+  </div>
+  <br />
+</%def>
+

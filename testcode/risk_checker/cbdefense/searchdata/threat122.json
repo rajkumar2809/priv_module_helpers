@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000022",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "claunch.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "INJECT_CODE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)setwindowshook(ex)?w\\(c:\\\\program\\s*files(\\(x86\\))?\\s*\\\\claunch\\\\claunch\\.exe\\)",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/3/4",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert(hook to myself) by claunch.exe"
+}

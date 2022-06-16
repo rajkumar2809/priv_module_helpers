@@ -1,0 +1,379 @@
+{
+    "alerted_process": [
+        "msiexec.exe", 
+        "powershell.exe", 
+        "gamebar.exe", 
+        "msedge.exe"
+    ], 
+    "incident_id": "38846EED", 
+    "threat_cause_actor_name": "msedge.exe", 
+    "threat_cause_vector": "UNKNOWN", 
+    "attack_phase": [
+        "INSTALL_RUN"
+    ], 
+    "threat_cause_reputation": "TRUSTED_WHITE_LIST", 
+    "threat_cause_event_id": "0f05a8deb84711ebb8124dedc8afbf35", 
+    "occurred": 1621357699, 
+    "summary": "The application msedge.exe invoked another application (identity_helper.exe).", 
+    "score": 2, 
+    "malicious_activity": [
+        {
+            "process_name": "gamebar.exe", 
+            "sha256": "50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5", 
+            "ttps": [
+                "ACTIVE_CLIENT", 
+                "INTERNATIONAL_SITE", 
+                "NETWORK_ACCESS", 
+                "UNKNOWN_APP"
+            ]
+        }, 
+        {
+            "process_name": "msedge.exe", 
+            "sha256": "357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04", 
+            "ttps": [
+                "RUN_ANOTHER_APP"
+            ]
+        }, 
+        {
+            "process_name": "powershell.exe", 
+            "sha256": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+            "ttps": [
+                "ENUMERATE_PROCESSES", 
+                "FILELESS", 
+                "MITRE_T1057_PROCESS_DISCOVERY", 
+                "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+            ]
+        }, 
+        {
+            "process_name": "msiexec.exe", 
+            "sha256": "0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad", 
+            "ttps": [
+                "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                "MODIFY_SERVICE"
+            ]
+        }
+    ], 
+    "network_access": [
+        {
+            "protocol": {
+                "protocol": "TCP", 
+                "port": 80, 
+                "nw_direction": "OUT"
+            }, 
+            "nw_src": {
+                "ip": "192.168.129.161", 
+                "location": "", 
+                "port": 49858, 
+                "name": ""
+            }, 
+            "nw_dst": {
+                "ip": "117.18.237.29", 
+                "location": "Taipei,03,Taiwan", 
+                "port": 80, 
+                "name": null
+            }
+        }
+    ], 
+    "threat_cause_category": "NON_MALWARE", 
+    "threat_cause_actor_sha256": "357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04", 
+    "malware_info": [], 
+    "category": "MONITORED", 
+    "events": [
+        {
+            "attack_phase": null, 
+            "description": "NtQuerySystemInformation(list all processes)", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                "name": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": [
+                    "powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';"
+                ], 
+                "ppid": "[7548]-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                "pid": [
+                    7548
+                ], 
+                "reputation_effective_source": "CLOUD", 
+                "user": [
+                    "NT AUTHORITY\\SYSTEM"
+                ]
+            }, 
+            "event_summary": "NtQuerySystemInformation(False)", 
+            "occurred": "2021/05/19 02:13:11", 
+            "event_detail": {
+                "api_target": false, 
+                "api_name": "NtQuerySystemInformation"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "SYSTEM_API_CALL", 
+            "categories": [
+                "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                "FILELESS", 
+                "ENUMERATE_PROCESSES", 
+                "MITRE_T1057_PROCESS_DISCOVERY"
+            ], 
+            "runuser": [
+                "NT AUTHORITY\\SYSTEM"
+            ], 
+            "network": {}, 
+            "event_id": "d8c4b168b84711ebae0b45edc3eb1bd2", 
+            "parent_process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "2bf5d8e400fe776b3a9f5400ba212ad8d638cc44e7f906e7800be5054445eecc", 
+                "name": "c:\\windows\\system32\\compattelrunner.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": null, 
+                "ppid": "7480-2bf5d8e400fe776b3a9f5400ba212ad8d638cc44e7f906e7800be5054445eecc-0", 
+                "pid": 7480, 
+                "reputation_effective_source": "CLOUD", 
+                "user": null
+            }, 
+            "raw_ev_type": "crossproc"
+        }, 
+        {
+            "attack_phase": [
+                "INSTALL_RUN"
+            ], 
+            "description": "CreateServiceW(create the service for \"CSAgent\")", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad", 
+                "name": "c:\\windows\\system32\\msiexec.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": [
+                    "C:\\Windows\\System32\\MsiExec.exe -Embedding 9F5FE3E8FC7D460109C71D315DDA22F5 E Global\\MSI0000"
+                ], 
+                "ppid": "[8920]-0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad-0", 
+                "pid": [
+                    8920
+                ], 
+                "reputation_effective_source": "APPROVED_DATABASE", 
+                "user": [
+                    "NT AUTHORITY\\SYSTEM"
+                ]
+            }, 
+            "event_summary": "CreateServiceW(False)", 
+            "occurred": "2021/05/19 02:06:36", 
+            "event_detail": {
+                "api_target": false, 
+                "api_name": "CreateServiceW"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "SYSTEM_API_CALL", 
+            "categories": [
+                "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                "MODIFY_SERVICE"
+            ], 
+            "runuser": [
+                "NT AUTHORITY\\SYSTEM"
+            ], 
+            "network": {}, 
+            "event_id": "0f61ac58b84711eb82d3353f7f6f6828", 
+            "parent_process": {
+                "reputation": "NOT_LISTED", 
+                "hash": "5a83818b3030e99f6c7df00ee7610d3d53fd558dee32e2eaecc957df64b158e3", 
+                "name": "c:\\programdata\\package cache\\{60720cd1-3675-430d-9bd9-e506ae46665b}v6.21.13510.0\\csagent.msi", 
+                "reputation_effective": "ADAPTIVE_WHITE_LIST", 
+                "command_line": null, 
+                "ppid": "1776-5a83818b3030e99f6c7df00ee7610d3d53fd558dee32e2eaecc957df64b158e3-0", 
+                "pid": 1776, 
+                "reputation_effective_source": "CLOUD", 
+                "user": null
+            }, 
+            "raw_ev_type": "crossproc"
+        }, 
+        {
+            "attack_phase": [
+                "INSTALL_RUN"
+            ], 
+            "description": "DeleteService(delete a service)", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad", 
+                "name": "c:\\windows\\system32\\msiexec.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": [
+                    "C:\\Windows\\System32\\MsiExec.exe -Embedding 9F5FE3E8FC7D460109C71D315DDA22F5 E Global\\MSI0000"
+                ], 
+                "ppid": "[8920]-0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad-0", 
+                "pid": [
+                    8920
+                ], 
+                "reputation_effective_source": "APPROVED_DATABASE", 
+                "user": [
+                    "NT AUTHORITY\\SYSTEM"
+                ]
+            }, 
+            "event_summary": "DeleteService(False)", 
+            "occurred": "2021/05/19 02:06:33", 
+            "event_detail": {
+                "api_target": false, 
+                "api_name": "DeleteService"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "SYSTEM_API_CALL", 
+            "categories": [
+                "MODIFY_SERVICE"
+            ], 
+            "runuser": [
+                "NT AUTHORITY\\SYSTEM"
+            ], 
+            "network": {}, 
+            "event_id": "0f61ac57b84711eb82d3353f7f6f6828", 
+            "parent_process": {
+                "reputation": "NOT_LISTED", 
+                "hash": "5a83818b3030e99f6c7df00ee7610d3d53fd558dee32e2eaecc957df64b158e3", 
+                "name": "c:\\programdata\\package cache\\{60720cd1-3675-430d-9bd9-e506ae46665b}v6.21.13510.0\\csagent.msi", 
+                "reputation_effective": "ADAPTIVE_WHITE_LIST", 
+                "command_line": null, 
+                "ppid": "1776-5a83818b3030e99f6c7df00ee7610d3d53fd558dee32e2eaecc957df64b158e3-0", 
+                "pid": 1776, 
+                "reputation_effective_source": "CLOUD", 
+                "user": null
+            }, 
+            "raw_ev_type": "crossproc"
+        }, 
+        {
+            "attack_phase": null, 
+            "description": "117.18.237.29:80(located in Taipei 03, Taiwan)", 
+            "process": {
+                "reputation": "NOT_LISTED", 
+                "hash": "50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5", 
+                "name": "c:\\program files\\windowsapps\\microsoft.xboxgamingoverlay_5.521.3093.0_x64__8wekyb3d8bbwe\\gamebar.exe", 
+                "reputation_effective": "NOT_LISTED", 
+                "command_line": [
+                    "\"C:\\Program Files\\WindowsApps\\Microsoft.XboxGamingOverlay_5.521.3093.0_x64__8wekyb3d8bbwe\\GameBar.exe\" -ServerName:App.AppXbdkk0yrkwpcgeaem8zk81k8py1eaahny.mca"
+                ], 
+                "ppid": "[1588]-50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5-0", 
+                "pid": [
+                    1588
+                ], 
+                "reputation_effective_source": "CLOUD", 
+                "user": [
+                    "DESKTOP-0BI16NS\\hoshiba"
+                ]
+            }, 
+            "event_summary": "192.168.129.161:49858-(TCP:OUT)->117.18.237.29:80(None)[Taipei,03,Taiwan]", 
+            "occurred": "2021/05/19 02:06:13", 
+            "event_detail": {
+                "is_inbound": false, 
+                "remote_ipv4": "117.18.237.29", 
+                "proto": "TCP", 
+                "remote_port": 80, 
+                "remote_domain": null, 
+                "remote_location": "Taipei,03,Taiwan", 
+                "local_port": 49858, 
+                "local_ipv4": "192.168.129.161"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "NETWORK", 
+            "categories": [
+                "INTERNATIONAL_SITE", 
+                "ACTIVE_CLIENT", 
+                "NETWORK_ACCESS", 
+                "UNKNOWN_APP"
+            ], 
+            "runuser": [
+                "DESKTOP-0BI16NS\\hoshiba"
+            ], 
+            "network": {
+                "protocol": {
+                    "protocol": "TCP", 
+                    "port": 80, 
+                    "nw_direction": "OUT"
+                }, 
+                "nw_src": {
+                    "ip": "192.168.129.161", 
+                    "location": "", 
+                    "port": 49858, 
+                    "name": ""
+                }, 
+                "nw_dst": {
+                    "ip": "117.18.237.29", 
+                    "location": "Taipei,03,Taiwan", 
+                    "port": 80, 
+                    "name": null
+                }
+            }, 
+            "event_id": "0f61ac28b84711eb82d3353f7f6f6828", 
+            "parent_process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                "name": "c:\\windows\\system32\\svchost.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": null, 
+                "ppid": "836-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                "pid": 836, 
+                "reputation_effective_source": "CLOUD", 
+                "user": null
+            }, 
+            "raw_ev_type": "netconn"
+        }, 
+        {
+            "attack_phase": [
+                "INSTALL_RUN"
+            ], 
+            "description": "C:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe", 
+            "process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04", 
+                "name": "c:\\program files (x86)\\microsoft\\edge\\application\\msedge.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": [
+                    "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" "
+                ], 
+                "ppid": "[7276]-357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04-0", 
+                "pid": [
+                    7276
+                ], 
+                "reputation_effective_source": "CLOUD", 
+                "user": [
+                    "DESKTOP-0BI16NS\\hoshiba"
+                ]
+            }, 
+            "event_summary": "c:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe:8816[\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\90.0.818.42\\identity_helper.exe\" --type=utility --utility-sub-type=winrt_app_id.mojom.WinrtAppIdService --field-trial-handle=1808,2632162569047820923,1129346508470068684,131072 --lang=ja --service-sandbox-type=none --mojo-platform-channel-handle=5040 /prefetch:8]", 
+            "occurred": "2021/05/19 02:05:30", 
+            "event_detail": {
+                "command_line": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\90.0.818.42\\identity_helper.exe\" --type=utility --utility-sub-type=winrt_app_id.mojom.WinrtAppIdService --field-trial-handle=1808,2632162569047820923,1129346508470068684,131072 --lang=ja --service-sandbox-type=none --mojo-platform-channel-handle=5040 /prefetch:8", 
+                "pid": 8816, 
+                "name": "c:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe"
+            }, 
+            "action": "APPLIED", 
+            "ev_type": "CREATE_PROCESS", 
+            "categories": [
+                "RUN_ANOTHER_APP"
+            ], 
+            "runuser": [
+                "DESKTOP-0BI16NS\\hoshiba"
+            ], 
+            "network": {}, 
+            "event_id": "0f05a8deb84711ebb8124dedc8afbf35", 
+            "parent_process": {
+                "reputation": "TRUSTED_WHITE_LIST", 
+                "hash": "7ac081a071642d569fd0994bd6df718fc79747408fb584404b902a6db9b248f9", 
+                "name": "c:\\windows\\explorer.exe", 
+                "reputation_effective": "TRUSTED_WHITE_LIST", 
+                "command_line": null, 
+                "ppid": "5716-7ac081a071642d569fd0994bd6df718fc79747408fb584404b902a6db9b248f9-0", 
+                "pid": 5716, 
+                "reputation_effective_source": "CLOUD", 
+                "user": null
+            }, 
+            "raw_ev_type": "childproc"
+        }
+    ], 
+    "categories": [
+        "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+        "UNKNOWN_APP", 
+        "ENUMERATE_PROCESSES", 
+        "MODIFY_SERVICE", 
+        "FILELESS", 
+        "MITRE_T1057_PROCESS_DISCOVERY", 
+        "RUN_ANOTHER_APP", 
+        "NETWORK_ACCESS", 
+        "INTERNATIONAL_SITE", 
+        "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+        "ACTIVE_CLIENT"
+    ]
+}

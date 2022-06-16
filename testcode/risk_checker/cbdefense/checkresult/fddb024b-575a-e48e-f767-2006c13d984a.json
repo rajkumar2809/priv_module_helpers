@@ -1,0 +1,196 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9204-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\ea1113718", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcessW(invoke the application \"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:42:16"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcessW"
+                        }, 
+                        "event_id": [
+                            "ddb4d8f81e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9204-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\ea1113718", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files\\windows security\\browsercore\\browsercore.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files\\windows security\\browsercore\\browsercore.exe:14556[\"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\"  chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 ]", 
+                        "occurred": [
+                            "2021/09/26 03:42:16"
+                        ], 
+                        "event_detail": {
+                            "pid": 14556, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\"  chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 ", 
+                            "name": "c:\\program files\\windows security\\browsercore\\browsercore.exe", 
+                            "hash": "f6fcf468ff94e2fb43b2383142b93581b83cdad898a4b1f0d71a76a5106a621a"
+                        }, 
+                        "event_id": [
+                            "ddb4d8f71e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9204-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ROOT_EISAI\\ea1113718", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:4952[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 03:42:16"
+                        ], 
+                        "event_detail": {
+                            "pid": 4952, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "name": "c:\\windows\\system32\\conhost.exe", 
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6"
+                        }, 
+                        "event_id": [
+                            "ddb4d8f51e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9204-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "parent_pid": 13492, 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /d /c \"C:\\Program Files\\Windows Security\\BrowserCore\\BrowserCore.exe\" chrome-extension://ppnbnpeolgkicgegkbkbjmhlideopiji/ --parent-window=0 < \\\\.\\pipe\\chrome.nativeMessaging.in.caad4b18a658d16b > \\\\.\\pipe\\chrome.nativeMessaging.out.caad4b18a658d16b", 
+                    "pid": 9204, 
+                    "parent_path": "c:\\program files\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed", 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "9204-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null, 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450"
+                }
+            }, 
+            "message": "cmd.exe(9204):00001-10-000560:<Google Chrome AddOn.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "13492-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0": {
+            "details": {
+                "indicators": [
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ROOT_EISAI\\ea1113718", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtCreateThreadEx(C:\\Windows\\System32\\cmd.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:42:16"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "ddb4d8f41e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13492-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "parent_pid": 11896, 
+                    "command_line": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" ", 
+                    "pid": 13492, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "c3159f629b9e989ee354834aa5a6a9af146b8bd1c07204e6ed9e94c96f2509fb", 
+                    "path": "c:\\program files\\google\\chrome\\application\\chrome.exe", 
+                    "ppid": "13492-4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed-0", 
+                    "parent_command_line": null, 
+                    "hash": "4ab07cea0d5543f3a955ec1edde511bf1c0d770748fdb84a8c5750a122808eed"
+                }
+            }, 
+            "message": "chrome.exe(13492):[00001-10-000721:<Chrome Normaly Work>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "chrome.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "ESI1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

@@ -1,0 +1,37 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEye解析レポートエディタ用 
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="1"><h2>${subheaders["outbound"]}</h2></td></tr>
+    <tr><td colspan="2"><p><textarea rows=3 cols=80 name="form.${outbound["src"]}">${outbound["content"]}</textarea></p></td></tr>
+  </table>
+  % if malware_object:
+    <table>
+    <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+      <tr><td colspan="1"><h2>${subheaders["known_callback"]}</h2></td></tr>
+      <tr><td colspan="2"><p><textarea rows=3 cols=80 name="form.${malware_object["known_callback"]["src"]}">${malware_object["known_callback"]["content"]}</textarea></p></td></tr>
+    </table>
+    ${ func.lateraltable(
+      malware_object["malware_file"], section="malware_file") }
+  % endif
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    ${ func.lateraltable(
+      ref_av_detection["endpointav"], section="endpointav") }
+  </table>
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+</%block>

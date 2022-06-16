@@ -1,0 +1,35 @@
+{
+	"id" : "00001-10-000052",
+	"rev" : "0002",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 0,
+	"value" : "jwdsrch.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "INJECT_CODE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "SetWindowsHook",
+				"type" : "include"
+			},
+			{
+				"field" : "description",
+				"value" : "JWord\\Plugin2\\jwdsrch.exe",
+				"type" : "include"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/5/17",
+	"user" : "sanrio",
+	"source" : "manual",
+	"message" : "jword plugin call API to myself."
+}

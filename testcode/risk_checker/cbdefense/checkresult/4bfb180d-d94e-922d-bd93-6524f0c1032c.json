@@ -1,0 +1,415 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "16064-15197fb8b958d05375e54a964ccda06528501e04a20a419ca03d662fbe5b039b-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"D:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_rpc0027-ecls0387_2.bat\" attempted to inject code into the process \"C:\\Windows\\System32\\findstr.exe\", by calling the function \"NtCreateThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:10"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "329e7a511e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "16064-15197fb8b958d05375e54a964ccda06528501e04a20a419ca03d662fbe5b039b-0", 
+                        "categories": [
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "backup_ecls0387.vbs", 
+                    "parent_pid": 11336, 
+                    "command_line": "\"C:\\Windows\\System32\\cmd.exe\" /c D:\\Users\\HubPC\\ffc4_10_0_3u\\Isilon_Move_RPC0027-ecls0387_2.bat", 
+                    "pid": 16064, 
+                    "parent_path": "d:\\users\\hubpc\\ffc4_10_0_3u\\backup_ecls0387.vbs", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec", 
+                    "path": "d:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_rpc0027-ecls0387_2.bat", 
+                    "ppid": "16064-15197fb8b958d05375e54a964ccda06528501e04a20a419ca03d662fbe5b039b-0", 
+                    "parent_command_line": null, 
+                    "hash": "15197fb8b958d05375e54a964ccda06528501e04a20a419ca03d662fbe5b039b"
+                }
+            }, 
+            "message": "win_batch(16064):00001-10-000827:<Customer Script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "11336-21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "HAS_SCRIPT_DLL", 
+                    "INJECT_CODE", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"D:\\users\\hubpc\\ffc4_10_0_3u\\backup_ecls0387.vbs\" attempted to inject code into the process \"C:\\Windows\\System32\\cmd.exe\", by calling the function \"NtCreateThreadEx\". The operation was successful.", 
+                        "event_count": 2, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:08", 
+                            "2021/09/26 03:38:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "329e7a4b1e7b11ec871fb75d4dae9b8a", 
+                            "329e7a461e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11336-21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP", 
+                            "HAS_SCRIPT_DLL"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 388, 
+                    "command_line": "C:\\Windows\\System32\\WScript.exe \"D:\\Users\\HubPC\\ffc4_10_0_3u\\backup_ecls0387.vbs\" ", 
+                    "pid": 11336, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52", 
+                    "path": "d:\\users\\hubpc\\ffc4_10_0_3u\\backup_ecls0387.vbs", 
+                    "ppid": "11336-21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec-0", 
+                    "parent_command_line": null, 
+                    "hash": "21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec"
+                }
+            }, 
+            "message": "vb_script(11336):00001-10-000829:<Customer Script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }, 
+        "8572-1c639fbba837b57f28691e7f210a034dd1b55380a13649a64e47be55bb8308a0-0": {
+            "details": {
+                "indicators": [
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "COMPROMISED_PARENT", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"C:\\Windows\\System32\\cmd.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:09"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "329e7a4f1e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "8572-1c639fbba837b57f28691e7f210a034dd1b55380a13649a64e47be55bb8308a0-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "COMPROMISED_PARENT"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "isilon_move_rpc0027-ecls0387.bat", 
+                    "parent_pid": 15404, 
+                    "command_line": "FINDSTR  BAT0002", 
+                    "pid": 8572, 
+                    "parent_path": "d:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_rpc0027-ecls0387.bat", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900", 
+                    "path": "c:\\windows\\system32\\findstr.exe", 
+                    "ppid": "8572-1c639fbba837b57f28691e7f210a034dd1b55380a13649a64e47be55bb8308a0-0", 
+                    "parent_command_line": null, 
+                    "hash": "1c639fbba837b57f28691e7f210a034dd1b55380a13649a64e47be55bb8308a0"
+                }
+            }, 
+            "message": "findstr.exe(8572):00001-10-000830:<Customer Script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "findstr.exe", 
+            "shell_type": 0
+        }, 
+        "15948-5ef458416e9fb4abec110dec9c8145fa8dd331505b0f937c2ac9067ecd794fd6-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"D:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_eclcx01737_ecls0387.bat\" attempted to inject code into the process \"C:\\Windows\\System32\\findstr.exe\", by calling the function \"NtCreateThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "329e7a481e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "15948-5ef458416e9fb4abec110dec9c8145fa8dd331505b0f937c2ac9067ecd794fd6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "backup_ecls0387.vbs", 
+                    "parent_pid": 11336, 
+                    "command_line": "\"C:\\Windows\\System32\\cmd.exe\" /c D:\\Users\\HubPC\\ffc4_10_0_3u\\Isilon_Move_ECLCX01737_ecls0387.bat", 
+                    "pid": 15948, 
+                    "parent_path": "d:\\users\\hubpc\\ffc4_10_0_3u\\backup_ecls0387.vbs", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec", 
+                    "path": "d:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_eclcx01737_ecls0387.bat", 
+                    "ppid": "15948-5ef458416e9fb4abec110dec9c8145fa8dd331505b0f937c2ac9067ecd794fd6-0", 
+                    "parent_command_line": null, 
+                    "hash": "5ef458416e9fb4abec110dec9c8145fa8dd331505b0f937c2ac9067ecd794fd6"
+                }
+            }, 
+            "message": "win_batch(15948):00001-10-000827:<Customer Script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "13588-de146bc7f110d30a7ebc85aa1cd03a51ab02982445c6326d105a5d92dce450da-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"D:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_eclcx01735_2_now.bat\" attempted to inject code into the process \"C:\\Windows\\System32\\findstr.exe\", by calling the function \"NtCreateThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:56"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "a157cff51e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13588-de146bc7f110d30a7ebc85aa1cd03a51ab02982445c6326d105a5d92dce450da-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 388, 
+                    "command_line": "C:\\Windows\\SYSTEM32\\cmd.exe /c \"D:\\Users\\HubPC\\ffc4_10_0_3u\\Isilon_Move_ECLCX01735_2_NOW.bat\"", 
+                    "pid": 13588, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "8a88e067e89d1dcfcafd842c0cb7de5dc7e6754447f2064a2bdf8496b088bd52", 
+                    "path": "d:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_eclcx01735_2_now.bat", 
+                    "ppid": "13588-de146bc7f110d30a7ebc85aa1cd03a51ab02982445c6326d105a5d92dce450da-0", 
+                    "parent_command_line": null, 
+                    "hash": "de146bc7f110d30a7ebc85aa1cd03a51ab02982445c6326d105a5d92dce450da"
+                }
+            }, 
+            "message": "win_batch(13588):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "15404-83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "RUN_ANOTHER_APP", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcessW(invoke the application \"C:\\Windows\\System32\\tasklist.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcessW"
+                        }, 
+                        "event_id": [
+                            "329e7a4c1e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "15404-83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "ECLCZ10347\\HubPC", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"D:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_rpc0027-ecls0387.bat\" attempted to inject code into the process \"C:\\Windows\\System32\\findstr.exe\", by calling the function \"NtCreateThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:38:08"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "329e7a4d1e7b11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "15404-83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "backup_ecls0387.vbs", 
+                    "parent_pid": 11336, 
+                    "command_line": "\"C:\\Windows\\System32\\cmd.exe\" /c D:\\Users\\HubPC\\ffc4_10_0_3u\\Isilon_Move_RPC0027-ecls0387.bat", 
+                    "pid": 15404, 
+                    "parent_path": "d:\\users\\hubpc\\ffc4_10_0_3u\\backup_ecls0387.vbs", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "21c7b489b9c1abf8bd8850773e6b2698e05f6832a3e6091ab250f233003c58ec", 
+                    "path": "d:\\users\\hubpc\\ffc4_10_0_3u\\isilon_move_rpc0027-ecls0387.bat", 
+                    "ppid": "15404-83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900-0", 
+                    "parent_command_line": null, 
+                    "hash": "83389262abc1006aea69281040ace2c7bcda124a24b6a696d068400140b73900"
+                }
+            }, 
+            "message": "win_batch(15404):00001-10-000827:<Customer Script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "ESI1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

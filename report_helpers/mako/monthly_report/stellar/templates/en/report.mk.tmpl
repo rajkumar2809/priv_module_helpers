@@ -1,0 +1,143 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEyeNx解析レポート用 
+
+## define function
+<%namespace file="./util.mk.tmpl" name="func" />
+
+<%inherit file="base.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+  .mltable {
+    border-collapse: collapse;
+  }
+  .mltable th, .s-tbl td {
+    border: 1px solid #000;
+  }
+  .mltable tr:nth-child(2n+1) {
+    background: #eee;
+  }
+  .mltable tr:first-child, .s-tbl th:first-child {
+    background: #0ff;
+  }
+  .mltable tr:hover {
+    background:#ff0;
+  }
+</%block>
+
+<%block name="alert_by_severity">
+  ${parent.alert_by_severity()}
+  ${ func.graph_wLegend("./images/severity_circle.png",
+                        alertdata["severity_table"]["legend"])
+  }
+  <br />
+  ${ func.mltable(alertdata["severity_table"]) }
+  <br />
+  <p class="description">The following is an alert summary by CrowdStrike original Severity during the reporting period.<p>
+  ${ func.mltable(appendix["statsByOrigSev"]) }
+</%block>
+
+<%block name="alert_by_daily">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/dailychart_stack_by_severity.png",
+                        alertdata["dailychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["dailychart_table"], True) }
+</%block>
+
+<%block name="alert_by_malware_type">
+  ${parent.alert_by_malware_type()}
+  <p class="description">The following is an alert summary by Malware Name during the reporting period.<p>
+  ${ func.mltable(alertdata["malware_table"]) }
+</%block>
+
+<%block name="alert_by_host">
+  ${parent.alert_by_host()}
+  <p class="description">The following is an alert summary by host during the reporting period.<p>
+  ${ func.mltable(alertdata["host_table"]) }
+</%block>
+
+<%block name="alert_by_os">
+  ${parent.alert_by_os()}
+  <p class="description">The following is the total number of alerts for each OS and the percentage of alerts for each risk level.<p>
+  <div style="page-break-inside: avoid;">
+    ${ func.mltable(alertdata["os_table"]) }
+  </div>
+</%block>
+
+<%block name="alert_by_monthly">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/monthlychart_stack_by_severity.png",
+                        alertdata["monthlychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["monthlychart_table"], True) }
+</%block>
+
+<%block name="incident">
+  ${parent.alert_by_host()}
+  <p class="description">The following is a list of the incident response performed during the reporting period.<p>
+  ${ func.mltable(alertdata["incident_table"]) }
+  <p class="description">Please refer to the alert analysis report issued at the time of the incident for details of each incident.<p>
+</%block>
+
+<%block name="blk_agent_release">
+  % if agent_release["updated"]:
+    The agent release information for ${report_target["report_month"]} is as follows.
+  % else:
+    In ${report_target["report_month"]}, there was no new agent release.
+  % endif
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][0]["name"] }</p>
+  ${ func.mltable(agent_release["windows"]["table"]) }
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][1]["name"] }</p>
+  ${ func.mltable(agent_release["macos"]["table"]) }
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][2]["name"] }</p>
+  ${ func.mltable(agent_release["linux"]["table"]) }
+</%block>
+
+<%block name="blk_threat_hunting">
+  ${ func.mltable(threat_hunting["results"]) }
+</%block>
+<%block name="blk_discover">
+  ${ func.mltable(discover["results"]) }
+</%block>
+<%block name="blk_spotlight">
+  ${ func.mltable(spotlight["results"]) }
+</%block>
+
+<%block name="blk_security_news">
+  <ol>
+    % for each in security_news["news"]:
+      <div style="page-break-inside: avoid;">
+        <li class="subsection">${ each["title"] }</li>
+        <p class="description">${ func.replace2br(each["content"]) }<p>
+      </div>
+      <br />
+    % endfor
+  </ol>
+</%block>
+
+<%block name="blk_other_comment">
+  % for each in userdata["comments"]:
+    <div style="page-break-inside: avoid;">
+      <li class="subsection">${ each["title"] }</li>
+      <p class="description">${ func.replace2br(each["content"]) }<p>
+    </div>
+    <br />
+  % endfor
+</%block>
+
+<%block name="blk_conclusion">
+  % if userdata["conclusion"]["incident"] is 0:
+    <p class="description">
+There was no alert that required incident response during the reporting period.<br />
+We recommend that employees be alerted to suspicious emails and that they be informed about what to do if they click on a suspicious URL or attachment.
+    <p>
+  % else:
+    <p class="description">
+During the reporting period, there were ${userdata["conclusion"]["incident"]} alerts of CB Defense that required incident response, however due to the process stoppage and the subsequent response  by CB Defense, no suspicious communication was detected after the alert, so that It is considered the attacks have been prevented.<br />
+We recommend that employees be alerted to suspicious emails and that they be informed about what to do if they click on a suspicious URL or attachment.
+    <p>
+  % endif
+</%block>
+

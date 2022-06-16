@@ -1,0 +1,45 @@
+{
+    "id": "00002-10-000003",
+    "rev": "0001", 
+    "reputation": "white", 
+    "enable": "yes", 
+    "score": 5, 
+    "value": "mshta.exe", 
+    "type": "condition", 
+    "detail": {
+        "expected": [
+            {
+                "data_position": "process_detail", 
+                "conditions": [
+                    {
+                        "section": null, 
+                        "field"  : "gparent_name", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\windows\\\\explorer\\.exe$"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "parent_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)cmd\\.exe\".*\\\\wu_clear3c_am.bat\"\\s*$"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "ps_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)mshta(\\.exe)?\\s+vbscript:execute\\(\"msgbox\\(.*\\s+&\\s+vbCrLf\\s+&\\s+.*http://iweb.mei.co.jp/gp/company/am/ja.*\\):close\"\\)\\s*$"
+                    }
+                ]
+            }
+        ],
+        "excepted" : []
+    }, 
+    "message": "Customer Script", 
+    "source": "manual", 
+    "registered": "2020/9/30", 
+    "product": "crowdstrike", 
+    "user": "PIS1"
+}

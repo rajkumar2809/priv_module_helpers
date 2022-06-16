@@ -1,0 +1,215 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "11708-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_oishi", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The script \"C:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll\" attempted to inject code into the process \"C:\\Windows\\explorer.exe\", by calling the function \"CreateRemoteThreadEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f73a3bf41dfe11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 12:48:31"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "11708-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "skyseahs.exe", 
+                    "parent_pid": 4752, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\rundll32.exe\" \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\",InjectDll \"C:\\Program Files (x86)\\Sky Product\\SKYSEA Client View\\\\LogCmd64.dll\" 3576", 
+                    "pid": 11708, 
+                    "parent_path": "c:\\program files (x86)\\sky product\\skysea client view\\skyseahs.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "3c6d7ac52939b9123beb41ad15ae3dcb5c5a9ae6a33250e4dbc3d2e2ec502479", 
+                    "path": "c:\\program files (x86)\\sky product\\skysea client view\\logcmd64.dll", 
+                    "ppid": "11708-c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536-0", 
+                    "parent_command_line": null, 
+                    "hash": "c5fb9ff2dd91690b5c596e1b61fc5648e90f5551ee71a7dfb1cbbd6a85862536"
+                }
+            }, 
+            "message": "dll_file(11708):00001-10-000769:<AssetMgmt:SkySea>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "dll_file", 
+            "shell_type": 0
+        }, 
+        "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0": {
+            "details": {
+                "indicators": [
+                    "ENUMERATE_PROCESSES", 
+                    "SUSPENDED_PROCESS", 
+                    "MITRE_T1057_PROCESS_DISCOVERY", 
+                    "COMPROMISED_PROCESS", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SUNAC\\y_oishi", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcessW(invoke the application \"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "1dfeb40f1dff11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcessW(False)", 
+                        "occurred": [
+                            "2021/09/25 12:49:55"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcessW"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP", 
+                            "SUSPENDED_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SUNAC\\y_oishi", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "GetClipboardOwner(write to the clipboard)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f73a3c011dfe11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "GetClipboardOwner(False)", 
+                        "occurred": [
+                            "2021/09/25 12:48:44"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "GetClipboardOwner"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SUNAC\\y_oishi", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtQuerySystemInformation(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f73a3bff1dfe11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtQuerySystemInformation(False)", 
+                        "occurred": [
+                            "2021/09/25 12:48:43"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtQuerySystemInformation"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SUNAC\\y_oishi", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                        "event_count": 2, 
+                        "event_id": [
+                            "8d7147de1dff11ec871fb75d4dae9b8a", 
+                            "1dfeb40e1dff11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe:1140[\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\" /dde]", 
+                        "occurred": [
+                            "2021/09/25 12:52:17", 
+                            "2021/09/25 12:49:55"
+                        ], 
+                        "event_detail": {
+                            "pid": 1140, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\" /dde", 
+                            "name": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                            "hash": "46554daf7a4a6082bb1faf1ff143c60c4f6701279c47e4563a6a2a53f0b5b5e0"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "werfault.exe", 
+                    "parent_pid": 18320, 
+                    "command_line": "\"C:\\Windows\\explorer.exe\" /LOADSAVEDWINDOWS", 
+                    "pid": 3576, 
+                    "parent_path": "c:\\windows\\system32\\werfault.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "df42a4557521bacae0d4982ed804762a2815dc157723725a19304632d9b49204", 
+                    "path": "c:\\windows\\explorer.exe", 
+                    "ppid": "3576-886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635-0", 
+                    "parent_command_line": null, 
+                    "hash": "886e75c65b77dafbd0d5fd9e99cf7a6dd696a905499b944f3ab53eff667fc635"
+                }
+            }, 
+            "message": "explorer.exe(3576):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "explorer.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "AHS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

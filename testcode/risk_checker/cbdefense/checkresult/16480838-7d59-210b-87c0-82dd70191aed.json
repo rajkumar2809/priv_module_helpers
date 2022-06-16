@@ -1,0 +1,77 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "6400-910d521315b83bb0d805eaceac3c83169aa791d1d1e64b417077c01ae21feb66-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP", 
+                    "RUN_SYSTEM_UTILITY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA-TPSC\\sfh00018", 
+                        "ppid": "6400-910d521315b83bb0d805eaceac3c83169aa791d1d1e64b417077c01ae21feb66-0", 
+                        "description": "C:\\windows\\syswow64\\mountvol.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "619f4b131e7c11ec958b1d11c1e33c4e"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\mountvol.exe:4232[mountvol  /L ]", 
+                        "occurred": [
+                            "2021/09/26 03:46:35"
+                        ], 
+                        "event_detail": {
+                            "command_line": "mountvol  /L ", 
+                            "hash": "c4ae61c7cf8639c162a12cdb73dae1001650c765f7edc8974cac1d7044cbd7ed", 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "pid": 4232, 
+                            "name": "c:\\windows\\syswow64\\mountvol.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "netiqmc.exe", 
+                    "parent_pid": 1560, 
+                    "command_line": "cmd /c mountvol /L > \"C:\\Program Files (x86)\\NetIQ\\Temp\\NetIQ_Debug\\diskspace_2452.tmp\"", 
+                    "pid": 6400, 
+                    "parent_path": "c:\\program files (x86)\\netiq\\appmanager\\bin\\netiqmc.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b27fdc1d4301641af27ab811d572a2487c0d96cc5eff0939d9f1836cb93ba1c7", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "6400-910d521315b83bb0d805eaceac3c83169aa791d1d1e64b417077c01ae21feb66-0", 
+                    "parent_command_line": null, 
+                    "hash": "910d521315b83bb0d805eaceac3c83169aa791d1d1e64b417077c01ae21feb66"
+                }
+            }, 
+            "message": "cmd.exe(6400):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

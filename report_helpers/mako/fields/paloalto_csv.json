@@ -1,0 +1,72 @@
+{
+  "headers" : {
+    "title"       : "Paloalto アラート解析一次レポート",
+    "company"     : "株式会社デジタルハーツ",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 通信詳細",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "securityanalyzer4pa_mssreport_html_data_view"
+  },
+  "subheaders" : {
+    "detail_network" : "通信詳細",
+    "emerg_block" : "緊急対応の要否"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "summary_info" : [
+    { "name" : "発生元FW",       "src" : "src_firewall" },
+    { "name" : "発生日時",       "src" : "createdtime"  },
+    { "name" : "カテゴリ",       "src" : "category"     },
+    { "name" : "アラートタイプ", "src" : "alert_desc"   },
+    { "name" : "危険度",         "src" : "pa_severity"  },
+    { "name" : "アクション",     "src" : "action"       }
+  ],
+  "detail_network" : [
+    { "name" : "ドメイン",     "src" : "domain"      },
+    { "name" : "サービス1",    "src" : "service"     },
+    { "name" : "サービス2",    "src" : "group"       },
+    { "name" : "プロトコル",   "src" : "proto_wport" },
+    { "name" : "通信先国家",   "src" : "country"     },
+    { "name" : "方向性",       "src" : "direction"   },
+    { "name" : "セッションID", "src" : "sessionid"   },
+    { "name" : "対象ルール",   "src" : "rule"        }
+  ],
+  "emerg_block" : [
+    { "name" : "要否",       "src" : "need_action" },
+    { "name" : "対象ゾーン", "src" : "fwd_in_zone",        "post" : false },
+    { "name" : "ソースIP",   "src" : "fwd_in_srcip_wport", "post" : false },
+    { "name" : "宛先IP",     "src" : "fwd_in_dstip_wport", "post" : false }
+  ],
+  "matrix_tables" : {
+    "forward_detail" : {
+      "from"     : null,
+      "datatype" : null,
+      "prefix"   : null,
+      "headers"  : [
+        { "name" : "項目",   "prefix" : null,      "row_header" : true  },
+        { "name" : "入力元", "prefix" : "fwd_in",  "row_header" : false },
+        { "name" : "出力先", "prefix" : "fwd_out", "row_header" : false }
+      ],
+      "fields"   : [
+        { "name" : "ゾーン",          "src" : "zone"        },
+        { "name" : "インタフェース",  "src" : "interface"   },
+        { "name" : "ソースIP:ポート", "src" : "srcip_wport" },
+        { "name" : "宛先IP:ポート",   "src" : "dstip_wport" }
+      ]
+    }
+  },
+  "hidden_fields" : [
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ]
+}

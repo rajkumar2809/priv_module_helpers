@@ -1,0 +1,161 @@
+#coding:utf-8
+
+## stellar.mk.tmpl Stellarcyber解析レポート用 
+
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+<%namespace file="../tips/virustotal.mk.tmpl" name="vtfunc" />
+
+<%inherit file="../base/analyst_report.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <div style="page-break-before: avoid;">
+    <h2 class="head">${ headers["detailinfo"] }</h2>
+    ${ func.lateraltable( detail_score, section="detail_score" ) }
+    <br />
+    % if is_traffic_base:
+      ${ func.lateraltable(
+            detail_network_comm_src,
+            values=[ detail_network_comm_src, detail_network_comm_dst ],
+            rowheads=[ "方向", "通信元", "通信先" ],
+            section="detail_network" ) }
+      <br />
+      ${ func.verticaltable(detail_network_content) }
+      <br />
+    % endif
+    ${ func.verticaltable(detail_alert, "detail_alert") }
+  </div>
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+  <br />
+  ${ func.lateraltable(remediation_append) }
+</%block>
+<%block name="appendix_blk">
+  <h2 class="head">本アラートの関連情報</h2>
+  <p class="description">本アラートに関連する詳細および御参考情報を以下に記載致します。<p>
+  % if total:
+    <h3 class="subsection">アラートの詳細情報</h3>
+    <p class="description">本アラートの詳細情報となります。<p>
+    % for each in total[0]:
+      <div style="page-break-before: avoid;">
+        <table>
+          <tr>
+            <td class="item">${ each["name"] }</td>
+            <td class="content">${ each["content"] }</td>
+          </tr>
+        </table>
+      </div>
+    % endfor
+  % endif
+  % if appendix_event_data:
+    <div style="page-break-before: always;"></div>
+    <h3 class="subsection">検知イベントの詳細</h3>
+    <p class="description">アラート対象イベントの一部抜粋になります。<p>
+    % for i in range(0, len(appendix_event_data)):
+      <div style="page-break-before: avoid;">
+        <table>
+          <caption>イベント No:${ i+1 }</caption>
+          % for each in appendix_event_data[i]:
+            <tr>
+              <td class="item">${ each["name"] }</td>
+              <td class="content">${ each["content"] }</td>
+            </tr>
+          % endfor
+        </table>
+      </div>
+      <br />
+    % endfor
+  % endif
+  % if appendix_ids:
+    <div style="page-break-before: always;"></div>
+    <h3 class="subsection">IDS検知情報の詳細</h3>
+    <p class="description">IDS検知イベントの内容です<p>
+    % for i in range(0, len(appendix_ids)):
+      <div style="page-break-before: avoid;">
+        <table>
+          <caption>検知情報 No:${ i+1 }</caption>
+          % for each in appendix_ids[i]:
+            <tr>
+              <td class="item">${ each["name"] }</td>
+              <td class="content">${ each["content"] }</td>
+            </tr>
+          % endfor
+        </table>
+      </div>
+      <br />
+    % endfor
+  % endif
+  % if appendix_correlation_info:
+    <div style="page-break-before: always;"></div>
+    <h3 class="subsection">相関分析対象の詳細</h3>
+    <p class="description">相関分析の対象となったイベントの詳細です。<p>
+    % for i in range(0, len(appendix_correlation_info)):
+      <div style="page-break-before: avoid;">
+        <table>
+          <caption>イベント No:${ i+1 }</caption>
+          % for each in appendix_correlation_info[i]:
+            <tr>
+              <td class="item">${ each["name"] }</td>
+              <td class="content">${ each["content"] }</td>
+            </tr>
+          % endfor
+        </table>
+      </div>
+      <br />
+    % endfor
+  % endif
+  % if appendix_metadata:
+    <div style="page-break-before: always;"></div>
+    <h3 class="subsection">通信情報の詳細</h3>
+    <p class="description">アラート対象イベントの一部抜粋になります。<p>
+    % for i in range(0, len(appendix_metadata)):
+      <div style="page-break-before: avoid;">
+        <table>
+          <caption>通信 No:${ i+1 }</caption>
+          % for each in appendix_metadata[i]:
+            <tr>
+              <td class="item">${ each["name"] }</td>
+              <td class="content">${ each["content"] }</td>
+            </tr>
+          % endfor
+        </table>
+      </div>
+      <br />
+    % endfor
+  % endif
+  % if vtinfo:
+    <div style="page-break-before: always;"></div>
+    <h3 class="subsection">VirusTotalの情報</h3>
+    <p class="description">当該のアラートにつきまして、VirusTotalで確認した結果を以下に示します。<p>
+    % if vtinfo[0]:
+      <h3 class="subsection">通信元IPおよびホストベースでの確認</h3>
+      % if vtinfo[0]["ip"]:
+        ${ vtfunc.vtTable4ip(vtinfo[0]["ip"]) }
+        <br />
+      % endif
+      % if vtinfo[0]["domain"]:
+        ${ vtfunc.vtTable4domain(vtinfo[0]["domain"]) }
+      % endif
+    % endif
+    % if vtinfo[1]:
+      <h3 class="subsection">通信先IPおよびホストベースでの確認</h3>
+      % if vtinfo[1]["ip"]:
+        ${ vtfunc.vtTable4ip(vtinfo[1]["ip"]) }
+        <br />
+      % endif
+      % if vtinfo[1]["domain"]:
+        ${ vtfunc.vtTable4domain(vtinfo[1]["domain"]) }
+      % endif
+    % endif
+    % if vtinfo[2]:
+      <h3 class="subsection">ファイルハッシュベースでの確認</h3>
+    % endif
+  % endif
+</%block>

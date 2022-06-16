@@ -1,0 +1,49 @@
+{
+  "headers" : {
+    "title"       : "Helix Squid Proxy アラート解析一次レポート",
+    "company"     : "株式会社デジタルハーツ",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 詳細情報",
+    "remediation" : "3. 推奨対応"
+  },
+  "subheaders" : {
+    "detail_alert"   : "アラート詳細",
+    "detail_network" : "通信詳細",
+    "detail_history" : "過去の発生履歴"
+  },
+  "date" : {
+    "src" : "detect_time"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "summary_info" : [
+    { "name" : "アラートID",   "src" : "alert_id"    },
+    { "name" : "発生日時",     "src" : "detect_time" },
+    { "name" : "対象ホスト",   "src" : "src_host"    },
+    { "name" : "アラート名称", "src" : "message"     },
+    { "name" : "アラート説明", "src" : "description" },
+    { "name" : "危険度",       "src" : "risk_jpn"    }
+  ],
+  "detail_alert" : [
+    { "name" : "攻撃フェーズ", "src" : "killchain"      },
+    { "name" : "深刻度",       "src" : "severity_jpn"   },
+    { "name" : "タグ情報",     "src" : "tags"           },
+    { "name" : "真正度",       "src" : "confidence_jpn" }
+  ],
+  "detail_history" : [
+    { "name" : "同一アラートの発生有無", "src" : "firstSeen"    },
+    { "name" : "発生回数",               "src" : "eventCount"   },
+    { "name" : "最初の発生",             "src" : "firstEventAt" }
+  ],
+  "detail_network" : [
+    { "name" : "宛先ドメイン",       "src" : "domain"     },
+    { "name" : "メソッド",           "src" : "httpmethod" },
+    { "name" : "ステータスコード",   "src" : "statuscode" },
+    { "name" : "URI",                "src" : "uri"        },
+    { "name" : "ユーザエージェント", "src" : "useragent"  }
+  ]
+}

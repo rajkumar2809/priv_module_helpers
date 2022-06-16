@@ -1,0 +1,312 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "13376-a57633850b4f82f842144b3758d1fc2d2dd71fb15036bac642aa81bd32004a55-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\z00489st", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\system32\\csrss.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:01:35"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "13c31a031e7611ec99db05ced56df15f"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13376-a57633850b4f82f842144b3758d1fc2d2dd71fb15036bac642aa81bd32004a55-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "a57633850b4f82f842144b3758d1fc2d2dd71fb15036bac642aa81bd32004a55", 
+                    "command_line": "C:\\PROGRA~1\\MICROS~2\\Office16\\POWERPNT.EXE -Embedding", 
+                    "pid": 13376, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 1212, 
+                    "path": "c:\\program files\\microsoft office\\office16\\powerpnt.exe", 
+                    "ppid": "13376-a57633850b4f82f842144b3758d1fc2d2dd71fb15036bac642aa81bd32004a55-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powerpnt.exe(13376):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powerpnt.exe", 
+            "shell_type": 0
+        }, 
+        "8692-ddfb86d8ccf294da241f4210ce548a112113dfec66cfe946a20d7439436ce891-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\z00489st", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files\\microsoft office\\office16\\outlook.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\program files\\microsoft office\\office16\\outlook.exe:6032[\"C:\\Program Files\\Microsoft Office\\Office16\\OUTLOOK.EXE\" /f \"C:\\Users\\z00489st\\AppData\\Local\\Temp\\notes8DBEEC\\~3915206.msg\"]", 
+                        "occurred": [
+                            "2021/09/26 03:00:09", 
+                            "2021/09/26 02:58:29"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Program Files\\Microsoft Office\\Office16\\OUTLOOK.EXE\" /f \"C:\\Users\\z00489st\\AppData\\Local\\Temp\\notes8DBEEC\\~3915206.msg\"", 
+                            "pid": 6032, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "a763b079ce51855b0b1b5943660c2342cda0af72722d398d9959c1ff72ab85e3", 
+                            "name": "c:\\program files\\microsoft office\\office16\\outlook.exe"
+                        }, 
+                        "event_id": [
+                            "ee0870661e7511ec8d6a73e676845c66", 
+                            "a44ba3f81e7511eca76f173e6c8f839e"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8692-ddfb86d8ccf294da241f4210ce548a112113dfec66cfe946a20d7439436ce891-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "notes.exe", 
+                    "hash": "ddfb86d8ccf294da241f4210ce548a112113dfec66cfe946a20d7439436ce891", 
+                    "command_line": "NLNOTES.EXE =M:\\notes\\sw6\\Pattarawan.M\\notes.ini", 
+                    "pid": 8692, 
+                    "parent_path": "c:\\program files\\lotus\\notes\\notes.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "d2f2c70e8fc07d338d0cbe26b8441870ca65d640d5de511ed2e673af5ad512a2", 
+                    "parent_pid": 1876, 
+                    "path": "c:\\program files\\lotus\\notes\\nlnotes.exe", 
+                    "ppid": "8692-ddfb86d8ccf294da241f4210ce548a112113dfec66cfe946a20d7439436ce891-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "nlnotes.exe(8692):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "nlnotes.exe", 
+            "shell_type": 0
+        }, 
+        "3032-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\z00489st", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe:5212[\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ]", 
+                        "occurred": [
+                            "2021/09/26 02:50:14"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ", 
+                            "pid": 5212, 
+                            "reputation": "ADAPTIVE_WHITE_LIST", 
+                            "hash": "25e3f7dea69ddbde17ded6acef13b0b56ce11f4b1d4289adfef5f5ac7c455963", 
+                            "name": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe"
+                        }, 
+                        "event_id": [
+                            "7e9e369d1e7411ec9e6d2b5c78da1ba0"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "3032-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /d /c \"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\" chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 < \\\\.\\pipe\\chrome.nativeMessaging.in.acaafc6bd4a9f907 > \\\\.\\pipe\\chrome.nativeMessaging.out.acaafc6bd4a9f907", 
+                    "pid": 3032, 
+                    "parent_path": "c:\\program files (x86)\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "61689dcf380e19f56e253f438b76537a6d332b20302278fb719e5f868587e58e", 
+                    "parent_pid": 14024, 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "3032-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(3032):00001-10-000481:<Chrome Extension IETabHelper.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "20548-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\z00489st", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe:19056[\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ]", 
+                        "occurred": [
+                            "2021/09/26 02:40:14"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ", 
+                            "pid": 19056, 
+                            "reputation": "ADAPTIVE_WHITE_LIST", 
+                            "hash": "25e3f7dea69ddbde17ded6acef13b0b56ce11f4b1d4289adfef5f5ac7c455963", 
+                            "name": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe"
+                        }, 
+                        "event_id": [
+                            "34a05dbc1e7311ecacc943d87f806de4"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "20548-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /d /c \"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\" chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 < \\\\.\\pipe\\chrome.nativeMessaging.in.ea2897105ea092c5 > \\\\.\\pipe\\chrome.nativeMessaging.out.ea2897105ea092c5", 
+                    "pid": 20548, 
+                    "parent_path": "c:\\program files (x86)\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "61689dcf380e19f56e253f438b76537a6d332b20302278fb719e5f868587e58e", 
+                    "parent_pid": 14024, 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "20548-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(20548):00001-10-000481:<Chrome Extension IETabHelper.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "8180-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\z00489st", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe:18884[\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ]", 
+                        "occurred": [
+                            "2021/09/26 03:00:14"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\"  chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 ", 
+                            "pid": 18884, 
+                            "reputation": "ADAPTIVE_WHITE_LIST", 
+                            "hash": "25e3f7dea69ddbde17ded6acef13b0b56ce11f4b1d4289adfef5f5ac7c455963", 
+                            "name": "c:\\users\\z00489st\\appdata\\local\\ie tab\\14.6.29.1\\ietabhelper.exe"
+                        }, 
+                        "event_id": [
+                            "ee08706a1e7511ec8d6a73e676845c66"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "8180-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "chrome.exe", 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "command_line": "C:\\WINDOWS\\system32\\cmd.exe /d /c \"C:\\Users\\z00489st\\AppData\\Local\\IE Tab\\14.6.29.1\\ietabhelper.exe\" chrome-extension://hehijbfgiekmjfkfjpbkbammjbdenadd/ --parent-window=0 < \\\\.\\pipe\\chrome.nativeMessaging.in.7ca06d18558aa352 > \\\\.\\pipe\\chrome.nativeMessaging.out.7ca06d18558aa352", 
+                    "pid": 8180, 
+                    "parent_path": "c:\\program files (x86)\\google\\chrome\\application\\chrome.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "61689dcf380e19f56e253f438b76537a6d332b20302278fb719e5f868587e58e", 
+                    "parent_pid": 14024, 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "8180-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(8180):00001-10-000481:<Chrome Extension IETabHelper.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

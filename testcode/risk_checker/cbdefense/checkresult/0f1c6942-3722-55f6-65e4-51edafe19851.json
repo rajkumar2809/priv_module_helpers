@@ -1,0 +1,173 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "1324-549af83c78320e33ab4d69e7edef013bd34a719505cd40c1c6ee9d802196d710-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "MITRE_T1021_REMOTE_SERVICES", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "HAS_SCRIPT_DLL", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1566_PHISHING", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MITRE_T1559_INTER_PROC_COMM"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TCC-MASTER\\08402", 
+                        "ppid": "1324-549af83c78320e33ab4d69e7edef013bd34a719505cd40c1c6ee9d802196d710-0", 
+                        "description": "\\\\esaitam1\\data\\\u5171\u6709\\\u30b7\u30b9\u30c6\u30e0\u516c\u958b\u8cc7\u6599\\fileopen.vbs", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f220214a1dc411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "\\\\esaitam1\\data\\\u5171\u6709\\\u30b7\u30b9\u30c6\u30e0\u516c\u958b\u8cc7\u6599\\fileopen.vbs:4880[\"C:\\Windows\\System32\\cscript.exe\" //nologo \\\\esaitam1\\data\\\u5171\u6709\\\u30b7\u30b9\u30c6\u30e0\u516c\u958b\u8cc7\u6599\\FileOpen.vbs \"http://d001vs005/intra_au/new_int/seisan/\u8caf\u8535\u54c1\u30c7\u30fc\u30bf.xlsm\" Open]", 
+                        "occurred": [
+                            "2021/09/25 05:53:18"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\System32\\cscript.exe\" //nologo \\\\esaitam1\\data\\\u5171\u6709\\\u30b7\u30b9\u30c6\u30e0\u516c\u958b\u8cc7\u6599\\FileOpen.vbs \"http://d001vs005/intra_au/new_int/seisan/\u8caf\u8535\u54c1\u30c7\u30fc\u30bf.xlsm\" Open", 
+                            "pid": 4880, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "a80e2d4b10e53c5f1d1bb41fd117fc5b6c358b87e3b2c197fc9af484bc44e5c6", 
+                            "name": "\\\\esaitam1\\data\\\u5171\u6709\\\u30b7\u30b9\u30c6\u30e0\u516c\u958b\u8cc7\u6599\\fileopen.vbs"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1021_REMOTE_SERVICES", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "MITRE_T1559_INTER_PROC_COMM", 
+                            "MITRE_T1566_PHISHING", 
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TCC-MASTER\\08402", 
+                        "ppid": "1324-549af83c78320e33ab4d69e7edef013bd34a719505cd40c1c6ee9d802196d710-0", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f22021531dc411ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 05:53:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "HAS_SCRIPT_DLL"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 984, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\" -Embedding", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 1324, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "hash": "549af83c78320e33ab4d69e7edef013bd34a719505cd40c1c6ee9d802196d710", 
+                    "ppid": "1324-549af83c78320e33ab4d69e7edef013bd34a719505cd40c1c6ee9d802196d710-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "excel.exe(1324):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "excel.exe", 
+            "shell_type": 0
+        }, 
+        "5008-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "HAS_SCRIPT_DLL", 
+                    "INJECT_CODE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TCC-MASTER\\08402", 
+                        "ppid": "5008-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0", 
+                        "description": "NtQueueApcThread(c:\\windows\\system32\\svchost.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "3a9f169d1dc511ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 05:55:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "HAS_SCRIPT_DLL"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "iexplore.exe", 
+                    "parent_pid": 4196, 
+                    "command_line": "\"C:\\Program Files (x86)\\Internet Explorer\\IEXPLORE.EXE\" SCODEF:4196 CREDAT:17412 /prefetch:2", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "pid": 5008, 
+                    "parent_path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "path": "c:\\program files (x86)\\internet explorer\\iexplore.exe", 
+                    "parent_hash": "f76f00939f1be76152809c37591ef75d3c150745232e35697d99cae09e31c2bc", 
+                    "hash": "e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3", 
+                    "ppid": "5008-e582676ec900249b408ab4e37976ae8c443635a7da77755daf6f896a172856a3-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "iexplore.exe(5008):00001-10-000236:<iexplorer normaly work.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SMW1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

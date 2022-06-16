@@ -1,0 +1,104 @@
+#coding:utf-8
+
+## define function
+<%def name="replace2br(word)">
+  ${word.replace('\n', '<br />')}
+</%def>
+
+<%def name="replace(word, word1, word2)">
+  ${word.replace(word1, word2)}
+</%def>
+
+<%def name="maskURL(_url)">
+  ${_url.replace('http://', 'hxxp://').replace('https://', 'hxxps://').replace('.', '[.]')}
+</%def>
+
+<%def name="list2table(rows)">
+  <table><tr>
+    % for each in rows:
+      <td>${each}</td>
+    % endfor
+  </tr></table>
+</%def>
+
+<%def name="verticaltable(infos, section=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      % for each in infos:
+        <tr>
+          <td class="item">${ each["name"] }</td>
+          <td class="content">${ self.replace2br(each["content"])}</td>
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+
+<%def name="lateraltable(names, values=None, section=None, rowheads=None)">
+  % if names and len(names) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      <tr>
+        % if rowheads:
+          <td class="item">${ rowheads[0] }</td>
+        % endif
+        % for each in names:
+            <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % if values:
+        % for i in range(0, len(values)):
+          <tr>
+            % if rowheads:
+              <td class="item">${ rowheads[i+1] }</td>
+            % endif
+            % for each in values[i]:
+              <td class="content">${ self.replace2br(each["content"]) }</td>
+            % endfor
+          </tr>
+        % endfor
+      % else:
+        <tr>
+          % if rowheads:
+            <td class="item">${ rowheads[1] }</td>
+          % endif
+          % for each in names:
+            <td class="content">${ self.replace2br(each["content"]) }</td>
+          % endfor
+        </tr>
+      % endif
+    </table>
+  % endif
+</%def>
+
+<%def name="matrixtable(infos, section=None)">
+  % if infos and len(infos) > 0:
+    % if section:
+      <h3 class="subsection">・${ subheaders[section] }</h3>
+    % endif
+    <table>
+      <tr>
+        % for each in infos["header"]:
+          <td class="item">${ each["name"] }</td>
+        % endfor
+      </tr>
+      % for each_row in infos["fields"]:
+        <tr>
+          % for each in each_row:
+            % if each["src"] == "name":
+              <td class="item">${ each["content"] }</td>
+            % else:
+              <td class="content">${ self.replace2br(each["content"])}</td>
+            % endif
+          % endfor
+        </tr>
+      % endfor
+    </table>
+  % endif
+</%def>
+

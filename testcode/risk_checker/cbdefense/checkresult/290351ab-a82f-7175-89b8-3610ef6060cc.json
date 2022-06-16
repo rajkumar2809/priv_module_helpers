@@ -1,0 +1,680 @@
+{
+    "product": "carbonblack", 
+    "global_access": [
+        {
+            "ip": "30.13.6.161", 
+            "location": ",,United States", 
+            "name": null, 
+            "port": 21
+        }
+    ], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "17592-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\expand.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\expand.exe:17756[expand  -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysSource.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"]", 
+                        "occurred": [
+                            "2021/09/25 02:43:18"
+                        ], 
+                        "event_detail": {
+                            "hash": "39ec40864c475ee1634b2aedf37e0e7d2a9e27cbd1e3a6c9e357537c49165961", 
+                            "pid": 17756, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "expand  -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysSource.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"", 
+                            "name": "c:\\windows\\syswow64\\expand.exe"
+                        }, 
+                        "event_id": [
+                            "70e2a5351daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "17592-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                        "categories": [
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                    "parent_pid": 17644, 
+                    "command_line": "C:\\Windows\\SysWOW64\\cmd.exe /C expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysSource.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"", 
+                    "pid": 17592, 
+                    "parent_path": "d:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302", 
+                    "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "17592-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(17592):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "13492-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "ACTIVE_CLIENT", 
+                    "FILE_TRANSFER", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "MITRE_T1056_INPUT_CAPTURE", 
+                    "INJECT_CODE", 
+                    "NETWORK_ACCESS", 
+                    "MONITOR_USER_INPUT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "NETWORK", 
+                        "description": "30.13.6.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "30.13.6.67:65132-(TCP:OUT)->30.13.6.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 02:42:39"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "30.13.6.161", 
+                            "proto": "TCP", 
+                            "remote_port": 21, 
+                            "local_ipv4": "30.13.6.67", 
+                            "is_inbound": false, 
+                            "local_port": 65132, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States"
+                        }, 
+                        "event_id": [
+                            "4cff54011daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "13492-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "SetWindowsHookEx(monitor keystrokes)", 
+                        "event_count": 1, 
+                        "attack_phase": "EXECUTE_GOAL", 
+                        "event_summary": "SetWindowsHookEx(False)", 
+                        "occurred": [
+                            "2021/09/25 02:42:57"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SetWindowsHookEx"
+                        }, 
+                        "event_id": [
+                            "4cff541c1daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13492-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MONITOR_USER_INPUT", 
+                            "MITRE_T1056_INPUT_CAPTURE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3b960.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 02:42:44"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "4cff54131daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "13492-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 14836, 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3B960.EXE\" ", 
+                    "pid": 13492, 
+                    "parent_path": "d:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "hash": "1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8", 
+                    "path": "d:\\canvas\\bin\\v3b960.exe", 
+                    "ppid": "13492-1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(13492):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "17644-24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_ANOTHER_APP", 
+                    "RUN_CMD_SHELL", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\expand.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\expand.exe:15620[expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\Koureisya.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\Koureisya\"]", 
+                        "occurred": [
+                            "2021/09/25 02:43:23"
+                        ], 
+                        "event_detail": {
+                            "hash": "39ec40864c475ee1634b2aedf37e0e7d2a9e27cbd1e3a6c9e357537c49165961", 
+                            "pid": 15620, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\Koureisya.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\Koureisya\"", 
+                            "name": "c:\\windows\\syswow64\\expand.exe"
+                        }, 
+                        "event_id": [
+                            "70ed2c5d1daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "17644-24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302-0", 
+                        "categories": [
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:18144[C:\\Windows\\SysWOW64\\cmd.exe /C expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysFirst.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"]", 
+                        "occurred": [
+                            "2021/09/25 02:43:20", 
+                            "2021/09/25 02:43:18"
+                        ], 
+                        "event_detail": {
+                            "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                            "pid": 18144, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "C:\\Windows\\SysWOW64\\cmd.exe /C expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysFirst.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "70e2a55f1daa11ec871fb75d4dae9b8a", 
+                            "70e2a5331daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "17644-24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3b961.exe", 
+                    "parent_pid": 9500, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm\"", 
+                    "pid": 17644, 
+                    "parent_path": "d:\\canvas\\bin\\v3b961.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db", 
+                    "hash": "24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302", 
+                    "path": "d:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                    "ppid": "17644-24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "excel(17644):00001-10-000895:<customer tool>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel", 
+            "shell_type": 0
+        }, 
+        "9500-d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT", 
+                    "RUN_ANOTHER_APP", 
+                    "FILE_TRANSFER", 
+                    "RUN_UNKNOWN_APP", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "NETWORK", 
+                        "description": "30.13.6.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "30.13.6.67:65261-(TCP:OUT)->30.13.6.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 02:45:08"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "30.13.6.161", 
+                            "proto": "TCP", 
+                            "remote_port": 21, 
+                            "local_ipv4": "30.13.6.67", 
+                            "is_inbound": false, 
+                            "local_port": 65261, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States"
+                        }, 
+                        "event_id": [
+                            "b8b666de1daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "9500-d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3b961.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 02:43:02"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "70e2a5171daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9500-d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "D:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm:17644[\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/25 02:43:16"
+                        ], 
+                        "event_detail": {
+                            "hash": "24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302", 
+                            "pid": 17644, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm\"", 
+                            "name": "d:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm"
+                        }, 
+                        "event_id": [
+                            "70e2a51f1daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9500-d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3b960.exe", 
+                    "parent_pid": 13492, 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3B961.EXE\" 0670", 
+                    "pid": 9500, 
+                    "parent_path": "d:\\canvas\\bin\\v3b960.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "1275f309a7b80e63b2b1f27b1235b9aa780dbf27c7474e1240246a6705f91ce8", 
+                    "hash": "d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db", 
+                    "path": "d:\\canvas\\bin\\v3b961.exe", 
+                    "ppid": "9500-d46b5b688e863924ec873265d41ad47e88331b8eaaad45589c0c1d887a7fd3db-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(9500):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "18144-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\expand.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\expand.exe:17824[expand  -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysFirst.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"]", 
+                        "occurred": [
+                            "2021/09/25 02:43:20"
+                        ], 
+                        "event_detail": {
+                            "hash": "39ec40864c475ee1634b2aedf37e0e7d2a9e27cbd1e3a6c9e357537c49165961", 
+                            "pid": 17824, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "expand  -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysFirst.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"", 
+                            "name": "c:\\windows\\syswow64\\expand.exe"
+                        }, 
+                        "event_id": [
+                            "70e2a5611daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "18144-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                        "categories": [
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                    "parent_pid": 17644, 
+                    "command_line": "C:\\Windows\\SysWOW64\\cmd.exe /C expand -r \"C:\\Users\\DEGUCH~1\\AppData\\Local\\Temp\\sysFirst.cab\" -f:* \"D:\\\u7533\u8acb\u30c4\u30fc\u30eb\\SysSource\"", 
+                    "pid": 18144, 
+                    "parent_path": "d:\\canvas\\bin\\v3temp\\\u6027\u80fd\u8a55\u4fa1\u7533\u8acb\u30d7\u30ed\u30b0\u30e9\u30e0.xlsm", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "24af709ce24fcaada36fc2dac78dc5d99bc0c882890c5c9566d5f73b395da302", 
+                    "hash": "3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "18144-3685495d051137b1c4efde22c26df0883614b6453b762fa84588da55ed2e7744-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(18144):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "17976-bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c-0": {
+            "details": {
+                "indicators": [
+                    "NON_STANDARD_PORT", 
+                    "UNKNOWN_APP", 
+                    "NETWORK_ACCESS", 
+                    "ACTIVE_CLIENT", 
+                    "RUN_ANOTHER_APP", 
+                    "FILE_TRANSFER", 
+                    "RUN_UNKNOWN_APP", 
+                    "MITRE_T1571_NON_STD_PORT", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "NETWORK", 
+                        "description": "30.13.6.161:21(located in United States)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "30.13.6.67:65097-(TCP:OUT)->30.13.6.161:21(None)[,,United States]", 
+                        "occurred": [
+                            "2021/09/25 02:41:24"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "30.13.6.161", 
+                            "proto": "TCP", 
+                            "remote_port": 21, 
+                            "local_ipv4": "30.13.6.67", 
+                            "is_inbound": false, 
+                            "local_port": 65097, 
+                            "remote_domain": null, 
+                            "remote_location": ",,United States"
+                        }, 
+                        "event_id": [
+                            "2919b8c91daa11ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "17976-bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c-0", 
+                        "categories": [
+                            "MITRE_T1571_NON_STD_PORT", 
+                            "NON_STANDARD_PORT", 
+                            "ACTIVE_CLIENT", 
+                            "NETWORK_ACCESS", 
+                            "UNKNOWN_APP", 
+                            "FILE_TRANSFER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3b968.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 02:31:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b92ce18f1da811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "17976-bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "D:\\canvas\\bin\\v3temp\\v3b968_\u5730\u76e4\u6db2\u72b6\u5316\u7533\u51fa\u66f8.xlsm", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "d:\\canvas\\bin\\v3temp\\v3b968_\u5730\u76e4\u6db2\u72b6\u5316\u7533\u51fa\u66f8.xlsm:18084[\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3B968_\u5730\u76e4\u6db2\u72b6\u5316\u7533\u51fa\u66f8.xlsm\"]", 
+                        "occurred": [
+                            "2021/09/25 02:32:12"
+                        ], 
+                        "event_detail": {
+                            "hash": "4f9d099f0cc1b92e2fc7217e05b4746b205bb76d120680d8be70789fec9dbf5d", 
+                            "pid": 18084, 
+                            "reputation": "NOT_LISTED", 
+                            "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Root\\Office16\\EXCEL.EXE\" \"D:\\CANVAS\\BIN\\V3TEMP\\V3B968_\u5730\u76e4\u6db2\u72b6\u5316\u7533\u51fa\u66f8.xlsm\"", 
+                            "name": "d:\\canvas\\bin\\v3temp\\v3b968_\u5730\u76e4\u6db2\u72b6\u5316\u7533\u51fa\u66f8.xlsm"
+                        }, 
+                        "event_id": [
+                            "dd19f6ca1da811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "17976-bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "UNKNOWN_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v3g000.exe", 
+                    "parent_pid": 9580, 
+                    "command_line": "D:\\CANVAS\\BIN\\V3B968.exe", 
+                    "pid": 17976, 
+                    "parent_path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617", 
+                    "hash": "bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c", 
+                    "path": "d:\\canvas\\bin\\v3b968.exe", 
+                    "ppid": "17976-bda7ce231d46c20b4c5dcf306ee562e7a6cb12e0e30bc108c2ab43559743979c-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(17976):00001-10-000892:<customer tool in canvas>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }, 
+        "9580-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0": {
+            "details": {
+                "indicators": [
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\deguchi006", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "The application \"d:\\canvas\\bin\\v3g000.exe\" attempted to inject code into another process, by calling the function \"SetWindowsHookEx\". The operation was successful.", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 02:31:07"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "b92ce1781da811ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "9580-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "v4z060.exe", 
+                    "parent_pid": 14836, 
+                    "command_line": "\"D:\\CANVAS\\BIN\\V3G000.EXE\" ", 
+                    "pid": 9580, 
+                    "parent_path": "d:\\canvas\\bin\\v4z060.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "8797ff50335a4a62c7b12646f3c4d66550f6288a6e050bb95677abc0f71d519a", 
+                    "hash": "b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617", 
+                    "path": "d:\\canvas\\bin\\v3g000.exe", 
+                    "ppid": "9580-b67dfb83add5e727aa9d6035fba387fb338efe473e84818432f170cf63833617-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "canvas_tmp_exe(9580):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "canvas_tmp_exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

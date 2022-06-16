@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000029",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "winword.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "CREATE_PROCESS",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)c:\\\\windows\\\\system32\\\\ime\\\\shared\\\\ime\\w+\\.exe",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/26",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert with ms office IME."
+}

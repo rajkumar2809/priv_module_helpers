@@ -1,0 +1,58 @@
+{# helix_squid.tpl.j2 Squid解析レポート用 #}  
+ 
+{% extends "base_analyst.tpl.j2" %} {# 親テンプレートを指定 #}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block summary %}
+  {{ super() }}
+{% endblock %}
+
+{% block detail %}
+  <div style="page-break-before: avoid;">
+    <h2 class="head">{{ headers["detailinfo"] }}</h2>
+    {% if detail_alert is defined %}
+      <p class="subsection">{{ subheaders["detail_alert"] }}</p>
+      <table>
+        {% for each in detail_alert %}
+          <tr>
+            <td class="item">{{ each["name"] }}</td>
+            <td class="content">{{ each["content"] | linebreaksbr }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+    {% if detail_history is defined %}
+      <p class="subsection">{{ subheaders["detail_history"] }}</p>
+      <table>
+        <tr>
+          {% for each in detail_history %}
+            <td class="item">{{ each["name"] }}</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for each in detail_history %}
+            <td class="content">{{ each["content"] | linebreaksbr }}</td>
+          {% endfor %}
+        </tr>
+      </table>
+    {% endif %}
+    {% if detail_network is defined %}
+      <p class="subsection">{{ subheaders["detail_network"] }}</p>
+      <table>
+        {% for each in detail_network %}
+          <tr>
+            <td class="item">{{ each["name"] }}</td>
+            <td class="content">{{ each["content"] | linebreaksbr }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block remediation %}
+  {{ super() }}
+{% endblock %}
+

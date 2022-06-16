@@ -1,0 +1,36 @@
+#coding:utf-8
+
+## stellar.mk.tmpl Squid解析レポートエディタ
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="2"><h2>${headers["detailinfo"]}</h2></td></tr>
+  </table>
+  ${ func.lateraltable( detail_score, section="detail_score" ) }
+  <br />
+  % if is_traffic_base:
+    ${ func.lateraltable(
+          detail_network_comm_src,
+          values=[ detail_network_comm_src, detail_network_comm_dst ],
+          rowheads=[ "方向", "通信元", "通信先" ],
+          section="detail_network" ) }
+    <br />
+    ${ func.verticaltable(detail_network_content) }
+    <br />
+  % endif
+  ${ func.verticaltable(detail_alert, "detail_alert") }
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+</%block>

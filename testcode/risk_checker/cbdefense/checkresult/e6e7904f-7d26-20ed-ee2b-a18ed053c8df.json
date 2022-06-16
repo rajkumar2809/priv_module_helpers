@@ -1,0 +1,1008 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "5", 
+    "important_tags": [], 
+    "malicious_process": {
+        "3748-887d12914ff25a5a1257022c4f01416046a3517457d5176ab00635142c2897ef-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1564_HIDE_ARTIFACTS", 
+                    "MODIFY_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a9f1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3748-887d12914ff25a5a1257022c4f01416046a3517457d5176ab00635142c2897ef-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "887d12914ff25a5a1257022c4f01416046a3517457d5176ab00635142c2897ef", 
+                    "command_line": "\"C:\\Program Files (x86)\\Hitachi\\jp1itdma\\bin\\jdngsmcsrv.exe\"", 
+                    "pid": 3748, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\program files (x86)\\hitachi\\jp1itdma\\bin\\jdngsmcsrv.exe", 
+                    "ppid": "3748-887d12914ff25a5a1257022c4f01416046a3517457d5176ab00635142c2897ef-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 924
+                }
+            }, 
+            "message": "jdngsmcsrv.exe(3748):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "jdngsmcsrv.exe", 
+            "shell_type": 0
+        }, 
+        "10440-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474aa11dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "10440-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a851dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:4920[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/25 08:54:54"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 4920, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "10440-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "setup.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"", 
+                    "pid": 10440, 
+                    "parent_path": "c:\\support\\o365update\\office2016\\setup.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "10440-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 5600
+                }
+            }, 
+            "message": "powershell.exe(10440):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "5600-b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a9e1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5600-b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5-0", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a841dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe:10440[\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"]", 
+                        "occurred": [
+                            "2021/09/25 08:54:54"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -NoProfile -NonInteractive -WindowStyle Hidden -Command \"& { $isOfficeInstalled = Get-AppxPackage Microsoft.Office.Desktop -allusers; if ($isOfficeInstalled -eq $null) { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '0' -Encoding ascii; } else { Out-File -FilePath 'C:\\Users\\KANAMO~1\\AppData\\Local\\Temp\\Centennial.Detection.IsCentennialOfficeInstalled.scratch' -InputObject '1' -Encoding ascii } }\"", 
+                            "pid": 10440, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                            "name": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "5600-b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5-0", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5", 
+                    "command_line": "setup.exe  /configure configuration.xml", 
+                    "pid": 5600, 
+                    "parent_path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                    "path": "c:\\support\\o365update\\office2016\\setup.exe", 
+                    "ppid": "5600-b95ac36a49e79c3e63e23eca86eac3d22acd80363d0f0aa83ba7ee7799acf2a5-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10624
+                }
+            }, 
+            "message": "setup.exe(5600):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "setup.exe", 
+            "shell_type": 0
+        }, 
+        "7800-047eed63c10655001dcf507555bf359674d5587533010370a39723e510dd92fe-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                    "UNKNOWN_APP", 
+                    "MITRE_T1082_SYS_INF_DISCOVERY", 
+                    "MITRE_T1106_EXEC_API", 
+                    "RUN_SYSTEM_APP", 
+                    "MODIFY_SERVICE"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\net.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2b122f7a1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\net.exe:11596[net  start wuauserv]", 
+                        "occurred": [
+                            "2021/09/25 08:53:37"
+                        ], 
+                        "event_detail": {
+                            "command_line": "net  start wuauserv", 
+                            "pid": 11596, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "7c4c7725e266f12aba8c50fd1598d4001201bca0e7aca901508307e365afff42", 
+                            "name": "c:\\windows\\syswow64\\net.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "7800-047eed63c10655001dcf507555bf359674d5587533010370a39723e510dd92fe-0", 
+                        "categories": [
+                            "MITRE_T1106_EXEC_API", 
+                            "MITRE_T1082_SYS_INF_DISCOVERY", 
+                            "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                            "MODIFY_SERVICE", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "office365update.exe", 
+                    "hash": "047eed63c10655001dcf507555bf359674d5587533010370a39723e510dd92fe", 
+                    "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c C:\\WINDOWS\\Temp\\O365Update\\start_update_start.bat", 
+                    "pid": 7800, 
+                    "parent_path": "c:\\support\\o365update\\office365update.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "c75f8ff3ab24fc6aa4fbc7c46ff3d3857e2e94c26da940950d6fe27e1820b7b9", 
+                    "path": "c:\\windows\\temp\\o365update\\start_update_start.bat", 
+                    "ppid": "7800-047eed63c10655001dcf507555bf359674d5587533010370a39723e510dd92fe-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 9456
+                }
+            }, 
+            "message": "win_batch(7800):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "win_batch", 
+            "shell_type": 1
+        }, 
+        "956-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f5ec9ec1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:55:00"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "956-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "wininit.exe", 
+                    "hash": "362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427", 
+                    "command_line": "C:\\WINDOWS\\system32\\lsass.exe", 
+                    "pid": 956, 
+                    "parent_path": "c:\\windows\\system32\\wininit.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "268ca325c8f12e68b6728ff24d6536030aab6e05603d0179033b1e51d8476d86", 
+                    "path": "c:\\windows\\system32\\lsass.exe", 
+                    "ppid": "956-362ab9743ff5d0f95831306a780fc3e418990f535013c80212dd85cb88ef7427-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 808
+                }
+            }, 
+            "message": "lsass.exe(956):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "lsass.exe", 
+            "shell_type": 0
+        }, 
+        "7520-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1564_HIDE_ARTIFACTS", 
+                    "MODIFY_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a9d1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "7520-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "services.exe", 
+                    "hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "command_line": "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p -s PcaSvc", 
+                    "pid": 7520, 
+                    "parent_path": "c:\\windows\\system32\\services.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "dfbea9e8c316d9bc118b454b0c722cd674c30d0a256340200e2c3a7480cba674", 
+                    "path": "c:\\windows\\system32\\svchost.exe", 
+                    "ppid": "7520-643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 924
+                }
+            }, 
+            "message": "svchost.exe(7520):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "svchost.exe", 
+            "shell_type": 0
+        }, 
+        "1244-299f2a5e48dd3eb9a9b1c2b5eb8631d46e776fba5f3f136a9f43d0d047476415-0": {
+            "details": {
+                "indicators": [
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\users\\kanamori0022\\appdata\\local\\microsoft\\windows\\inetcache\\ie\\yjsowgi1\\o365setup.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "2b122f741dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\users\\kanamori0022\\appdata\\local\\microsoft\\windows\\inetcache\\ie\\yjsowgi1\\o365setup.exe:10320[\"C:\\Users\\kanamori0022\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\YJSOWGI1\\O365setup.exe\" ]", 
+                        "occurred": [
+                            "2021/09/25 08:53:36"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Users\\kanamori0022\\AppData\\Local\\Microsoft\\Windows\\INetCache\\IE\\YJSOWGI1\\O365setup.exe\" ", 
+                            "pid": 10320, 
+                            "reputation": "NOT_LISTED", 
+                            "hash": "422521dd5062c5acbaf7d7e891af9090d22ea1dc22f58d26ccaae65db6f107fd", 
+                            "name": "c:\\users\\kanamori0022\\appdata\\local\\microsoft\\windows\\inetcache\\ie\\yjsowgi1\\o365setup.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "1244-299f2a5e48dd3eb9a9b1c2b5eb8631d46e776fba5f3f136a9f43d0d047476415-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\program files (x86)\\jword\\plugin2\\jwdhelper.exe", 
+                        "event_count": 2, 
+                        "event_id": [
+                            "06e4b60c1dde11ec871fb75d4dae9b8a", 
+                            "06e4b60b1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\program files (x86)\\jword\\plugin2\\jwdhelper.exe:11868[\"C:\\PROGRA~2\\JWord\\Plugin2\\JwdHelper.exe\" DeleteFile C:\\Users\\KANAMO~1\\AppData\\LocalLow\\livelog.ini]", 
+                        "occurred": [
+                            "2021/09/25 08:52:57", 
+                            "2021/09/25 08:52:57"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\PROGRA~2\\JWord\\Plugin2\\JwdHelper.exe\" DeleteFile C:\\Users\\KANAMO~1\\AppData\\LocalLow\\livelog.ini", 
+                            "pid": 11868, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "f26f7914fd90f358bc5b71f645f0b107f23c85eac04dbdcf0debe54f014e733f", 
+                            "name": "c:\\program files (x86)\\jword\\plugin2\\jwdhelper.exe"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "1244-299f2a5e48dd3eb9a9b1c2b5eb8631d46e776fba5f3f136a9f43d0d047476415-0", 
+                        "categories": [
+                            "RUN_ANOTHER_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "299f2a5e48dd3eb9a9b1c2b5eb8631d46e776fba5f3f136a9f43d0d047476415", 
+                    "command_line": "\"C:\\Program Files\\internet explorer\\iexplore.exe\" ", 
+                    "pid": 1244, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "a98345cbc518a993626cbb11010b7eacffe8918876d5322c8434a4928d0100ae", 
+                    "path": "c:\\program files\\internet explorer\\iexplore.exe", 
+                    "ppid": "1244-299f2a5e48dd3eb9a9b1c2b5eb8631d46e776fba5f3f136a9f43d0d047476415-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 1608
+                }
+            }, 
+            "message": "iexplore.exe(1244):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "iexplore.exe", 
+            "shell_type": 0
+        }, 
+        "4920-6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "MITRE_T1564_HIDE_ARTIFACTS", 
+                    "MODIFY_PROCESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474aa21dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "4920-6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_PROCESS", 
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "powershell.exe", 
+                    "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                    "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                    "pid": 4920, 
+                    "parent_path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "path": "c:\\windows\\system32\\conhost.exe", 
+                    "ppid": "4920-6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10440
+                }
+            }, 
+            "message": "conhost.exe(4920):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "conhost.exe", 
+            "shell_type": 0
+        }, 
+        "5656-e1287bab0e4286bd2626b06b36d7a746d59638cc64736ec1c4304b49085559fe-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f5ec9ed1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:55:01"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "5656-e1287bab0e4286bd2626b06b36d7a746d59638cc64736ec1c4304b49085559fe-0", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "jdngsrv.exe", 
+                    "hash": "e1287bab0e4286bd2626b06b36d7a746d59638cc64736ec1c4304b49085559fe", 
+                    "command_line": "\"C:\\Program Files (x86)\\Hitachi\\jp1itdma\\bin\\jdngspy.exe\" /service", 
+                    "pid": 5656, 
+                    "parent_path": "c:\\windows\\syswow64\\jdngsrv.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "7066a7d80a73ea23c167bf81a9cbb36390c59418174c526f6cb2cba71b4db060", 
+                    "path": "c:\\program files (x86)\\hitachi\\jp1itdma\\bin\\jdngspy.exe", 
+                    "ppid": "5656-e1287bab0e4286bd2626b06b36d7a746d59638cc64736ec1c4304b49085559fe-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 3760
+                }
+            }, 
+            "message": "jdngspy.exe(5656):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "jdngspy.exe", 
+            "shell_type": 0
+        }, 
+        "9456-c75f8ff3ab24fc6aa4fbc7c46ff3d3857e2e94c26da940950d6fe27e1820b7b9-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC", 
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 5, 
+                        "event_id": [
+                            "4f4723371dde11ec871fb75d4dae9b8a", 
+                            "4f4723341dde11ec871fb75d4dae9b8a", 
+                            "2b122fce1dde11ec871fb75d4dae9b8a", 
+                            "2b122f7d1dde11ec871fb75d4dae9b8a", 
+                            "2b122f761dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:8128[\"C:\\WINDOWS\\system32\\cmd.exe\" /c C:\\SUPPORT\\O365Update\\Setup.bat]", 
+                        "occurred": [
+                            "2021/09/25 08:54:41", 
+                            "2021/09/25 08:54:40", 
+                            "2021/09/25 08:53:46", 
+                            "2021/09/25 08:53:40", 
+                            "2021/09/25 08:53:37"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c C:\\SUPPORT\\O365Update\\Setup.bat", 
+                            "pid": 8128, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "9456-c75f8ff3ab24fc6aa4fbc7c46ff3d3857e2e94c26da940950d6fe27e1820b7b9-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP", 
+                            "MITRE_T1218_SIGNED_BINARY_PROXY_EXEC"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "o365setup.exe", 
+                    "hash": "c75f8ff3ab24fc6aa4fbc7c46ff3d3857e2e94c26da940950d6fe27e1820b7b9", 
+                    "command_line": "\"C:\\SUPPORT\\O365Update\\Office365Update.exe\" ", 
+                    "pid": 9456, 
+                    "parent_path": "c:\\users\\kanamori0022\\appdata\\local\\microsoft\\windows\\inetcache\\ie\\yjsowgi1\\o365setup.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "422521dd5062c5acbaf7d7e891af9090d22ea1dc22f58d26ccaae65db6f107fd", 
+                    "path": "c:\\support\\o365update\\office365update.exe", 
+                    "ppid": "9456-c75f8ff3ab24fc6aa4fbc7c46ff3d3857e2e94c26da940950d6fe27e1820b7b9-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 10320
+                }
+            }, 
+            "message": "office365update.exe(9456):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "office365update.exe", 
+            "shell_type": 0
+        }, 
+        "1516-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1564_HIDE_ARTIFACTS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f5ec9e91dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:59"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1516-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0", 
+                        "categories": [
+                            "MITRE_T1564_HIDE_ARTIFACTS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3", 
+                    "command_line": "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe -Embedding", 
+                    "pid": 1516, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\windows\\system32\\wbem\\wmiprvse.exe", 
+                    "ppid": "1516-2198a7b58bccb758036b969ddae6cc2ece07565e2659a7c541a313a0492231a3-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 652
+                }
+            }, 
+            "message": "wmiprvse.exe(1516):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "wmiprvse.exe", 
+            "shell_type": 0
+        }, 
+        "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "CODE_DROP", 
+                    "RUN_UNKNOWN_APP", 
+                    "RUN_CMD_SHELL", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "INJECT_CODE", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "FILE_CREATE", 
+                        "description": "C:\\users\\kanamori0022\\appdata\\local\\temp\\__psscriptpolicytest_s3o1odiy.adi.psm1", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474aa61dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "ACTION_FILE_CREATE(c:\\users\\kanamori0022\\appdata\\local\\temp\\__psscriptpolicytest_s3o1odiy.adi.psm1:96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7)(ADAPTIVE_WHITE_LIST:/)<Sign:None>", 
+                        "occurred": [
+                            "2021/09/25 08:54:42"
+                        ], 
+                        "event_detail": {
+                            "filemod_publisher_state": null, 
+                            "filemod_name": "c:\\users\\kanamori0022\\appdata\\local\\temp\\__psscriptpolicytest_s3o1odiy.adi.psm1", 
+                            "filemod_action": "ACTION_FILE_CREATE", 
+                            "filemod_reputation": "ADAPTIVE_WHITE_LIST", 
+                            "file_scan_result": "/", 
+                            "filemod_hash": "96ad1146eb96877eab5942ae0736b82d8b5e2039a80d3d6932665c1a4c87dcf7"
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "filemod", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "CODE_DROP", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a7d1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\syswow64\\cmd.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a861dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:56"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\program files\\internet explorer\\Start-Process\"*\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a7e1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:48"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtAllocateVirtualMemory(allocate executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a751dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtAllocateVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:45"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtAllocateVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f47235c1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:45"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\microsoft.net\\framework\\v4.0.30319\\mscoreei.dll\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a6e1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/25 08:54:45"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "SEKISUIHOUSE\\kanamori0022", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "4f474a7f1dde11ec871fb75d4dae9b8a"
+                        ], 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:10624[\"C:\\WINDOWS\\System32\\cmd.exe\" /C \"C:\\Support\\O365Update\\OF2016.bat\" ]", 
+                        "occurred": [
+                            "2021/09/25 08:54:52"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\WINDOWS\\System32\\cmd.exe\" /C \"C:\\Support\\O365Update\\OF2016.bat\" ", 
+                            "pid": 10624, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                        "categories": [
+                            "FILELESS", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "RUN_CMD_SHELL", 
+                            "RUN_UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70", 
+                    "command_line": "powershell.exe  -Command Start-Process \"\"\"OF2016.bat\"\"\" -Verb Runas", 
+                    "pid": 640, 
+                    "parent_path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                    "path": "c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "640-73a3c4aef5de385875339fc2eb7e58a9e8a47b6161bdc6436bf78a763537be70-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 8128
+                }
+            }, 
+            "message": "powershell.exe(640):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

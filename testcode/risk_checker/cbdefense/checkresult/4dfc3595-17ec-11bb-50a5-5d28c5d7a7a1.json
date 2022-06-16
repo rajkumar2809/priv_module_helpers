@@ -1,0 +1,163 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "19148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "INJECT_INPUT", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\e4010810", 
+                        "ppid": "19148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "SendInput(send input data to the process)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "1c531aac1e8311ec8f32a380ee4062d5"
+                        ], 
+                        "event_summary": "SendInput(False)", 
+                        "occurred": [
+                            "2021/09/26 04:34:23"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "SendInput"
+                        }, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS", 
+                            "INJECT_INPUT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\e4010810", 
+                        "ppid": "19148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\microsoft.net\\framework64\\v4.0.30319\\csc.exe\")", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f793e80a1e8211ecba00811a542d4d40"
+                        ], 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:33:27"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "preventscreensaver.bat", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "powershell  -NoProfile -ExecutionPolicy Unrestricted \"&([ScriptBlock]::Create((cat -encoding utf8 \\\"C:\\Users\\e4010810\\Documents\\PreventScreenSaver.bat\\\" | ? {$_.ReadCount -gt 2}) -join \\\"`n\\\"))\" ", 
+                    "pid": 19148, 
+                    "parent_path": "c:\\users\\e4010810\\documents\\preventscreensaver.bat", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "cf2ba6aef20b8a63d20a82facaa97761e61c172907289490636ced167d880ec3", 
+                    "parent_pid": 12828, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "19148-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(19148):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "18984-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\e4010810", 
+                        "ppid": "18984-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "EnumProcesses(list all processes)", 
+                        "event_count": 1, 
+                        "event_id": [
+                            "f793e80d1e8211ecba00811a542d4d40"
+                        ], 
+                        "event_summary": "EnumProcesses(False)", 
+                        "occurred": [
+                            "2021/09/26 04:33:27"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "EnumProcesses"
+                        }, 
+                        "attack_phase": "", 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "ENUMERATE_PROCESSES", 
+                            "MITRE_T1057_PROCESS_DISCOVERY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "command_line": "\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \nParam($minutes = 600)\n\n$myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()\n$myWindowsPrincipal=new-object System.Security.Principal.WindowsPrincipal($myWindowsID)\n$adminRole=[System.Security.Principal.WindowsBuiltInRole]::Administrator\nif (! $myWindowsPrincipal.IsInRole($adminRole))\n{\n  $newProcess = new-object System.Diagnostics.ProcessStartInfo \"PowerShell\";\n  $newProcess.Arguments = $myInvocation.MyCommand.Definition;\n  $newProcess.Verb = \"runas\";\n  [System.Diagnostics.Process]::Start($newProcess); # \n}\n\n$cs = @\"\nusing System;\nusing System.Runtime.InteropServices;\n\npublic class Win32SendInput {\n [DllImport(\"user32.dll\")]\n static extern uint SendInput(\n  uint nInputs,\n  ref INPUT pInputs,\n  int cbSize\n );\n\n [StructLayout(LayoutKind.Sequential)]\n struct INPUT\n {\n  public int type;\n  public MOUSEINPUT mi;\n }\n\n [StructLayout(LayoutKind.Sequential)]\n struct MOUSEINPUT\n {\n  public int dx;\n  public int dy;\n  public uint mouseData;\n  public uint dwFlags;\n  public uint time;\n  public IntPtr dwExtraInfo;\n }\n\n public static void PreventScreenSaver()\n {\n  INPUT input = new INPUT();\n  input.type = 0; // INPUT_MOUSE;\n  input.mi = new MOUSEINPUT();\n\n  input.mi.dwExtraInfo = IntPtr.Zero;\n  input.mi.dx = 0;\n  input.mi.dy = 0;\n  input.mi.time = 0;\n  input.mi.mouseData = 0;\n  input.mi.dwFlags = 0x0001; // MOVE (RELATIVE)\n  int cbSize = Marshal.SizeOf(typeof(INPUT));\n  uint r = SendInput(1, ref input, cbSize);\n }\n}\n\"@\nAdd-Type -Language CSharp -TypeDefinition $cs\n\nfor ($i = 0; $i -lt $minutes; $i++) {\n  Write-Host $i\n  Start-Sleep -Seconds 60\n  [Win32SendInput]::PreventScreenSaver() # \n}", 
+                    "pid": 18984, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "parent_pid": 2408, 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "18984-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(18984):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

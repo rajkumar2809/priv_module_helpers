@@ -1,0 +1,265 @@
+#coding:utf-8
+
+## fireeye_nx.mk.tmpl FireEyeNx解析レポート用 
+
+## define function
+<%namespace file="./util.mk.tmpl" name="func" />
+
+<%inherit file="base.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+  .mltable {
+    border-collapse: collapse;
+  }
+  .mltable th, .s-tbl td {
+    border: 1px solid #000;
+  }
+  .mltable tr:nth-child(2n+1) {
+    background: #eee;
+  }
+  .mltable tr:first-child, .s-tbl th:first-child {
+    background: #0ff;
+  }
+  .mltable tr:hover {
+    background:#ff0;
+  }
+</%block>
+
+<%block name="alert_by_severity">
+  ${parent.alert_by_severity()}
+  ${ func.graph_wLegend("./images/severity_circle.png",
+                        alertdata["severity_table"]["legend"])
+  }
+  <br />
+  ${ func.mltable(alertdata["severity_table"]) }
+  <br />
+  <p class="description">
+  CrowdStrikeの危険度毎でのアラート発生状況を以下に示します。<br />
+  本アラートから、過検知を除外した件数が上記のものとなります。
+  </p>
+  ${ func.mltable(appendix["statsByOrigSev"]) }
+</%block>
+
+<%block name="alert_by_daily">
+  ${parent.alert_by_daily()}
+  ${ func.graph_wLegend("./images/dailychart_stack_by_severity.png",
+                        alertdata["dailychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["dailychart_table"], True) }
+</%block>
+
+<%block name="alert_by_malware_type">
+  ${parent.alert_by_malware_type()}
+  % if len(alertdata["malware_table"]["fields"]) is 0:
+    <p class="description">当月中にマルウェアによるアラートはございませんでした。<p>
+  % else:
+    <p class="description">マルウェアタイプ別の集計を以下に示します。</p>
+    ${ func.mltable(alertdata["malware_table"]) }
+  % endif
+</%block>
+
+<%block name="alert_by_host">
+  ${parent.alert_by_host()}
+  <p class="description">発生したアラートのホスト毎の集計を以下に示します。</p>
+  ${ func.mltable(alertdata["host_table"]) }
+</%block>
+
+<%block name="alert_by_os">
+  ${parent.alert_by_os()}
+  <p class="description">発生したアラートのOS毎の集計と各危険度での割合を以下に示します。</p>
+  <div style="page-break-inside: avoid;">
+    ${ func.mltable(alertdata["os_table"]) }
+  </div>
+</%block>
+
+<%block name="alert_by_monthly">
+  ${parent.alert_by_monthly()}
+  ${ func.graph_wLegend("./images/monthlychart_stack_by_severity.png",
+                        alertdata["monthlychart_table"]["legend"])
+  }
+  ${ func.mltable(alertdata["monthlychart_table"], True) }
+</%block>
+
+<%block name="incident">
+  ${parent.alert_by_host()}
+  <p class="description">当月中のインシデント対応一覧を記載いたします。<p>
+  ${ func.mltable(alertdata["incident_table"]) }
+  <p class="description">各インシデントの内容の詳細は、インシデント発生時に発行したアラート解析レポートをご参照ください。<p>
+  <p class="description">記載している以外のアラートは上記アラートに付随して発生したものです。<p>
+</%block>
+
+<%block name="blk_agent_release">
+  % if agent_release["updated"]:
+    ${report_target["report_month"]}度は、新しい エージェントのリリースがございました。
+  % else:
+    ${report_target["report_month"]}度は、新しい エージェントのリリースはございませんでした。
+  % endif
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][0]["name"] }</p>
+  ${ func.mltable(agent_release["windows"]["table"]) }
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][1]["name"] }</p>
+  ${ func.mltable(agent_release["macos"]["table"]) }
+  <p class="subsection">${ headers["sections"]["agent_release"]["number"] }.${ agent_release["chapters"][2]["name"] }</p>
+  ${ func.mltable(agent_release["linux"]["table"]) }
+</%block>
+
+<%block name="blk_threat_hunting">
+  ${ func.mltable(threat_hunting["results"]) }
+</%block>
+<%block name="blk_discover">
+  ${ func.mltable(discover["results"]) }
+</%block>
+
+<%block name="blk_spotlight">
+  <p class="description">ホストタイプ及びCrowdStrikeのExploit Rate（以下、CS危険度）ごとでの検出した脆弱性件数が以下となります。</p>
+  ${ func.mltable(spotlight["grandsummary"]) }
+  <p class="description">※その他は、CS危険度情報がないものなどとなります</p>
+  <p class="description">以降については、各ホストタイプでの検出内容について記載致します。<br />
+  詳細は別紙「脆弱性情報.csv」をご参照ください。
+  </p>
+  % if len(spotlight["comments"]["fields"]) is not 0:
+    <p class="description">Spotlight実施結果に関する推奨事項は以下となります。<p>
+    ${ func.mltable(spotlight["comments"]) }
+  % endif
+  <p class="subsection">${ headers["sections"]["spotlight"]["number"] }.${ spotlight["chapters"][0]["name"] }</p>
+  % if spotlight["domaincontroller"]["total"] is 0:
+    <p class="description">ドメインコントローラでは、脆弱性は検出されませんでした。<p>
+  % else:
+    <p class="description">ドメインコントローラでは、${ spotlight["domaincontroller"]["total"] }の脆弱性が検出され、CVSSが最も高いものは「${ spotlight["domaincontroller"]["highest"] }」となっておりました。</p>
+    % if len(spotlight["domaincontroller"]["actives"]["fields"]) is 0:
+      <p class="description">ただし、悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）はございませんでした。</p>
+    % else:
+      <div style="page-break-inside: avoid;">
+        <p class="description">悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）は以下となります。</p>
+        % if spotlight["domaincontroller"]["actives"]["limitover"]:
+          <p class="description">検出された脆弱性のうち100件までを下表に示します。</p>
+        % endif
+        ${ func.mltable(spotlight["domaincontroller"]["actives"]) }
+      </div>
+    % endif
+  % endif
+  <div style="page-break-after: always;" ><br /></div>
+  <p class="subsection">${ headers["sections"]["spotlight"]["number"] }.${ spotlight["chapters"][1]["name"] }</p>
+  % if spotlight["server"]["total"] is 0:
+    <p class="description">サーバでは、脆弱性は検出されませんでした。<p>
+  % else:
+    <p class="description">サーバでは、${ spotlight["server"]["total"] }の脆弱性が検出され、CVSSが最も高いものは「${ spotlight["server"]["highest"] }」となっておりました。</p>
+    % if len(spotlight["server"]["groupby_host"]["fields"]) is not 0:
+      <div style="page-break-inside: avoid;">
+        <p class="description">サーバで脆弱性の検出が多い端末(10台まで)を以下に示します。</p>
+        ${ func.mltable(spotlight["server"]["groupby_host"]) }
+      </div>
+    % endif
+    % if len(spotlight["server"]["groupby_product"]["fields"]) is not 0:
+      <div style="page-break-inside: avoid;">
+        <p class="description">サーバで脆弱性の検出が多いアプリケーション(10個まで)を以下に示します。</p>
+        ${ func.mltable(spotlight["server"]["groupby_product"]) }
+      </div>
+    % endif
+    % if len(spotlight["server"]["actives"]["fields"]) is 0:
+      <p class="description">ただし、悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）はございませんでした。</p>
+    % else:
+      <div style="page-break-inside: avoid;">
+        <p class="description">悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）は以下となります。</p>
+        % if spotlight["server"]["actives"]["limitover"]:
+          <p class="description">検出された脆弱性のうち100件までを下表に示します。</p>
+        % endif
+        ${ func.mltable(spotlight["server"]["actives"]) }
+      </div>
+    % endif
+  % endif
+  <div style="page-break-after: always;" ><br /></div>
+  <p class="subsection">${ headers["sections"]["spotlight"]["number"] }.${ spotlight["chapters"][2]["name"] }</p>
+  % if spotlight["client"]["total"] is 0:
+    <p class="description">通常PCでは、脆弱性は検出されませんでした。<p>
+  % else:
+    <p class="description">通常PCでは、${ spotlight["client"]["total"] }の脆弱性が検出され、CVSSが最も高いものは「${ spotlight["client"]["highest"] }」となっておりました。</p>
+    % if len(spotlight["client"]["groupby_host"]["fields"]) is not 0:
+      <div style="page-break-inside: avoid;">
+        <p class="description">通常PCで脆弱性の検出が多い端末(10台まで)を以下に示します。</p>
+        ${ func.mltable(spotlight["client"]["groupby_host"]) }
+      </div>
+    % endif
+    % if len(spotlight["client"]["groupby_product"]["fields"]) is not 0:
+      <div style="page-break-inside: avoid;">
+        <p class="description">通常PCで脆弱性の検出が多いアプリケーション(10個まで)を以下に示します。</p>
+        ${ func.mltable(spotlight["client"]["groupby_product"]) }
+      </div>
+    % endif
+    % if len(spotlight["client"]["actives"]["fields"]) is 0:
+      <p class="description">ただし、悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）はございませんでした。</p>
+    % else:
+      <div style="page-break-inside: avoid;">
+        <p class="description">悪用が確認されている脆弱性（またはPOCコードが公開されているなどで、容易に悪用が可能）は以下となります。</p>
+        % if spotlight["client"]["actives"]["limitover"]:
+          <p class="description">検出された脆弱性のうち100件までを下表に示します。</p>
+        % endif
+        ${ func.mltable(spotlight["client"]["actives"]) }
+      </div>
+    % endif
+  % endif
+</%block>
+
+<%block name="blk_digitalrisk_vuln_domain">
+  % for each in digitalrisk["vuln_domain"]["results"]:
+    ${ func.mltable( each, name=each["top_domain"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_vuln_ipaddr">
+  % for each in digitalrisk["vuln_ipaddr"]["results"]:
+    ${ func.mltable( each, name=each["ipaddr"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_impersonate_domain">
+  % for each in digitalrisk["impersonate_domain"]["results"]:
+    ${ func.mltable( each, name=each["top_domain"] ) }
+  % endfor
+</%block>
+
+<%block name="blk_digitalrisk_dataleak">
+  % for each in digitalrisk["dataleak"]["results"]:
+    ${ func.mltable( each ) }
+  % endfor
+  <p class="description">検出したキーワードの詳細は別紙「dataleak.csv」をご参照下さい。</p>
+  <p class="description">推奨対応<br />
+・検出された情報の内容により、適切な事後対応および再発防止策を実施</p>
+</%block>
+
+<%block name="blk_security_news">
+  <ol>
+    % for each in security_news["news"]:
+      <div style="page-break-inside: avoid;">
+        <li class="subsection">${ each["title"] }</li>
+        <p class="description">${ func.replace2br(each["content"]) }<p>
+      </div>
+      <br />
+    % endfor
+  </ol>
+</%block>
+
+<%block name="blk_other_comment">
+  % for each in userdata["comments"]:
+    <div style="page-break-inside: avoid;">
+      <li class="subsection">${ each["title"] }</li>
+      <p class="description">${ func.replace2br(each["content"]) }<p>
+    </div>
+    <br />
+  % endfor
+</%block>
+
+<%block name="blk_conclusion">
+  % if userdata["conclusion"]["incident"] is 0:
+    <p class="description">
+当月の CrowdStrike Falcon においては、対応が必要となるアラートはございませんでした。<br />
+従業員の皆様に対しては、継続的に不審メールへの注意喚起と、URL や添付ファイルをクリックしてしまった際の対応方法について周知徹底されることを推奨します。
+    <p>
+  % else:
+    <p class="description">
+当月の CrowdStrike Falcon においては、対応が必要となるアラートが ${userdata["conclusion"]["incident"]} 件ありましたが、CrowdStrike によるプロセス停止およびその後の対応により、アラート後の不審な通信は検知されていないため、攻撃は防止されたものと考えられます。<br />
+従業員の皆様に対しては、継続的に不審メールへの注意喚起と、URL や添付ファイルをクリックしてしまった際の対応方法について周知徹底されることを推奨します。
+    <p>
+  % endif
+</%block>
+

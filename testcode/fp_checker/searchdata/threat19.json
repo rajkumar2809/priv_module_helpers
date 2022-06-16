@@ -1,0 +1,31 @@
+{
+	"id" : "00001-10-000009",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "installer.exe",
+	"detail" : {
+		"data_position" : "process_info",
+		"expected" : [
+			{
+				"field" : "path",
+				"value" : "(?i)c:\\\\program\\s*files\\s*(\\(x86\\))?\\s*\\\\java\\\\jre[\\w|.]+\\\\installer\\.exe",
+				"type" : "regexp"
+			},
+			{
+				"field" : "parent_command_line",
+				"value" : "(?i)c:\\\\windows\\\\system32\\\\msiexec\\.exe",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/3/5",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by Java Runtime Installer."
+}
+

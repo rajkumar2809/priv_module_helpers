@@ -1,0 +1,30 @@
+{
+	"id" : "00001-10-000007",
+	"rev" : "0001",
+	"enable" : "yes",
+	"product" : "cbdefense",
+	"type" : "condition",
+	"reputation" : "white",
+	"score" : 5,
+	"value" : "powershell.exe",
+	"detail" : {
+		"data_position" : "events",
+		"expected" : [
+			{
+				"field" : "ev_type",
+				"value" : "FILE_CREATE",
+				"type" : "exact"
+			},
+			{
+				"field" : "description",
+				"value" : "(?i)__psscriptpolicytest[\\w|_|.]+\\.ps1",
+				"type" : "regexp"
+			}
+		],
+		"exclusion" : []
+	},
+	"registered" : "2019/2/13",
+	"user" : "gdo",
+	"source" : "manual",
+	"message" : "normaly alert by customer script(*PSScriptPolicyTest*.ps1)."
+}

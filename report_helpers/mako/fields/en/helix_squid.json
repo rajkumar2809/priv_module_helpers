@@ -1,0 +1,59 @@
+{
+  "headers" : {
+    "title"       : "Helix Squid Proxy Alert Report",
+    "summary"     : "1. Summary",
+    "detailinfo"  : "2. Detail Information",
+    "remediation" : "3. Recommended"
+  },
+  "_form" : {
+    "action" : "helix_squid_html_data_view"
+  },
+  "subheaders" : {
+    "detail_alert"   : "Detail of Alert",
+    "detail_network" : "Detail of Traffic",
+    "detail_history" : "Event Count",
+    "detail_headers"  : "header informations"
+  },
+  "summary" : {
+    "src" : "summary_en"
+  },
+  "remediation" : {
+    "src" : "remediation_en"
+  },
+  "date" : {
+    "src" : "UNIX"
+  },
+  "summary_info" : [
+    { "name" : "Alert ID",         "src" : "alert_id"    },
+    { "name" : "detect time(JST)", "src" : "detect_time" },
+    { "name" : "src host",         "src" : "src_host"    },
+    { "name" : "alert name",       "src" : "message"     },
+    { "name" : "description",      "src" : "description" },
+    { "name" : "risk",             "src" : "risk"        }
+  ],
+  "detail_alert" : [
+    { "name" : "kill chain",      "src" : "killchain"  },
+    { "name" : "tag",             "src" : "tags"       }
+  ],
+  "detail_history" : [
+    { "name" : "event num",    "src" : "eventCount"  },
+    { "name" : "firstEventAt", "src" : "firstEventAt"},
+    { "name" : "lastEventAt",  "src" : "lastEventAt" }
+  ],
+  "detail_network" : [
+    { "name" : "dst domain",       "src" : "domain"     },
+    { "name" : "http status code", "src" : "statuscode" },
+    { "name" : "URI",              "src" : "uri"        }
+  ],
+  "detail_headers" : [
+    { "name" : "method",     "src" : "httpmethod" },
+    { "name" : "user agent", "src" : "useragent"  }
+  ],
+  "hidden_fields" : [
+    { "src" : "summary"     },
+    { "src" : "remediation" },
+    { "src" : "risk_jpn"    },
+    { "src" : "report_type" },
+    { "src" : "with_eng"    }
+  ]
+}

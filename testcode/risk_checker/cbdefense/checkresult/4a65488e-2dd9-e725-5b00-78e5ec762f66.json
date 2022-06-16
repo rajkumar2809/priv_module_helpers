@@ -1,0 +1,184 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "7320-908b64b1971a979c7e3e8ce4621945cba84854cb98d76367b791a6e22b5f6d53-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "7320-908b64b1971a979c7e3e8ce4621945cba84854cb98d76367b791a6e22b5f6d53-0", 
+                        "description": "NtQueueApcThread(c:\\program files\\internet explorer\\iexplore.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:43:25"
+                        ], 
+                        "event_detail": {
+                            "api_name": null, 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "ffc11ffa1e7b11ec8d13e79d150975d3"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "INJECT_CODE", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "7320-908b64b1971a979c7e3e8ce4621945cba84854cb98d76367b791a6e22b5f6d53-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:43:20"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "ffc11ff01e7b11ec8d13e79d150975d3"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "senseir.exe", 
+                    "parent_pid": 13896, 
+                    "pid": 7320, 
+                    "command_line": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy AllSigned -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1' }\"", 
+                    "parent_path": "c:\\program files\\windows defender advanced threat protection\\senseir.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2152153d09543e1782d6d9feea5b3343032bba89d414a00fda946af31e9bd902", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "7320-908b64b1971a979c7e3e8ce4621945cba84854cb98d76367b791a6e22b5f6d53-0", 
+                    "parent_command_line": null, 
+                    "hash": "908b64b1971a979c7e3e8ce4621945cba84854cb98d76367b791a6e22b5f6d53"
+                }
+            }, 
+            "message": "powershell.exe(7320):00001-10-000654:<WindowsDefender ATP>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }, 
+        "7320-5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "7320-5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\microsoft.net\\framework64\\v4.0.30319\\csc.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:43:31"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "ffc11ffc1e7b11ec8d13e79d150975d3"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "7320-5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79-0", 
+                        "description": "FindFirstFile(find \"c:\\programdata\\oracle\\java\\javapath\\Get-FileHash\"*\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 03:43:27"
+                        ], 
+                        "event_detail": {
+                            "api_name": "FindFirstFile", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "ffc11ffb1e7b11ec8d13e79d150975d3"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "FILELESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "senseir.exe", 
+                    "parent_pid": 13896, 
+                    "pid": 7320, 
+                    "command_line": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy AllSigned -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1' }\"", 
+                    "parent_path": "c:\\program files\\windows defender advanced threat protection\\senseir.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "2152153d09543e1782d6d9feea5b3343032bba89d414a00fda946af31e9bd902", 
+                    "path": "c:\\programdata\\microsoft\\windows defender advanced threat protection\\datacollection\\7740.6162270.0.6410586.6341476-05dc21e04e46a669f9013d17e953367ff412251c\\aceb19ff-8484-4db4-b8f6-f5a8d03a8c4a.ps1", 
+                    "ppid": "7320-5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79-0", 
+                    "parent_command_line": null, 
+                    "hash": "5d06e01d89bef598624794e2141053cc9f4adf891e071861259f029173247f79"
+                }
+            }, 
+            "message": "ps_script(7320):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

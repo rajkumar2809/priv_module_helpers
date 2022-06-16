@@ -1,0 +1,68 @@
+#coding:utf-8
+
+## cbdefense.mk.tmpl CBDefense解析レポート用 
+
+## define function
+<%namespace file="../tips/report.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_report.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <div style="page-break-inside: avoid;">
+    <h2 class="head">${ headers["detailinfo"] }</h2>
+  </div>
+  <div style="page-break-inside: avoid;">
+    % if process_info:
+      <br />
+      <h3 class="subsection">・${ subheaders["process_info"] }</h3>
+      <table>
+        <tr>
+          % for each in process_info[0]:
+            <td class="item">${ each["name"] }</td>
+          % endfor
+        </tr>
+        % for each in process_info:
+          <tr>
+            % for value in each:
+              <td class="content">${ value["content"] }</td>
+            % endfor
+          </tr>
+        % endfor
+      </table>
+    %endif
+  </div>
+  <div style="page-break-inside: avoid;">
+    % if event_info:
+      <br />
+      <h3 class="subsection">・${ subheaders["event_info"] }</h3>
+      <table>
+        <tr>
+          % for each in event_info[0]:
+            <td class="item">${ each["name"] }</td>
+          % endfor
+        </tr>
+        % for each in event_info:
+          <tr>
+            % for value in each:
+              <td class="content">${ value["content"] }</td>
+            % endfor
+          </tr>
+        % endfor
+      </table>
+    %endif
+  </div>
+</%block>
+<%block name="remediation_blk">
+  <div style="page-break-inside: avoid;">
+    ${parent.remediation_blk()}
+    % if nw_contain:
+      ${ func.lateraltable(nw_contain) }
+    % endif
+  </div>
+</%block>

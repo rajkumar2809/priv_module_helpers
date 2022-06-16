@@ -1,0 +1,99 @@
+{
+  "headers" : {
+    "title"       : "FireEye HX アラート解析一次レポート",
+    "summary"     : "1. 解析結果",
+    "detailinfo"  : "2. 詳細情報",
+    "remediation" : "3. 推奨対応"
+  },
+  "_form" : {
+    "action" : "fehx_mdrreport_html_data_view"
+  },
+  "subheaders" : {
+    "processinfo"  : "アラートプロセス詳細",
+    "event_info"   : "イベント詳細情報",
+    "ioc_info"     : "IOC詳細情報",
+    "exploit_info" : "エクスプロイト詳細情報"
+  },
+  "summary" : {
+    "src" : "summary"
+  },
+  "remediation" : {
+    "src" : "remediation"
+  },
+  "date" : {
+    "src" : "JPN"
+  },
+  "summary_info" : [
+    { "name" : "通知日時",       "src" : "detect_time" },
+    { "name" : "アラートID",     "src" : "alert_ids"   },
+    { "name" : "カテゴリ",       "src" : "categories"  },
+    { "name" : "イベントタイプ", "src" : "events"      },
+    { "name" : "危険度",         "src" : "severity"    },
+    { "name" : "アラート件数",   "src" : "alertnum"    },
+    { "name" : "アクション",     "src" : "blocked"     },
+    { "name" : "IPアドレス",     "src" : "ip"          },
+    { "name" : "対象ホスト",     "src" : "hostname"    },
+    { "name" : "ホストセット",   "src" : "hostset"     },
+    { "name" : "ホストOS",       "src" : "os"          },
+    { "name" : "ユーザID",       "src" : "runuser"     }
+  ],
+  "mltables" : {
+    "process_info" : {
+      "from"     : "_raw",
+      "datatype" : "json",
+      "prefix"   : "alert_detail.process_detail",
+      "fields"   : [
+        { "name" : "プロセス名",     "src" : "process_name"    },
+        { "name" : "プロセスパス",   "src" : "process_path"    },
+        { "name" : "プロセスID",     "src" : "process_id"      },
+        { "name" : "コマンドライン", "src" : "process_cmdline" },
+        { "name" : "sha256ハッシュ", "src" : "process_hash"    },
+        { "name" : "親プロセス",     "src" : "parent_name"     },
+        { "name" : "親プロセスID",   "src" : "parent_pid"      },
+        { "name" : "実行ユーザ",     "src" : "runuser"         }
+      ]
+    }
+  },
+  "nw_contain" : [
+    { "name" : "隔離対象", "src" : "contain_host" }
+  ],
+  "hidden_fields" : [
+    { "src" : "sender_name"     },
+    { "src" : "connector_id"    },
+    { "src" : "saved_report"    },
+    { "src" : "cb_appliance_id" },
+    { "src" : "threat_app"      },
+    { "src" : "threat_app_info" },
+    { "src" : "severity"        },
+    { "src" : "action"          },
+    { "src" : "summary_en"      },
+    { "src" : "remediation_en"  },
+    { "src" : "with_eng"        }
+  ],
+  "appendix": {
+    "process_detail" : {
+      "each" : [
+        { "name" : "プロセスID",         "src" : "pid"          },
+        { "name" : "プロセスユニークID", "src" : "ppid"         },
+        { "name" : "sha256ハッシュ",     "src" : "hash"         },
+        { "name" : "パス",               "src" : "path"         },
+        { "name" : "プロセス名",         "src" : "name"         },
+        { "name" : "起動コマンド",       "src" : "command_line" }
+      ],
+      "summary" : [
+        { "name" : "実行ユーザ",       "src" : "runuser"      },
+        { "name" : "イベント一覧",     "src" : "ev_type"      },
+        { "name" : "攻撃フェーズ一覧", "src" : "attack_phase" },
+        { "name" : "不審事項一覧",     "src" : "categories"   }
+      ],
+      "events" : [
+        { "name" : "時刻",       "src" : "occurred"          },
+        { "name" : "プロセスID", "src" : "pid"               },
+        { "name" : "イベント",   "src" : "ev_type"           },
+        { "name" : "内容",       "src" : "short_description" },
+        { "name" : "フェーズ",   "src" : "attack_phase"      },
+        { "name" : "不審事項",   "src" : "categories"        }
+      ]
+    }
+  }
+}

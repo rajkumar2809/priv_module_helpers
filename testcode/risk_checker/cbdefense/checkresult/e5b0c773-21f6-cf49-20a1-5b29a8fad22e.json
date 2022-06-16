@@ -1,0 +1,87 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "9120-b552974e4d0dc063653436afd08bda8fb768ae580baaddf536c6e2f042bc16ff-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1082_SYS_INF_DISCOVERY", 
+                    "MITRE_T1106_EXEC_API", 
+                    "MODIFY_SERVICE", 
+                    "RUN_SYSTEM_APP", 
+                    "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                    "UNKNOWN_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "SEKISUIHOUSE\\yoshikawa0196", 
+                        "ppid": "9120-b552974e4d0dc063653436afd08bda8fb768ae580baaddf536c6e2f042bc16ff-0", 
+                        "description": "C:\\windows\\system32\\net.exe", 
+                        "event_count": 2, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\net.exe:7204[\"C:\\Windows\\System32\\net.exe\" stop wuauserv]", 
+                        "occurred": [
+                            "2021/09/13 07:44:12", 
+                            "2021/09/13 07:44:05"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\Windows\\System32\\net.exe\" stop wuauserv", 
+                            "pid": 7204, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "3b9ad8e2c1d03ff941a7c9192a605f31671b107def6ff503a71a0fb2c5bbd659", 
+                            "name": "c:\\windows\\system32\\net.exe"
+                        }, 
+                        "event_id": [
+                            "38db8e8f1e8111ec871fb75d4dae9b8a", 
+                            "38db8e761e8111ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1106_EXEC_API", 
+                            "MITRE_T1082_SYS_INF_DISCOVERY", 
+                            "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                            "MODIFY_SERVICE", 
+                            "RUN_SYSTEM_APP", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "gpscript.exe", 
+                    "hash": "b552974e4d0dc063653436afd08bda8fb768ae580baaddf536c6e2f042bc16ff", 
+                    "pid": 9120, 
+                    "command_line": "\"C:\\Windows\\System32\\WScript.exe\" \"\\\\sekisuihouse.gp\\SysVol\\sekisuihouse.gp\\Policies\\{0E4AC3FF-25B0-42D2-A5DE-1B8347A9905E}\\User\\Scripts\\Logoff\\WannaCry.vbs\" ", 
+                    "parent_path": "c:\\windows\\system32\\gpscript.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "3f00c0359e849d5897b576db4077145d4bd089e71afdcbc172082fc3b0d60707", 
+                    "path": "\\\\sekisuihouse.gp\\sysvol\\sekisuihouse.gp\\policies\\{0e4ac3ff-25b0-42d2-a5de-1b8347a9905e}\\user\\scripts\\logoff\\wannacry.vbs", 
+                    "ppid": "9120-b552974e4d0dc063653436afd08bda8fb768ae580baaddf536c6e2f042bc16ff-0", 
+                    "parent_command_line": null, 
+                    "parent_pid": 7092
+                }
+            }, 
+            "message": "vb_script(9120):00001-10-000850:<customer script>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "vb_script", 
+            "shell_type": 1
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "SKS1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

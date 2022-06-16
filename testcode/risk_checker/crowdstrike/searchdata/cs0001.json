@@ -1,0 +1,45 @@
+{
+    "id": "00002-10-000001",
+    "rev": "0001", 
+    "reputation": "white", 
+    "enable": "yes", 
+    "score": 5, 
+    "value": "rundll32.exe", 
+    "type": "condition", 
+    "detail": {
+        "expected": [
+            {
+                "data_position": "process_detail", 
+                "conditions": [
+                    {
+                        "section": null, 
+                        "field"  : "gparent_name", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)\\\\program\\s+files\\s*(\\(x86\\))?\\s*\\\\rimarts\\\\b2\\\\b2.exe"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "parent_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)wscript\\.exe.*imageviewer.vbs.*\\\\b2temp\\\\attach\\\\"
+                    },
+                    {
+                        "section": null, 
+                        "field"  : "ps_cmdline", 
+                        "type"   : "regex", 
+                        "op"     : null, 
+                        "value"  : "(?i)rundll32\\.exe.*\\\\Windows\\s+Photo\\s+Viewer\\\\PhotoViewer\\.dll.*ImageView_Fullscreen.*\\\\b2temp\\\\attach\\\\"
+                    }
+                ]
+            }
+        ],
+        "excepted" : []
+    }, 
+    "message": "Open Image file in Mail Attachment with Becky.", 
+    "source": "manual", 
+    "registered": "2020/9/30", 
+    "product": "crowdstrike", 
+    "user": "PIS1"
+}

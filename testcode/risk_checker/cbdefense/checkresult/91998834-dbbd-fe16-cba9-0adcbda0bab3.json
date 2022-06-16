@@ -1,0 +1,438 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "4", 
+    "important_tags": [], 
+    "malicious_process": {
+        "43424-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0": {
+            "details": {
+                "indicators": [
+                    "RUN_SYSTEM_UTILITY", 
+                    "RUN_NET_UTILITY", 
+                    "RUN_SYSTEM_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\system32\\ftp.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\ftp.exe:16308[ftp  192.168.1.50]", 
+                        "occurred": [
+                            "2021/09/26 03:01:07"
+                        ], 
+                        "event_detail": {
+                            "command_line": "ftp  192.168.1.50", 
+                            "pid": 16308, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "hash": "9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5", 
+                            "name": "c:\\windows\\system32\\ftp.exe"
+                        }, 
+                        "event_id": [
+                            "04d031d11e7611ecadbce53f71c6aaa5"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "43424-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                        "categories": [
+                            "RUN_NET_UTILITY", 
+                            "RUN_SYSTEM_UTILITY", 
+                            "RUN_SYSTEM_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "explorer.exe", 
+                    "hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" ", 
+                    "pid": 43424, 
+                    "parent_path": "c:\\windows\\explorer.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "e37f098b56b4a7b6c798cc7fa84cbb50d376eb938c58f31e60296ab545d82a10", 
+                    "parent_pid": 35620, 
+                    "path": "c:\\windows\\system32\\cmd.exe", 
+                    "ppid": "43424-b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "cmd.exe(43424):00001-10-000192:<cmd boot from explorer without fileless command.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "16308-9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5-0": {
+            "details": {
+                "indicators": [
+                    "FILE_TRANSFER", 
+                    "PHONE_HOME", 
+                    "ACTIVE_SERVER", 
+                    "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                    "NETWORK_ACCESS", 
+                    "PORTSCAN"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.14:61117", 
+                        "event_count": 1, 
+                        "attack_phase": "RECONNAISSANCE", 
+                        "event_summary": "192.168.1.14:61117<-(TCP:IN)-192.168.1.50:20(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:01:22"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 61117, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 20
+                        }, 
+                        "event_id": [
+                            "2d1270b21e7611ec99aad7e6b2987c17"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "16308-9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5-0", 
+                        "categories": [
+                            "PORTSCAN", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.50:21", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.1.14:61103-(TCP:OUT)->192.168.1.50:21(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:01:10"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 61103, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 21
+                        }, 
+                        "event_id": [
+                            "04d031d41e7611ecadbce53f71c6aaa5"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "16308-9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5-0", 
+                        "categories": [
+                            "PHONE_HOME", 
+                            "NETWORK_ACCESS", 
+                            "FILE_TRANSFER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "cmd.exe", 
+                    "hash": "9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5", 
+                    "command_line": "ftp  192.168.1.50", 
+                    "pid": 16308, 
+                    "parent_path": "c:\\windows\\system32\\cmd.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "b99d61d874728edc0918ca0eb10eab93d381e7367e377406e65963366c874450", 
+                    "parent_pid": 43424, 
+                    "path": "c:\\windows\\system32\\ftp.exe", 
+                    "ppid": "16308-9728a3b5755a67a4ebe91a04730efcc2cabebacbb41ffca75a71b42502e3d7d5-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ftp.exe(16308):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "ftp.exe", 
+            "shell_type": 0
+        }, 
+        "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0": {
+            "details": {
+                "indicators": [
+                    "CONNECT_AFTER_SCAN", 
+                    "PHONE_HOME", 
+                    "ACTIVE_SERVER", 
+                    "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                    "NETWORK_ACCESS", 
+                    "PORTSCAN"
+                ], 
+                "events": [
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.50:43454", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.1.14:55780-(TCP:OUT)->192.168.1.50:43454(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:13"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 55780, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 43454
+                        }, 
+                        "event_id": [
+                            "5517097c1e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PHONE_HOME", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "CONNECT_AFTER_SCAN"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.14:55781", 
+                        "event_count": 1, 
+                        "attack_phase": "RECONNAISSANCE", 
+                        "event_summary": "192.168.1.14:55781<-(TCP:IN)-192.168.1.50:48488(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:12"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 55781, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 48488
+                        }, 
+                        "event_id": [
+                            "5517097a1e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PORTSCAN", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.14:9000", 
+                        "event_count": 1, 
+                        "attack_phase": "RECONNAISSANCE", 
+                        "event_summary": "192.168.1.14:9000<-(TCP:IN)-192.168.1.50:44480(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:11"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 9000, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 44480
+                        }, 
+                        "event_id": [
+                            "551709761e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PORTSCAN", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.50:12199", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.1.14:55779-(TCP:OUT)->192.168.1.50:12199(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:09"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 55779, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 12199
+                        }, 
+                        "event_id": [
+                            "551709741e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PHONE_HOME", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "CONNECT_AFTER_SCAN"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.14:8003", 
+                        "event_count": 1, 
+                        "attack_phase": "RECONNAISSANCE", 
+                        "event_summary": "192.168.1.14:8003<-(TCP:IN)-192.168.1.50:38233(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:09"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 8003, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": true, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 38233
+                        }, 
+                        "event_id": [
+                            "551709731e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PORTSCAN", 
+                            "MITRE_T1046_NETWORK_SERVICE_SCANNING", 
+                            "NETWORK_ACCESS", 
+                            "ACTIVE_SERVER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.50:37054", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.1.14:55777-(TCP:OUT)->192.168.1.50:37054(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:06"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 55777, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 37054
+                        }, 
+                        "event_id": [
+                            "551709711e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PHONE_HOME", 
+                            "NETWORK_ACCESS"
+                        ]
+                    }, 
+                    {
+                        "runuser": "RALNTDOM\\mvaughan", 
+                        "ev_type": "NETWORK", 
+                        "description": "192.168.1.50:12099", 
+                        "event_count": 1, 
+                        "attack_phase": "COMMAND_AND_CONTROL", 
+                        "event_summary": "192.168.1.14:55776-(TCP:OUT)->192.168.1.50:12099(None)[None]", 
+                        "occurred": [
+                            "2021/09/26 03:03:06"
+                        ], 
+                        "event_detail": {
+                            "remote_ipv4": "192.168.1.50", 
+                            "local_port": 55776, 
+                            "proto": "TCP", 
+                            "local_ipv4": "192.168.1.14", 
+                            "is_inbound": false, 
+                            "remote_domain": null, 
+                            "remote_location": null, 
+                            "remote_port": 12099
+                        }, 
+                        "event_id": [
+                            "551709701e7611ec88142becf68b6a42"
+                        ], 
+                        "raw_ev_type": "netconn", 
+                        "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                        "categories": [
+                            "PHONE_HOME", 
+                            "NETWORK_ACCESS"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "aefmonitor.bat", 
+                    "hash": "7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035", 
+                    "command_line": "\"c:\\Program Files\\Java\\jdk1.8.0_231\\JRE\\bin\\java.exe\"  -Djava.rmi.server.hostname=192.168.1.14 -cp .;.\\usersim.jar;.\\user.jar;\"C:\\ProgramData\\Toshiba\\StoreIntegrator\\user\\siuser.jar\";\"C:\\ProgramData\\Toshiba\\StoreIntegrator\\user\\sistore.jar\";\"C:\\ProgramData\\Toshiba\\StoreIntegrator\\user\\sibusp.jar\";\"C:\\Program Files (x86)\\Toshiba\\StoreIntegrator\\SIEXT4212037\\\\siibm.jar\";\"C:\\ProgramData\\Toshiba\\StoreIntegrator\\security\";\"C:\\Program Files (x86)\\Toshiba\\StoreIntegrator\\COMMON4212042\\siutil.jar\";\"C:\\Program Files (x86)\\Toshiba\\StoreIntegrator\\AEF4212042\\aefsys.jar\";.\\js.jar;.\\bsf.jar;\"C:\\Program Files (x86)\\Toshiba\\StoreIntegrator\\COMMON4212042\\xercessi.jar\";.\\aeftools.jar monitor.AEFMonitor 192.168.1.14", 
+                    "pid": 43992, 
+                    "parent_path": "c:\\apache-tomee-plus-1.7.2\\aefmon\\aefmonitor.bat", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "f89f53d8f5e0e2dd17f4e6691d97eca9e1a6aa587ba3eb8c80fa033315bdc634", 
+                    "parent_pid": 44088, 
+                    "path": "c:\\program files (x86)\\toshiba\\storeintegrator\\common4212042\\xercessi.jar", 
+                    "ppid": "43992-7512957342dc34290f27c0d5fd4313e00acb1e6dbe2992fd4ca66b46d7200035-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "xercessi.jar(43992):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "xercessi.jar", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

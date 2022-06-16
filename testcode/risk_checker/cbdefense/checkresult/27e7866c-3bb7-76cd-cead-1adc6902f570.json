@@ -1,0 +1,247 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "6", 
+    "important_tags": [], 
+    "malicious_process": {
+        "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1055_PROCESS_INJECT", 
+                    "HAS_INJECTED_CODE", 
+                    "COMPROMISED_PROCESS", 
+                    "MITRE_T1106_NATIVE_API", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "RUN_ANOTHER_APP"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "OpenProcess(open the process \"c:\\tools\\filelistmanager\\filelistmanager.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "OpenProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "OpenProcess"
+                        }, 
+                        "event_id": [
+                            "ae00c7891e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "FindFirstFile(find \"c:\\windows\\syswow64\\PSAPI.DLL\")", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "FindFirstFile(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "FindFirstFile"
+                        }, 
+                        "event_id": [
+                            "ae00c7881e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "CreateProcess"
+                        }, 
+                        "event_id": [
+                            "ae00c7851e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                        "categories": [
+                            "MITRE_T1106_NATIVE_API", 
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1055_PROCESS_INJECT"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": "NtProtectVirtualMemory"
+                        }, 
+                        "event_id": [
+                            "ae00c7841e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                        "categories": [
+                            "COMPROMISED_PROCESS", 
+                            "HAS_INJECTED_CODE", 
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "MODIFY_MEMORY_PROTECTION"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "filelistmanager.exe", 
+                    "parent_pid": 3584, 
+                    "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c dir C:\\ /A /-C /S /O >> \"C:\\TOOLS\\FilelistManager\\TPSCPC550064_20210926.txt\"", 
+                    "pid": 1676, 
+                    "parent_path": "c:\\tools\\filelistmanager\\filelistmanager.exe", 
+                    "reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_reputation": "NOT_LISTED", 
+                    "parent_hash": "2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7", 
+                    "path": "c:\\windows\\syswow64\\cmd.exe", 
+                    "ppid": "1676-4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22-0", 
+                    "parent_command_line": null, 
+                    "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22"
+                }
+            }, 
+            "message": "cmd.exe(1676):has un-whitelisted mal event.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": true
+            }, 
+            "app_name": "cmd.exe", 
+            "shell_type": 1
+        }, 
+        "3584-2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7-0": {
+            "details": {
+                "indicators": [
+                    "RUN_CMD_SHELL", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "UNKNOWN_APP", 
+                    "INJECT_CODE", 
+                    "MITRE_T1055_PROCESS_INJECT"
+                ], 
+                "events": [
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:1676[\"C:\\WINDOWS\\system32\\cmd.exe\" /c dir C:\\ /A /-C /S /O >> \"C:\\TOOLS\\FilelistManager\\TPSCPC550064_20210926.txt\"]", 
+                        "occurred": [
+                            "2021/09/26 03:40:15"
+                        ], 
+                        "event_detail": {
+                            "pid": 1676, 
+                            "reputation": "TRUSTED_WHITE_LIST", 
+                            "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c dir C:\\ /A /-C /S /O >> \"C:\\TOOLS\\FilelistManager\\TPSCPC550064_20210926.txt\"", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22"
+                        }, 
+                        "event_id": [
+                            "ae00c77e1e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ppid": "3584-2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7-0", 
+                        "categories": [
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "UNKNOWN_APP"
+                        ]
+                    }, 
+                    {
+                        "runuser": "TOSHIBA\\t3506050", 
+                        "ev_type": "INJECT_CODE", 
+                        "description": "CreateRemoteThread(c:\\windows\\syswow64\\cmd.exe)", 
+                        "event_count": 1, 
+                        "attack_phase": "DELIVER_EXPLOIT", 
+                        "event_summary": "None(False)", 
+                        "occurred": [
+                            "2021/09/26 03:40:20"
+                        ], 
+                        "event_detail": {
+                            "api_target": false, 
+                            "api_name": null
+                        }, 
+                        "event_id": [
+                            "ae00c7831e7b11ec91d451068b017617"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ppid": "3584-2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7-0", 
+                        "categories": [
+                            "MITRE_T1055_PROCESS_INJECT", 
+                            "INJECT_CODE", 
+                            "UNKNOWN_APP"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 1656, 
+                    "command_line": "C:\\TOOLS\\FilelistManager\\FilelistManager.exe", 
+                    "pid": 3584, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "NOT_LISTED", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "path": "c:\\tools\\filelistmanager\\filelistmanager.exe", 
+                    "ppid": "3584-2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7-0", 
+                    "parent_command_line": null, 
+                    "hash": "2397d3f9e543ad84a4fa0dff93afd1332e88cbd0c86e522636a48d0a143c80b7"
+                }
+            }, 
+            "message": "filelistmanager.exe(3584):no records found.", 
+            "flags": {
+                "emerg": false, 
+                "positive": true, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": true
+            }, 
+            "app_name": "filelistmanager.exe", 
+            "shell_type": 0
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4e2d", 
+    "customer_name": "TSB1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}

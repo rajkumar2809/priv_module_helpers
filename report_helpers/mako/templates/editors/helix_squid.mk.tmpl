@@ -1,0 +1,27 @@
+#coding:utf-8
+
+## helix_squid.mk.tmpl Squid解析レポートエディタ
+
+## define function
+<%namespace file="../tips/editor.mk.tmpl" name="func" />
+
+<%inherit file="../base/analyst_editor.mk.tmpl" />
+
+<%block name="stylesheet_blk">
+  ${parent.stylesheet_blk()}
+</%block>
+<%block name="summary_blk">
+  ${parent.summary_blk()}
+</%block>
+<%block name="detail_blk">
+  <table style="margin-top: 5px; margin-bottom: 5px; width: 500px;" border="0" cellpadding="6" cellspacing="0">
+    <tr><td colspan="2"><h2>${headers["detailinfo"]}</h2></td></tr>
+  </table>
+  ${ func.verticaltable(detail_alert, section="detail_alert") }
+  ${ func.lateraltable(detail_history, section="detail_history") }
+  ${ func.verticaltable(detail_network, section="detail_network") }
+  ${ func.lateraltable(detail_headers, section="detail_headers") }
+</%block>
+<%block name="remediation_blk">
+  ${parent.remediation_blk()}
+</%block>

@@ -1,0 +1,216 @@
+[
+    {
+        "indicators": [
+            "ENUMERATE_PROCESSES", 
+            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+            "FILELESS", 
+            "MITRE_T1057_PROCESS_DISCOVERY"
+        ], 
+        "events": [
+            {
+                "runuser": "NT AUTHORITY\\SYSTEM", 
+                "ev_type": "SYSTEM_API_CALL", 
+                "description": "NtQuerySystemInformation(list all processes)", 
+                "event_count": 1, 
+                "event_id": [
+                    "d8c4b168b84711ebae0b45edc3eb1bd2"
+                ], 
+                "event_summary": "NtQuerySystemInformation(False)", 
+                "occurred": [
+                    "2021/05/19 02:13:11"
+                ], 
+                "event_detail": {
+                    "api_target": false, 
+                    "api_name": "NtQuerySystemInformation"
+                }, 
+                "attack_phase": null, 
+                "raw_ev_type": "crossproc", 
+                "ppid": "7548-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                "categories": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "FILELESS", 
+                    "ENUMERATE_PROCESSES", 
+                    "MITRE_T1057_PROCESS_DISCOVERY"
+                ]
+            }
+        ], 
+        "process_info": {
+            "parent_name": "powershell.exe", 
+            "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+            "command_line": "powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';", 
+            "pid": 7548, 
+            "parent_hash": "2bf5d8e400fe776b3a9f5400ba212ad8d638cc44e7f906e7800be5054445eecc", 
+            "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+            "ppid": "7548-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+            "parent_command_line": null, 
+            "parent_pid": 7480
+        }
+    }, 
+    {
+        "indicators": [
+            "UNKNOWN_APP", 
+            "INTERNATIONAL_SITE", 
+            "ACTIVE_CLIENT", 
+            "NETWORK_ACCESS"
+        ], 
+        "events": [
+            {
+                "runuser": "DESKTOP-0BI16NS\\hoshiba", 
+                "ev_type": "NETWORK", 
+                "description": "117.18.237.29:80(located in Taipei 03, Taiwan)", 
+                "event_count": 1, 
+                "event_id": [
+                    "0f61ac28b84711eb82d3353f7f6f6828"
+                ], 
+                "event_summary": "192.168.129.161:49858-(TCP:OUT)->117.18.237.29:80(None)[Taipei,03,Taiwan]", 
+                "occurred": [
+                    "2021/05/19 02:06:13"
+                ], 
+                "event_detail": {
+                    "is_inbound": false, 
+                    "remote_ipv4": "117.18.237.29", 
+                    "proto": "TCP", 
+                    "remote_port": 80, 
+                    "remote_domain": null, 
+                    "remote_location": "Taipei,03,Taiwan", 
+                    "local_port": 49858, 
+                    "local_ipv4": "192.168.129.161"
+                }, 
+                "attack_phase": null, 
+                "raw_ev_type": "netconn", 
+                "ppid": "1588-50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5-0", 
+                "categories": [
+                    "INTERNATIONAL_SITE", 
+                    "ACTIVE_CLIENT", 
+                    "NETWORK_ACCESS", 
+                    "UNKNOWN_APP"
+                ]
+            }
+        ], 
+        "process_info": {
+            "parent_name": "gamebar.exe", 
+            "hash": "50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5", 
+            "command_line": "\"C:\\Program Files\\WindowsApps\\Microsoft.XboxGamingOverlay_5.521.3093.0_x64__8wekyb3d8bbwe\\GameBar.exe\" -ServerName:App.AppXbdkk0yrkwpcgeaem8zk81k8py1eaahny.mca", 
+            "pid": 1588, 
+            "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+            "path": "c:\\program files\\windowsapps\\microsoft.xboxgamingoverlay_5.521.3093.0_x64__8wekyb3d8bbwe\\gamebar.exe", 
+            "ppid": "1588-50e571576a18926fb8709dc8cc2a231cd96aefefc3c491d16a835fb43947cbe5-0", 
+            "parent_command_line": null, 
+            "parent_pid": 836
+        }
+    }, 
+    {
+        "indicators": [
+            "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+            "MODIFY_SERVICE"
+        ], 
+        "events": [
+            {
+                "runuser": "NT AUTHORITY\\SYSTEM", 
+                "ev_type": "SYSTEM_API_CALL", 
+                "description": "CreateServiceW(create the service for \"CSAgent\")", 
+                "event_count": 1, 
+                "event_id": [
+                    "0f61ac58b84711eb82d3353f7f6f6828"
+                ], 
+                "event_summary": "CreateServiceW(False)", 
+                "occurred": [
+                    "2021/05/19 02:06:36"
+                ], 
+                "event_detail": {
+                    "api_target": false, 
+                    "api_name": "CreateServiceW"
+                }, 
+                "attack_phase": [
+                    "INSTALL_RUN"
+                ], 
+                "raw_ev_type": "crossproc", 
+                "ppid": "8920-0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad-0", 
+                "categories": [
+                    "MITRE_T1543_CREATE_OR_MODIFY_SYS_PROC", 
+                    "MODIFY_SERVICE"
+                ]
+            }, 
+            {
+                "runuser": "NT AUTHORITY\\SYSTEM", 
+                "ev_type": "SYSTEM_API_CALL", 
+                "description": "DeleteService(delete a service)", 
+                "event_count": 1, 
+                "event_id": [
+                    "0f61ac57b84711eb82d3353f7f6f6828"
+                ], 
+                "event_summary": "DeleteService(False)", 
+                "occurred": [
+                    "2021/05/19 02:06:33"
+                ], 
+                "event_detail": {
+                    "api_target": false, 
+                    "api_name": "DeleteService"
+                }, 
+                "attack_phase": [
+                    "INSTALL_RUN"
+                ], 
+                "raw_ev_type": "crossproc", 
+                "ppid": "8920-0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad-0", 
+                "categories": [
+                    "MODIFY_SERVICE"
+                ]
+            }
+        ], 
+        "process_info": {
+            "parent_name": "msiexec.exe", 
+            "hash": "0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad", 
+            "command_line": "C:\\Windows\\System32\\MsiExec.exe -Embedding 9F5FE3E8FC7D460109C71D315DDA22F5 E Global\\MSI0000", 
+            "pid": 8920, 
+            "parent_hash": "5a83818b3030e99f6c7df00ee7610d3d53fd558dee32e2eaecc957df64b158e3", 
+            "path": "c:\\windows\\system32\\msiexec.exe", 
+            "ppid": "8920-0a8797d088023a7f17bb00b22ff7c91036070cca561bff5337c472313c0cb4ad-0", 
+            "parent_command_line": null, 
+            "parent_pid": 1776
+        }
+    }, 
+    {
+        "indicators": [
+            "RUN_ANOTHER_APP"
+        ], 
+        "events": [
+            {
+                "runuser": "DESKTOP-0BI16NS\\hoshiba", 
+                "ev_type": "CREATE_PROCESS", 
+                "description": "C:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe", 
+                "event_count": 1, 
+                "event_id": [
+                    "0f05a8deb84711ebb8124dedc8afbf35"
+                ], 
+                "event_summary": "c:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe:8816[\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\90.0.818.42\\identity_helper.exe\" --type=utility --utility-sub-type=winrt_app_id.mojom.WinrtAppIdService --field-trial-handle=1808,2632162569047820923,1129346508470068684,131072 --lang=ja --service-sandbox-type=none --mojo-platform-channel-handle=5040 /prefetch:8]", 
+                "occurred": [
+                    "2021/05/19 02:05:30"
+                ], 
+                "event_detail": {
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\90.0.818.42\\identity_helper.exe\" --type=utility --utility-sub-type=winrt_app_id.mojom.WinrtAppIdService --field-trial-handle=1808,2632162569047820923,1129346508470068684,131072 --lang=ja --service-sandbox-type=none --mojo-platform-channel-handle=5040 /prefetch:8", 
+                    "pid": 8816, 
+                    "name": "c:\\program files (x86)\\microsoft\\edge\\application\\90.0.818.42\\identity_helper.exe"
+                }, 
+                "attack_phase": [
+                    "INSTALL_RUN"
+                ], 
+                "raw_ev_type": "childproc", 
+                "ppid": "7276-357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04-0", 
+                "categories": [
+                    "RUN_ANOTHER_APP"
+                ]
+            }
+        ], 
+        "process_info": {
+            "parent_name": "msedge.exe", 
+            "hash": "357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04", 
+            "command_line": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" ", 
+            "pid": 7276, 
+            "parent_hash": "7ac081a071642d569fd0994bd6df718fc79747408fb584404b902a6db9b248f9", 
+            "path": "c:\\program files (x86)\\microsoft\\edge\\application\\msedge.exe", 
+            "ppid": "7276-357c6d81788b489528cd01dd85badef520b03478a0655fc0f2a13ea48ddc3f04-0", 
+            "parent_command_line": null, 
+            "parent_pid": 5716
+        }
+    }
+]

@@ -1,0 +1,299 @@
+<root>
+<each>
+<title>
+マイクロソフト株式会社 - 2022 年 3月のセキュリティ更新プログラム
+</title>
+<content>
+3月のセキュリティリリースは、次のソフトウェアのセキュリティ更新プログラムで構成されています。
+この中には、深刻度が「緊急」のセキュリティ更新プログラムが含まれております。Microsoft Exchange Serverの脆弱性（CVE-2022-23277、CVE-2022-24463）も「緊急」に分類されており、早期の対応が推奨されます。
+早急なセキュリティ更新プログラムの適用を推奨いたします。
+
+ - .NET and Visual Studio
+ - Azure Site Recovery
+ - Microsoft Defender for Endpoint
+ - Microsoft Defender for IoT
+ - Microsoft Edge (Chromium-based)
+ - Microsoft Exchange Server
+ - Microsoft Intune
+ - Microsoft Office Visio
+ - Microsoft Office Word
+ - Microsoft Windows ALPC
+ - Microsoft Windows Codecs Library
+ - Paint 3D
+ - Role: Windows Hyper-V
+ - Skype Extension for Chrome
+ - Tablet Windows User Interface
+ - Visual Studio Code
+ - Windows Ancillary Function Driver for WinSock
+ - Windows CD-ROM Driver
+ - Windows Cloud Files Mini Filter Driver
+ - Windows COM
+ - Windows Common Log File System Driver
+ - Windows DWM Core Library
+ - Windows Event Tracing
+ - Windows Fastfat Driver
+ - Windows Fax and Scan Service
+ - Windows HTML Platform
+ - Windows Installer
+ - Windows Kernel
+ - Windows Media
+ - Windows PDEV
+ - Windows Point-to-Point Tunneling Protocol
+ - Windows Print Spooler Components
+ - Windows Remote Desktop
+ - Windows Security Support Provider Interface
+ - Windows SMB Server
+ - Windows Update Stack
+ - Xbox
+
+参考）当該プログラムに関するIPAの注意喚起
+Microsoft 製品の脆弱性対策について(2022年3月)：IPA
+https://www.ipa.go.jp/security/ciadr/vul/20220309-ms.html
+
+参考）当該プログラムに関するJPCERTの注意喚起
+2022年3月マイクロソフトセキュリティ更新プログラムに関する注意喚起：JPCERT
+https://www.jpcert.or.jp/at/2022/at220007.html
+
+参考）CVE-2022-23277に関するMicrosoft社の情報
+Microsoft Exchange Server のリモートでコードが実行される脆弱性：Microsoft
+https://msrc.microsoft.com/update-guide/ja-jp/vulnerability/CVE-2022-23277
+
+参考）CVE-2022-24463に関するMicrosoft社の情報
+Microsoft Exchange Server のなりすましの脆弱性：Microsoft
+https://msrc.microsoft.com/update-guide/ja-jp/vulnerability/CVE-2022-24463
+</content>
+</each>
+<each>
+<title>
+Emotetの感染再拡大について
+</title>
+<content>
+2022年2月ごろから国内での感染急増が確認されているEmotetについて、感染拡大の勢いは弱まることなく、注意が必要な状況が続いています。拡大の増加国内でも広く感染が確認されております。JPCERTの情報によれば、Emotetに感染し、メール送信に悪用される可能性のある「.jp」ドメインのメールアドレス数は3月に入りさらに急増し、2020年の感染ピーク時の約5倍以上にまで達しているとのことです。
+
+弊社で確認されているEmotetの代表的な攻撃パターンは以下の通りです。
+
+ - 過去に送信したメールへの返信を装っている
+ - 本文中に添付ファイルのパスワードが記載されている
+ - 日時や16桁程度の数字のみの添付ファイル名が多く配布されている
+　 （例：20220201-12-34.zip、1357924680123456.zip）
+ - 「report」という単語が入っている（※2月下旬頃から確認）
+ - 解凍後のファイルの拡張子は.xlsまたは.xlsm
+ - ドキュメントには保護モードを無効化することを促す内容が記載されている
+
+攻撃手法は従来のものから大きな変化はありません。添付したExcelやWordなどのOfficeファイル、またはそれらの暗号化Zipファイルの実行や、メール本文内に記載したリンクのクリックを促す攻撃メールがばらまかれています。
+
+また2021年11月以降は、Windows10 およびWindows 11にあらかじめ搭載されているApp Installerという機能を使って、Adobe PDFソフトウェアを装ったWindowsアプリインストーラパッケージを介した配布も確認されています。今後も攻撃手法は変化していく可能性がありますので、引き続きIPAやJPCERTなどから発信される情報をご確認ください。なお、JPCERTからは3月7日にYouTubeでEmotetの解説、確認方法・対策の動画も公開されておりますので、ご確認されることをお勧めします。
+
+2021年1月の停止措置前のものから対象ソフトや手法に変化が見られますので、従業員の皆様には下記参考サイトなどの情報もご確認の上、改めて組織内に以下のような注意喚起を実施されることを推奨いたします。
+
+ - 心当たりのないメールの添付ファイルは開かない。メール本文内のURLもクリックしない。
+ - 自分が送信したメールへの返信に見えるメールであっても、安易に添付ファイルは開かない。
+　（送信者のメールアドレスや、返信メールの文章に不審な点がないかを確認する、など）
+ - WordやExcelのマクロの自動実行機能を無効化する。※
+ - Word文書やExcelファイルを開く際に、マクロやセキュリティに関する警告が表示された場合、安全なファイルである
+　 ことを確認できるまで、マクロやコンテンツを有効化しない。
+ - 心当たりのないメールが届いたり、添付ファイルやリンク先の文書を開く際に、追加のプログラムのインストールを求めら
+　 れたりした場合は、すぐにシステム管理部門などに連絡する。添付ファイルを開いたり、URLをクリックしたり、プログラム
+　 のインストールをしてしまったりした場合は、その状況も含めて連絡する。
+
+※マクロの自動実行機能の無効化手順は、下記参考サイト「マルウエア Emotet の感染に関する注意喚起」内を
+　ご参照ください。
+
+また、システム管理部門には、以下のような対応を推奨いたします。
+
+ - OSや導入ソフトウェアに定期的にセキュリティパッチを適用する
+　  (ソフトウェアの脆弱性をついた感染拡大対策)
+ - 重要な情報の定期的なオフラインバックアップ（標的型ランサムウェア攻撃対策）
+ - メールの監査ログの有効化（インシデントの早期発見および事後の原因究明のため）
+
+参考）Emotetに関するIPAの注意喚起
+「Emotet（エモテット）」と呼ばれるウイルスへの感染を狙うメールについて：IPA
+https://www.ipa.go.jp/security/announce/20191202.html
+
+参考）Emotetに関するJPCERTの情報（マクロの自動実行機能の無効化手順含む）
+マルウェアEmotetの感染再拡大に関する注意喚起：JPCERT
+https://www.jpcert.or.jp/at/2022/at220006.html
+
+マルウエア Emotet の感染に関する注意喚起：JPCERT（マクロの自動実行機能の無効化手順含む）
+https://www.jpcert.or.jp/at/2019/at190044.html
+
+Emotet感染有無確認ツールEmoCheck（最新バージョン v2.1.1）
+https://github.com/JPCERTCC/EmoCheck/releases
+
+参考）Emotetに関するJPCERTの解説動画（YouTube　2022年3月7日公開）
+日本中で感染が広がるマルウェアEmotet：JPCERT
+https://www.youtube.com/watch?v=wvu9sWiB2_U
+
+Emotet感染の確認方法と対策：JPCERT
+https://www.youtube.com/watch?v=nqxikr1x2ag
+</content>
+</each>
+<each>
+<title>
+Linux カーネルの権限昇格の脆弱性（Dirty Pipe）について
+</title>
+<content>
+Linuxカーネルの権限昇格が可能となる脆弱性（CVE-2022-0847、通称 Dirty Pipe）が公開されました。本脆弱性を悪用されると権限昇格により制御権を奪われる危険性があります。脆弱性の詳細や、実証コードは既に公開されており、脆弱性を発見したCM4all社のMax Kellermann氏は当該脆弱性の悪用は比較的簡単であると指摘しています。既にセキュリティアップデートがリリースされておりますので、本脆弱性の影響を受けるバージョンをご利用の場合は、至急アップデートをされることを推奨いたします。
+
+影響を受けるバージョン
+- Linuxカーネル version 5.8以降
+
+修正済のバージョン
+- Linuxカーネル version 5.16.11
+- Linuxカーネル version 5.15.25
+- Linuxカーネル version 5.10.102
+
+参考）当該脆弱性に関する情報を含むJPCERTのウィークリーレポート
+Weekly Report 2022-03-16号：JPCERT 
+https://www.jpcert.or.jp/wr/2022/wr221101.html
+
+参考）当該脆弱性に関するニュースサイト情報
+Linuxカーネルに権限昇格の脆弱性「Dirty Pipe」 - PoCも公開に：Security NEXT
+https://www.security-next.com/134791
+
+参考）当該脆弱性に関するCM4all GmbH社の情報
+The Dirty Pipe Vulnerability（英語）：CM4all GmbH
+https://dirtypipe.cm4all.com/
+
+参考）当該脆弱性に関する情報を含むディストリビューターの情報
+CVE-2022-0847（英語）：Red Hat Customer Portal
+https://access.redhat.com/security/cve/cve-2022-0847
+
+CVE-2022-0847（英語）：Debian
+https://security-tracker.debian.org/tracker/CVE-2022-0847
+
+CVE-2022-0847（英語）：Ubuntu
+https://ubuntu.com/security/CVE-2022-0847
+
+CVE-2022-0847（英語）：SUSE
+https://www.suse.com/security/cve/CVE-2022-0847.html
+</content>
+</each>
+<each>
+<title>
+複数のApple製品のセキュリティアップデート
+</title>
+<content>
+3月14日および3月15日（現地時間）に複数のApple製品の脆弱性につき、セキュリティアップデートがリリースされました。これらの脆弱性が悪用されると、カーネル権限で任意のコード実行の原因となるなどの恐れがあります。
+
+以下の該当する製品を Apple社が提供する修正済みのバージョンに更新することで解決します。
+
+詳細は、Apple社が提供する情報を参照してください。
+
+ - macOS Monterey
+ - macOS Catalina
+ - macOS Big Sur
+ - iOSおよびiPadOS
+ - Safari
+
+参考）当該脆弱性に関するニュースサイト情報
+macOSに複数の脆弱性、アップデートで修正：Security NEXT
+https://www.security-next.com/134863
+
+参考）Apple提供情報
+macOS Monterey 12.3 のセキュリティコンテンツについて：Apple
+https://support.apple.com/ja-jp/HT213183
+
+セキュリティアップデート 2022-003 Catalina のセキュリティコンテンツについて：Apple
+https://support.apple.com/ja-jp/HT213185
+
+macOS Big Sur 11.6.5 のセキュリティコンテンツについて：Apple
+https://support.apple.com/ja-jp/HT213184
+
+iOS 15.4 および iPadOS 15.4 のセキュリティコンテンツについて：Apple
+https://support.apple.com/ja-jp/HT213182
+
+Safari 15.4 のセキュリティコンテンツについて：Apple
+https://support.apple.com/ja-jp/HT213187
+</content>
+</each>
+<each>
+<title>
+Google Chromeのセキュリティアップデート
+</title>
+<content>
+3月15日（現地時間）に、Google Chromeの脆弱性を修正するセキュリティアップデートがリリースされました。これらの脆弱性は、対象のシステムを制御するために悪用される恐れがあります。
+
+以下の該当する製品を、Google社が提供する修正済みのバージョンに更新することで解決します。
+
+詳細は、Google社が提供する情報を参照してください。
+
+ - Google Chrome 99.0.4844.74 より前のバージョン
+
+参考）当該セキュリティアップデートに関するニュースサイト情報
+Google、「Chrome 99.0.4844.74」を公開 - 深刻な脆弱性を修正：Security NEXT
+https://www.security-next.com/134894
+
+参考）当該セキュリティアップデートに関するGoogle社の情報
+Stable Channel Update for Desktop（英語）：Google
+https://chromereleases.googleblog.com/2022/03/stable-channel-update-for-desktop_15.html
+</content>
+</each>
+<each>
+<title>
+Microsoft Edgeのセキュリティアップデート
+</title>
+<content>
+3月17日（現地時間）に、Microsoft Edgeの脆弱性を修正するセキュリティアップデートがリリースされました。これらの脆弱性は、対象のシステムを制御するために悪用される恐れがあります。
+
+以下の該当する製品を、Microsoft社が提供する修正済みのバージョンに更新することで解決します。
+
+詳細は、Microsoft社が提供する情報を参照してください。
+
+ - Microsoft Edge (Chromium ベース) 99.0.1150.46 より前のバージョン
+
+参考）当該セキュリティアップデートに関するニュースサイト情報
+MS、独自の脆弱性修正含む「Microsoft Edge 99.0.1150.46」をリリース：Security NEXT
+https://www.security-next.com/134966
+
+参考）当該セキュリティアップデートに関するMicrosoft社の情報
+Release notes for Microsoft Edge Stable Channel（英語）：Microsoft
+https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel
+</content>
+</each>
+<each>
+<title>
+複数の Mozilla 製品のセキュリティアップデート
+</title>
+<content>
+3月8日（現地時間）に、複数の Mozilla 製品において脆弱性を修正するセキュリティアップデートがリリースされました。これらの脆弱性のいくつかを利用して、対象のシステムを制御される恐れがあります。
+
+また、12月1日にNSS（Network Security Services）ライブラリの致命的な脆弱性に対するセキュリティアップデートもリリースされています。こちらはThunderbird、LibreOffice、Evolution、Evinceなど、署名検証にNSSを使用する電子メールクライアントとPDFビューアが影響を受けると考えられています。
+
+以下の該当する製品を、Mozilla社が提供する修正済みのバージョンに更新することで解決します。
+
+詳細は、Mozilla社が提供する情報を参照してください。
+
+ - Firefox 98 より前のバージョン
+ - Firefox ESR 91.7 より前のバージョン
+ - Thunderbird 91.7 より前のバージョン
+ - NSS 3.73 より前のバージョン
+ - NSS 3.68.1ESR より前のバージョン
+
+参考）当該セキュリティアップデートに関するニュースサイト情報
+「Firefox 98」がリリースに - 脆弱性7件を解消：Security NEXT
+https://www.security-next.com/134699
+
+「Thunderbird 91.7.0」が公開 ～ここ1週間で2回目のバージョンアップ 不具合とセキュリティ問題への対応が中心：窓の杜
+https://forest.watch.impress.co.jp/docs/news/1394381.html
+
+Mozillaの暗号ライブラリ「NSS」に深刻な脆弱性 - アップデートを公開：Security NEXT
+https://www.security-next.com/132072
+
+参考）修正されたFirefoxの脆弱性に関するMozilla社の情報
+Security Vulnerabilities fixed in Firefox 98（英語）：Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-10/
+
+Security Vulnerabilities fixed in Firefox ESR 91.7（英語）：Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-11/
+
+参考）修正されたThunderbirdの脆弱性に関するMozilla社の情報
+Security Vulnerabilities fixed in Thunderbird 91.7（英語）：Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2022-12/
+
+参考）修正されたNSSの脆弱性に関するMozilla社の情報
+Memory corruption in NSS via DER-encoded DSA and RSA-PSS signatures（英語）：Mozilla
+https://www.mozilla.org/en-US/security/advisories/mfsa2021-51/
+</content>
+</each>
+</root>

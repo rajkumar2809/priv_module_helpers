@@ -1,0 +1,36 @@
+以下のサーチを使う
+・| savedsearch stellar_6month_alert | search risk_score>=2
+  -> stats6month.csv
+
+以下サーチと同様の統計をPythonで作成する
+
+get_6month_timechart
+
+get_1month_alerts
+  | savedsearch aella_lastmonth_alert
+get_alert_by_type
+  | stats count by incident_category
+get_alert_by_killchain
+  | stats count by event_type
+get_risklevel_table
+  | stats count by risklevel,risk_score
+  | sort risk_score desc | fields - risk_score
+get_1month_timechart
+  | timechart span=1day count(tenantid) by risklevel
+  | eval high   = if(isnull(high),   0, high)
+  | eval middle = if(isnull(middle), 0, middle)
+  | eval low    = if(isnull(low),    0, low)
+get_topnum_by
+  | top limit={} {} << keyname, _num
+  * _numは全て5(TOP5のみを表示させる)
+  | sort by count desc
+  _alert_traffic_app_base
+    _keyname = "appid_name"
+  _alert_traffic_srcip_base
+    _keyname = "srcip"
+  _alert_traffic_dstip_base
+    _keyname = "dstip"
+  _alert_traffic_dstip_country_base
+    _keyname = "dstip_geo_countryName"
+
+

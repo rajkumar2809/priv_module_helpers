@@ -1,0 +1,259 @@
+{
+    "product": "carbonblack", 
+    "global_access": [], 
+    "alert_level": "3", 
+    "important_tags": [], 
+    "malicious_process": {
+        "1576-46554daf7a4a6082bb1faf1ff143c60c4f6701279c47e4563a6a2a53f0b5b5e0-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1559_INTER_PROC_COMM", 
+                    "RUN_ANOTHER_APP", 
+                    "MITRE_T1021_REMOTE_SERVICES", 
+                    "MITRE_T1566_PHISHING", 
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "RUN_CMD_SHELL"
+                ], 
+                "events": [
+                    {
+                        "runuser": "CCSDM01\\astaff1", 
+                        "ppid": "1576-46554daf7a4a6082bb1faf1ff143c60c4f6701279c47e4563a6a2a53f0b5b5e0-0", 
+                        "description": "C:\\windows\\syswow64\\cmd.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\syswow64\\cmd.exe:16156[\"C:\\WINDOWS\\system32\\cmd.exe\" /c whoami /groups | findstr S-1-5-32-544]", 
+                        "occurred": [
+                            "2021/09/26 04:35:55"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\WINDOWS\\system32\\cmd.exe\" /c whoami /groups | findstr S-1-5-32-544", 
+                            "pid": 16156, 
+                            "reputation": "COMPANY_WHITE_LIST", 
+                            "hash": "4d89fc34d5f0f9babd022271c585a9477bf41e834e46b991deaa0530fdb25e22", 
+                            "name": "c:\\windows\\syswow64\\cmd.exe"
+                        }, 
+                        "event_id": [
+                            "5c932a381e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "MITRE_T1559_INTER_PROC_COMM", 
+                            "RUN_ANOTHER_APP", 
+                            "MITRE_T1021_REMOTE_SERVICES", 
+                            "MITRE_T1566_PHISHING", 
+                            "RUN_CMD_SHELL", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "svchost.exe", 
+                    "parent_pid": 1164, 
+                    "command_line": "\"C:\\Program Files (x86)\\Microsoft Office\\Office16\\EXCEL.EXE\" /automation -Embedding", 
+                    "pid": 1576, 
+                    "parent_path": "c:\\windows\\system32\\svchost.exe", 
+                    "reputation": "COMPANY_WHITE_LIST", 
+                    "parent_reputation": "TRUSTED_WHITE_LIST", 
+                    "parent_hash": "643ec58e82e0272c97c2a59f6020970d881af19c0ad5029db9c958c13b6558c7", 
+                    "hash": "46554daf7a4a6082bb1faf1ff143c60c4f6701279c47e4563a6a2a53f0b5b5e0", 
+                    "path": "c:\\program files (x86)\\microsoft office\\office16\\excel.exe", 
+                    "ppid": "1576-46554daf7a4a6082bb1faf1ff143c60c4f6701279c47e4563a6a2a53f0b5b5e0-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "excel.exe(1576):[00001-10-000831:<Customer Script>]", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "excel.exe", 
+            "shell_type": 0
+        }, 
+        "4328-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "POLICY_DENY", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "4328-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                        "description": "C:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "INSTALL_RUN", 
+                        "event_summary": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe:15844[\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" C:\\WINDOWS\\System32\\schtasks.exe /Delete /TN \\Lenovo\\BatteryGauge\\BatteryGaugeMaintenance /F]", 
+                        "occurred": [
+                            "2021/09/26 04:35:30"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" C:\\WINDOWS\\System32\\schtasks.exe /Delete /TN \\Lenovo\\BatteryGauge\\BatteryGaugeMaintenance /F", 
+                            "pid": 15844, 
+                            "reputation": "COMPANY_WHITE_LIST", 
+                            "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                            "name": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe"
+                        }, 
+                        "event_id": [
+                            "37781c571e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                            "POLICY_DENY"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "lenovo.modern.imcontroller.exe", 
+                    "parent_pid": 5348, 
+                    "command_line": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy bypass -NoProfile -NonInteractive -WindowStyle Hidden -File C:\\ProgramData\\Lenovo\\iMController\\Plugins\\LenovoBatteryGaugePackage_\\x64\\Install.PS1", 
+                    "pid": 4328, 
+                    "parent_path": "c:\\windows\\lenovo\\imcontroller\\service\\lenovo.modern.imcontroller.exe", 
+                    "reputation": "COMPANY_WHITE_LIST", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "a17996b2d9d1a5a671daf1cd31236a6cfa56931938ca53f682a3fa9ecf379670", 
+                    "hash": "138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5", 
+                    "path": "c:\\programdata\\lenovo\\imcontroller\\plugins\\lenovobatterygaugepackage_\\x64\\install.ps1", 
+                    "ppid": "4328-138ddc5957f112a66fcc62cf8ea763ddcc2106de9b36bf1ce4fe923a082fada5-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "ps_script(4328):00001-10-000097:<Lenovo ImController Installer.>", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": true, 
+                "gray": false
+            }, 
+            "app_name": "ps_script", 
+            "shell_type": 5
+        }, 
+        "4328-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0": {
+            "details": {
+                "indicators": [
+                    "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER", 
+                    "MODIFY_MEMORY_PROTECTION", 
+                    "BYPASS_POLICY"
+                ], 
+                "events": [
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "4328-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "NtProtectVirtualMemory(enable executable memory)", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "NtProtectVirtualMemory(False)", 
+                        "occurred": [
+                            "2021/09/26 04:35:32"
+                        ], 
+                        "event_detail": {
+                            "api_name": "NtProtectVirtualMemory", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "37cf63e21e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MODIFY_MEMORY_PROTECTION", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "4328-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "CreateProcess(invoke the application \"c:\\windows\\system32\\conhost.exe\")", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "CreateProcess(False)", 
+                        "occurred": [
+                            "2021/09/26 04:35:31"
+                        ], 
+                        "event_detail": {
+                            "api_name": "CreateProcess", 
+                            "api_target": false
+                        }, 
+                        "event_id": [
+                            "37cf63da1e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "crossproc", 
+                        "ev_type": "SYSTEM_API_CALL", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }, 
+                    {
+                        "runuser": "NT AUTHORITY\\SYSTEM", 
+                        "ppid": "4328-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                        "description": "C:\\windows\\system32\\conhost.exe", 
+                        "event_count": 1, 
+                        "attack_phase": "", 
+                        "event_summary": "c:\\windows\\system32\\conhost.exe:10692[\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1]", 
+                        "occurred": [
+                            "2021/09/26 04:35:27"
+                        ], 
+                        "event_detail": {
+                            "command_line": "\\??\\C:\\WINDOWS\\system32\\conhost.exe 0xffffffff -ForceV1", 
+                            "pid": 10692, 
+                            "reputation": "COMPANY_WHITE_LIST", 
+                            "hash": "6651ab6c5c6d85c86b0c6c532115662e09f338fa8cc1233e1434139346f25ef6", 
+                            "name": "c:\\windows\\system32\\conhost.exe"
+                        }, 
+                        "event_id": [
+                            "37781c391e8311ec871fb75d4dae9b8a"
+                        ], 
+                        "raw_ev_type": "childproc", 
+                        "ev_type": "CREATE_PROCESS", 
+                        "categories": [
+                            "BYPASS_POLICY", 
+                            "MITRE_T1059_CMD_LINE_OR_SCRIPT_INTER"
+                        ]
+                    }
+                ], 
+                "process_info": {
+                    "parent_name": "lenovo.modern.imcontroller.exe", 
+                    "parent_pid": 5348, 
+                    "command_line": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy bypass -NoProfile -NonInteractive -WindowStyle Hidden -File C:\\ProgramData\\Lenovo\\iMController\\Plugins\\LenovoBatteryGaugePackage_\\x64\\Install.PS1", 
+                    "pid": 4328, 
+                    "parent_path": "c:\\windows\\lenovo\\imcontroller\\service\\lenovo.modern.imcontroller.exe", 
+                    "reputation": "COMPANY_WHITE_LIST", 
+                    "parent_reputation": "ADAPTIVE_WHITE_LIST", 
+                    "parent_hash": "a17996b2d9d1a5a671daf1cd31236a6cfa56931938ca53f682a3fa9ecf379670", 
+                    "hash": "9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f", 
+                    "path": "c:\\windows\\system32\\windowspowershell\\v1.0\\powershell.exe", 
+                    "ppid": "4328-9f914d42706fe215501044acd85a32d58aaef1419d404fddfa5d3b48f66ccd9f-0", 
+                    "parent_command_line": null
+                }
+            }, 
+            "message": "powershell.exe(4328):has no malicious event", 
+            "flags": {
+                "emerg": false, 
+                "positive": false, 
+                "cyfirma": false, 
+                "main": false, 
+                "gray": false
+            }, 
+            "app_name": "powershell.exe", 
+            "shell_type": 5
+        }
+    }, 
+    "cyfirma_detected_by_hash": [], 
+    "nw_listen": false, 
+    "base_severity": "\u4f4e", 
+    "customer_name": "OPT1", 
+    "shelltype_of_malprocess": 0, 
+    "cyfirma_detected_by_nwdst": [], 
+    "validator": "general_validator", 
+    "is_except": false
+}
